@@ -1,0 +1,13 @@
+# 站点设置
+title: 咲衣憧
+subtitle: 王者自由
+email: anytjf@live.com
+description: > # this means to ignore newlines until "baseurl:"
+  萌豚，声豚，大友，非提，非P；博爱，喜轻百合；天麻厨，东山厨，阿澄蜜。
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://kingfree.github.io" # the base hostname & protocol for your site
+weibo_username: kingfree
+github_username:  kingfree
+
+# 构建设置
+markdown: kramdown
