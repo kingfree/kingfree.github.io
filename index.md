@@ -18,7 +18,7 @@ tagline: 王者自由
 <ul class="books">
   {% for page in site.pages %}
     {% if page.group == "book" %}
-      <li><a href="{{ BASE_PATH }}{{page.url}}">{{page.title}}</a></li>
+      <li><a href="{{ BASE_PATH }}{{page.url}}">《{{page.title}}》</a></li>
     {% endif %}
   {% endfor %}
 </ul>

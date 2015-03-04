@@ -13,16 +13,28 @@
 /*.navbar .nav {
   float: right; }*/
 
+body {
+  font-size: 16px;
+  font-family: "Georgia", "Times New Roman", "宋体", "MS PGothic", serif;
+}
+
 /* Jekyll Bootstrap Colors */
 h1, h2, h3, h4 {
+  font-family: "Ubuntu", "Microsoft Yahei UI", "Meiryo UI", sans-serif;
   color: #f22430;
 }
+
+h1 {
+  font-weight: bold;
+}
+
 #footer {
 }
 
 
 
 /* posts index */
+
 .post > h3.title {
   position: relative;
   padding-top: 10px; }
