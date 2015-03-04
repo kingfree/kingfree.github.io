@@ -31,7 +31,10 @@ h1 {
 #footer {
 }
 
-
+h2 a, h2 a:hover {
+  color: #f22430;
+  text-decoration: none;
+}
 
 /* posts index */
 
