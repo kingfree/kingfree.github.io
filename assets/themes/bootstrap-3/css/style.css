@@ -21,7 +21,7 @@ body {
 /* Jekyll Bootstrap Colors */
 h1, h2, h3, h4 {
   font-family: "Ubuntu", "Microsoft Yahei UI", "Meiryo UI", sans-serif;
-  color: #f22430;
+  color: #FB65B0;
 }
 
 h1 {
@@ -91,3 +91,75 @@ h2 a, h2 a:hover {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+#title {
+  text-align: center;
+}  
+
+#title a, #title a:hover {
+  font-family: "KFKai", "楷体", "华文楷体";
+  font-size: 48px;
+  color: #FB65B0;
+  text-decoration: none;
+}
+  
+#leftbar {
+  position: fixed;
+}
+
+#header {
+  background-color: #F8DDE3;
+  text-align: center;
+}
+
+#header a {
+  color: #C70079;
+  text-decoration: none;
+}
+
+#header a:hover {
+  color: white;
+  background-color: #F764BF;
+  text-decoration: none;
+}
+
+#header li.active > a, #header a:active {
+  color: white;
+  background-color: #F20093;
+  text-decoration: none;
+}
+
+#center {
+  padding: 20px;
+}
+
+#footer {
+  display: block;
+  position: fixed;
+  bottom: 10px;
+  padding: 10px;
+}
+
+#contact a {
+  display: block;
+  position: relative;
+}
+
+blockquote p {
+  font-size: normal;
+}
+
+a {
+  color: #C70079;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F764BF;
+  text-decoration: none;
+}
+
+a:active {
+  color: #F20093;
+  text-decoration: none;
+}
