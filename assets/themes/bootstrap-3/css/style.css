@@ -1,60 +1,71 @@
-/* Custom container */
-
-/* Replaced with normal container and standard footer */
-/*.container-narrow {
-  margin: 0 auto;
-  max-width: 700px; }
-
-.container-narrow > hr {
-  margin: 30px 0; }
-*/
-
-/* Replaced with standard BS3 Navbar */
-/*.navbar .nav {
-  float: right; }*/
-
 body {
   font-size: 16px;
-  font-family: "Georgia", "Times New Roman", "宋体", "MS PGothic", serif;
 }
 
-/* Jekyll Bootstrap Colors */
-h1, h2, h3, h4 {
-  font-family: "Ubuntu", "Microsoft Yahei UI", "Meiryo UI", sans-serif;
-  color: #FB65B0;
+p {
+  font-family: "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
+  color: #F20093;
+  text-decoration: none;
 }
 
-h1 {
-  font-weight: bold;
+blockquote p {
+  font-size: 1em;
 }
+
+pre code {
+  font-size: 0.8em;
+}
+
+a {
+  color: #F20093;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F764BF;
+  text-decoration: none;
+}
+
+a:active {
+  color: #C70079;
+  text-decoration: none;
+}
+
 
 #footer {
 }
 
-h2 a, h2 a:hover {
-  color: #f22430;
-  text-decoration: none;
+.subtitle {
+  margin-bottom: 20px;
+  margin-top: 0px;
 }
 
-/* posts index */
+.etitle {
+  font-size: 24px;
+  display: block;
+  font-weight: bold;
+}
+
+.author {
+  font-variant: italic;
+  display: block;
+  text-align: right;
+}
 
 .post > h3.title {
   position: relative;
   padding-top: 10px; }
 
-.post > h3.title span.date {
-  position: absolute;
-  right: 0;
-  font-size: 0.9em; }
-
 .post > .more {
   margin: 10px 0;
   text-align: left; }
 
-/* post-full*/
-.post-full .date {
-  margin-bottom: 20px;
-  font-weight: bold; }
+.date {
+  color: #F20093;
+}
 
 /* tag_box */
 .tag_box {
@@ -97,7 +108,7 @@ h2 a, h2 a:hover {
 }  
 
 #title a, #title a:hover {
-  font-family: "KFKai", "楷体", "华文楷体";
+  font-family: "KFKai", "楷体", "华文楷体", "MS Song";
   font-size: 48px;
   color: #FB65B0;
   text-decoration: none;
@@ -143,23 +154,4 @@ h2 a, h2 a:hover {
 #contact a {
   display: block;
   position: relative;
-}
-
-blockquote p {
-  font-size: normal;
-}
-
-a {
-  color: #C70079;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #F764BF;
-  text-decoration: none;
-}
-
-a:active {
-  color: #F20093;
-  text-decoration: none;
 }

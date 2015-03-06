@@ -1,9 +1,24 @@
 <div class="page-header">
+    <div class="date pull-right">
+	  {% if page.date %}
+      <span>{{ page.date | date: "%Y年%m月%d日" }}</span>
+	  {% endif %}
+	  {% if page.update %}
+	    <br>
+	    <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
+	  {% endif %}
+    </div>
   <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
 </div>
 
-<div class="row">
+<div class="row post-full">
   <div class="col-xs-12">
-    {{ content }}
+    <div class="subtitle">
+	  {% if page.etitle %}<span class="etitle">{{ page.etitle }}</span>{% endif %}
+	  {% if page.author %}<span class="author">{{ page.author }}</span>{% endif %}
+	</div>
+    <div class="content">
+      {{ content }}
+    </div>
   </div>
 </div>
