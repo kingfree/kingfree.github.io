@@ -118,27 +118,27 @@ update: 2015-3-6
 
 **all together, altogether**: All together 表示 simultaneously 或 all at once；altogether 表示 entirely 或 wholly。如果句中可以替换成 entirely 或 wholly 就用单个单词的 altogether。
 
-☆ You're altogether wreng about the six frienhs going all together to the dance; each is going separately.
+☆ You're altogether wrong about the six friends going all together to the dance; each is going separately.
 
-****: 
+**alumni, alumnae, alumnus, alumna**: 简单来说：一个男毕业生是 an alumnus；一个女毕业生是 an alumna；几个女毕业生是 alumnae；几个男女毕业生是 alumni。缩略式 alum/alums 可用于以上所有情况。
 
-☆ 
+☆ Although Mary Jo and her sisters are alumnae from Wellesley, Mary Jo is the alumna who receives the most attention; her brothers Martin and Xavier are alumni of Harvard, but Martin is a more famous alumnus than Xavier.
 
-****: 
+**allusion, illusion**: Allusion 是影射，illusion 是幻想。
 
-☆ 
+☆ Kay told Jerry that she was under the illusion he would be her Prince Charming; Jerry didn't understand the allusion.
 
-****: 
+**altar, alter**: 改变（chang*e*）用alt*e*r；在alter前祭祀。
 
-☆ 
+☆ We'll alter the position of the altar so the congregation can see the new carvings.
 
-****: 
+**among, between**: 两人分用 between，三人分用 among。
 
-☆ 
+☆ The money was divided between Sarah and Bob; the land was divided among Billy, Henry, and Janice.
 
-****: 
+**anybody, any body**: Anybody 意为 any one person（常可用anyone替换）。 Any body 表示（可能指向一个图片引用）一个死人。
 
-☆ 
+☆ Anybody can help to search for any body that might not have been found in the wreckage.
 
 ****: 
 

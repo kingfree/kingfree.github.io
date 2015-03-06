@@ -38,6 +38,12 @@ a:active {
 #footer {
 }
 
+#category {
+  position: fixed;
+  top: 10px;
+  font-size: 12px;
+}
+
 .subtitle {
   margin-bottom: 20px;
   margin-top: 0px;

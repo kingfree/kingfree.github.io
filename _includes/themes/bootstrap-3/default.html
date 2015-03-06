@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,20 +38,20 @@
 
   <body>
     <div class="container">
-	  <div class="row">
+    <div class="row">
 
-	    <div class="col-xs-6 col-md-2" id="leftbar">
-		  <div id="title">
-		    <a href="{{ HOME_PATH }}">咲衣憧</a>
-		  </div>
-		  <div id="header">
-			  <ul class="nav nav-pills nav-stacked">
-				{% assign pages_list = site.pages %}
-				{% assign group = 'navigation' %}
-				{% include JB/pages_list %}
-			  </ul>
-		  </div>
-		  <div id="footer">
+      <div class="col-xs-6 col-md-2" id="leftbar">
+      <div id="title">
+        <a href="{{ HOME_PATH }}">咲衣憧</a>
+      </div>
+      <div id="header">
+        <ul class="nav nav-pills nav-stacked">
+        {% assign pages_list = site.pages %}
+        {% assign group = 'navigation' %}
+        {% include JB/pages_list %}
+        </ul>
+      </div>
+      <div id="footer">
       <div id="contact">
           <a href="http://weibo.com/{{ site.author.weibo }}" target="_blank">微博</a>
           <a href="https://github.com/{{ site.author.github }}" target="_blank">Github</a>
@@ -59,15 +59,19 @@
           <a href="mailto:{{ site.author.gmail }}">Gmail邮箱</a>
       </div>
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
-		  </div>
-		</div>
+      </div>
+    </div>
 
-	    <div id="center" class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
-		  {{ content }}
-		</div>
+      <div id="center" class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+      {{ content }}
+    </div>
 
-	    <div id="rightbar" class="col-xs-6 col-md-2 col-md-offset-10">
-		</div>
+      <div id="rightbar" class="col-xs-6 col-md-2 col-md-offset-10">
+      <nav id="category">
+        <ul idclass="nav">
+      </ul>
+      </nav>
+    </div>
 
       </div>
     </div>
@@ -76,5 +80,19 @@
 
     <script src="{{ ASSET_PATH }}/js/jquery-1.11.2.min.js"></script>
     <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
+  
+<script>
+$(document).ready(function() {
+  $("h2,h3").each(function(i, item) {
+    var tag = $(item).get(0).localName;
+	if ($(item).attr("id") == undefined) {
+	  $(item).attr("id", "section" + i);
+	}
+    $("#category").append('<a class="cate' + tag + '" href="#' + $(item).attr("id") + '">' + $(this).text() + '</a></br>');
+  });
+  $(".cateh2").css("margin-left", 0);
+  $(".cateh3").css("margin-left", 20);
+});
+</script>
   </body>
 </html>
