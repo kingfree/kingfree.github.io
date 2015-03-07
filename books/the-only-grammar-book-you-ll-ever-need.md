@@ -5,7 +5,7 @@ tagline: 一站式的写作学习
 group: book
 etitle: "The Only Grammar Book You'll Ever Need: A One-Stop Source for Every Writing Assignment"
 date: 2015-3-4
-update: 2015-3-6
+update: 2015-3-7
 ---
 
 > 版权声明：原书购自[亚马逊](http://www.amazon.cn/gp/product/1580628559)，原作者和出版社保留所有版权。
@@ -140,21 +140,21 @@ update: 2015-3-6
 
 ☆ Anybody can help to search for any body that might not have been found in the wreckage.
 
-****: 
+**bad, badly**: 表示你的感觉用 bad。表示做某事用 badly。
 
-☆ 
+☆ Gregg felt bad he had scored so badly on the test.
 
-****: 
+**bear, bare**: A b*ea*r can t*ea*r off your *ea*r; if you're bar*e*, you're nud*e*.
 
-☆ 
+☆ The bare bathers were disturbed when the grizzly bear arrived.
 
-****: 
+**besides, beside**: If you want the one that means *in addition to*, you want the one that has an additional *s*(*besides*); *beside* means *by the side of*.
 
-☆ 
+☆ Besides her groom, the bride wanted her dad beside her in the photo.
 
-****: 
+**breath, breathe**: You take a single *breath*; you inhal*e* and *e*xhal*e* when you breath*e*.
 
-☆ 
+☆ In the cold of the winter, it was hard for me to breathe when taking a breath outside.
 
 ****: 
 
