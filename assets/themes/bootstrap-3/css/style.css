@@ -148,6 +148,8 @@ a:active {
 
 #center {
   padding: 20px;
+  background-color: #FFFFFF;
+  z-index: 9999;
 }
 
 #footer {
