@@ -16,7 +16,7 @@ tagline: 王者自由
 ## 读书笔记
 
 <ul class="books">
-  {% for page in site.pages %}
+  {% for page in site.pages reversed %}
     {% if page.group == "book" %}
       <li>{% if page.update %}<span>{{ page.update | date: "%Y年%m月%d日" }}</span> &raquo; {% endif %}<a href="{{ BASE_PATH }}{{page.url}}">《{{page.title}}》</a></li>
     {% endif %}

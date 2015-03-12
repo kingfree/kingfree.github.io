@@ -4,6 +4,7 @@ title: 程序员修炼之道
 tagline: 从小工到专家
 group: book
 etitle: "The Pragmatic Progrrammer: Form Journeyman to Master"
+permalink: /books/the-pragmatic-programmer/
 date: 2015-3-8
 update: 2015-3-10
 ---

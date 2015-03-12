@@ -4,6 +4,7 @@ group: book
 title: 程序员的思维修炼
 tagline: 开发认知潜能的九堂课
 etitle: "Pragmatic Thinking and Learning: Refactor Your Wetware"
+permalink: /books/pragmatic-thinking-and-learning/
 author: Andy Hunt
 date: 2015-3-6
 update: 2015-3-6

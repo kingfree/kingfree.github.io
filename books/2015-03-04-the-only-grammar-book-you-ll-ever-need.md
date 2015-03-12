@@ -4,6 +4,7 @@ title: 一本语法书就够了
 tagline: 一站式的写作学习
 group: book
 etitle: "The Only Grammar Book You'll Ever Need: A One-Stop Source for Every Writing Assignment"
+permalink: /books/the-only-grammar-book-youll-ever-need/
 date: 2015-3-4
 update: 2015-3-7
 ---

@@ -2,6 +2,7 @@
 layout: page
 group: book
 title: 辛雷学习方法
+permalink: /books/xinlei-learning-method/
 update: 2015-3-6
 ---
 
