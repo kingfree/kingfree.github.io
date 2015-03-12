@@ -8,8 +8,12 @@ tagline: 王者自由
 ## 博文列表
 
 <ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date: "%Y年%m月%d日" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+  {% for page in site.posts %}
+      <li>
+	  {% if page.date %}<span>{{ page.date | date: "%Y年%m月%d日" }} &raquo; </span>{% endif %}
+	  <a href="{{ BASE_PATH }}{{page.url}}">《{{page.title}}》</a>
+	  {% if page.update %}<span class="pull-right"> &laquo; {{ page.update | date: "%Y年%m月%d日" }}</span>{% endif %}
+      </li>
   {% endfor %}
 </ul>
 
@@ -18,7 +22,11 @@ tagline: 王者自由
 <ul class="books">
   {% for page in site.pages reversed %}
     {% if page.group == "book" %}
-      <li>{% if page.update %}<span>{{ page.update | date: "%Y年%m月%d日" }}</span> &raquo; {% endif %}<a href="{{ BASE_PATH }}{{page.url}}">《{{page.title}}》</a></li>
+      <li>
+	  {% if page.date %}<span>{{ page.date | date: "%Y年%m月%d日" }} &raquo; </span>{% endif %}
+	  <a href="{{ BASE_PATH }}{{page.url}}">《{{page.title}}》</a>
+	  {% if page.update %}<span class="pull-right"> &laquo; {{ page.update | date: "%Y年%m月%d日" }}</span>{% endif %}
+	  </li>
     {% endif %}
   {% endfor %}
 </ul>

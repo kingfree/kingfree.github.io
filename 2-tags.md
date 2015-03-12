@@ -2,6 +2,7 @@
 layout: page
 title: 标签
 header: 标签
+permalink: /tags/
 group: navigation
 ---
 {% include JB/setup %}

@@ -6,7 +6,7 @@ group: book
 etitle: "Apprenticeship Patterns: Guidance for the Aspiring Software Craftsman"
 permalink: /books/apprenticeship-patterns/
 date: 2015-3-3
-update: 2015-3-11
+update: 2015-3-12
 ---
 
 原书英文版：<http://chimera.labs.oreilly.com/books/1234000001813/index.html>
