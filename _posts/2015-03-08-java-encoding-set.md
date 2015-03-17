@@ -2,6 +2,7 @@
 layout: post
 title: Java 编译时的编码设置
 tags: Java 编码
+update: 2015-3-17
 ---
 
 在 UTF-8 成为事实文本编码标准的现在，我的所有程序都是 UTF-8 编码的。
@@ -15,7 +16,11 @@ tags: Java 编码
 解决办法也很简单，指定编码即可：
 
     javac -encoding UTF-8 <文件名>
+	
+在 Eclipse 中则可以在属性中配置。
 
-# 参考文献
-
-1. <http://bbs.csdn.net/topics/390374418>
+javadoc 也会产生相同的问题，在命令行参数中或在 Eclipse 中的 Generate Javadoc 的 VM options 中加入：
+	
+	-encoding utf-8 -charset utf-8
+	
+Linux 默认编码就是 UTF-8，没有这个问题。
