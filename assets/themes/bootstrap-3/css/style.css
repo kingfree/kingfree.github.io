@@ -73,6 +73,10 @@ a:active {
   color: #F20093;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* tag_box */
 .tag_box {
   list-style: none;
