@@ -121,6 +121,10 @@ img {
   width: 100%;
 }
 
+#title td {
+  width: 33%;
+}
+
 #title a, #title a:hover {
   font-family: "KFKai", "楷体", "华文楷体", "MS Song";
   font-size: 48px;
