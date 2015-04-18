@@ -42,7 +42,7 @@
     <div class="container">
     <div class="row">
 
-      <div class="col-xs-6 col-md-2" id="leftbar">
+      <div class="col-xs-6 col-md-2 hidden-print hidden-xs hidden-sm" id="leftbar">
       <div id="title">
         <a href="{{ HOME_PATH }}">
           <table>
@@ -71,16 +71,16 @@
       </div>
     </div>
 
-      <div id="center" class="col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
+      <div id="center" class="bs-docs-container col-xs-12 col-sm-6 col-md-8 col-md-offset-2">
       {{ content }}
     </div>
 
-      <div id="rightbar" class="col-xs-6 col-md-2 col-md-offset-10">
-      <nav id="category">
-        <ul idclass="nav">
-      </ul>
-      </nav>
-    </div>
+	<div id="rightbar" class="col-xs-6 col-md-2 col-md-offset-10" role="complementary">
+	<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+	<ul id="category" class="nav bs-docs-sidenav">
+	</ul>
+	</nav>
+	</div>
 
       </div>
     </div>
@@ -89,18 +89,6 @@
 
     <script src="{{ ASSET_PATH }}/js/jquery-1.11.2.min.js"></script>
     <script src="{{ ASSET_PATH }}/bootstrap/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function() {
-  $("h2,h3").each(function(i, item) {
-    var tag = $(item).get(0).localName;
-	if ($(item).attr("id") == undefined) {
-	  $(item).attr("id", "section" + i);
-	}
-    $("#category").append('<a class="cate' + tag + '" href="#' + $(item).attr("id") + '">' + $(this).text() + '</a></br>');
-  });
-  $(".cateh2").css("margin-left", 0);
-  $(".cateh3").css("margin-left", 20);
-});
-</script>
+    <script src="{{ ASSET_PATH }}/js/tableofcontents.js"></script>
   </body>
 </html>
