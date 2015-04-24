@@ -26,8 +26,8 @@ JB:
   rss_path : /rss.xml
 
   comments :
-  provider : duoshuo
-  duoshuo :
-    short_name : come
-  disqus :
-    short_name : jekyllbootstrap
+    provider : duoshuo
+    duoshuo :
+      short_name : come
+    disqus :
+      short_name : jekyllbootstrap
