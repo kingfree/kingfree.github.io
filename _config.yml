@@ -14,3 +14,11 @@ production_url: "http://kingfree.github.io"
 # 构建设置
 markdown: kramdown
 highlighter: pygments
+
+# 评论插件
+comments :
+provider : duoshuo
+duoshuo :
+  short_name : come
+disqus :
+  short_name : jekyllbootstrap
