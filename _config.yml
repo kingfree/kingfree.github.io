@@ -28,6 +28,4 @@ JB:
   comments :
     provider : duoshuo
     duoshuo :
-      short_name : come
-    disqus :
-      short_name : jekyllbootstrap
+      short_name : kingfree
