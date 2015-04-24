@@ -16,9 +16,18 @@ markdown: kramdown
 highlighter: pygments
 
 # 评论插件
-comments :
-provider : duoshuo
-duoshuo :
-  short_name : come
-disqus :
-  short_name : jekyllbootstrap
+JB:
+  version : 0.3.0
+  
+  BASE_PATH : http://kingfree.github.io
+  
+  tags_path : /tags/
+  atom_path : /atom.xml
+  rss_path : /rss.xml
+
+  comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : come
+  disqus :
+    short_name : jekyllbootstrap
