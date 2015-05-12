@@ -12,6 +12,7 @@ url: "http://kingfree.github.io"
 production_url: "http://kingfree.github.io"
 
 # 构建设置
+exclude: ["vendor"]
 markdown: kramdown
 highlighter: pygments
 
