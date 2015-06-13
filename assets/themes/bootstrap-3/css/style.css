@@ -7,7 +7,7 @@ p {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
-  color: #F20093;
+  color: #005CAF; /* 瑠璃 */
   text-decoration: none;
 }
 
@@ -20,17 +20,17 @@ pre code {
 }
 
 a, a:link, :visited {
-  color: #F20093;
+  color: #8A6BBE; /* 藤紫 */
   text-decoration: none;
 }
 
 a:hover {
-  color: #F764BF;
+  color: #B28FCE; /* 薄 */
   text-decoration: none;
 }
 
 a:active {
-  color: #C70079;
+  color: #6A4C9C; /* 桔梗 */
   text-decoration: none;
 }
 
@@ -70,7 +70,7 @@ a:active {
   text-align: left; }
 
 .date {
-  color: #F20093;
+  color: #00896C; /* 青竹 */
 }
 
 img {
@@ -128,7 +128,7 @@ img {
 #title a, #title a:hover {
   font-family: "KFKai", "楷体", "华文楷体", "MS Song";
   font-size: 48px;
-  color: #FB65B0;
+  color: #F596AA; /* 桃 */
   text-decoration: none;
 }
 
@@ -152,24 +152,24 @@ img {
 }
 
 #header {
-  background-color: #F8DDE3;
+  background-color: #FFFFFF;
   text-align: center;
 }
 
 #header a {
-  color: #C70079;
+  color: #58B2DC; /* 空 */
   text-decoration: none;
 }
 
 #header a:hover {
   color: white;
-  background-color: #F764BF;
+  background-color: #81C7D4; /* 水 */
   text-decoration: none;
 }
 
 #header li.active > a, #header a:active {
   color: white;
-  background-color: #F20093;
+  background-color: #7DB9DE; /* 勿忘草 */
   text-decoration: none;
 }
 
@@ -208,21 +208,21 @@ display : block;
 padding : 4px 20px;
 font-size : 13px;
 font-weight : 500;
-color : #767676;
+color : #33A6B8; /* 浅葱 */
 }
 .bs-docs-sidebar .nav > li > a:focus, .bs-docs-sidebar .nav > li > a:hover {
 padding-left : 19px;
-color : #F20093;
+color : #1E88A8; /* 花浅葱 */
 text-decoration : none;
 background-color : transparent;
-border-left : 1px solid #F20093;
+border-left : 1px solid #1E88A8; /* 花浅葱 */
 }
 .bs-docs-sidebar .nav > .active:focus > a, .bs-docs-sidebar .nav > .active:hover > a, .bs-docs-sidebar .nav > .active > a {
 padding-left : 18px;
 font-weight : 700;
-color : #F20093;
+color : #1E88A8; /* 花浅葱 */
 background-color : transparent;
-border-left : 2px solid #F20093;
+border-left : 2px solid #1E88A8; /* 花浅葱 */
 }
 .bs-docs-sidebar .nav .nav {
 // display : none;
@@ -252,7 +252,7 @@ font-weight : bold;
 color : #999;
 }
 .back-to-top:hover, .bs-docs-theme-toggle:hover {
-color : #F20093;
+color : #1E88A8; /* 花浅葱 */
 text-decoration : none;
 }
 .bs-docs-theme-toggle {
