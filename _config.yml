@@ -14,7 +14,7 @@ production_url: "http://blog.kingfree.moe"
 # 构建设置
 exclude: ["vendor"]
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 # 评论插件
 JB:
