@@ -49,12 +49,11 @@
           </div>
           <div id="footer">
             <div id="contact">
+              <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
               <a href="http://weibo.com/{{ site.author.weibo }}" target="_blank">微博</a>
-              <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">Twitter</a>
+              <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">推特</a>
               <a href="https://github.com/{{ site.author.github }}" target="_blank">Github</a>
-              <a href="{{ site.author.gitlab }}" target="_blank">GitLab</a>
-              <a href="mailto:{{ site.author.email }}">Outlook</a>
-              <a href="mailto:{{ site.author.gmail }}">Gmail</a>
+              <a href="{{ site.author.gitlab }}" target="_blank">私有代码仓库</a>
             </div>
             <div id="copyright">
               <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</span>
