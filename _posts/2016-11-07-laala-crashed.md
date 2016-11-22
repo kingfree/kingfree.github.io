@@ -7,7 +7,7 @@ update: 2016-11-10
 
 昨天晚上升级了 laala 的系统，升级到一半 SSH 断掉了，本来以为重启就好了，结果重启完直接硬盘挂了。进去控制台，一看：
 
-  Unable to mount root fs on Unknown-block(0,0)
+    Unable to mount root fs on Unknown-block(0,0)
 
 尝试开了新机器，把旧的硬盘挂上去，结果还是启动不起来。对于 Linux，升级内核升级挂了的也不少见，加上懒得跟 Conoha 直接沟通，就不折腾这个了。
 于是开了台新机器，把本地的 Git 仓库导入进去，所幸是没丢什么东西（就算是丢了也忘了）。
@@ -16,12 +16,12 @@ update: 2016-11-10
 
 还有就是一年没更新博客了，导致 Github-Pages 都升级了好几个版本了，今天做一下迁移。需要注意的是，进行 `bundle install` 之前，要为 nokogiri 的编译准备相关的库：
 
-  sudo apt-get install libxslt-dev libxml2-dev build-essential
+    sudo apt-get install libxslt-dev libxml2-dev build-essential
 
 我现在用的是 Ubuntu bash on Windows，进入 bash 只有加上 `bash --login` 才能使用 RVM 环境。
 还有就是在启动 Jekyll 服务时，加上这个选项：
 
-  bundle exec jekyll serve --force_polling
+    bundle exec jekyll serve --force_polling
 
 # 参考文献
 
