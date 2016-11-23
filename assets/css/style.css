@@ -3,11 +3,11 @@ body {
 }
 
 p {
-    font-family: "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
+    font-family: "PingFang", "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
+    font-family: "PingFang", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
     color: #005CAF; /* 瑠璃 */
     text-decoration: none;
 }
@@ -21,8 +21,16 @@ blockquote p {
     color: #6A4C9C; /* 桔梗 */
 }
 
-pre code {
-    font-size: 0.8em;
+pre, code {
+    font-family: "Ubuntu Mono", monospace;
+    color: #B5495b; /* 苺 */
+    background-color: #FFFAFA; /* 雪色 */
+}
+
+pre {
+    border-radius: 0;
+    margin: 0;
+    padding: 10px;
 }
 
 a, a:link, :visited {
@@ -168,8 +176,11 @@ img {
 }
 
 #header {
+    top: 100px;
+    right: 200px;
+    padding: 0;
+    margin-left: 50px;
     background-color: #FFFFFF;
-    text-align: center;
 }
 
 #header a {
@@ -202,7 +213,11 @@ img {
     padding: 10px;
 }
 
-#contact a {
+#contact {
+    list-style-type: none;
+}
+
+#contact li > a {
     display: block;
     position: relative;
 }

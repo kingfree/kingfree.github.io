@@ -9,7 +9,12 @@
     <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
     {% endif %}
   </div>
-  <h1>{{ page.title }} {% if page.tagline %}<small>{{ page.tagline }}</small>{% endif %}</h1>
+  <h1>
+    {{ page.title }}
+    {% if page.tagline %}
+    <small>{{ page.tagline }}</small>
+    {% endif %}
+  </h1>
 </div>
 <div class="row post-full">
   <div class="col-xs-12">
@@ -17,5 +22,7 @@
       {% if page.etitle %}<span class="etitle">{{ page.etitle }}</span>{% endif %}
       {% if page.author %}<span class="author">{{ page.author }}</span>{% endif %}
     </div>
-    <div class="content">{{ content }}</div>{% include JB/comments %}</div>
+    <div class="content">{{ content }}</div>
+    {% include JB/comments %}
+  </div>
 </div>
