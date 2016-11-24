@@ -38,7 +38,7 @@
 <body>
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-md-2 hidden-print hidden-xs hidden-sm" id="leftbar">
+    <div id="leftbar" class="hidden-print hidden-xs hidden-sm">
       <div id="title">
         <a href="/" title="{{ site.production_url }}">
           <table>
@@ -54,34 +54,47 @@
           </table>
         </a>
       </div>
-      <div id="header">
-        <ul class="nav nav-stacked">
-          {% assign pages_list = site.pages %}
-          {% assign group = 'navigation' %}
-          {% include JB/pages_list %}
-        </ul>
-      </div>
+      <!--<div id="header">-->
+      <!--<ul class="nav nav-stacked">-->
+      <!--{% assign pages_list = site.pages %}-->
+      <!--{% assign group = 'navigation' %}-->
+      <!--{% include JB/pages_list %}-->
+      <!--</ul>-->
+      <!--</div>-->
       <div id="footer">
         <ul id="contact">
-          <li><a href="mailto:{{ site.author.email }}">邮箱</a></li>
-          <li><a href="http://weibo.com/{{ site.author.weibo }}" target="_blank">微博</a></li>
-          <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">推特</a></li>
-          <li><a href="https://github.com/{{ site.author.github }}" target="_blank">Github</a></li>
-          <li><a href="{{ site.author.gitlab }}" target="_blank">GitLab</a></li>
-          <li>
-            <div id="copyright">
-              <span>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</span></div>
-          </li>
-          <li class="small">
-            <div>
+          <li><a href="mailto:{{ site.author.email }}">
+            {{ site.author.email }}
+            <i class="fa fa-envelope"></i>
+          </a></li>
+          <li><a href="tencent://message/?uin={{ site.author.qq }}" target="_blank">
+            {{ site.author.qq }}
+            <i class="fa fa-qq"></i>
+          </a></li>
+          <li><a href="http://weibo.com/{{ site.author.weibo }}" target="_blank">
+            @{{ site.author.weibo }}
+            <i class="fa fa-weibo"></i>
+          </a></li>
+          <li><a href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
+            @{{ site.author.twitter }}
+            <i class="fa fa-twitter"></i>
+          </a></li>
+          <li><a href="https://github.com/{{ site.author.github }}" target="_blank">
+            github.com/{{ site.author.github }}
+            <i class="fa fa-github"></i>
+          </a></li>
+          <li><a href="{{ site.author.gitlab }}" target="_blank">
+            git.kingfree.moe
+            <i class="fa fa-gitlab"></i>
+          </a></li>
+          <li class="hidden">
               <script src="http://s11.cnzz.com/z_stat.php?id=1254619309&web_id=1254619309"></script>
-            </div>
           </li>
         </ul>
       </div>
     </div>
-    <div id="center" class="bs-docs-container col-xs-12 col-sm-6 col-md-8 col-md-offset-2">{{ content }}</div>
-    <div id="rightbar" class="col-xs-6 col-md-2 col-md-offset-10" role="complementary">
+    <div id="center">{{ content }}</div>
+    <div id="rightbar" role="complementary">
       <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
         <ul id="category" class="nav bs-docs-sidenav"></ul>
       </nav>
@@ -89,6 +102,7 @@
   </div>
 </div>
 {% include JB/analytics %}
+<script src="https://use.fontawesome.com/7b9dd0ac7a.js"></script>
 <script src="/assets/js/jquery-1.11.2.min.js"></script>
 <script src="/assets/themes/bootstrap-3/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/js/tableofcontents.js"></script>
