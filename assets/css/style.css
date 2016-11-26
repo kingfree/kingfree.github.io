@@ -9,6 +9,20 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+em, i {
+    font-family: "KFKai", "楷体", "华文楷体", "MS Song", Italic, sans-serif;
+    font-style: normal;
+}
+
+strong, b {
+    font-family: "黑体", "Heiti SC", sans-serif;
+    font-weight: bold;
+}
+
+p {
+    margin: 5px;
+}
+
 blockquote p {
     font-size: 1em;
 }
