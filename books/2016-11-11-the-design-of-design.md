@@ -7,7 +7,7 @@ etitle: "The Design of Design: Essays form a Computer Scientist"
 permalink: /books/the-design-of-design/
 author: Frederick P. Brooks, Jr.
 date: 2016-11-11
-update: 2016-11-25
+update: 2016-11-26
 ---
 
 这本书的目的在于督促设计师和项目经理们去努力思考设计活动的*过程*，特别是复杂系统的设计过程。Brooks 以其在计算机体系结构、软件、房屋、图书、组织这五个设计领域的实践经验，总结出了一系列关于设计的经验，并举出了相关例子。
