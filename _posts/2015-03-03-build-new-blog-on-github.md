@@ -11,11 +11,11 @@ tags: Github Ruby Jekyll
 搭建 Ruby 环境之后，克隆下来这个项目，安装好必要的 Gem：
 
 	bundle install
-    bundle update
+	bundle update
 
 启动服务器
 
-    bundle exec jekyll serve
+  bundle exec jekyll serve
 
 # 参考文献
 

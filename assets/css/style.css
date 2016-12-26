@@ -96,6 +96,18 @@ a:active {
     text-align: left;
 }
 
+.posts ul {
+  list-style-type: circle;
+}
+
+.posts .subtitle {
+  margin: 0;
+}
+
+.posts .created, .posts .updated {
+  font-size: small;
+}
+
 .date {
     color: #00896C; /* 青竹 */
 }

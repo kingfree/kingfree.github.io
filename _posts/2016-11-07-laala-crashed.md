@@ -21,7 +21,7 @@ update: 2016-11-10
 我现在用的是 Ubuntu bash on Windows，进入 bash 只有加上 `bash --login` 才能使用 RVM 环境。
 还有就是在启动 Jekyll 服务时，加上这个选项：
 
-    bundle exec jekyll serve --force_polling
+    bundle exec jekyll serve --force_polling --no-watch
 
 # 参考文献
 

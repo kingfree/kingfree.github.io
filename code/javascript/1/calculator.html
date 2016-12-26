@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>贷款计算器</title>
+  <style>
+    .output {
+      font-weight: bold;
+    }
+
+    #payment {
+      text-decoration: underline;
+    }
+
+    #graph {
+      border: solid black 1px;
+    }
+
+    th, td {
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+<table>
+  <tr>
+    <th>输入贷款数据：</th>
+    <td></td>
+    <th>贷款余额、累计收益和偿还利息</th>
+  </tr>
+  <tr>
+    <td>贷款金额（￥）：</td>
+    <td><input id="amount" onchange="calculate();" title="人民币元"></td>
+    <td rowspan="8">
+      <canvas id="graph" width="400" height="250"></canvas>
+    </td>
+  </tr>
+  <tr>
+    <td>贷款利率（%）：</td>
+    <td><input id="apr" onchange="calculate();" title="百分比"></td>
+  </tr>
+  <tr>
+    <td>贷款期限（年）：</td>
+    <td><input id="years" onchange="calculate();" title="年"></td>
+  </tr>
+</table>
+<script>
+  "use strict";
+  
+  function calculate() {
+
+  }
+</script>
+</body>
+</html>
