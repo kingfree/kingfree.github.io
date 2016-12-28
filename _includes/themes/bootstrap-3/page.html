@@ -2,17 +2,22 @@
   {% if page.group == 'book' %}<span class="bookTag">读书笔记</span>{% endif %}
   <div class="date pull-right">
     {% if page.date %}
-    <span>{{ page.date | date: "%Y年%m月%d日" }}</span>
+      <span>{{ page.date | date: "%Y年%m月%d日" }}</span>
     {% endif %}
     {% if page.update %}
-    <br>
-    <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
+      <br>
+      <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
     {% endif %}
   </div>
   <h1>
-    {{ page.title }}
+    {% if page.subtitle %}
+      {{ page.subtitle }}
+      <small>——{{ page.title }}</small>
+    {% else %}
+      {{ page.title }}
+    {% endif %}
     {% if page.tagline %}
-    <small>{{ page.tagline }}</small>
+      <small>{{ page.tagline }}</small>
     {% endif %}
   </h1>
 </div>
