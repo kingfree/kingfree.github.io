@@ -28,7 +28,9 @@ JB:
   atom_path : /atom.xml
   rss_path : /rss.xml
 
-  comments :
-    provider : duoshuo
+  comments:
+    provider : uyan
+    uyan:
+      uid: 2132897
     duoshuo :
       short_name : kingfree

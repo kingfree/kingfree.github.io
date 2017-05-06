@@ -1,6 +1,8 @@
 {% if site.JB.comments.provider and page.comments != false %}
 
 {% case site.JB.comments.provider %}
+{% when "uyan" %}
+  {% include JB/comments-providers/uyan %}
 {% when "duoshuo" %}
   {% include JB/comments-providers/duoshuo %}
 {% when "disqus" %}
