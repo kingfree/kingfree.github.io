@@ -1,10 +1,10 @@
 body {
     font-size: 16px;
-    font-family: "PingFang SC Regular", "Ubuntu",  "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
+    font-family: "SourceHanSerifSC-Light", "PingFang SC Regular", "Ubuntu",  "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "PingFang SC Bold", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
+    font-family: "SourceHanSansSC-Light", "PingFang SC Bold", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
     color: #005CAF; /* 瑠璃 */
     text-decoration: none;
 }
