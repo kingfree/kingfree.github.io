@@ -1,11 +1,12 @@
 body {
     font-size: 16px;
-    font-family: "SourceHanSerifSC-Light", "PingFang SC Regular", "Ubuntu",  "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
+    font-family: "SourceHanSerifSC", "PingFang SC Regular", "Ubuntu",  "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "SourceHanSansSC-Light", "PingFang SC Bold", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
+    font-family: "SourceHanSansSC", "PingFang SC", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
     color: #005CAF; /* 瑠璃 */
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -25,6 +26,7 @@ p {
 }
 
 blockquote p {
+  text-indent: 0;
     font-size: 1em;
 }
 
