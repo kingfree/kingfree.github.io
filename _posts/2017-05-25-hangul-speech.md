@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 韩语发音
+title: 韩语字母表
 tags: 韩语 训民正音 输入法
 date: 2017-05-25
 ---
