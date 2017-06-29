@@ -234,7 +234,7 @@ a.kingfree.title {
     height: auto;
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 70px;
     top: 20px;
     left: auto;
     border-bottom: none;
@@ -245,15 +245,12 @@ a.kingfree.title {
   }
   .article {
     top: 20px;
-    bottom: 20px;
+    bottom: 70px;
     left: 20px;
     right: 80px;
   }
   .bottom {
-    width: 50px;
-    height: auto;
-    position: absolute;
-    left: 20px;
+    writing-mode: horizontal-tb;
   }
   #uyan_frame {
     margin-right: 20px;
@@ -282,5 +279,14 @@ rt {
   }
   .ui.right.menu {
     display: none;
+  }
+}
+
+table.biao {
+  p {
+    text-indent: 0;
+  }
+  td {
+    vertical-align: top;
   }
 }

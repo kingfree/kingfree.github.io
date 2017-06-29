@@ -36,6 +36,36 @@ layout: default
 
             {% include JB/comments %}
         </div>
+        <div class="bottom">
+            <div class="three ui buttons">
+                {% if page.previous %}
+                <a class="ui red basic button"
+                   href="{{ BASE_PATH }}{{ page.previous.url }}">
+                    <i class="left chevron icon"></i>
+                    {{ page.previous.title }}
+                </a>
+                {% else %}
+                <button class="ui red basic button" disabled>
+                    <i class="left chevron icon"></i>
+                    上一篇
+                </button>
+                {% endif %}
+                <a class="ui basic teal button" href="#uyan_frame">评论</a>
+                {% if page.next %}
+                <a class="ui green basic button"
+                   href="{{ BASE_PATH }}{{ page.next.url }}">
+                    {{ page.next.title }}
+                    <i class="right chevron icon"></i>
+                </a>
+                {% else %}
+                <button class="ui green basic button" disabled>
+                    下一篇
+                    <i class="right chevron icon"></i>
+                </button>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 </div>
 {% include sidebar.html %}
