@@ -13,21 +13,24 @@ baseurl: ""
 url: "http://blog.kingfree.moe"
 production_url: "http://blog.kingfree.moe"
 
+plugins_dir: _plugins
+
 # 构建设置
 exclude: ["vendor"]
 markdown: kramdown
 highlighter: rouge
 
+sass:
+  sass_dir: _sass
+  style: compressed
+
 # 评论插件
 JB:
   version : 0.3.0
-
-  BASE_PATH : http://kingfree.github.io
-
+  ASSET_PATH: /assets
   tags_path : /tags/
   atom_path : /atom.xml
   rss_path : /rss.xml
-
   comments:
     provider : uyan
     uyan:

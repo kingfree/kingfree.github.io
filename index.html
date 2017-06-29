@@ -1,0 +1,34 @@
+---
+layout: default
+title: 咲衣憧
+description: 咲衣憧
+---
+
+<div class="ui main segment">
+    <div class="article vertical-rl">
+        <ul class="posts">
+            {% for page in site.posts %}
+            <li>
+                <a class="header" href="{{ BASE_PATH }}{{ page.url }}">
+                    {% if page.group == "book" %}
+                    {% if page.subtitle %}<span class="subtitle">{{ page.subtitle }}——读</span>{% endif %}
+                    《{{ page.title }}》
+                    {% else %}
+                    {% if page.subtitle %}<span class="subtitle">{{ page.subtitle }}——</span>{% endif %}
+                    {{ page.title }}
+                    {% endif %}
+                </a>
+                <div class="extra">
+                    {% if page.date %}
+                    <span class="created">{{ page.date | date_chinese }}</span>
+                    {% endif %}
+                    {% if page.update %}
+                    <span class="updated">——{{ page.update | date_chinese }}</span>
+                    {% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% include sidebar.html %}

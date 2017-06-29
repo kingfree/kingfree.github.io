@@ -1,0 +1,48 @@
+<div class="ui right fixed vertical menu">
+    <a class="item kingfree title" href="/" title="{{ site.production_url }}">
+        <table>
+            <tr class="pinyin">
+                <td>xiào yī chōng</td>
+            </tr>
+            <tr class="kana">
+                <td>さき ころも あこ</td>
+            </tr>
+            <tr class="title">
+                <td>咲衣憧</td>
+            </tr>
+        </table>
+        <img class="ui centered circular small image" src="/images/favicon.ico">
+    </a>
+    {% assign pages_list = site.pages %}
+    {% assign group = 'navigation' %}
+    {% include JB/pages_list %}
+    <div class="item"></div>
+    <div class="item about">
+        <div class="ui list">
+            <a class="item" href="mailto:{{ site.author.email }}">
+                <i class="mail icon"></i>
+                <div class="content">{{ site.author.email }}</div>
+            </a>
+            <a class="item" href="tencent://message/?uin={{ site.author.qq }}" target="_blank">
+                <i class="qq icon"></i>
+                <div class="content">{{ site.author.qq }}</div>
+            </a>
+            <a class="item" href="http://weibo.com/{{ site.author.weibo }}" target="_blank">
+                <i class="weibo icon"></i>
+                <div class="content">@{{ site.author.weibo }}</div>
+            </a>
+            <a class="item" href="https://twitter.com/{{ site.author.twitter }}" target="_blank">
+                <i class="twitter icon"></i>
+                <div class="content">@{{ site.author.twitter }}</div>
+            </a>
+            <a class="item" href="https://github.com/{{ site.author.github }}" target="_blank">
+                <i class="github icon"></i>
+                <div class="content">github.com/{{ site.author.github }}</div>
+            </a>
+            <a class="item" href="{{ site.author.gitlab }}" target="_blank">
+                <i class="gitlab icon"></i>
+                <div class="content">git.kingfree.moe</div>
+            </a>
+        </div>
+    </div>
+</div>

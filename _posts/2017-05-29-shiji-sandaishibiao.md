@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: hon
 title: 三代世表
 subtitle: 史記
 tags: 史記

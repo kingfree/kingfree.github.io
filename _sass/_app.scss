@@ -1,0 +1,145 @@
+body {
+  font-size: 16px;
+  font-family: "SourceHanSerifSC-Regular", "PingFang SC Regular", "Ubuntu",  "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
+  background: url('/images/background/shinohayu1920.jpg');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "SourceHanSansSC-Regular", "PingFang SC", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
+  color: #005CAF; /* 瑠璃 */
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a, a:link, :visited {
+  color: #8A6BBE; /* 藤紫 */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #B28FCE; /* 薄 */
+  text-decoration: none;
+}
+
+a:active {
+  color: #6A4C9C; /* 桔梗 */
+  text-decoration: none;
+}
+
+a.kingfree.title {
+  color: #F596AA !important; /* 桃 */
+  text-decoration: none;
+  text-align: center;
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    width: 33%;
+  }
+
+  tr, td {
+    margin: 0;
+    padding: 0;
+  }
+
+  .pinyin {
+    font-family: "STXihei", "华文黑体", "sans-serif";
+    font-size: 14px;
+  }
+
+  .kana {
+    font-family: "Meiryo UI", "MS PGothic", "serif";
+    font-size: 16px;
+  }
+
+  .title {
+    font-family: "KFKai", "楷体", "华文楷体", "MS Song", serif;
+    font-size: 48px;
+  }
+}
+
+.ui.right.menu {
+  //background: rgba(255, 255, 255, 0.6);
+  .item.about {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    .ui.list {
+      a.item {
+        color: #5DAC81; /* 若竹 */
+        i.icon {
+          color: #5DAC81;
+        }
+      }
+      a.item:hover, a.item:active {
+        color: #B5495B; /* 苺 */
+        i.icon {
+          color: #B5495B;
+        }
+      }
+    }
+  }
+}
+
+.ui.main.segment {
+  background: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  right: 260px;
+  top: 20px;
+  left: 40px;
+  bottom: 20px;
+  margin: 0;
+}
+
+.article {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  overflow: scroll;
+  font-size: 18px;
+
+  img {
+    max-width: 60%;
+  }
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+  overflow-x: scroll;
+}
+
+.posts {
+  list-style-type: cjk-ideographic;
+  font-size: 14px;
+  margin: 0;
+  border: 2px solid #C73E3A;
+  li {
+    border: 1px solid #C73E3A; /* 銀朱 */
+    border-right: none;
+    &:last-child {
+      border-right: 1px solid #C73E3A;
+    }
+    margin-top: 1em;
+    padding: 10px 3px;
+    .extra {
+      font-size: 14px;
+      line-height: 24px;
+      color: #6A8372; /* 老竹 */
+    }
+    a {
+      font-size: 20px;
+      line-height: 40px;
+      font-weight: 500;
+      color: black;
+      font-family: "SourceHanSerifSC-Bold", sans-serif;
+      &:hover {
+        color: #B54434; /* 紅樺 */
+      }
+    }
+  }
+}
