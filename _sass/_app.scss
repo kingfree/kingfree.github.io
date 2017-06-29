@@ -271,3 +271,16 @@ table {
 rt {
   font-family: "STXihei", "华文黑体", "sans-serif";
 }
+
+@media (max-width: 767px) {
+  .ui.main.segment {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .ui.right.menu {
+    display: none;
+  }
+}
