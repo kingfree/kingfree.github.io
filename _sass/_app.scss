@@ -10,6 +10,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #005CAF; /* 瑠璃 */
   font-weight: bold;
   text-decoration: none;
+  line-height: 2em;
 }
 
 a, a:link, :visited {
@@ -25,6 +26,21 @@ a:hover {
 a:active {
   color: #6A4C9C; /* 桔梗 */
   text-decoration: none;
+}
+
+::-webkit-scrollbar-track {
+  color: #cccccc;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
 }
 
 a.kingfree.title {
@@ -103,18 +119,6 @@ a.kingfree.title {
   overflow: scroll;
   font-size: 18px;
 
-  .ui.tag.labels {
-    float: right;
-    margin: 10px;
-    a {
-      margin: 10px;
-      display: block;
-      .detail {
-        float: right;
-      }
-    }
-  }
-
   img {
     max-width: 60%;
   }
@@ -156,6 +160,23 @@ a.kingfree.title {
   }
 }
 
+.header {
+  .tagline {
+    display: inline-block;
+    font-size: 24px;
+    .etitle {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .author {
+      font-size: 18px;
+      font-style: italic;
+    }
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
 .post {
   .header {
     height: 50px;
@@ -165,16 +186,7 @@ a.kingfree.title {
     h1 {
       display: inline-block;
       font-size: 30px;
-    }
-    .subtitle {
-      display: inline-block;
-      .etitle {
-        font-size: 24px;
-        font-weight: bold;
-      }
-      .author {
-        font-style: italic;
-      }
+      line-height: 1em;
     }
     .date {
       vertical-align: middle;
@@ -187,6 +199,17 @@ a.kingfree.title {
   .article {
     top: 70px;
     bottom: 70px;
+    .ui.tag.labels {
+      float: right;
+      margin: 10px;
+      a {
+        margin: 10px;
+        display: block;
+        .detail {
+          float: right;
+        }
+      }
+    }
   }
   .bottom {
     height: 50px;
@@ -195,4 +218,56 @@ a.kingfree.title {
     bottom: 10px;
     right: 20px;
   }
+}
+
+.blogs {
+  h1, h2, h3 {
+    margin: 0;
+    display: inline-block;
+    line-height: 52px;
+  }
+}
+
+.post.vertical-rl {
+  .header {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    top: 20px;
+    left: auto;
+    border-bottom: none;
+    border-left: 1px solid #C73E3A;
+    .date {
+      bottom: 0;
+    }
+  }
+  .article {
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 80px;
+  }
+  .bottom {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    left: 20px;
+  }
+  #uyan_frame {
+    margin-right: 20px;
+  }
+}
+
+table {
+  margin: 0 10px;
+}
+
+.vertical-rl {
+  margin: 10px 0;
+}
+
+rt {
+  font-family: "STXihei", "华文黑体", "sans-serif";
 }

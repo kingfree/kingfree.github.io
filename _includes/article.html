@@ -1,55 +1,80 @@
-<div class="date pull-right">
-    {% if page.date %}
-    <span>{{ page.date | date: "%Y年%m月%d日" }}</span>
-    {% endif %}
-    {% if page.update %}
-    <br>
-    <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
-    {% endif %}
-</div>
-<h1>
-    {{ page.title }}
-    {% if page.tagline %}<small>{{ page.tagline }}</small>{% endif %}
-</h1>
-<div class="subtitle">
-    {% if page.etitle %}<span class="etitle">{{ page.etitle }}</span>{% endif %}
-    {% if page.author %}<span class="author">{{ page.author }}</span>{% endif %}
-</div>
-<div class="content">
-    {{ content }}
-</div>
-
-{% unless page.categories == empty %}
-<ul class="tag_box inline">
-    <li><i class="glyphicon glyphicon-open"></i></li>
-    {% assign categories_list = page.categories %}
-    {% include JB/categories_list %}
-</ul>
-{% endunless %}
-
-{% unless page.tags == empty %}
-<ul class="tag_box inline">
-    <li><i class="glyphicon glyphicon-tags"></i></li>
-    {% assign tags_list = page.tags %}
-    {% include JB/tags_list %}
-</ul>
-{% endunless %}
-
-<hr>
-<ul class="pagination">
-    {% if page.previous %}
-    <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo;上一篇</a>
-    </li>
-    {% else %}
-    <li class="prev disabled"><a>&laquo; 上一篇</a></li>
-    {% endif %}
-    <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">当前</a></li>
-    {% if page.next %}
-    <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">下一篇 &raquo;</a>
-    </li>
-    {% else %}
-    <li class="next disabled"><a>下一篇 &raquo;</a>
+<div class="header">
+    <h1>
+        {% if page.group == "book" %}
+        {% if page.subtitle %}
+        {{ page.subtitle }}——读
         {% endif %}
-</ul>
-<hr>
-{% include JB/comments %}
+        《{{ page.title }}》
+        {% else %}
+        {% if page.subtitle %}
+        {{ page.subtitle }}——
+        {% endif %}
+        {{ page.title }}
+        {% endif %}
+    </h1>
+    <div class="tagline">
+        {% if page.tagline %}{{ page.tagline }}{% endif %}
+    </div>
+    <div class="date">
+        {% if page.date %}
+        <span>{{ page.date | date: "%Y年%m月%d日" }}</span>
+        {% endif %}
+        {% if page.update %}
+        <br>
+        <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
+        {% endif %}
+    </div>
+</div>
+<div class="article">
+    <div class="subtitle">
+        {% if page.etitle %}<span class="etitle">{{ page.etitle }}</span>{% endif %}
+        {% if page.author %}<span class="author">{{ page.author }}</span>{% endif %}
+    </div>
+
+    {% unless page.categories == empty %}
+    <div class="ui pink tag labels">
+        {% assign categories_list = page.categories %}
+        {% include JB/categories_list %}
+    </div>
+    {% endunless %}
+
+    {% unless page.tags == empty %}
+    <div class="ui tag labels">
+        {% assign tags_list = page.tags %}
+        {% include JB/tags_list %}
+    </div>
+    {% endunless %}
+
+    {{ content }}
+
+    {% include JB/comments %}
+</div>
+<div class="bottom">
+    <div class="three ui buttons">
+        {% if page.previous %}
+        <a class="ui red basic button"
+           href="{{ BASE_PATH }}{{ page.previous.url }}">
+            <i class="left chevron icon"></i>
+            {{ page.previous.title }}
+        </a>
+        {% else %}
+        <button class="ui red basic button" disabled>
+            <i class="left chevron icon"></i>
+            上一篇
+        </button>
+        {% endif %}
+        <a class="ui basic teal button" href="#uyan_frame">评论</a>
+        {% if page.next %}
+        <a class="ui green basic button"
+           href="{{ BASE_PATH }}{{ page.next.url }}">
+            {{ page.next.title }}
+            <i class="right chevron icon"></i>
+        </a>
+        {% else %}
+        <button class="ui green basic button" disabled>
+            下一篇
+            <i class="right chevron icon"></i>
+        </button>
+        {% endif %}
+    </div>
+</div>

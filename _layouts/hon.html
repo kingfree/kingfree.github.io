@@ -4,8 +4,38 @@ layout: default
 {% include JB/setup %}
 
 <div class="ui main segment">
-    <div class="article vertical-rl">
-        {% include article.html %}
+    <div class="post vertical-rl">
+        <div class="header">
+            <h1>
+                {% if page.group == "book" %}
+                {% if page.subtitle %}
+                {{ page.subtitle }}——讀
+                {% endif %}
+                《{{ page.title }}》
+                {% else %}
+                {% if page.subtitle %}
+                {{ page.subtitle }}——
+                {% endif %}
+                {{ page.title }}
+                {% endif %}
+            </h1>
+            <div class="tagline">
+                {% if page.tagline %}{{ page.tagline }}{% endif %}
+            </div>
+            <div class="subtitle">
+                {% if page.etitle %}<span class="etitle">{{ page.etitle }}</span>{% endif %}
+                {% if page.author %}<span class="author">{{ page.author }}</span>{% endif %}
+            </div>
+            <div class="date">
+                {% if page.date %}<span>{{ page.date | date_chinese }}</span>{% endif %}
+                {% if page.update %}<span>作，{{ page.update | date_chinese }}訂。</span>{% endif %}
+            </div>
+        </div>
+        <div class="article">
+            {{ content }}
+
+            {% include JB/comments %}
+        </div>
     </div>
 </div>
 {% include sidebar.html %}

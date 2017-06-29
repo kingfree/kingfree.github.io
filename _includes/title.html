@@ -1,0 +1,17 @@
+<a class="header" href="{{ BASE_PATH }}{{ post.url }}">
+    {% if post.group == "book" %}
+    {% if post.subtitle %}<span class="subtitle">{{ post.subtitle }}——读</span>{% endif %}
+    《{{ post.title }}》
+    {% else %}
+    {% if post.subtitle %}<span class="subtitle">{{ post.subtitle }}——</span>{% endif %}
+    {{ post.title }}
+    {% endif %}
+</a>
+<div class="extra">
+    {% if post.date %}
+    <span class="created">{{ post.date | date_chinese }}</span>
+    {% endif %}
+    {% if post.update %}
+    <span class="updated">——{{ post.update | date_chinese }}</span>
+    {% endif %}
+</div>

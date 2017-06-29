@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Saki萌战应援本、闹萌网站开源
-tags: 天才麻将少女 ComiCup 闹萌 萌战
+tags: 天才麻将少女 ComiCup 闹萌 萌战 東山奈央
 ---
 
 CP20结束，放出场贩所售两本源文件。

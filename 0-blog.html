@@ -1,6 +1,6 @@
 ---
-layout: page
-title : 博客
+layout: default
+title : 博文
 permalink: /blog/
 header : 博客文章
 group: navigation
@@ -8,4 +8,42 @@ group: navigation
 {% include JB/setup %}
 
 {% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+
+<div class="ui main segment">
+    <div class="article vertical-rl blogs">
+{% for post in posts_collate  %}
+{% capture this_year %}{{ post.date | chinese_year }}{% endcapture %}
+{% capture this_month %}{{ post.date | chinese_month }}{% endcapture %}
+{% capture next_year %}{{ post.previous.date | chinese_year }}{% endcapture %}
+{% capture next_month %}{{ post.previous.date | chinese_month }}{% endcapture %}
+
+{% if forloop.first %}
+<h2>{{this_year}}</h2>
+<h3>{{this_month}}</h3>
+<ul class="posts">
+    {% endif %}
+
+    <li>
+        {% include title.html %}
+    </li>
+
+    {% if forloop.last %}
+</ul>
+{% else %}
+{% if this_year != next_year %}
+</ul>
+<h2>{{next_year}}</h2>
+<h3>{{next_month}}</h3>
+<ul class="posts">
+    {% else %}
+    {% if this_month != next_month %}
+</ul>
+<h3>{{next_month}}</h3>
+<ul class="posts">
+    {% endif %}
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% include sidebar.html %}

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: 读书
 permalink: /books/
 tagline: 读书笔记
@@ -7,15 +7,21 @@ group: navigation
 ---
 {% include JB/setup %}
 
-<ul class="books">
-  {% for page in site.posts %}
-	  {% if page.group == "book" %}
-	  	<li><a href="{{ BASE_PATH }}{{page.url}}">{{page.title}}</a></li>
-	  {% endif %}
-  {% endfor %}
-  {% for page in site.pages reversed %}
-	  {% if page.group == "book" %}
-	  	<li><a href="{{ BASE_PATH }}{{page.url}}">《{{page.title}}》</a></li>
-	  {% endif %}
-  {% endfor %}
-</ul>
+<div class="ui main segment">
+    <div class="article vertical-rl">
+        <h1>读书笔记</h1>
+        <ul class="posts">
+            {% for post in site.posts %}
+            {% if post.group == "book" %}
+            <li>{% include title.html %}</li>
+            {% endif %}
+            {% endfor %}
+            {% for post in site.pages reversed %}
+            {% if post.group == "book" %}
+            <li>{% include title.html %}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% include sidebar.html %}
