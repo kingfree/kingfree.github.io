@@ -4,8 +4,85 @@ layout: default
 {% include JB/setup %}
 
 <div class="ui main segment">
-    <div class="article">
-        {% include article.html %}
+    <div class="post">
+        <div class="header">
+            <h1>
+                {% if page.group == "book" %}
+                {% if page.subtitle %}
+                <span class="subtitle">{{ page.subtitle }}——读</span>
+                {% endif %}
+                《{{ page.title }}》
+                {% else %}
+                {% if page.subtitle %}
+                <span class="subtitle">{{ page.subtitle }}——</span>
+                {% endif %}
+                {{ page.title }}
+                {% endif %}
+            </h1>
+            <div class="subtitle">
+                {% if page.tagline %}{{ page.tagline }}{% endif %}
+                {% if page.etitle %}<span class="etitle">{{ page.etitle }}</span>{% endif %}
+                {% if page.author %}<span class="author">{{ page.author }}</span>{% endif %}
+            </div>
+            <div class="date">
+                {% if page.date %}
+                <span>{{ page.date | date: "%Y年%m月%d日" }}</span>
+                {% endif %}
+                {% if page.update %}
+                <br>
+                <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="article">
+
+            {% unless page.categories == empty %}
+            <div class="ui pink tag labels">
+                {% assign categories_list = page.categories %}
+                {% include JB/categories_list %}
+            </div>
+            {% endunless %}
+
+            {% unless page.tags == empty %}
+            <div class="ui tag labels">
+                {% assign tags_list = page.tags %}
+                {% include JB/tags_list %}
+            </div>
+            {% endunless %}
+
+            {{ content }}
+
+            {% include JB/comments %}
+        </div>
+        <div class="bottom">
+            <div class="three ui buttons">
+                {% if page.previous %}
+                <a class="ui labeled icon red basic button"
+                   href="{{ BASE_PATH }}{{ page.previous.url }}">
+                    <i class="left chevron icon"></i>
+                    {{ page.previous.title }}
+                </a>
+                {% else %}
+                <button class="ui red basic button" disabled>
+                    <i class="left chevron icon"></i>
+                    上一篇
+                </button>
+                {% endif %}
+                <a class="ui basic teal button" href="#uyan_frame">评论</a>
+                {% if page.next %}
+                <a class="ui right labeled icon green basic button"
+                   href="{{ BASE_PATH }}{{ page.next.url }}">
+                    {{ page.next.title }}
+                    <i class="right chevron icon"></i>
+                </a>
+                {% else %}
+                <button class="ui right labeled icon green basic button" disabled>
+                    下一篇
+                    <i class="right chevron icon"></i>
+                </button>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </div>
 {% include sidebar.html %}

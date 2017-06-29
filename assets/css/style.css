@@ -72,22 +72,6 @@ a:active {
     font-size: 12px;
 }
 
-.subtitle {
-    margin-bottom: 20px;
-    margin-top: 0;
-}
-
-.etitle {
-    font-size: 24px;
-    display: block;
-    font-weight: bold;
-}
-
-.author {
-    font-style: italic;
-    display: block;
-    text-align: right;
-}
 
 .post > h3.title {
     position: relative;

@@ -1,13 +1,14 @@
 body {
   font-size: 16px;
-  font-family: "SourceHanSerifSC-Regular", "PingFang SC Regular", "Ubuntu",  "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
-  background: url('/images/background/shinohayu1920.jpg');
+  font-family: "SourceHanSerifSC-Regular", "PingFang SC Regular", "Ubuntu", "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
+  // background: url('/images/background/shinohayu1920.jpg');
+  background-image: linear-gradient(170deg, #58B2DC 0%, #81C7D4 85%); /* 水 空 */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "SourceHanSansSC-Regular", "PingFang SC", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
+  font-family: "SourceHanSerifSC-Bold", "PingFang SC", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
   color: #005CAF; /* 瑠璃 */
-  font-weight: 500;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -61,7 +62,7 @@ a.kingfree.title {
 }
 
 .ui.right.menu {
-  //background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   .item.about {
     position: absolute;
     bottom: 0;
@@ -75,9 +76,9 @@ a.kingfree.title {
         }
       }
       a.item:hover, a.item:active {
-        color: #B5495B; /* 苺 */
+        color: #86C166; /* 苗 */
         i.icon {
-          color: #B5495B;
+          color: #86C166;
         }
       }
     }
@@ -85,7 +86,6 @@ a.kingfree.title {
 }
 
 .ui.main.segment {
-  background: rgba(255, 255, 255, 0.8);
   position: absolute;
   right: 260px;
   top: 20px;
@@ -102,6 +102,18 @@ a.kingfree.title {
   right: 20px;
   overflow: scroll;
   font-size: 18px;
+
+  .ui.tag.labels {
+    float: right;
+    margin: 10px;
+    a {
+      margin: 10px;
+      display: block;
+      .detail {
+        float: right;
+      }
+    }
+  }
 
   img {
     max-width: 60%;
@@ -120,9 +132,9 @@ a.kingfree.title {
   border: 2px solid #C73E3A;
   li {
     border: 1px solid #C73E3A; /* 銀朱 */
-    border-right: none;
+    border-left: none;
     &:last-child {
-      border-right: 1px solid #C73E3A;
+      border-left: 1px solid #C73E3A;
     }
     margin-top: 1em;
     padding: 10px 3px;
@@ -141,5 +153,46 @@ a.kingfree.title {
         color: #B54434; /* 紅樺 */
       }
     }
+  }
+}
+
+.post {
+  .header {
+    height: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid #C73E3A;
+    vertical-align: middle;
+    h1 {
+      display: inline-block;
+      font-size: 30px;
+    }
+    .subtitle {
+      display: inline-block;
+      .etitle {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .author {
+        font-style: italic;
+      }
+    }
+    .date {
+      vertical-align: middle;
+      float: right;
+      font-size: 12px;
+      line-height: 14px;
+      color: #00896C; /* 青竹 */
+    }
+  }
+  .article {
+    top: 70px;
+    bottom: 70px;
+  }
+  .bottom {
+    height: 50px;
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    right: 20px;
   }
 }
