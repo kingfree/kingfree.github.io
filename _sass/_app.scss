@@ -50,6 +50,7 @@ a.kingfree.title {
 
   table {
     width: 100%;
+    margin: 0;
   }
 
   td {
@@ -218,6 +219,14 @@ a.kingfree.title {
     bottom: 10px;
     right: 20px;
   }
+}
+
+
+.zhu {
+  color: #000;
+  font-size: 12px;
+  display: inline-block;
+  line-height: 16px;
 }
 
 .blogs {

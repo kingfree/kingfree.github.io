@@ -12,10 +12,10 @@ group: navigation
 <div class="ui main segment">
     <div class="article vertical-rl blogs">
 {% for post in posts_collate  %}
-{% capture this_year %}{{ post.date | chinese_year }}{% endcapture %}
-{% capture this_month %}{{ post.date | chinese_month }}{% endcapture %}
-{% capture next_year %}{{ post.previous.date | chinese_year }}{% endcapture %}
-{% capture next_month %}{{ post.previous.date | chinese_month }}{% endcapture %}
+{% capture this_year %}{{ post.date | date: "%Y年" }}{% endcapture %}
+{% capture this_month %}{{ post.date | date: "%m月" }}{% endcapture %}
+{% capture next_year %}{{ post.previous.date | date: "%Y年" }}{% endcapture %}
+{% capture next_month %}{{ post.previous.date | date: "%m月" }}{% endcapture %}
 
 {% if forloop.first %}
 <h2>{{this_year}}</h2>

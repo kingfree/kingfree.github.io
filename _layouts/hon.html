@@ -27,8 +27,8 @@ layout: default
                 {% if page.author %}<span class="author">{{ page.author }}</span>{% endif %}
             </div>
             <div class="date">
-                {% if page.date %}<span>{{ page.date | date_chinese }}</span>{% endif %}
-                {% if page.update %}<span>作，{{ page.update | date_chinese }}訂。</span>{% endif %}
+                {% if page.date %}<span>{{ page.date | date: "%Y年%m月%d日" }}</span>{% endif %}
+                {% if page.update %}<span>作，{{ page.update | date: "%Y年%m月%d日" }}訂。</span>{% endif %}
             </div>
         </div>
         <div class="article">

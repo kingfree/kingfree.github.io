@@ -9,9 +9,9 @@
 </a>
 <div class="extra">
     {% if post.date %}
-    <span class="created">{{ post.date | date_chinese }}</span>
+    <span class="created">{{ post.date | date: "%Y年%m月%d日" }}</span>
     {% endif %}
     {% if post.update %}
-    <span class="updated">——{{ post.update | date_chinese }}</span>
+    <span class="updated">——{{ post.update | date: "%Y年%m月%d日" }}</span>
     {% endif %}
 </div>
