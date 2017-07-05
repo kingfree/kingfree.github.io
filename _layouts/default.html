@@ -13,6 +13,7 @@
     <meta name="author" content="{{ site.author.name }}">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/app.css"/>
     <link rel="stylesheet" href="/assets/css/syntax.css">
 
@@ -29,10 +30,11 @@
     <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
-<section class="app">
+<div class="app" id="app">
     {{ content }}
-</section>
+</div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/assets/js/tableofcontents.js"></script>
 {% include JB/analytics %}
 <div style="display: none;">

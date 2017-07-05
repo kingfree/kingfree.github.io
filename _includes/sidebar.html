@@ -16,7 +16,9 @@
     {% assign pages_list = site.pages %}
     {% assign group = 'navigation' %}
     {% include JB/pages_list %}
-    <div class="item"></div>
+    <div class="item bs-docs-sidebar">
+        <ul id="category" class="table-of-content nav bs-docs-sidenav"></ul>
+    </div>
     <div class="item about">
         <div class="ui list">
             <a class="item" href="mailto:{{ site.author.email }}">
