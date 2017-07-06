@@ -1,3 +1,7 @@
+.ichigo {
+  color: #B5495B; /* 莓 */
+}
+
 body {
   font-size: 16px;
   font-family: "SourceHanSerifSC-Regular", "PingFang SC Regular", "Ubuntu", "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
@@ -74,7 +78,7 @@ a.kingfree.title {
 
   .title {
     font-family: "KFKai", "楷体", "华文楷体", "MS Song", serif;
-    font-size: 48px;
+    font-size: 36px;
   }
 }
 
@@ -275,7 +279,7 @@ table {
 }
 
 rt {
-  font-family: "STXihei", "华文黑体", "sans-serif";
+  //font-family: "STXihei", "华文黑体", "sans-serif";
 }
 
 @media (max-width: 767px) {
