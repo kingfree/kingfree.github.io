@@ -1,4 +1,9 @@
 $(document).ready(function () {
+  $('.zhu').each(function (i, item) {
+    var text = $(item).text();
+    console.log(text, text.length)
+    $(item).css('height', ((text.length + 1) / 2) + 'em');
+  });
     var category = $('#category');
     $("h2, h3").each(function (i, item) {
         if ($(item).attr('id') == undefined) {
