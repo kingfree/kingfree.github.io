@@ -2,38 +2,54 @@
   color: #B5495B; /* 莓 */
 }
 
+/* http://www.thedayscolor.com/ */
+$color0: #111111;
+$colorA: #999999;
+$colorB: #cccccc;
+$colorR: #ea9ebc;
+$colorL: #f9f6f7;
+$color1: #db5094;
+$color2: #f3ae0b;
+$color3: #6886bd;
+$color4: #e3313d;
+$color5: #44c1ed;
+
 body {
+  color: $color0;
   font-size: 16px;
   font-family: "SourceHanSerifSC-Regular", "PingFang SC Regular", "Ubuntu", "Verdana", "Tahoma", "Songti SC", "SimSun", serif;
-  // background: url('/images/background/shinohayu1920.jpg');
-  background-image: linear-gradient(170deg, #58B2DC 0%, #81C7D4 85%); /* 水 空 */
+  background: url('/images/background/shinohayu1920.jpg');
+  // background-image: linear-gradient(90deg, $colorL 0%, $colorR 100%);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "SourceHanSerifSC-Bold", "PingFang SC", "Lucida Grande", "Helvetica Neue", "Arial", "Hiragino Sans GB", "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi Microhei", sans-serif;
-  color: #005CAF; /* 瑠璃 */
+  color: $color3;
   font-weight: bold;
   text-decoration: none;
   line-height: 2em;
+  a {
+    color: $color3 !important;
+    &:hover {
+      color: $color1 !important;
+      transition: all .3s;
+    }
+  }
 }
 
 a, a:link, :visited {
-  color: #8A6BBE; /* 藤紫 */
+  color: $color5;
   text-decoration: none;
 }
 
-a:hover {
-  color: #B28FCE; /* 薄 */
+a:hover, a:active {
+  color: $color1;
   text-decoration: none;
-}
-
-a:active {
-  color: #6A4C9C; /* 桔梗 */
-  text-decoration: none;
+  transition: all .3s;
 }
 
 ::-webkit-scrollbar-track {
-  color: #cccccc;
+  color: $colorB;
   background-color: transparent;
 }
 
@@ -44,7 +60,7 @@ a:active {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #cccccc;
+  background-color: $colorB;
 }
 
 a.kingfree.title {
@@ -91,15 +107,16 @@ a.kingfree.title {
     left: 0;
     .ui.list {
       a.item {
-        color: #5DAC81; /* 若竹 */
+        color: $colorA;
         i.icon {
-          color: #5DAC81;
+          color: $colorA;
         }
       }
       a.item:hover, a.item:active {
-        color: #86C166; /* 苗 */
+        color: $color1;
+        transition: all .5s;
         i.icon {
-          color: #86C166;
+          color: $color1;
         }
       }
     }
@@ -138,19 +155,19 @@ a.kingfree.title {
   list-style-type: cjk-ideographic;
   font-size: 14px;
   margin: 0;
-  border: 2px solid #C73E3A;
+  border: 2px solid $color4;
   li {
-    border: 1px solid #C73E3A; /* 銀朱 */
+    border: 1px solid $color4; /* 銀朱 */
     border-left: none;
     &:last-child {
-      border-left: 1px solid #C73E3A;
+      border-left: 1px solid $color4;
     }
     margin-top: 1em;
     padding: 10px 3px;
     .extra {
       font-size: 14px;
       line-height: 24px;
-      color: #6A8372; /* 老竹 */
+      color: #6886bd;
     }
     a {
       font-size: 20px;
@@ -159,7 +176,8 @@ a.kingfree.title {
       color: black;
       font-family: "SourceHanSerifSC-Bold", sans-serif;
       &:hover {
-        color: #B54434; /* 紅樺 */
+        color: $color1;
+        transition: .3s;
       }
     }
   }
@@ -186,7 +204,7 @@ a.kingfree.title {
   .header {
     height: 50px;
     overflow: hidden;
-    border-bottom: 1px solid #C73E3A;
+    border-bottom: 1px solid $color4;
     vertical-align: middle;
     h1 {
       display: inline-block;
@@ -198,7 +216,7 @@ a.kingfree.title {
       float: right;
       font-size: 12px;
       line-height: 14px;
-      color: #00896C; /* 青竹 */
+      color: $color3;
     }
   }
   .article {
@@ -251,7 +269,7 @@ a.kingfree.title {
     top: 20px;
     left: auto;
     border-bottom: none;
-    border-left: 1px solid #C73E3A;
+    border-left: 1px solid $color4;
     .date {
       bottom: 0;
     }
