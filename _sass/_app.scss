@@ -149,6 +149,10 @@ a.kingfree.title {
 .vertical-rl {
   writing-mode: vertical-rl;
   overflow-x: scroll;
+  ol {
+    list-style-type: trad-chinese-informal;
+    -webkit-margin-start: 2em;
+  }
 }
 
 .posts {
