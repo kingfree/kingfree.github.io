@@ -1,49 +1,82 @@
-# 站点设置
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
 title: 原田莓莓
-tagline: 王者自由
-author:
-  name: Kingfree
-  email: kingfree@toyama.moe
-  gitlab: "http://git.kingfree.moe"
-  github: kingfree
-  weibo: kingfree
-  twitter: kingfreet
-  qq: 947925753
-baseurl: ""
-url: "http://blog.kingfree.moe"
-production_url: "http://blog.kingfree.moe"
+subtitle: 舍其舊而新是謀
+description:
+keywords:
+author: 王者自由
+language: zh-CN
+timezone: Asia/Shanghai
 
-plugins_dir: _plugins
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://blog.kingfree.moe
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
 
-# 构建设置
-exclude: ["vendor"]
-markdown: kramdown
-highlighter: rouge
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
-sass:
-  sass_dir: _sass
-  style: compressed
+# Writing
+new_post_name: :year-:month-:day-:title.md
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+highlight_theme: light
 
-# 评论插件
-JB:
-  version : 0.3.0
-  ASSET_PATH: /assets
-  tags_path : /tags/
-  atom_path : /atom.xml
-  rss_path : /rss.xml
-  comments:
-    provider : uyan
-    uyan:
-      uid: 2132897
-    duoshuo :
-      short_name : kingfree
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
 
-exclude:
- - Gemfile
- - Gemfile.lock
- - node_modules
- - vendor/bundle/
- - vendor/cache/
- - vendor/gems/
- - vendor/ruby/
- - .idea
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: melody
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type:
