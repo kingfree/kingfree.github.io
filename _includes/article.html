@@ -24,6 +24,9 @@
         <span>{{ page.update | date: "%Y年%m月%d日" }}更新</span>
         {% endif %}
     </div>
+    {% if page.source %}
+    转载来源：<a href="{{page.source}}" target="_blank">{{page.source}}</a>
+    {% endif %}
 </div>
 <div class="article">
     <div class="subtitle">
