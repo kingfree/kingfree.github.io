@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Java 编译时的编码设置
-tags: Java 编码
+tags: 
+  - Java
+  - 编码
 update: 2015-3-17
 ---
 

@@ -1,6 +1,4 @@
 ---
-layout: page
-group: book
 title: 程序员的思维修炼
 tagline: 开发认知潜能的九堂课
 etitle: "Pragmatic Thinking and Learning: Refactor Your Wetware"

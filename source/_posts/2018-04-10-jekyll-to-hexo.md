@@ -4,7 +4,7 @@ date: 2018-04-10 14:10:27
 tags:
   - Jekyll
   - Hexo
-  - Github
+  - Git
 ---
 
 上午把一些很占资源的大图给删掉了，研究了一下现在 Github Pages 博客的最新进展，发现很多人都开始用基于 Node.js 的 [Hexo](https://hexo.io/zh-cn/) 了。功能比较丰富，而且配置简单，主题也多，所以就把博客从 Jekyll 迁移过来了。

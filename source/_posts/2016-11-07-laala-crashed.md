@@ -1,7 +1,10 @@
 ---
 layout: post
 title: GitLab 服务从 laala 迁移到 ako
-tags: GitLab Conoha CentOS
+tags: 
+  - Git
+  - VPS
+  - Linux
 update: 2016-11-10
 ---
 
