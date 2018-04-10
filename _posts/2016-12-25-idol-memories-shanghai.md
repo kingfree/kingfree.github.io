@@ -12,43 +12,43 @@ update: 2016-12-29
 
 23号晚下班回家，收拾下东西，抄起两根棒子，沿着郑州地铁二号线——郑州地铁一号线到达郑州东站，坐城际高铁来到新郑机场。
 
-![新郑机场安检入口](/images/pictures/IMG_20161224_055340.jpg)
+![新郑机场安检入口](https://wx4.sinaimg.cn/mw1024/6a446ed3gy1fq7dyos60bj21kw16ox6t.jpg)
 
-![吞吐量突破2000万](/images/pictures/IMG_20161224_060143.jpg)
+![吞吐量突破2000万](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7dyf9pg3j21kw16oe85.jpg)
 
 机场明晃晃的，虽然也有不少人在睡，不过还是没睡多久。把票打印出来一看，郑州这个机场居然这么快就达到了2000万人次，确实挺厉害了。然后去安检，人还真不少。总之刷着QQ和微博就上了飞机出发。
 
-![刚才还是晚上](/images/pictures/IMG_20161224_064736.jpg)
+![刚才还是晚上](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7dyn3uckj21kw16ohdx.jpg)
 
-![一会儿就天亮了](/images/pictures/IMG_20161224_072914.jpg)
+![一会儿就天亮了](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7dyi80kkj21kw16o7wl.jpg)
 
 十点半落地浦东，正好手上公交卡没用完，就直接去坐地铁了。路上说要去上海嘉杰广场的萨莉亚吃饭，到了只见到`遥遥`群里几个大佬。人家换过来名片，一拍脑门自己没有好尴尬——回头我也装作P做一个吧。进去之后才发现，`南小鸡`已经在了，就坐下来随便点了点东西。算来也是第二次吃萨莉亚——上一次是广州跟`c酱`吃的了。
 
-![萨莉亚](/images/pictures/IMG_20161224_142852.jpg)
+![萨莉亚](https://wx2.sinaimg.cn/mw1024/6a446ed3gy1fq7dygtxypj21kw16o4qt.jpg)
 
-![浅水湾](/images/pictures/IMG_20161224_153635.jpg)
+![浅水湾](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7dyn7oihj21kw16ou10.jpg)
 
 萨莉亚的星星人还真不少，一直很多人。吃完饭一起逛了逛跟他们想买礼物，路上说道送个老黄历吧，挺有中国特色的——不过好像也没送吧（笑）。我想送个天麻的漫画来着，不过也算了不砸场子，最后就没送。一路来到浅水湾。
 
-![门口的宣传板](/images/pictures/IMG_20161224_154254.jpg)
+![门口的宣传板](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7dyq5y6yj21kw16ou11.jpg)
 
-![排成长队的星星人](/images/pictures/IMG_20161224_155705.jpg)
+![排成长队的星星人](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7dyennv9j21kw16oe85.jpg)
 
 远远就看到这么大一个板子，星星人们已经有序地排好了队。不过天还早，场贩也没开，我就先去如家办理入住了。等我回来时已经快五点了，这时见到了闹群的`小白`，一问才知道有些场贩已经切了。
 
 我去领了VIP的福利，一根官棒、一个手环、一张签名卡。打开一看，是七海的，这不行，我要薇薇的，在群里吼了一声，过会儿就换到了。虽然是随机派发，不过这种交换也是挺好的交流方式啊。哦，突然想到好像`园长`作了CALL本，过去一看果然有，就领了一本——翻了翻果然看不太懂。
 
-![园长制作的CALL本](/images/pictures/IMG_20161224_172512_HHT.jpg)
+![园长制作的CALL本](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7dycw4hmj21kw23vnpf.jpg)
 
-![丰田萌绘的签名](/images/pictures/IMG_20161224_174605_HHT.jpg)
+![丰田萌绘的签名](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7e0vagoyj21kw23vb2c.jpg)
 
 <h2 id="live">圣诞夜的LIVE</h2>
 
 我是20号，开始排队了，正好被掐到第二批进场。`海月`带来了几个日本大佬，跟工作人员简单交涉之后验证了护照，就放进来了。我看了看日本的护照，跟中国护照没啥区别嘛。
 
-![星星花篮](/images/pictures/IMG_20161224_180803_HHT.jpg)
+![星星花篮](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7e0x1073j21kw16oe84.jpg)
 
-![集资的小伙伴们](/images/pictures/IMG_20161224_180806.jpg)
+![集资的小伙伴们](https://wx4.sinaimg.cn/mw1024/6a446ed3gy1fq7e14iiw8j21kw16ob2d.jpg)
 
 进场了，进来就看到我们集资送的星星花篮。我故意留下了一个非常不引人注目的名字。
 
@@ -116,27 +116,27 @@ MC里问了几个问题，什么动画场景啊，提的问题啊，具体没有
 
 回来以后在群里聊天，直到两点才不得不睡了。起床已经是快十点了。查好路线就出发去坐地铁，看了最后一眼的浅水湾。有点小雨。
 
-![上桥](/images/pictures/IMG_20161225_110305.jpg)
+![上桥](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7e0p3t7uj21kw16okjn.jpg)
 
-![浅水湾](/images/pictures/IMG_20161225_110418.jpg)
+![浅水湾](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7e0ravzij21kw16oqv6.jpg)
 
 来到陆家嘴，出地铁一看，大楼的上方云雾缭绕，仿若仙境。可惜摄影技术不好，拍起来感觉像雾霾（`小极`语）。倒是东方明珠还是一如既往，也是每次来上海的必见之物了。
 
-![高耸入云](/images/pictures/IMG_20161225_114735.jpg)
+![高耸入云](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7e125kgej21kw23vhdx.jpg)
 
-![东方明珠](/images/pictures/IMG_20161225_124246.jpg)
+![东方明珠](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7e166otij21kw23ve86.jpg)
 
 地铁门口就是墨西哥卷饼店Taco Bell——终于在有生之年吃到了卷饼好开心，还是挺好吃的，怪不得片冈优希这么喜欢，也算是作为麻厨的心愿之一已了。
 
-![Taco Bell](/images/pictures/IMG_20161225_114928.jpg)
+![Taco Bell](https://wx3.sinaimg.cn/mw1024/6a446ed3gy1fq7e108ubtj21kw16oe85.jpg)
 
-![卷饼](/images/pictures/IMG_20161225_115755.jpg)
+![卷饼](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7e1103gpj21kw23vx6s.jpg)
 
 然后去了南京路，拐到外文书店，买了本『声優グランプリ』——因为一眼看到上面的东山奈央和丰田萌绘，两个大本命，买买买啊。东山奈央的出道专题，丰田萌绘的吹奏部访谈，都在回去的飞机和高铁上舔了个不停。
 
-![东山奈央](/images/pictures/IMG_20161225_181355.jpg)
+![东山奈央](https://wx1.sinaimg.cn/mw1024/6a446ed3gy1fq7e1utcg0j21kw16ob2d.jpg)
 
-![丰田萌绘](/images/pictures/IMG_20161225_181448.jpg)
+![丰田萌绘](https://wx2.sinaimg.cn/mw1024/6a446ed3gy1fq7e1w3w84j21kw16oqv9.jpg)
 
 去泰康食品随便吃了点汤包，去了静安寺本来还想吃个猪扒饭，实在吃不下了就赶去虹桥机场了。虹桥机场不是很大，挨着虹桥火车站。安检也很松，虽然进去了才发现没有全家——真是后悔没在上海多吃点全家饭团，这回航班的晚餐真难吃。
 
