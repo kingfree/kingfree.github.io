@@ -5,7 +5,7 @@ tags: Git
 source: http://www.cnblogs.com/shines77/p/3460274.html
 ---
 
-有些时候不小心上传了一些敏感文件(例如密码), 或者不想上传的文件(没及时或忘了加到.gitignore里的),
+有些时候不小心上传了一些敏感文件(例如密码), 或者不想上传的文件(没及时或忘了加到`.gitignore`里的),
 
 而且上传的文件又特别大的时候, 这将导致别人clone你的代码或下载zip包的时候也必须更新或下载这些无用的文件,
 
@@ -20,11 +20,11 @@ $ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch <pa
 ```
 其中, `<path-to-your-remove-file>` 就是你要删除的文件的相对路径(相对于git仓库的跟目录), 替换成你要删除的文件即可. 注意一点，这里的文件或文件夹，都不能以 '/' 开头，否则文件或文件夹会被认为是从 git 的安装目录开始。
 
-如果你要删除的目标不是文件，而是文件夹，那么请在 `git rm --cached' 命令后面添加 -r 命令，表示递归的删除（子）文件夹和文件夹下的文件，类似于 `rm -rf` 命令。
+如果你要删除的目标不是文件，而是文件夹，那么请在 `git rm --cached` 命令后面添加 `-r` 命令，表示递归的删除（子）文件夹和文件夹下的文件，类似于 `rm -rf` 命令。
 
 此外，如果你要删除的文件很多, 可以写进一个.sh文件批量执行, 如果文件或路径里有中文, 由于MinGW或CygWin对中文路径设置比较麻烦, 你可以使用通配符*号, 例如: sound/music_*.mp3, 这样就把sound目录下以music_开头的mp3文件都删除了.
 
-例如这样, 新建一个 bash 脚本文件，del-music-mp3.sh:
+例如这样, 新建一个 bash 脚本文件，`del-music-mp3.sh`:
 
 ```bash
 #!/bin/bash
@@ -37,7 +37,7 @@ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch sound
 Rewrite 48dc599c80e20527ed902928085e7861e6b3cbe6 (266/266)
 # Ref 'refs/heads/master' was rewritten
 ```
-如果显示 xxxxx unchanged, 说明repo里没有找到该文件, 请检查路径和文件名是否正确.
+如果显示 `xxxxx unchanged`, 说明repo里没有找到该文件, 请检查路径和文件名是否正确.
 
 注意: 补充一点, 如果你想以后也不会再上传这个文件或文件夹, 请把这个文件或文件夹添加到.gitignore文件里, 然后再push你的repo.
 
@@ -92,7 +92,6 @@ Counting objects: 2437, done.
 # Writing objects: 100% (2437/2437), done.
 # Total 2437 (delta 1483), reused 0 (delta 0)
 ```
- 
 
 现在你再看看你的.git目录文件大小是不是变小了.
 
