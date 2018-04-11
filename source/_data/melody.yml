@@ -9,6 +9,7 @@ menu:
   博文: /archives
   标签: /tags
   分类: /categories
+  关于: /about
   #XXX: /xxx
 
 # Favicon
@@ -101,7 +102,7 @@ cdn:
 
 # Post info settings
 # ---------------
-avatar: /images/favicon.ico
+avatar: /favicon.ico
 
 top_img: /images/background/shinohayu1920.jpg # false or url of img
 

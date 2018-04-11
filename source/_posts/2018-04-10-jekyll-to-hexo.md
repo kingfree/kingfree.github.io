@@ -12,7 +12,6 @@ tags:
 本地写博客的话，还是起一个服务就够了。
 ```bash
 hexo new "create-new-post"
-
 hexo server
 ```
 
