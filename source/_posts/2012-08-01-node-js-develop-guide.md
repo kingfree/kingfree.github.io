@@ -1,6 +1,9 @@
 ---
 title: 全面系统的入门教程——评《Node.js 开发指南》
 author: BYVoid
+tags: 
+  - JavaScript
+  - Node.js
 categories: 讀書筆記
 ---
 

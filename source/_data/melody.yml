@@ -228,6 +228,7 @@ busuanzi:
 
 # Sidebar Settings
 # ---------------
-#links_title: Links
-#links:
-  #Name: url
+links_title: 友情链接
+links:
+  BYVoid: https://www.byvoid.com
+  Zeyi Fan: https://zr.is/
