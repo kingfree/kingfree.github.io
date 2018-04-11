@@ -1,8 +1,7 @@
 ---
-layout: page
-group: book
-title: 經學歷史
+title: 《經學歷史》
 author: 皮錫瑞
+categories: 讀書筆記
 date: 2017-12-21
 ---
 

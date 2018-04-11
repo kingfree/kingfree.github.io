@@ -1,5 +1,4 @@
 ---
-layout: post
 title: GitLab 服务从 laala 迁移到 ako
 tags: 
   - Git

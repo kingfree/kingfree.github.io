@@ -1,7 +1,6 @@
 ---
-layout: page
-group: book
-title: 临高启明
+title: 《临高启明》
+categories: 讀書筆記
 date: 2017-03-29
 update: 2017-07-05
 ---

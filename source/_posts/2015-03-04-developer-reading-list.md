@@ -1,8 +1,6 @@
 ---
-layout: post
 title: 程序员必读书单
 tags: 读书
-group: book
 date: 2015-3-4
 update: 2015-3-6
 ---

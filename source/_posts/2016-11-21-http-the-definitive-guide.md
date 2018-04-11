@@ -1,9 +1,9 @@
 ---
-layout: page
-group: book
-title: HTTP 权威指南
+title: 《HTTP 权威指南》
 etitle: "HTTP: The Definitive Guide"
 author: David Gourley, Brian Totty, Marjorie Sayer, Sailu Reddy, etc.
+tags: HTTP
+categories: 讀書筆記
 date: 2016-11-12
 update: 2016-11-24
 ---
@@ -314,14 +314,15 @@ Cookie 和 Session 的唯一区别就是它们的过期时间。不同站点使�
 
 摘要的计算：
 
-1. 由单项散列函数$$H(d)$$和摘要$$KD(s, d)$$组成一对函数，其中$$s$$表示密码，$$d$$表示数据。
-2. 密码是包含了安全信息的数据块，称$$A_1$$。
-3. 请求报文中非保密属性的数据块，成$$A_2$$。
-4. 计算$$H(A_2)$$和$$KD(A_1, A_2)$$，产生摘要。
+1. 由单项散列函数$H(d)$和摘要$KD(s, d)$组成一对函数，其中$s$表示密码，$d$表示数据。
+2. 密码是包含了安全信息的数据块，称$A_1$。
+3. 请求报文中非保密属性的数据块，成$A_2$。
+4. 计算$H(A_2)$和$KD(A_1, A_2)$，产生摘要。
 
 建议的摘要算法为 MD5：
 
-$$H(d) = MD5(d)\\KD(s, d) = H(concatenate(s, d))$$
+$$H(d) = MD5(d)\\
+KD(s, d) = H(concatenate(s, d))$$
 
 **预授权**可以减少报文数量，通过在首部加入预选随机数实现：
 

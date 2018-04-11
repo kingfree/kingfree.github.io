@@ -1,7 +1,6 @@
 ---
-layout: page
-group: book
-title: 高铁风云录 & 大国速度
+title: 《高铁风云录》 & 《大国速度》
+categories: 讀書筆記
 date: 2017-05-10
 update: 2017-05-20
 ---

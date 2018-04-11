@@ -28,6 +28,11 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
+# hexo渲染表格的bug
+marked:
+  gfm: true
+  breaks: false
+
 # Writing
 new_post_name: :year-:month-:day-:title.md
 default_layout: post
@@ -43,7 +48,6 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-highlight_theme: light
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')

@@ -1,10 +1,9 @@
 ---
-layout: page
-group: book
-title: 设计原本
+title: 《设计原本》
 tagline: 计算机科学巨匠 Frederick P. Brooks 的反思
 etitle: "The Design of Design: Essays form a Computer Scientist"
 author: Frederick P. Brooks, Jr.
+categories: 讀書筆記
 date: 2016-11-11
 update: 2016-11-26
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Saki萌战应援本、闹萌网站开源
 tags: 
   - 天才麻将少女

@@ -1,8 +1,9 @@
 ---
-layout: hon
-title: 十二諸侯年表
-subtitle: 史記
-tags: 史記
+title: 《史記》十二諸侯年表
+categories: 
+  - 經史子集
+  - 乙部
+  - 史記
 date: 2017-06-29
 ---
 

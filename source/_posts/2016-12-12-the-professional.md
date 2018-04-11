@@ -1,9 +1,8 @@
 ---
-layout: page
-group: book
-title: 专业主义
+title: 《专业主义》
 etitle: ザ・プロフェッショナル
 author: 大前研一
+categories: 讀書筆記
 date: 2016-12-12
 update: 2016-12-14
 ---

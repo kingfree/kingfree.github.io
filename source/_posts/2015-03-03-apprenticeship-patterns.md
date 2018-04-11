@@ -1,9 +1,8 @@
 ---
-layout: page
-title: 软件开发者路线图
+title: 《软件开发者路线图》
 tagline: 从学徒到高手
-group: book
 etitle: "Apprenticeship Patterns: Guidance for the Aspiring Software Craftsman"
+categories: 讀書筆記
 date: 2015-3-3
 update: 2015-3-15
 ---

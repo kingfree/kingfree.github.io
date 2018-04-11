@@ -1,9 +1,8 @@
 ---
-layout: page
-group: book
-title: 如何阅读一本书
+title: 《如何阅读一本书》
 etitle: "How to Read a Book"
 author: Mortimer J. Adler, Charles Van Doran
+categories: 讀書筆記
 date: 2016-10-20
 update: 2016-11-26
 ---

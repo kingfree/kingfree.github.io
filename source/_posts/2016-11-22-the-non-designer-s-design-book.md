@@ -1,10 +1,9 @@
 ---
-layout: page
-group: book
-title: 写给大家看的设计书
+title: 《写给大家看的设计书》
 tagline: 第4版
 etitle: "The Non-Designer's Design Book"
 author: Robin Williams
+categories: 讀書筆記
 date: 2016-11-22
 update: 2016-11-23
 ---

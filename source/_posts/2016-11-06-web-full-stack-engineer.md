@@ -1,8 +1,7 @@
 ---
-layout: page
-group: book
-title: "Web 全栈工程师的自我修养"
+title: "《Web 全栈工程师的自我修养》"
 author: 余果
+categories: 讀書筆記
 date: 2016-11-6
 update: 2016-11-21
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 浅谈开源协议
 tags: 开源
 ---

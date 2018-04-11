@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Java 编译时的编码设置
 tags: 
   - Java

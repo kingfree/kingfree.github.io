@@ -28,8 +28,11 @@ highlight_theme: light
 
 # Nav settings
 # ---------------
-#social:
-  #icon_name: url
+social:
+  weibo: http://weibo.com/kingfree
+  twitter: https://twitter.com/kingfreet
+  github: https://github.com/kingfree
+  gitlab: http://git.kingfree.moe
 
 # Algolia search
 # ---------------
@@ -54,7 +57,7 @@ local_search:
 # ---------------
 mathjax:
   enable: true
-  cdn: https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 
 # Toggle fireworks (IE >= 10)

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 《星梦手记》上海 1st Fan Meeting
 subtitle: 圣诞上海星梦之行
 tags: 

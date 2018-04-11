@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 在 Github 上的新博客
 tags: 
   - Git
