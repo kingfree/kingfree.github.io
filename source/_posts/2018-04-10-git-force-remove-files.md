@@ -1,9 +1,10 @@
 ---
 layout: repost
-title: Git如何永久删除文件(包括历史记录)
+title: 【转】Git如何永久删除文件(包括历史记录)
 tags: Git
-source: http://www.cnblogs.com/shines77/p/3460274.html
 ---
+
+*原文链接：<http://www.cnblogs.com/shines77/p/3460274.html>*
 
 有些时候不小心上传了一些敏感文件(例如密码), 或者不想上传的文件(没及时或忘了加到`.gitignore`里的),
 
@@ -11,7 +12,7 @@ source: http://www.cnblogs.com/shines77/p/3460274.html
 
 因此, 我们需要一个方法, 永久的删除这些文件(包括该文件的历史记录).
 
-首先, 可以参考 github 的帮助:[https://help.github.com/articles/remove-sensitive-data](https://help.github.com/articles/remove-sensitive-data)
+首先, 可以参考 github 的帮助:<https://help.github.com/articles/remove-sensitive-data>
 
 ### 步骤一: 从你的资料库中清除文件
 以Windows下为例(Linux类似), 打开项目的Git Bash,使用命令: 
