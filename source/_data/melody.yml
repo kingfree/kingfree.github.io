@@ -165,7 +165,7 @@ addThis:
 # ---------------
 disqus:
   enable: true
-  shortname: kingfreet
+  shortname: kingfree
   count: true
 
 # laibili:

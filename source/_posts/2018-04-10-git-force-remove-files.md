@@ -1,6 +1,7 @@
 ---
 layout: repost
-title: 【转】Git如何永久删除文件(包括历史记录)
+title: Git如何永久删除文件(包括历史记录)[转]
+categories: 转载
 tags: Git
 ---
 
