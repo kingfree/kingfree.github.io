@@ -30,8 +30,6 @@ Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，�
 
 ## 1. STRING
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/6019b2db-bc3e-4408-b6d8-96025f4481d6.png)
-
 ```html
 > set hello world
 OK
@@ -44,8 +42,6 @@ OK
 ```
 
 ## 2. LIST
-
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/fb327611-7e2b-4f2f-9f5b-38592d408f07.png)
 
 ```html
 > rpush list-key item
@@ -72,8 +68,6 @@ OK
 ```
 
 ## 3. SET
-
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png)
 
 ```html
 > sadd set-key item
@@ -107,8 +101,6 @@ OK
 
 ## 4. HASH
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7bd202a7-93d4-4f3a-a878-af68ae25539a.png)
-
 ```html
 > hset hash-key sub-key1 value1
 (integer) 1
@@ -137,8 +129,6 @@ OK
 ```
 
 ## 5. ZSET
-
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1202b2d6-9469-4251-bd47-ca6034fb6116.png)
 
 ```html
 > zadd zset-key 728 member1
@@ -172,6 +162,21 @@ OK
 
 Redis 可以为每个键设置过期时间，当键过期时，会自动删除该键。
 
+```html
+> set my-key-test 1
+OK
+> get my-key-test
+"1"
+> expire my-key-test 5
+(integer) 1
+> ttl my-key-test
+(integer) 4
+> persist my-key-test
+(integer) 1
+> get my-key-test
+"1"
+```
+
 对于散列表这种容器，只能为整个键设置过期时间（整个散列表），而不能为键里面的单个元素设置过期时间。
 
 过期时间对于清理缓存数据非常有用。
@@ -197,6 +202,8 @@ Redis 可以为每个键设置过期时间，当键过期时，会自动删除�
 Redis 最简单的事务实现方式是使用 MULTI 和 EXEC 命令将事务操作包围起来。
 
 MULTI 和 EXEC 中的操作将会一次性发送给服务器，而不是一条一条发送，这种方式称为流水线，它可以减少客户端与服务器之间的网络通信次数从而提升性能。
+
+Redis只能保证事务的每个命令连续执行，但是如果事务中的一个命令失败了，并不回滚其他命令，比如使用的命令类型不匹配。当事务的执行过程中，如果redis意外的挂了。很遗憾只有部分命令执行了，后面的也就被丢弃了。当然如果我们使用的append-only file方式持久化，redis会用单个write操作写入整个事务内容。即是是这种方式还是有可能只部分写入了事务到磁盘。发生部分写入事务的情况 下，redis重启时会检测到这种情况，然后失败退出。可以使用redis-check-aof工具进行修复，修复会删除部分写入的事务内容。修复完后就能够重新启动了。（[redis学习笔记之事务](http://www.cnblogs.com/xhan/archive/2011/02/04/1949151.html)）
 
 # 六、持久化
 
