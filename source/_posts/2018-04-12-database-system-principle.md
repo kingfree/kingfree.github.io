@@ -76,7 +76,7 @@ T<sub>1</sub> 读取某个范围的数据，T<sub>2</sub> 在这个范围内插�
 
 ## 封锁粒度
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1a851e90-0d5c-4d4f-ac54-34c20ecfb903.jpg" width="300)
+![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1a851e90-0d5c-4d4f-ac54-34c20ecfb903.jpg)
 
 应该尽量只锁定需要修改的那部分数据，而不是所有的资源。锁定的数据量越少，发生锁争用的可能就越小，系统的并发程度就越高。
 
@@ -376,7 +376,7 @@ SELECT c FROM t WHERE c BETWEEN 10 and 20 FOR UPDATE;
 
 范式理论是为了解决以上提到四种异常。高级别范式的依赖于低级别的范式。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c2d343f7-604c-4856-9a3c-c71d6f67fecc.png" width="300)
+![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c2d343f7-604c-4856-9a3c-c71d6f67fecc.png)
 
 ### 1. 第一范式 (1NF)
 
