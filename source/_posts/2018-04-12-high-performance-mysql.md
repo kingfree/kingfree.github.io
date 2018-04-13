@@ -1,5 +1,5 @@
 ---
-title: 《高性能 MySQL》[转]
+title: 《高性能 MySQL》【转】
 categories: 转载
 tags: 
   - 数据库
@@ -69,6 +69,8 @@ FLOAT、DOUBLE 和 DECIMAL 都可以指定列宽，例如 DECIMAL(18, 9) 表示�
 VARCHAR 这种变长类型能够节省空间，因为只需要存储必要的内容。但是在执行 UPDATE 时可能会使行变得比原来长，当超出一个页所能容纳的大小时，就要执行额外的操作。MyISAM 会将行拆成不同的片段存储，而 InnoDB 则需要分裂页来使行放进页内。
 
 VARCHAR 会保留字符串末尾的空格，而 CHAR 会删除。
+
+*VARCHAR 的长度表示的是字符的数量，而不是字节数。MySQL 屏蔽了底层的编码细节。*
 
 ## 时间和日期
 

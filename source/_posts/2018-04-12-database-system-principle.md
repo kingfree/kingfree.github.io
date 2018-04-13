@@ -1,5 +1,5 @@
 ---
-title: 《数据库系统概论》[转]
+title: 《数据库系统概论》【转】
 categories: 转载
 tags: 数据库
 ---

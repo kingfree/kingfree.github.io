@@ -1,5 +1,5 @@
 ---
-title: 《Redis 设计与实现》&《Redis 实战》[转]
+title: 《Redis 设计与实现》&《Redis 实战》【转】
 categories: 转载
 tags: 
   - 数据库
