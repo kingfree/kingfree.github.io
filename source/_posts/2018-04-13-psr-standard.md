@@ -2,8 +2,7 @@
 title: PHP中PSR-[0-4]代码规范【转】
 date: 2018-04-13 12:55:01
 categories: 转载
-tags:
-  - PHP
+tags: PHP
 ---
 
 *原文链接： <http://www.cnblogs.com/52php/p/5852572.html>*
