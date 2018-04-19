@@ -19,7 +19,7 @@ update: 2015-3-6
 * 程序设计：
   1. 基础理论：
     * 1) 编码：隐匿在计算机软硬件背后的语言
-    * 2) [深入理解计算机系统（第2版）](/books/cs-app/)
+    * 2) [深入理解计算机系统（第2版）](/cs-app/)
     * 3) 
   1. 编程语言：
 	  1. C：
@@ -29,7 +29,7 @@ update: 2015-3-6
 	    * 13) C++程序设计原理与实践
 		* 14) C++程序设计语言
 	  1. Java：
-		* 21) [Java核心技术（第9版）](/books/core-java/)
+		* 21) [Java核心技术（第9版）](/core-java/)
 		* 22) Effective Java（第2版）
 	  1. C#：
 	    * 27) 精通C#（第6版）
@@ -93,7 +93,7 @@ update: 2015-3-6
 	* 86) 
 	* 87) 
   1. 专业开发：
-	* 88) [程序员修炼之道：从小工到专家](/books/the-pragmatic-programmer/)
+	* 88) [程序员修炼之道：从小工到专家](/the-pragmatic-programmer/)
 	* 89) 程序员的职业素养
 	* 90) 高效程序员的45个习惯
 	* 91) 精益创业
@@ -119,14 +119,14 @@ update: 2015-3-6
 	* 108) 简约至上：交互式设计四策略
 * 个人成长：
   1. 职业规划：
-    * 109) [软件开发者路线图](/books/apprenticeship-patterns/)
+    * 109) [软件开发者路线图](/apprenticeship-patterns/)
 	* 110) 卡耐基全集
   1. 思维方式：
-    * 113) [程序员的思维修炼：开发认知潜能的九堂课](/books/pragmatic-thinking-and-learning/)
+    * 113) [程序员的思维修炼：开发认知潜能的九堂课](/pragmatic-thinking-and-learning/)
   1. 求职面试：
     * 119) 金领简历：敲开苹果微软谷歌的大门
   1. 英语写作：
-    * 126) [The Only Grammar Book You'll Ever Need](/books/the-only-grammar-book-you-ll-ever-need/)
+    * 126) [The Only Grammar Book You'll Ever Need](/the-only-grammar-book-you-ll-ever-need/)
 	* 127) The Elements of Style
 
 我在学校图书馆找到了大部分书，没有找到的书或是推荐给了图书馆，或是购买纸质书或电子书。这个书单或将伴随我整个大学生活，并且这个博客也主要是为了记录这些读书心得而建立的。

@@ -1,5 +1,5 @@
 ---
-title: "《Web 全栈工程师的自我修养》"
+title: 初步解决全栈痛点——读"《Web 全栈工程师的自我修养》"
 author: 余果
 categories: 讀書筆記
 date: 2016-11-6
