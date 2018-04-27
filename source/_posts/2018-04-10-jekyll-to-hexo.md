@@ -20,7 +20,11 @@ hexo server
 hexo clean && hexo generate && hexo deploy
 ```
 
-所以现在写作的源代码就放在 hexo 分支下了，master分支是生成后的文件。一定要注意！
+所以现在写作的源代码就放在 hexo 分支下了，master分支是生成后的文件。一定要注意！这样的话，在克隆代码时需要加点料：
+
+```bash
+git clone --recurse-submodules -j2 -b hexo git@github.com:kingfree/kingfree.github.io.git
+```
 
 老的代码提交记录也在这个分支，因为master已经被暴力清空了TAT
 

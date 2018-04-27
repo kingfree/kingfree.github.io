@@ -11,7 +11,7 @@ tags:
 
 **本规范版本 REVISION 23。当你实质性地（即有影响）更新了算法时，请更新本句中的修订号。同样，具体的实现中也请包含相应的修订版本号。**
 
-Ethash 基于以太坊 1.0 的 PoW 算法。它是 Dagger-Hashimoto 的最后一个版本，虽然由于两种算法在最后一个月的研究和开发后产生了巨大变化，它已经不应该再叫这个名字了。参见 <https://github.com/ethereum/wiki/blob/master/Dagger-Hashimoto.md> 获取原始版本。
+Ethash 基于以太坊 1.0 的 PoW 算法。它是 Dagger-Hashimoto 的最后一个版本，虽然由于两种算法在最后一个月的研究和开发后产生了巨大变化，它已经不应该再叫这个名字了。Dagger-Hashimoto 的算法可以参见[这里](/dagger-hashimoto)。
 
 算法基于如下流程：
 
