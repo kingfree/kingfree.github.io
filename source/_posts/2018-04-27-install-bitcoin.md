@@ -48,6 +48,16 @@ sudo apt-get install libboost-all-dev
 sudo apt-get install libqt4-core libqt4-gui libqt4-dev
 ```
 
+遇到`configure: error: "libevent not found"`解决方法：
+```
+git clone https://github.com/libevent/libevent.git
+cd libevent
+./autogen.sh
+./configure
+make
+sudo make install
+```
+
 再次configure，这次可以了
 ```
 make
@@ -72,8 +82,6 @@ bitcoind  -server –printtoconcole
 接到下，是否挖矿就看您自己了。以当前时间为起点，连接testnet有9G的blockchain数据需要下载，livesite有35G的数据需要下载。 
 也可以从这里下载文件，以加快速度。后续会介绍关于比特币的更多内容。有兴趣可以阅读它的源代码。
 
- 
-
 资料LINK：
 
 - [BitCoin比特币 wiki](https://en.bitcoin.it/wiki/Main_Page)
@@ -84,3 +92,7 @@ bitcoind  -server –printtoconcole
 > 出处：<http://www.cnblogs.com/wintersun/>
 > 本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。 
 > 该文章也同时发布在我的独立博客中-Petter Liu Blog。
+
+### 参考资料
+
+- [tmux(ubuntu14.04)编译过程遇到的错误](http://www.cnblogs.com/LicwStack/p/4982356.html)

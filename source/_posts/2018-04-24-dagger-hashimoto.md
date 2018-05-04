@@ -39,7 +39,7 @@ The code for the algorithm will be defined in Python below. First, we give `enco
 NUM_BITS = 512
 
 def encode_int(x):
-    "Encode an integer x as a string of 64 characters using a big-endian scheme"
+    "将整数 x 编码为 64 字符的大端序格式"
     o = ''
     for _ in range(NUM_BITS / 8):
         o = chr(x % 256) + o
@@ -47,7 +47,7 @@ def encode_int(x):
     return o
 
 def decode_int(s):
-    "Unencode an integer x from a string using a big-endian scheme"
+    "从大端序字符串解码为整数 x"
     x = 0
     for c in s:
         x *= 256
