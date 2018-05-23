@@ -25,15 +25,14 @@ Dagger Hashimoto 建立在之前两个关键的工作之上：
 
 在 Dagger 和 Dagger Hashimoto 之间的处理不是我们本次关注的重点，包括：
 
-* “基于区块链的工作证明”——
-- a proof of work function that involves running contracts taken from the blockchain. The approach was abandoned because it was long-range attack vulnerabilities, since attackers can create forks and populate them with contracts that they have a secret fast "trapdoor" execution mechanism for.
-* "Random circuit" - a proof of work function developed largely by Vlad Zamfir that involves generating a new program every 1000 nonces - essentially, choosing a new hash function each time, faster than even FPGAs can reconfigure. The approach was temporarily put aside because it was difficult to see what mechanism one can use to generate random programs that would be general enough so that specialization gains would be low; however, we see no fundamental reasons why the concept cannot be made to work.
+* “基于区块链的工作证明”——一种为区块链上运行的合约证明工作的方法。因为它有受到溢出攻击的漏洞所以被废弃了，攻击者可以创建分支并且用它们有的一种机密的快速“trapdoor”执行机制的合约填充来它们。
+* “随机电路”——一个由 Vlad Zamfir 开发的工作证明算法，通过对每 1000 个 nonce 生成一段新程序实现——本质上，每次选择一个新的散列算法是比重新配置 FPGA 更快。这种算法被搁置的原因在于很难看出人们可以用什么机制来产生随机的程序，这使得专门化的收益降低；然而，我们没有看到为什么这个概念不能实现的根本原因。
 
-The difference between Dagger Hashimoto and Hashimoto is that, instead of using the blockchain as a data source, Dagger Hashimoto uses a custom-generated 1 GB data set, which updates based on block data every N blocks. The data set is generated using the Dagger algorithm, allowing for the efficient calculation of a subset specific to every nonce for the light client verification algorithm. The difference between Dagger Hashimoto and Dagger is that, unlike in the original Dagger, the dataset used to query the block is semi-permanent, only being updated at occasional intervals (eg. once per week). This means that the portion of the effort that goes toward generating the dataset is close to zero, so Sergio Lerner's arguments regarding shared memory speedups become negligible.
+Dagger Hashimoto 和 Hashimoto 的区别在于，Dagger Hashimoto 没有使用区块链作为数据源，而是使用了一个自定义生成的 1GB 数据集，该数据集根据每 N 块的块数据进行更新。该数据集是使用 Dagger算法生成的，允许对每个 nonce 进行有效计算，用于轻客户端验证算法。Dagger Hashimoto 和 Dagger 的区别还在于，与原来的 Dagger 不同，用于查询块的数据集是半永久性的，只是偶尔更新（比如每周一次）。这意味着用于生成数据集的部分工作接近于零，因此 Sergio Lerner 关于共享内存速度的争论变得微不足道了。
 
 ## DAG 生成
 
-The code for the algorithm will be defined in Python below. First, we give `encode_int` for marshaling unsigned ints of specified precision to strings. Its inverse is also given:
+算法定义在下面的 Python 代码中。首先，我们给出 `encode_int`，用于将指定精度的非负整数转为字符串。它的逆算法也给出：
 
 ```python
 NUM_BITS = 512
@@ -55,7 +54,7 @@ def decode_int(s):
     return x
 ```
 
-We next assume that `sha3` is a function that takes an integer and outputs an integer, and `dbl_sha3` is a double-sha3 function; if converting this reference code into an implementation use:
+`sha3` 接收一个整数并输出一个整数，而 `dbl_sha3` 则运行了两遍 `sha3`；代码实现：
 
 ```python
 from pyethereum import utils
@@ -72,31 +71,30 @@ def dbl_sha3(x):
 
 ### 参数
 
-The parameters used for the algorithm are:
+算法需要的参数如下：
 
 ```python
 SAFE_PRIME_512 = 2**512 - 38117     # 小于 2**512 的最大安全素数
 
 params = {
-      "n": 4000055296 * 8 // NUM_BITS,  # Size of the dataset (4 Gigabytes); MUST BE MULTIPLE OF 65536
-      "n_inc": 65536,                   # Increment in value of n per period; MUST BE MULTIPLE OF 65536
-                                        # with epochtime=20000 gives 882 MB growth per year
-      "cache_size": 2500,               # Size of the light client's cache (can be chosen by light
-                                        # client; not part of the algo spec)
-      "diff": 2**14,                    # Difficulty (adjusted during block evaluation)
-      "epochtime": 100000,              # Length of an epoch in blocks (how often the dataset is updated)
-      "k": 1,                           # Number of parents of a node
-      "w": w,                           # Used for modular exponentiation hashing
-      "accesses": 200,                  # Number of dataset accesses during hashimoto
-      "P": SAFE_PRIME_512               # Safe Prime for hashing and random number generation
+      "n": 4000055296 * 8 // NUM_BITS,  # 数据集大小（4 GB）；必须是 65536 的倍数
+      "n_inc": 65536,                   # 每 n 个周期增长的值；必须是 65536 的倍数
+                                        # 并且每年当 epochtime=20000 时增加 882 MB 
+      "cache_size": 2500,               # 轻客户端缓存大小（由客户端决定；非算法一部分）
+      "diff": 2**14,                    # 难度（适用于块验证）
+      "epochtime": 100000,              # 块中每世代长度（数据集更新频率）
+      "k": 1,                           # 结点的父结点数量
+      "w": w,                           # 用于模幂运算散列
+      "accesses": 200,                  # Hashimoto 时访问数据集的次数
+      "P": SAFE_PRIME_512               # 用于散列和随机数生成的安全素数
 }
 ```
 
-`P` in this case is a prime chosen such that `log₂(P)` is just slightly less than 512, which corresponds to the 512 bits we have been using to represent our numbers. Note that only the latter half of the DAG actually needs to be stored, so the de-facto RAM requirement starts off at 1 GB and grows by 441 MB per year.
+`P` 是一个素数并满足 `log₂(P)` 略小于 512，以对应我们使用的 512 位表示的数字。注意实际上只需要存储 DAG 的后半部分，因为从 1 GB 开始的每年的内存增长就会是 441 MB。
 
 ### Dagger 图构建
 
-The dagger graph building primitive is defined as follows:
+有向图的建立过程如下：
 
 ```python
 def produce_dag(params, seed, length):
@@ -111,15 +109,15 @@ def produce_dag(params, seed, length):
     return o
 ```
 
-Essentially, it starts off a graph as a single node, `sha3(seed)`, and from there starts sequentially adding on other nodes based on random previous nodes. When a new node is created, a modular power of the seed is computed to randomly select some indices less than `i` (using `x % i` above), and the values of the nodes at those indices are used in a calculation to generate a new a value for `x`, which is then fed into a small proof of work function (based on XOR) to ultimately generate the value of the graph at index `i`.  The rationale behind this particular design is to force sequential access of the DAG; the next value of the DAG that will be accessed cannot be determined until the current value is known.  Finally, modular exponentiation is used to further hash the result.
+算法从某个随机结点开始计算 `sha3(seed)`，在此之上依次添加其他结点。创建新结点时，会随机对小于 `i` 的来计算种子的模幂（用上面的 `x % i`），结点值还用于计算 `x`，然后用基于 XOR 的证明算法来生成 `i` 上的 `x`。该算法要求 DAG 是可以顺序访问的，并且只能在已知当前结点时才能访问下一个结点。最后，用模幂运算计算散列值。
 
-This algorithm relies on several results from number theory.  See the appendix below for a discussion.
+算法依赖于附录描述的几个数论方面的结论。
 
 ## 轻量客户端验证
 
-The intent of the above graph construction is to allow each individual node in the graph can be reconstructed by computing a subtree of only a small number of nodes, and requiring only a small amount of auxiliary memory. Note that with k=1, the subtree is only a chain of values going up to the first element in the DAG. 
+上述图构造的目的是通过计算仅有少量节点的子树并仅需要少量辅助存储器来重构图中的每个单独节点。注意当 k=1 时，子树仅是 DAG 首个元素后的一条链。
 
-The light client computing function for the DAG works as follows:
+DAG 上的轻客户端计算方法如下：
 
 ```python
 def quick_calc(params, seed, p):
@@ -141,7 +139,7 @@ def quick_calc(params, seed, p):
     return quick_calc_cached(p)
 ```
 
-Essentially, it is simply a rewrite of the above algorithm that removes the loop of computing the values for the entire DAG and replaces the earlier node lookup with a recursive call or a cache lookup. Note that for `k=1` the cache is unnecessary, although a further optimization actually precomputes the first few thousand values of the DAG and keeps that as a static cache for computations; see the appendix for a code implementation of this.
+本质上，这只是对上面算法的一种简写，其中删除了计算整个 DAG 值的循环，并利用记忆化递归实现结点查找。注意，k=1 时不需要缓存，进一步的优化会预先计算出 DAG 的前几千个值并缓存。请参阅附录中的实现。
 
 ## DAG 的双缓冲区
 
