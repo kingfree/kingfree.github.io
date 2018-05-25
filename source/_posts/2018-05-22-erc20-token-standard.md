@@ -4,7 +4,7 @@ categories: 翻译
 tags: 区块链
 ---
 
-*原文链接：<https://github.com/ethereum/wiki/blob/master/Dagger-Hashimoto.md>*
+*原文链接：<https://theethereum.wiki/w/index.php/ERC20_Token_Standard>*
 
 [ERC20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md) 代币标准描述了基于以太坊代币合约的一系列待实现的方法和事件。
 
