@@ -1,0 +1,1507 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content=""><meta name="keywords" content="王者自由,Kingfree,原田莓莓,咲衣憧"><meta name="author" content="原田莓莓,undefined"><meta name="copyright" content="原田莓莓"><title>舍其旧而新是谋 | 原田莓莓</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.2"><script>var GLOBAL = { 
+  root: '/',
+  algolia: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  localSearch: undefined
+} </script><meta name="generator" content="Hexo 5.3.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="author-info"><div class="author-info__avatar text-center"><img src="/favicon.ico"></div><div class="author-info__name text-center">原田莓莓</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">73</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">34</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">10</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="https://www.byvoid.com" target="_blank">BYVoid</a><a class="author-info-links__name text-center" href="https://zr.is/" target="_blank">Zeyi Fan</a></div></div></div><nav class="/images/background/shinohayu1920.jpg" id="nav" style="background-image: url(/images/background/shinohayu1920.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">原田莓莓</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">首页</a><a class="site-page" href="/archives">博文</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/about">关于</a></span></div><div id="site-info"><div id="site-title">原田莓莓</div><div id="site-sub-title">舍其旧而新是谋</div><div id="site-social-icons"> <a class="social-icon" href="http://weibo.com/kingfree" target="_blank"><i class="fa fa-weibo"></i></a><a class="social-icon" href="https://twitter.com/kingfreet" target="_blank"><i class="fa fa-twitter"></i></a><a class="social-icon" href="https://github.com/kingfree" target="_blank"><i class="fa fa-github"></i></a><a class="social-icon" href="http://git.kingfree.moe" target="_blank"><i class="fa fa-gitlab"></i></a></div></div></nav><div id="content-outer"><div class="layout" id="content-inner"><div class="recent-post-item"><a class="article-title" href="/psr-2/">PSR-2: 代码风格指南</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/PHP/">PHP</a></span><div class="content"><p><em>原文： <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-2/">https://www.php-fig.org/psr/psr-2/</a></em></p>
+<p>本手册是基础代码规范(<a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-1/">PSR-1</a>)的继承和扩展。</p>
+<p>为了尽可能的提升阅读其他人代码时的效率，下面例举了一系列的通用规则，特别是有关于PHP代码风格的。</p>
+<p>各个成员项目间的共性组成了这组代码规范。当开发者们在多个项目中合作时，本指南将会成为所有这些项目中共用的一组代码规范。 因此，本指南的益处不在于这些规则本身，而在于在所有项目中共用这些规则。</p>
+<p><a target="_blank" rel="noopener" href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>中的<strong>必须</strong>(MUST)、<strong>不能</strong>(MUST NOT)、<strong>应当</strong>(SHOULD)、<strong>不应</strong>(SHOULD NOT)、<strong>可以</strong>(MAY)等术语将在本节用来做一些解释性的描述。</p>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><ul>
+<li><p>代码<strong>必须</strong>遵守“基础代码规范” <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-1/">PSR-1</a>。</p>
+</li>
+<li><p>代码<strong>必须</strong>使用4个空格来进行缩进，而不是用制表符。</p>
+</li>
+<li><p>一行代码的长度<strong>不能</strong>有强制限制；非强制限制<strong>必须</strong>为120个字符，每行代码<strong>应当</strong>有80个字符或者更少。</p>
+</li>
+<li><p>在<code>namespace</code>的声明下面<strong>必须</strong>有一行空行，并且在<code>use</code>的声明下面也<strong>必须</strong>有一行空行。</p>
+</li>
+<li><p>类的左花括号<strong>必须</strong>放到其声明下面自成一行，右花括号则<strong>必须</strong>放到类主体下面自成一行。</p>
+</li>
+<li><p>方法的左花括号<strong>必须</strong>放到其声明下面自成一行，右花括号则<strong>必须</strong>放到方法主体的下一行。</p>
+</li>
+<li><p>所有的属性和方法<strong>必须</strong>有可见性声明；<code>abstract</code>和<code>final</code>声明<strong>必须</strong>在可见性声明之前；而<code>static</code>声明<strong>必须</strong>在可见性声明之后。</p>
+</li>
+<li><p>在控制结构关键字的后面<strong>必须</strong>有一个空格；而方法和函数的关键字的后面<strong>不能</strong>有空格。</p>
+</li>
+<li><p>控制结构的左花括号<strong>必须</strong>跟其放在同一行，右花括号<strong>必须</strong>放在该控制结构代码主体的下一行。</p>
+</li>
+<li><p>控制结构的左括号之后<strong>不能</strong>有空格，右括号之前也<strong>不能</strong>有空格。</p>
+</li>
+</ul>
+<h3 id="1-1-示例"><a href="#1-1-示例" class="headerlink" title="1.1. 示例"></a>1.1. 示例</h3><p>这个示例中简单展示了上文中提到的一些规则：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">FooInterface</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">BarClass</span> <span class="title">as</span> <span class="title">Bar</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">OtherVendor</span>\<span class="title">OtherPackage</span>\<span class="title">BazClass</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span> <span class="keyword">extends</span> <span class="title">Bar</span> <span class="keyword">implements</span> <span class="title">FooInterface</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">sampleFunction</span>(<span class="params"><span class="variable">$a</span>, <span class="variable">$b</span> = <span class="literal">null</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$a</span> === <span class="variable">$b</span>) &#123;</span><br><span class="line">            bar();</span><br><span class="line">        &#125; <span class="keyword">elseif</span> (<span class="variable">$a</span> &gt; <span class="variable">$b</span>) &#123;</span><br><span class="line">            <span class="variable">$foo</span>-&gt;bar(<span class="variable">$arg1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            BazClass::bar(<span class="variable">$arg2</span>, <span class="variable">$arg3</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-通则"><a href="#2-通则" class="headerlink" title="2. 通则"></a>2. 通则</h2><h3 id="2-1-基础代码规范"><a href="#2-1-基础代码规范" class="headerlink" title="2.1 基础代码规范"></a>2.1 基础代码规范</h3><p>代码<strong>必须</strong>遵守 <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-1/">PSR-1</a> 中的所有规则。</p>
+<h3 id="2-2-源文件"><a href="#2-2-源文件" class="headerlink" title="2.2 源文件"></a>2.2 源文件</h3><p>所有的PHP源文件<strong>必须</strong>使用Unix LF(换行)作为行结束符。</p>
+<p>所有PHP源文件<strong>必须</strong>以一个空行结束。</p>
+<p>纯PHP代码源文件的关闭标签 <code>?&gt;</code> <strong>必须</strong>省略。</p>
+<h3 id="2-3-行"><a href="#2-3-行" class="headerlink" title="2.3. 行"></a>2.3. 行</h3><p>行长度<strong>不能</strong>有强制限制。</p>
+<p>行长度的非强制限制<strong>必须</strong>是120个字符；对于非强制限制，代码风格检查器<strong>必须</strong>警告但<strong>不能</strong>报错。</p>
+<p>一行代码的长度<strong>不应</strong>超过80个字符；较长的行<strong>应当</strong>拆分成多个不超过80个字符的子行。</p>
+<p>在非空行后面<strong>不能</strong>有空格。</p>
+<p>空行<strong>可以</strong>用来增强可读性和区分相关代码块。</p>
+<p>一行<strong>不能</strong>多于一个语句。</p>
+<h3 id="2-4-缩进"><a href="#2-4-缩进" class="headerlink" title="2.4. 缩进"></a>2.4. 缩进</h3><p>代码<strong>必须</strong>使用4个空格，且<strong>不能</strong>使用制表符来作为缩进。</p>
+<p>注意：代码中只使用空格，且不和制表符混合使用，将会对避免代码差异、补丁、历史和注解中的一些问题有帮助。空格的使用还可以使通过调整细微的缩进来改进行间对齐变得更加的简单。</p>
+<h3 id="2-5-关键字和-True-False-Null"><a href="#2-5-关键字和-True-False-Null" class="headerlink" title="2.5. 关键字和 True/False/Null"></a>2.5. 关键字和 True/False/Null</h3><p>PHP关键字(<a target="_blank" rel="noopener" href="http://php.net/manual/en/reserved.keywords.php">keywords</a>)<strong>必须</strong>使用小写字母。</p>
+<p>PHP常量<code>true</code>、<code>false</code>和<code>null</code> <strong>必须</strong>使用小写字母。</p>
+<h2 id="3-命名空间和导入声明"><a href="#3-命名空间和导入声明" class="headerlink" title="3. 命名空间和导入声明"></a>3. 命名空间和导入声明</h2><p>命名空间(<code>namespace</code>)的声明后面<strong>必须</strong>有一行空行。</p>
+<p>所有的导入(<code>use</code>)声明<strong>必须</strong>放在命名空间(<code>namespace</code>)声明的下面。</p>
+<p>一句声明中，<strong>必须</strong>只有一个导入(<code>use</code>)关键字。</p>
+<p>在导入(<code>use</code>)声明代码块后面<strong>必须</strong>有一行空行。</p>
+<p>例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">FooClass</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">BarClass</span> <span class="title">as</span> <span class="title">Bar</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">OtherVendor</span>\<span class="title">OtherPackage</span>\<span class="title">BazClass</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ... 其它PHP代码 ...</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-类、属性和方法"><a href="#4-类、属性和方法" class="headerlink" title="4. 类、属性和方法"></a>4. 类、属性和方法</h2><p>术语“类”指所有的类、接口和特性。</p>
+<h3 id="4-1-继承和实现"><a href="#4-1-继承和实现" class="headerlink" title="4.1. 继承和实现"></a>4.1. 继承和实现</h3><p>一个类的继承(<code>extends</code>)和实现(<code>implement</code>)术语<strong>必须</strong>和类名在同一行。</p>
+<p>类的左花括号<strong>必须</strong>放在下面自成一行；右花括号必须放在类主体的后面自成一行。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">FooClass</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">BarClass</span> <span class="title">as</span> <span class="title">Bar</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">OtherVendor</span>\<span class="title">OtherPackage</span>\<span class="title">BazClass</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span> <span class="keyword">extends</span> <span class="title">ParentClass</span> <span class="keyword">implements</span> \<span class="title">ArrayAccess</span>, \<span class="title">Countable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// 常量、属性、方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现(<code>implement</code>)列表<strong>可以</strong>被拆分为多个缩进了一次的子行。如果要拆成多个子行，列表的第一项<strong>必须</strong>要放在下一行，并且每行<strong>必须</strong>只有一个接口。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">FooClass</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">BarClass</span> <span class="title">as</span> <span class="title">Bar</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">OtherVendor</span>\<span class="title">OtherPackage</span>\<span class="title">BazClass</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span> <span class="keyword">extends</span> <span class="title">ParentClass</span> <span class="keyword">implements</span></span></span><br><span class="line"><span class="class">    \<span class="title">ArrayAccess</span>,</span></span><br><span class="line"><span class="class">    \<span class="title">Countable</span>,</span></span><br><span class="line"><span class="class">    \<span class="title">Serializable</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// 常量、属性、方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-属性"><a href="#4-2-属性" class="headerlink" title="4.2. 属性"></a>4.2. 属性</h3><p>所有的属性都<strong>必须</strong>声明其可见性。</p>
+<p>关键字<code>var</code><strong>不能</strong>用来声明一个属性。</p>
+<p>一条语句<strong>不能</strong>声明多个属性。</p>
+<p>属性名<strong>不应</strong>用单个下划线作为前缀来表明其保护或私有的可见性。</p>
+<p>一个属性声明看起来应该像下面这样。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$foo</span> = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-方法"><a href="#4-3-方法" class="headerlink" title="4.3. 方法"></a>4.3. 方法</h3><p>所有的方法都<strong>必须</strong>声明其可见性。</p>
+<p>方法名<strong>不应</strong>用单个下划线作为前缀来表明其保护或私有的可见性。</p>
+<p>方法名在其声明后面<strong>不能</strong>有空格跟随。其左花括号<strong>必须</strong>放在下面自成一行，且右花括号<strong>必须</strong>放在方法主体的下面自成一行。左括号后面<strong>不能</strong>有空格，且右括号前面也<strong>不能</strong>有空格。</p>
+<p>一个方法声明看来应该像下面这样。 注意括号、逗号、空格和花括号的位置：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">fooBarBaz</span>(<span class="params"><span class="variable">$arg1</span>, &amp;<span class="variable">$arg2</span>, <span class="variable">$arg3</span> = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 方法主体部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-方法参数"><a href="#4-4-方法参数" class="headerlink" title="4.4. 方法参数"></a>4.4. 方法参数</h3><p>在参数列表中，逗号之前<strong>不能</strong>有空格，而逗号之后则<strong>必须</strong>要有一个空格。</p>
+<p>方法中有默认值的参数<strong>必须</strong>放在参数列表的最后面。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"><span class="variable">$arg1</span>, &amp;<span class="variable">$arg2</span>, <span class="variable">$arg3</span> = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数列表<strong>可以</strong>被拆分为多个缩进了一次的子行。如果要拆分成多个子行，参数列表的第一项<strong>必须</strong>放在下一行，并且每行<strong>必须</strong>只有一个参数。</p>
+<p>当参数列表被拆分成多个子行，右括号和左花括号之间<strong>必须</strong>有一个空格并且自成一行。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">aVeryLongMethodName</span>(<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">        ClassTypeHint <span class="variable">$arg1</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        &amp;<span class="variable">$arg2</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">        <span class="keyword">array</span> <span class="variable">$arg3</span> = []</span></span></span><br><span class="line"><span class="function"><span class="params">    </span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-5-抽象、终结和静态"><a href="#4-5-抽象、终结和静态" class="headerlink" title="4.5. 抽象、终结和静态"></a>4.5. 抽象、终结和静态</h3><p>当用到抽象(<code>abstract</code>)和终结(<code>final</code>)来做类声明时，它们<strong>必须</strong>放在可见性声明的前面。</p>
+<p>而当用到静态(<code>static</code>)来做类声明时，则<strong>必须</strong>放在可见性声明的后面。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="built_in">static</span> <span class="variable">$foo</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">zim</span>(<span class="params"></span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-6-调用方法和函数"><a href="#4-6-调用方法和函数" class="headerlink" title="4.6. 调用方法和函数"></a>4.6. 调用方法和函数</h3><p>调用一个方法或函数时，在方法名或者函数名和左括号之间<strong>不能</strong>有空格，左括号之后<strong>不能</strong>有空格，右括号之前也<strong>不能</strong>有空格。参数列表中，逗号之前<strong>不能</strong>有空格，逗号之后则<strong>必须</strong>有一个空格。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">bar();</span><br><span class="line"><span class="variable">$foo</span>-&gt;bar(<span class="variable">$arg1</span>);</span><br><span class="line">Foo::bar(<span class="variable">$arg2</span>, <span class="variable">$arg3</span>);</span><br></pre></td></tr></table></figure>
+<p>参数列表<strong>可以</strong>被拆分成多个缩进了一次的子行。如果拆分成子行，列表中的第一项<strong>必须</strong>放在下一行，并且每一行<strong>必须</strong>只能有一个参数。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$foo</span>-&gt;bar(</span><br><span class="line">    <span class="variable">$longArgument</span>,</span><br><span class="line">    <span class="variable">$longerArgument</span>,</span><br><span class="line">    <span class="variable">$muchLongerArgument</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="5-控制结构"><a href="#5-控制结构" class="headerlink" title="5. 控制结构"></a>5. 控制结构</h2><p>下面是对于控制结构代码风格的概括：</p>
+<ul>
+<li>控制结构的术语之后<strong>必须</strong>有一个空格。</li>
+<li>控制结构的左括号之后<strong>不能</strong>有空格。</li>
+<li>控制结构的右括号之前<strong>不能</strong>有空格。</li>
+<li>控制结构的右括号和左花括号之间<strong>必须</strong>有一个空格。</li>
+<li>控制结构的代码主体<strong>必须</strong>进行一次缩进。</li>
+<li>控制结构的右花括号<strong>必须</strong>主体的下一行。</li>
+</ul>
+<p>每个控制结构的代码主体<strong>必须</strong>被括在花括号里。这样可是使代码看上去更加标准化，并且加入新代码的时候还可以因此而减少引入错误的可能性。</p>
+<h3 id="5-1-if、elseif、else"><a href="#5-1-if、elseif、else" class="headerlink" title="5.1. if、elseif、else"></a>5.1. <code>if</code>、<code>elseif</code>、<code>else</code></h3><p>下面是一个<code>if</code>条件控制结构的示例，注意其括号、空格和花括号的位置。同时注意<code>else</code>和<code>elseif</code>要和前一个条件控制结构的右花括号在同一行。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$expr1</span>) &#123;</span><br><span class="line">    <span class="comment">// if body</span></span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="variable">$expr2</span>) &#123;</span><br><span class="line">    <span class="comment">// elseif body</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// else body;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>应当</strong>用<code>elseif</code>来替代<code>else if</code>，以保持所有的条件控制关键字看起来像是一个单词。</p>
+<h3 id="5-2-switch、case"><a href="#5-2-switch、case" class="headerlink" title="5.2. switch、case"></a>5.2. <code>switch</code>、<code>case</code></h3><p>下面是一个<code>switch</code>条件控制结构的示例，注意其中括号、空格和花括号的位置。<code>case</code>语句<strong>必须</strong>要缩进一级，而<code>break</code>关键字（或其他中止关键字）<strong>必须</strong>和<code>case</code>结构的代码主体在同一个缩进层级。如果一个有主体代码的<code>case</code>结构故意的继续向下执行则<strong>必须</strong>要有一个类似于<code>// no break</code>的注释。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">switch</span> (<span class="variable">$expr</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;First case, with a break&#x27;</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;Second case, which falls through&#x27;</span>;</span><br><span class="line">        <span class="comment">// no break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;Third case, return instead of break&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;Default case&#x27;</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-while、do-while"><a href="#5-3-while、do-while" class="headerlink" title="5.3. while、do while"></a>5.3. <code>while</code>、<code>do while</code></h3><p>下面是一个<code>while</code>循环控制结构的示例，注意其括号、空格和花括号的位置。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$expr</span>) &#123;</span><br><span class="line">    <span class="comment">// 结构体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是一个<code>do while</code>循环控制结构的示例，注意其括号、空格和花括号的位置。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// 结构体</span></span><br><span class="line">&#125; <span class="keyword">while</span> (<span class="variable">$expr</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="5-4-for"><a href="#5-4-for" class="headerlink" title="5.4. for"></a>5.4. <code>for</code></h3><p>下面是一个<code>for</code>循环控制结构的示例，注意其括号、空格和花括号的位置。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="number">10</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-5-foreach"><a href="#5-5-foreach" class="headerlink" title="5.5. foreach"></a>5.5. <code>foreach</code></h3><p>下面是一个<code>foreach</code>循环控制结构的示例，注意其括号、空格和花括号的位置。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$iterable</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span>) &#123;</span><br><span class="line">    <span class="comment">// 循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-6-try、catch"><a href="#5-6-try、catch" class="headerlink" title="5.6. try、catch"></a>5.6. <code>try</code>、<code>catch</code></h3><p>下面是一个<code>try catch</code>异常处理控制结构的示例，注意其括号、空格和花括号的位置。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// try body</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (FirstExceptionType <span class="variable">$e</span>) &#123;</span><br><span class="line">    <span class="comment">// catch body</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (OtherExceptionType <span class="variable">$e</span>) &#123;</span><br><span class="line">    <span class="comment">// catch body</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6-闭包"><a href="#6-闭包" class="headerlink" title="6. 闭包"></a>6. 闭包</h2><p>声明闭包时所用的<code>function</code>关键字之后<strong>必须</strong>要有一个空格，而<code>use</code>关键字的前后都要有一个空格。</p>
+<p>闭包的左花括号<strong>必须</strong>跟其在同一行，而右花括号<strong>必须</strong>在闭包主体的下一行。</p>
+<p>闭包的参数列表和变量列表的左括号后面<strong>不能</strong>有空格，右括号的前面也<strong>不能</strong>有空格。</p>
+<p>闭包的参数列表和变量列表中逗号前面<strong>不能</strong>有空格，而逗号后面则<strong>必须</strong>有空格。</p>
+<p>闭包的参数列表中带默认值的参数<strong>必须</strong>放在参数列表的结尾部分。</p>
+<p>下面是一个闭包的示例。注意括号、空格和花括号的位置。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$closureWithArgs</span> = <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$arg1</span>, <span class="variable">$arg2</span></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// body</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable">$closureWithArgsAndVars</span> = <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$arg1</span>, <span class="variable">$arg2</span></span>) <span class="title">use</span> (<span class="params"><span class="variable">$var1</span>, <span class="variable">$var2</span></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// body</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>参数列表和变量列表<strong>可以</strong>被拆分成多个缩进了一级的子行。如果要拆分成多个子行，列表中的第一项<strong>必须</strong>放在下一行，并且每一行<strong>必须</strong>只放一个参数或变量。</p>
+<p>当列表（不管是参数还是变量）最终被拆分成多个子行，右括号和左花括号之间<strong>必须</strong>要有一个空格并且自成一行。</p>
+<p>下面是一个参数列表和变量列表被拆分成多个子行的示例。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$longArgs_noVars</span> = <span class="function"><span class="keyword">function</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longArgument</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longerArgument</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$muchLongerArgument</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// body</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable">$noArgs_longVars</span> = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) <span class="title">use</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longVar1</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longerVar2</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$muchLongerVar3</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// body</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable">$longArgs_longVars</span> = <span class="function"><span class="keyword">function</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longArgument</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longerArgument</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$muchLongerArgument</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>) <span class="title">use</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longVar1</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longerVar2</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$muchLongerVar3</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// body</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable">$longArgs_shortVars</span> = <span class="function"><span class="keyword">function</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longArgument</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longerArgument</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$muchLongerArgument</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>) <span class="title">use</span> (<span class="params"><span class="variable">$var1</span></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// body</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable">$shortArgs_longVars</span> = <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$arg</span></span>) <span class="title">use</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longVar1</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$longerVar2</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    <span class="variable">$muchLongerVar3</span></span></span></span><br><span class="line"><span class="function"><span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">// body</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>把闭包作为一个参数在函数或者方法中调用时，依然要遵守上述规则。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$foo</span>-&gt;bar(</span><br><span class="line">    <span class="variable">$arg1</span>,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$arg2</span></span>) <span class="title">use</span> (<span class="params"><span class="variable">$var1</span></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// body</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="variable">$arg3</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-结论"><a href="#7-结论" class="headerlink" title="7. 结论"></a>7. 结论</h2><p>本指南有意的省略了许多元素的代码风格。主要包括：</p>
+<ul>
+<li><p>全局变量和全局常量的声明</p>
+</li>
+<li><p>函数声明</p>
+</li>
+<li><p>操作符和赋值</p>
+</li>
+<li><p>行间对齐</p>
+</li>
+<li><p>注释和文档块</p>
+</li>
+<li><p>类名的前缀和后缀</p>
+</li>
+<li><p>最佳实践</p>
+</li>
+</ul>
+<p>以后的代码规范中<strong>可能</strong>会修正或扩展本指南中规定的代码风格。</p>
+<h2 id="附录A-调查"><a href="#附录A-调查" class="headerlink" title="附录A 调查"></a>附录A 调查</h2><p>为了写这个风格指南，我们调查了各个项目以最终确定通用的代码风格。并把这次调查在这里公布出来。</p>
+<h3 id="A-1-调查数据"><a href="#A-1-调查数据" class="headerlink" title="A.1. 调查数据"></a>A.1. 调查数据</h3><pre><code>url,http://www.horde.org/apps/horde/docs/CODING_STANDARDS,http://pear.php.net/manual/en/standards.php,http://solarphp.com/manual/appendix-standards.style,http://framework.zend.com/manual/en/coding-standard.html,http://symfony.com/doc/2.0/contributing/code/standards.html,http://www.ppi.io/docs/coding-standards.html,https://github.com/ezsystems/ezp-next/wiki/codingstandards,http://book.cakephp.org/2.0/en/contributing/cakephp-coding-conventions.html,https://github.com/UnionOfRAD/lithium/wiki/Spec%3A-Coding,http://drupal.org/coding-standards,http://code.google.com/p/sabredav/,http://area51.phpbb.com/docs/31x/coding-guidelines.html,https://docs.google.com/a/zikula.org/document/edit?authkey=CPCU0Us&amp;hgd=1&amp;id=1fcqb93Sn-hR9c0mkN6m_tyWnmEvoswKBtSc0tKkZmJA,http://www.chisimba.com,n/a,https://github.com/Respect/project-info/blob/master/coding-standards-sample.php,n/a,Object Calisthenics for PHP,http://doc.nette.org/en/coding-standard,http://flow3.typo3.org,https://github.com/propelorm/Propel2/wiki/Coding-Standards,http://developer.joomla.org/coding-standards.html
+voting,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,no,no,no,?,yes,no,yes
+indent_type,4,4,4,4,4,tab,4,tab,tab,2,4,tab,4,4,4,4,4,4,tab,tab,4,tab
+line_length_limit_soft,75,75,75,75,no,85,120,120,80,80,80,no,100,80,80,?,?,120,80,120,no,150
+line_length_limit_hard,85,85,85,85,no,no,no,no,100,?,no,no,no,100,100,?,120,120,no,no,no,no
+class_names,studly,studly,studly,studly,studly,studly,studly,studly,studly,studly,studly,lower_under,studly,lower,studly,studly,studly,studly,?,studly,studly,studly
+class_brace_line,next,next,next,next,next,same,next,same,same,same,same,next,next,next,next,next,next,next,next,same,next,next
+constant_names,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper,upper
+true_false_null,lower,lower,lower,lower,lower,lower,lower,lower,lower,upper,lower,lower,lower,upper,lower,lower,lower,lower,lower,upper,lower,lower
+method_names,camel,camel,camel,camel,camel,camel,camel,camel,camel,camel,camel,lower_under,camel,camel,camel,camel,camel,camel,camel,camel,camel,camel
+method_brace_line,next,next,next,next,next,same,next,same,same,same,same,next,next,same,next,next,next,next,next,same,next,next
+control_brace_line,same,same,same,same,same,same,next,same,same,same,same,next,same,same,next,same,same,same,same,same,same,next
+control_space_after,yes,yes,yes,yes,yes,no,yes,yes,yes,yes,no,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes
+always_use_control_braces,yes,yes,yes,yes,yes,yes,no,yes,yes,yes,no,yes,yes,yes,yes,no,yes,yes,yes,yes,yes,yes
+else_elseif_line,same,same,same,same,same,same,next,same,same,next,same,next,same,next,next,same,same,same,same,same,same,next
+case_break_indent_from_switch,0/1,0/1,0/1,1/2,1/2,1/2,1/2,1/1,1/1,1/2,1/2,1/1,1/2,1/2,1/2,1/2,1/2,1/2,0/1,1/1,1/2,1/2
+function_space_after,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,no
+closing_php_tag_required,no,no,no,no,no,no,no,no,yes,no,no,no,no,yes,no,no,no,no,no,yes,no,no
+line_endings,LF,LF,LF,LF,LF,LF,LF,LF,?,LF,?,LF,LF,LF,LF,?,,LF,?,LF,LF,LF
+static_or_visibility_first,static,?,static,either,either,either,visibility,visibility,visibility,either,static,either,?,visibility,?,?,either,either,visibility,visibility,static,?
+control_space_parens,no,no,no,no,no,no,yes,no,no,no,no,no,no,yes,?,no,no,no,no,no,no,no
+blank_line_after_php,no,no,no,no,yes,no,no,no,no,yes,yes,no,no,yes,?,yes,yes,no,yes,no,yes,no
+class_method_control_brace,next/next/same,next/next/same,next/next/same,next/next/same,next/next/same,same/same/same,next/next/next,same/same/same,same/same/same,same/same/same,same/same/same,next/next/next,next/next/same,next/same/same,next/next/next,next/next/same,next/next/same,next/next/same,next/next/same,same/same/same,next/next/same,next/next/next
+</code></pre>
+<h3 id="A-2-调查说明"><a href="#A-2-调查说明" class="headerlink" title="A.2. 调查说明"></a>A.2. 调查说明</h3><p><code>indent_type</code>:
+缩进类型。 <code>tab</code> = “使用制表符”，<code>2</code> or <code>4</code> = “空格数量”</p>
+<p><code>line_length_limit_soft</code>:
+行长度的“软”限制，用字符。 <code>?</code> = 不表示或者数字 <code>no</code> 意为不限制.</p>
+<p><code>line_length_limit_hard</code>:
+行长度的”硬”限制，用字符。 <code>?</code> = 不表示或者数字, <code>no</code> 意为不限制.</p>
+<p><code>class_names</code>:
+类名如何命名 <code>lower</code> = 只是小写, <code>lower_under</code> = 小写加下划线, <code>studly</code> = 骆驼型.</p>
+<p><code>class_brace_line</code>:
+类的左花括号是放在同(<code>same</code>)一行还是在下(<code>next</code>)一行？</p>
+<p><code>constant_names</code>:
+类常量如何命名？<code>upper</code> = 大写加下划线分隔符。</p>
+<p><code>true_false_null</code>:
+全小写或者全大写？</p>
+<p><code>method_names</code>:
+方法名如何命名？<code>camel</code> = <code>驼峰式</code>, <code>lower_under</code> = 小写加下划线分隔符。</p>
+<p><code>method_brace_line</code>:
+方法的左花括号在同(<code>same</code>)一行还是在下(<code>next</code>)一行？</p>
+<p><code>control_brace_line</code>:
+控制结构的左花括号在同(<code>same</code>)一行还是在下(<code>next</code>)一行？</p>
+<p><code>control_space_after</code>:
+控制结构术语后是否有空格？</p>
+<p><code>always_use_control_braces</code>:
+控制结构总是使用花括号？</p>
+<p><code>else_elseif_line</code>:
+当使用<code>else</code>和<code>elseif</code>，是否放在同(<code>same</code>)一行还是在下(<code>next</code>)一行？</p>
+<p><code>case_break_indent_from_switch</code>:
+<code>case</code>和<code>break</code>分别从<code>swith</code>语句处缩进多少次？</p>
+<p><code>function_space_after</code>:
+函数调用的函数名和左括号是否有空格？</p>
+<p><code>closing_php_tag_required</code>:
+如过是纯PHP文件，关闭标签<code>?&gt;</code>是否需要？</p>
+<p><code>line_endings</code>:
+使用何种的行结束符？</p>
+<p><code>static_or_visibility_first</code>:
+在定义方法的时候<code>static</code>和可见性谁在前面？</p>
+<p><code>control_space_parens</code>:
+在控制结构表达式中，左括号后面和右括号前面是否要有一个空格？<code>yes</code> = <code>if ( $expr )</code>, <code>no</code> = <code>if ($expr)</code>.</p>
+<p><code>blank_line_after_php</code>:
+PHP的开始标签后面是否需要一个空行？</p>
+<p><code>class_method_control_brace</code>:
+左花括号在类，方法和控制结构中的位置。</p>
+<h3 id="A-3-调查结果"><a href="#A-3-调查结果" class="headerlink" title="A.3. 调查结果"></a>A.3. 调查结果</h3><pre><code>indent_type:
+    tab: 7
+    2: 1
+    4: 14
+line_length_limit_soft:
+    ?: 2
+    no: 3
+    75: 4
+    80: 6
+    85: 1
+    100: 1
+    120: 4
+    150: 1
+line_length_limit_hard:
+    ?: 2
+    no: 11
+    85: 4
+    100: 3
+    120: 2
+class_names:
+    ?: 1
+    lower: 1
+    lower_under: 1
+    studly: 19
+class_brace_line:
+    next: 16
+    same: 6
+constant_names:
+    upper: 22
+true_false_null:
+    lower: 19
+    upper: 3
+method_names:
+    camel: 21
+    lower_under: 1
+method_brace_line:
+    next: 15
+    same: 7
+control_brace_line:
+    next: 4
+    same: 18
+control_space_after:
+    no: 2
+    yes: 20
+always_use_control_braces:
+    no: 3
+    yes: 19
+else_elseif_line:
+    next: 6
+    same: 16
+case_break_indent_from_switch:
+    0/1: 4
+    1/1: 4
+    1/2: 14
+function_space_after:
+    no: 22
+closing_php_tag_required:
+    no: 19
+    yes: 3
+line_endings:
+    ?: 5
+    LF: 17
+static_or_visibility_first:
+    ?: 5
+    either: 7
+    static: 4
+    visibility: 6
+control_space_parens:
+    ?: 1
+    no: 19
+    yes: 2
+blank_line_after_php:
+    ?: 1
+    no: 13
+    yes: 8
+class_method_control_brace:
+    next/next/next: 4
+    next/next/same: 11
+    next/same/same: 1
+    same/same/same: 6
+</code></pre>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/psr-1/">PSR-1: 基本代码规范</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/PHP/">PHP</a></span><div class="content"><p><em>原文： <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-1/">https://www.php-fig.org/psr/psr-1/</a></em></p>
+<p>本节我们将会讨论一些基本的代码规范问题，以此作为将来讨论更高级别的代码分享和技术互用的基础。</p>
+<p><a target="_blank" rel="noopener" href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>中的<strong>必须</strong>(MUST)、<strong>不能</strong>(MUST NOT)、<strong>应当</strong>(SHOULD)、<strong>不应</strong>(SHOULD NOT)、<strong>可以</strong>(MAY)等术语将在本节用来做一些解释性的描述。</p>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><ul>
+<li>源文件<strong>必须</strong>只使用 <code>&lt;?php</code> 和 <code>&lt;?=</code> 这两种标签。</li>
+<li>源文件中PHP代码的编码格式<strong>必须</strong>只使用不带字节顺序标记(BOM)的UTF-8。</li>
+<li>一个源文件<strong>应当</strong>只用来做声明（类、函数、常量等）<em>或者</em>只用来做一些引起副作用的操作（如输出信息、修改.ini配置等），但<strong>不应</strong>同时做这两件事。</li>
+<li>命名空间和类<strong>必须</strong>遵守关于自动加载的PSR标准：[<a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-0/">PSR-0</a>, <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-4/">PSR-4</a>]。</li>
+<li>类名<strong>必须</strong>使用<code>StulyCaps</code>写法。</li>
+<li>类中的常量<strong>必须</strong>只由大写字母和下划线组成。</li>
+<li>方法名<strong>必须</strong>使用<code>camelCase</code>写法。</li>
+</ul>
+<h2 id="2-文件"><a href="#2-文件" class="headerlink" title="2. 文件"></a>2. 文件</h2><h3 id="2-1-PHP标签"><a href="#2-1-PHP标签" class="headerlink" title="2.1. PHP标签"></a>2.1. PHP标签</h3><p>PHP代码<strong>必须</strong>只使用长标签<code>&lt;?php ?&gt;</code>或者短输出式标签<code>&lt;?= ?&gt;</code>，而<strong>不能</strong>使用其他标签。</p>
+<h3 id="2-2-字符编码"><a href="#2-2-字符编码" class="headerlink" title="2.2. 字符编码"></a>2.2. 字符编码</h3><p>PHP代码的编码格式<strong>必须</strong>只使用不带字节顺序标记(BOM)的UTF-8。</p>
+<h3 id="2-3-副作用"><a href="#2-3-副作用" class="headerlink" title="2.3. 副作用"></a>2.3. 副作用</h3><p>一个源文件<strong>应当</strong>只用来做声明（类、函数、常量等）或者只用来做一些引起副作用的操作（如输出信息、修改.ini配置等），但<strong>不应</strong>同时做这两件事。</p>
+<p>短语“副作用”的意思是<em>在包含文件时</em>所执行的逻辑与所声明的类、函数、常量等没有直接的关系。</p>
+<p>“副作用”包括但不限于：产生输出，显式地使用<code>require</code>或<code>include</code>，连接外部服务，修改ini配置，触发错误或异常，修改全局或者静态变量，读取或修改文件等等。</p>
+<p>下面是一个既包含声明又有副作用的示例文件；即应避免的例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 副作用：修改了ini配置</span></span><br><span class="line">ini_set(<span class="string">&#x27;error_reporting&#x27;</span>, E_ALL);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 副作用：载入了文件</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">&quot;file.php&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 副作用：产生了输出</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;html&gt;\n&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是一个仅包含声明的示例文件；即应提倡的例子：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 条件式声明*不*算做是副作用</span></span><br><span class="line"><span class="keyword">if</span> (! function_exists(<span class="string">&#x27;bar&#x27;</span>)) &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 函数体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-命名空间和类名"><a href="#3-命名空间和类名" class="headerlink" title="3. 命名空间和类名"></a>3. 命名空间和类名</h2><p>命名空间和类<strong>必须</strong>遵守关于自动加载的PSR标准：[<a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-0/">PSR-0</a>, <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-4/">PSR-4</a>]。</p>
+<p>这意味着一个源文件中只能有一个类，并且每个类至少要有一级空间名，即一个顶级的组织名。</p>
+<p>类名<strong>必须</strong>使用<code>StulyCaps</code>写法。</p>
+<p>PHP5.3之后的代码<strong>必须</strong>使用正式的命名空间。</p>
+<p>例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// PHP 5.3 及之后:</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Model</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>PHP5.2.x和之前的代码<strong>应当</strong>用伪命名空间<code>Vendor_</code>作为类名的前缀：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// PHP 5.2.x 及之前:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vendor_Model_Foo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-类的常量、属性和方法"><a href="#4-类的常量、属性和方法" class="headerlink" title="4. 类的常量、属性和方法"></a>4. 类的常量、属性和方法</h2><p>术语“类”指所有的类、接口和特性。</p>
+<h3 id="4-1-常量"><a href="#4-1-常量" class="headerlink" title="4.1. 常量"></a>4.1. 常量</h3><p>类常量<strong>必须</strong>只由大写字母和下划线组成。</p>
+<p>例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Model</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> VERSION = <span class="string">&#x27;1.0&#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> DATE_APPROVED = <span class="string">&#x27;2012-06-01&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-属性"><a href="#4-2-属性" class="headerlink" title="4.2. 属性"></a>4.2. 属性</h3><p>本指南中故意不对<code>$StulyCaps</code>、<code>$camelCase</code>和<code>$unser_score</code>中的某一种风格作特别推荐，完全由读者依据个人喜好决定属性名的命名风格。</p>
+<p>但是不管你如何定义属性名，<strong>应当</strong>在一个合理的范围内保持一致。这个范围可能是组织级别的、包级别的、类级别的或者方法级别的。</p>
+<h3 id="4-3-方法"><a href="#4-3-方法" class="headerlink" title="4.3. 方法"></a>4.3. 方法</h3><p>方法名则<strong>必须</strong>使用<code>camelCase()</code>风格来声明。</p>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/psr-standard/">PHP中PSR-[0-4]代码规范【转】</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-13</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/PHP/">PHP</a></span><div class="content"><p><em>原文链接： <a target="_blank" rel="noopener" href="http://www.cnblogs.com/52php/p/5852572.html">http://www.cnblogs.com/52php/p/5852572.html</a></em></p>
+<h1 id="PHP-FIG"><a href="#PHP-FIG" class="headerlink" title="PHP-FIG"></a>PHP-FIG</h1><p>在说啥是PSR-[0-4]规范的之前，我觉得我们有必要说下它的发明者和规范者：PHP-FIG，它的网站是：<a target="_blank" rel="noopener" href="https://www.php-fig.org/">https://www.php-fig.org</a> 。就是这个联盟组织发明和创造了PSR-[0-4]规范，膜拜吧，屌丝们！</p>
+<p>FIG 是 Framework Interoperability Group（框架可互用性小组）的缩写，由几位开源框架的开发者成立于 2009 年，从那开始也选取了很多其他成员进来，虽然不是 “官方” 组织，但也代表了社区中不小的一块。组织的目的在于：以最低程度的限制，来统一各个项目的编码规范，避免各家自行发展的风格阻碍了程序设计师开发的困扰，于是大伙发明和总结了PSR，PSR是Proposing a Standards Recommendation（提出标准建议）的缩写，截止到目前为止，总共有5套PSR规范，分别是：</p>
+<ul>
+<li>PSR-0 (Autoloading Standard) 自动加载标准 </li>
+<li>PSR-1 (Basic Coding Standard) 基础编码标准 </li>
+<li>PSR-2 (Coding Style Guide) 编码风格向导 </li>
+<li>PSR-3 (Logger Interface) 日志接口 </li>
+<li>PSR-4 (Improved Autoloading) 自动加载的增强版，可以替换掉PSR-0了。</li>
+</ul>
+<p>接下来的篇目，我们会针对这5套，深入了解下。仔细学习下受万千PHPer热捧的这5套规范到底有啥出众之处。</p>
+<h1 id="PSR-0-规范"><a href="#PSR-0-规范" class="headerlink" title="PSR-0 规范"></a>PSR-0 规范</h1><p>PRS-0规范是他们出的第1套规范，主要是制定了一些自动加载标准（Autoloading Standard），如果你英文比较好，可以直接看官网的这个：<a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-0/">PSR-0</a>，很短。我们打开PSR-0的主页时，发现多了一个警告：</p>
+<pre><code>Deprecated - As of 2014-10-21 PSR-0 has been marked as deprecated. [PSR-4](http://www.php-fig.org/psr/psr-4/) is now recommended as an alternative.
+</code></pre>
+<p>大概意思：</p>
+<pre><code>不推荐使用 - 在2014年10月21日PSR-0已被标记为过时。PSR-4现在推荐作为替代。
+</code></pre>
+<p>那么也就是说PSR-0已！经！过！时！了！，别哭，PHP代码狗。虽说已经过时，但是我们也可以看看嘛，这不影响我们的学习，好了。废话不说了，开始吧：</p>
+<p>PSR-0强制性要求几点：</p>
+<ol>
+<li>一个完全合格的namespace和class必须符合这样的结构：<code>\&lt;Vendor Name&gt;(&lt;Namespace&gt;)*&lt;Class Name&gt;</code></li>
+<li>每个namespace必须有一个顶层的namespace（”Vendor Name”提供者名字）</li>
+<li>每个namespace可以有多个子namespace</li>
+<li>当从文件系统中加载时，每个namespace的分隔符(/)要转换成 DIRECTORY_SEPARATOR(操作系统路径分隔符)</li>
+<li>在类名中，每个下划线(_)符号要转换成DIRECTORY_SEPARATOR(操作系统路径分隔符)。在namespace中，下划线(_)符号是没有（特殊）意义的。</li>
+<li>当从文件系统中载入时，合格的namespace和class一定是以 <code>.php</code> 结尾的</li>
+<li>verdor name,namespaces,class名可以由大小写字母组合而成（大小写敏感的）</li>
+</ol>
+<p>是不是有点看不懂啊。什么namespace啊，什么autoloading啊。所以，如果你对命名空间还不是特别懂的话，可以google下namespace 和 自动加载相关的php知识。或者看下一篇，我专门来讲讲他们：namespace 和 autoloading</p>
+<p>好，我们接着一条条举例来分析下：</p>
+<h2 id="第1条"><a href="#第1条" class="headerlink" title="第1条"></a>第1条</h2><p>比如我的文件 <code>/Doctrine/Common/IsolatedClassLoader.php</code> 这样子的一个类文件，那么你的namespace命名就必须声明称这样：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">声明：<span class="keyword">namespace</span> \<span class="title">Doctrine</span>\<span class="title">Common</span>\</span><br><span class="line">调用：\<span class="title">Doctrine</span>\<span class="title">Common</span>\<span class="title">IsolatedClassLoader</span></span><br></pre></td></tr></table></figure>
+<p>其中，<code>Doctrine</code> 表示一个模块目录 Vendor name, <code>Common</code>就是namesapce, <code>IsolatedClassLoader</code>是class name。这样一看就知道这个文件的目录层次，一目了然。</p>
+<p>再比如：<code>/path/to/project/lib/vendor/Symfony/Core/Request.php</code> 文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">声明：<span class="keyword">namespace</span> \<span class="title">Symfony</span>\<span class="title">Core</span></span><br><span class="line">调用：\<span class="title">Symfony</span>\<span class="title">Core</span>\<span class="title">Request</span></span><br></pre></td></tr></table></figure>
+<h2 id="第2，3条"><a href="#第2，3条" class="headerlink" title="第2，3条"></a>第2，3条</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">namespace \Zend\Acl =&gt; /path/to/project/lib/vendor/Zend/Acl.php</span><br><span class="line">namespace \Zend\Mail\Message =&gt; /path/to/project/lib/vendor/Zend/Mail/Message.php</span><br></pre></td></tr></table></figure>
+<p>必须有一个顶级的zend的namespace, zend 下面可以有message子命名空间。</p>
+<h2 id="第4条"><a href="#第4条" class="headerlink" title="第4条"></a>第4条</h2><p>看这个例子，我们需要new 一个这样的类</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> \Symfony\Core\Request</span><br></pre></td></tr></table></figure>
+<p>那么我再加载这个类文件时候，就要将分隔符 \ 转换成 目录，也就是去 Vendor -&gt; Symfony-&gt;Core-&gt;Request.php 一层层的目录找到这个文件。其实也就是和第1,2,3是反过来的对应关系。</p>
+<h2 id="第5条"><a href="#第5条" class="headerlink" title="第5条"></a>第5条</h2><p>第5条是说namespace命名中的这个 <code>_</code> 符号 没有任何用处，就是用来表示目录分隔符的，但是注意在PRS-4中已经取消了这个<code>_</code> ，那么我们还是看一下，这个过时的规定是怎么样的：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\namespace\package\Class_Name =&gt; /path/to/project/lib/vendor/namespace/package/Class/Name.php</span><br><span class="line">\namespace\package_name\Class_Name =&gt; /path/to/project/lib/vendor/namespace/package_name/Class/Name.php</span><br></pre></td></tr></table></figure>
+<p>以上2个namespace中的 _ 其实是目录分隔符。并不是class name就是那样的。现在PSR-4出来后，确实觉得这样的规定有点不好。怪怪的。</p>
+<h3 id="第6条"><a href="#第6条" class="headerlink" title="第6条"></a>第6条</h3><p>第6条不用多说。既然你用php，文件名当然是得用<code>.php</code> 后缀结尾。这个规定的原因，我大致猜一下，估计是有人用 <code>.php3</code> 后缀的。好吧。这个是个神话了。因为在apache的配置文件中是允许的：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">IfModule</span> <span class="attr">dir_module</span>&gt;</span></span><br><span class="line">    DirectoryIndex index.php index.php3 index.html index.htm</span><br><span class="line"><span class="tag">&lt;/<span class="name">IfModule</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>所以，老老实实的用<code>.php</code>作为后缀名吧。</p>
+<h2 id="第7条"><a href="#第7条" class="headerlink" title="第7条"></a>第7条</h2><p>文件大小写的问题，这个其实是很重要的。因为Linux系统下是区分文件名和目录名大小写的，而在Windows下是不区分的。所以就会经常出现问题，比如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span>  \<span class="title">Doctrine</span>\<span class="title">Common</span>\<span class="title">IsolatedClassLoader</span></span><br></pre></td></tr></table></figure>
+<p>在Linux下就去严格按照大小写去找目录和文件了。但是如果你在Windows下开发，全是小写也不会报错，你一发布到Linux上就悲剧了，提示找不到文件。所以，大小写太重要了。</p>
+<h1 id="PSR-1-规范"><a href="#PSR-1-规范" class="headerlink" title="PSR-1 规范"></a>PSR-1 规范</h1><p>还是那句话，如果你英文比较好，可以直接看官网的这个：<a target="_blank" rel="noopener" href="http://www.php-fig.org/psr/psr-1">PSR-1</a>，也不长，基本能看懂。但是如果你英语不好，那么还是请继续往下看</p>
+<ol>
+<li>PHP源文件必须只使用 <code>&lt;?php</code> 和 <code>&lt;?=</code> 这两种标签。</li>
+<li>源文件中php代码的编码格式必须是不带字节顺序标记(BOM)的UTF-8。</li>
+<li>一个源文件建议只用来做声明（类(class)，函数(function)，常量(constant)等）或者只用来做一些引起副作用的操作（例如：输出信息，修改.ini配置等），但不建议同时做这两件事。</li>
+<li>命名空间(namespace)和类(class) 必须遵守PSR-0标准。</li>
+<li>类名(class name) 必须使用骆驼式(StudlyCaps)写法 (注：驼峰式(cameCase)的一种变种，后文将直接用StudlyCaps表示)。</li>
+<li>类(class)中的常量必须只由大写字母和下划线(<code>_</code>)组成。</li>
+<li>方法名(method name) 必须使用驼峰式(cameCase)写法。
+好，就是上面的基本7大点，有些很简单，就不过多说明，第3点需要仔细说下。</li>
+</ol>
+<h2 id="第1条-1"><a href="#第1条-1" class="headerlink" title="第1条"></a>第1条</h2><p>这个基本都是大家都懂得的，PHP代码必须只使用长标签(<code>&lt;?php ?&gt;</code>)或者短输出式标签(<code>&lt;?= ?&gt;</code>)；而不要使用其他标签。</p>
+<p>之所以说这个，是因为我们在学习PHP的时候，一般的教材都告诉我们说，php有4种标记风格：php的4种标记风格 所以，很多人就乱来了。特别是asp风格的简直是折磨好么！！！</p>
+<h2 id="第2条"><a href="#第2条" class="headerlink" title="第2条"></a>第2条</h2><p>这个不多说，保存的时候格式必须是无BOM的UTF-8格式，否则会出现很多无法解释的千奇百怪的问题。千万别傻逼的用Windows下的text文本编辑器保存文件啊</p>
+<h2 id="第3条"><a href="#第3条" class="headerlink" title="第3条"></a>第3条</h2><p>这个通俗的说呢。就是别把一些输出和修改的操作(副作用) 和 类文件混合在一起，专注一点，这个文件专门来声明Class, 那个文件专门来修改配置文件，别混在一起写：</p>
+<p>所以，以下的这个文件是有问题的，最好不要这样：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 副作用：修改了ini配置</span></span><br><span class="line">ini_set(<span class="string">&#x27;error_reporting&#x27;</span>, E_ALL);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 副作用：载入了文件</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">&quot;file.php&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 副作用：产生了输出</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;html&gt;\n&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 声明 function</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你看上面看起来多乱啊。最好全部分开来写:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">Lib</span>;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Name</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">__NAMESPACE__</span> . <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">__NAMESPACE__</span> . <span class="string">&#x27; static function test &lt;br&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改ini:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ini_set(<span class="string">&#x27;error_reporting&#x27;</span>, E_ALL);</span><br></pre></td></tr></table></figure>
+<p>require 文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> DIR . <span class="string">&#x27;/loading.php&#x27;</span>;</span><br><span class="line"> </span><br><span class="line">spl_autoload_register(<span class="string">&quot;\\AutoLoading\\loading::autoload&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>你看是不是整齐好看多了。当然这个是很难约束的。自己仔细划分。</p>
+<h2 id="第4条-1"><a href="#第4条-1" class="headerlink" title="第4条"></a>第4条</h2><p>第4条是约束namespace的，前面已经说过，不多说。值得说的是名字要是驼峰方式来</p>
+<h2 id="第5条-1"><a href="#第5条-1" class="headerlink" title="第5条"></a>第5条</h2><p>类名用大驼峰：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第6条-1"><a href="#第6条-1" class="headerlink" title="第6条"></a>第6条</h2><p>是规定类中的常量名(const)声明必须要全部大写，如果有多个单词，就用<code>_</code>分开：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// 全部大写</span></span><br><span class="line">    <span class="keyword">const</span> NAME = <span class="string">&#x27;phper&#x27;</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 用_隔开</span></span><br><span class="line">    <span class="keyword">const</span> HOUSE_INFO = <span class="string">&#x27;已经深圳买房&#x27;</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getUserName</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;​</span><br></pre></td></tr></table></figure>
+<h2 id="第7条-1"><a href="#第7条-1" class="headerlink" title="第7条"></a>第7条</h2><p>方法名用小驼峰：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserInfo</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getUserName</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="PSR-2-规范"><a href="#PSR-2-规范" class="headerlink" title="PSR-2 规范"></a>PSR-2 规范</h1><p>PSR-2 规范的官网链接在此：<a target="_blank" rel="noopener" href="http://www.php-fig.org/psr/psr-2/">PSR-2</a> 这一规范主要是约束代码风格的，可是说是所有里面最关键最重要的，也是需要好好规范和共同遵守的。</p>
+<p>我们一个个来看下，只能我大略的写一些比较重要的，或者说平时用的最多的。</p>
+<h2 id="1、源文件"><a href="#1、源文件" class="headerlink" title="1、源文件"></a>1、源文件</h2><ol>
+<li>文件末尾必须空一行。</li>
+<li>必须使用Unix LF(换行)作为行结束符。</li>
+<li>纯PHP代码源文件的关闭标签<code>?&gt;</code>必须省略。
+第3点其实是蛮重要的，我之前还老写闭合，现在不写了。这可以避免在 PHP 结束标记之后万一意外加入了空格或者换行符，会导致 PHP 开始输出这些空白，而脚本中此时并无输出的意图。</li>
+</ol>
+<h2 id="2、缩进"><a href="#2、缩进" class="headerlink" title="2、缩进"></a>2、缩进</h2><p>必须使用4个空格来缩进，不能使用Tab键。当然你如果把Tab在编辑器里手动设置为4个空格也可以。这样的目的是因为：每个人的机器上的Tab键都不一样，有些是4个空格，有些是8个空格，在你的机器上看着很爽的代码，在别人机器上了就各种恶心了。所以，统一搞成4个空格，不管在哪里打开都是美观的。</p>
+<h2 id="3、行"><a href="#3、行" class="headerlink" title="3、行"></a>3、行</h2><p>一行推荐的是最多写80个字符，多于这个字符就应该换行了，一般的编辑器是可以设置的。</p>
+<h2 id="4、关键字和-True-False-Null"><a href="#4、关键字和-True-False-Null" class="headerlink" title="4、关键字和 True/False/Null"></a>4、关键字和 True/False/Null</h2><p>php的关键字，必须小写，boolean值：<code>true</code>，<code>false</code>，<code>null</code> 也必须小写</p>
+<p>下面是php的keyword，必须小写。</p>
+<pre><code>&#39;__halt_compiler&#39;, &#39;abstract&#39;, &#39;and&#39;, &#39;array&#39;, &#39;as&#39;, &#39;break&#39;, &#39;callable&#39;, &#39;case&#39;, &#39;catch&#39;, &#39;class&#39;, &#39;clone&#39;, &#39;const&#39;, &#39;continue&#39;, &#39;declare&#39;, &#39;default&#39;, &#39;die&#39;, &#39;do&#39;, &#39;echo&#39;, &#39;else&#39;, &#39;elseif&#39;, &#39;empty&#39;, &#39;enddeclare&#39;, &#39;endfor&#39;, &#39;endforeach&#39;, &#39;endif&#39;, &#39;endswitch&#39;, &#39;endwhile&#39;, &#39;eval&#39;, &#39;exit&#39;, &#39;extends&#39;, &#39;final&#39;, &#39;for&#39;, &#39;foreach&#39;, &#39;function&#39;, &#39;global&#39;, &#39;goto&#39;, &#39;if&#39;, &#39;implements&#39;, &#39;include&#39;, &#39;include_once&#39;, &#39;instanceof&#39;, &#39;insteadof&#39;, &#39;interface&#39;, &#39;isset&#39;, &#39;list&#39;, &#39;namespace&#39;, &#39;new&#39;, &#39;or&#39;, &#39;print&#39;, &#39;private&#39;, &#39;protected&#39;, &#39;public&#39;, &#39;require&#39;, &#39;require_once&#39;, &#39;return&#39;, &#39;static&#39;, &#39;switch&#39;, &#39;throw&#39;, &#39;trait&#39;, &#39;try&#39;, &#39;unset&#39;, &#39;use&#39;, &#39;var&#39;, &#39;while&#39;, &#39;xor&#39;
+</code></pre>
+<h2 id="5、命名空间-Namespace-和导入-Use-声明"><a href="#5、命名空间-Namespace-和导入-Use-声明" class="headerlink" title="5、命名空间(Namespace)和导入(Use)声明"></a>5、命名空间(Namespace)和导入(Use)声明</h2><p>先简单文字描述下：</p>
+<ol>
+<li>命名空间(namespace)的声明后面必须有一行空行。</li>
+<li>所有的导入(use)声明必须放在命名空间(namespace)声明的下面。</li>
+<li>一句声明中，必须只有一个导入(use)关键字。</li>
+<li>在导入(use)声明代码块后面必须有一行空行。
+用代码来说明下：<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Lib</span>\<span class="title">Databases</span>; <span class="comment">// 下面必须空格一行</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mysql</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+namespace下空一行，才能使用use，再空一行，才能声明class<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Lib</span>\<span class="title">Databases</span>; <span class="comment">// 下面必须空格一行</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">use</span> <span class="title">FooInterface</span>; <span class="comment">// use 必须在namespace 后面声明</span></span><br><span class="line"><span class="keyword">use</span> <span class="title">BarClass</span> <span class="title">as</span> <span class="title">Bar</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">OtherVendor</span>\<span class="title">OtherPackage</span>\<span class="title">BazClass</span>; <span class="comment">// 下面必须空格一行</span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mysql</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="6、类-class-，属性-property-和方法-method"><a href="#6、类-class-，属性-property-和方法-method" class="headerlink" title="6、类(class)，属性(property)和方法(method)"></a>6、类(class)，属性(property)和方法(method)</h2>（1）、继承(extends) 和实现(implement) 必须和 class name 写在一行，切花括号要换行写。<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Lib</span>\<span class="title">Databaes</span>;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mysql</span> <span class="keyword">extends</span> <span class="title">ParentClass</span> <span class="keyword">implements</span> \<span class="title">PDO</span>, \<span class="title">DB</span> // 写一行</span></span><br><span class="line"><span class="class"></span>&#123; <span class="comment">// 换行写&#123;</span></span><br><span class="line">     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+（2）、属性(property)必须声明其可见性，到底是 public 还是 protected 还是 private，不能省略，也不能使用var, var是php老版本中的什么方式，等用于public。<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Lib</span>\<span class="title">Databaes</span>;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mysql</span> <span class="keyword">extends</span> <span class="title">ParentClass</span> <span class="keyword">implements</span> \<span class="title">PDO</span>, \<span class="title">DB</span> // 写一行</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$foo</span> = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$name</span> = <span class="string">&#x27;yangyi&#x27;</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$age</span> = <span class="string">&#x27;17&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+（3）、方法(method)，必须 声明其可见性，到底是 public 还是 protected 还是 private，不能省略。并且，花括号{必须换行写。如果有多个参数，第一个参数后紧接, ,再加个空格，且函数name和( 之间必须要有个空格：<code>function_name ($par, $par2, $pa3)</code>, 如果参数有默认值，也要用左右空格分开。<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Lib</span>\<span class="title">Databaes</span>;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mysql</span> <span class="keyword">extends</span> <span class="title">ParentClass</span> <span class="keyword">implements</span> \<span class="title">PDO</span>, \<span class="title">DB</span> // 写一行</span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> getInfo (<span class="variable">$name</span>, <span class="variable">$age</span>, <span class="variable">$gender</span> = <span class="number">1</span>) <span class="comment">// 函数名getInfo和(之间有个空格，参数之间也要有空格。默认参数也要左右都有空格</span></span><br><span class="line">    &#123; <span class="comment">// 必须换行写 &#123;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+（4）、当用到抽象(abstract)和终结(final)来做类声明时，它们必须放在可见性声明 （public 还是protected还是private）的前面。而当用到静态(static)来做类声明时，则必须放在可见性声明的后面。</li>
+</ol>
+<p>直接上代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Vendor</span>\<span class="title">Package</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassName</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="built_in">static</span> <span class="variable">$foo</span>; <span class="comment">// static放后面</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">zim</span>(<span class="params"></span>)</span>; <span class="comment">// abstract放前面</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">public</span> <span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) // <span class="title">final</span>放前面，<span class="title">static</span>放最后。</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 方法主体部分</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7、控制结构"><a href="#7、控制结构" class="headerlink" title="7、控制结构"></a>7、控制结构</h2><p>控制接口，就是 if else while switch等。这一类的写法规范也是经常容易出现问题的，也要规范一下。</p>
+<p>（1）、if，elseif，else写法，直接上规范代码吧：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$expr1</span>) &#123; <span class="comment">// 左右空格</span></span><br><span class="line">    <span class="comment">// if body</span></span><br><span class="line">&#125; <span class="keyword">elseif</span> (<span class="variable">$expr2</span>) &#123; <span class="comment">// elesif 连着写</span></span><br><span class="line">    <span class="comment">// elseif body</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// else body;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）、switch，case 注意左右空格和换行，还是直接上规范代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">switch</span> (<span class="variable">$expr</span>) &#123; <span class="comment">// 左右空格</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;First case, with a break&#x27;</span>; <span class="comment">// 对齐</span></span><br><span class="line">        <span class="keyword">break</span>; <span class="comment">// 换行写break，也对齐。</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;Second case, which falls through&#x27;</span>;</span><br><span class="line">        <span class="comment">// no break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;Third case, return instead of break&#x27;</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;Default case&#x27;</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（3）、while，do while 的写法也是类似，要左右空格，上代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$expr</span>) &#123; <span class="comment">// 左右空格</span></span><br><span class="line">    <span class="comment">// structure body</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="comment">// structure body; // 左右空格</span></span><br><span class="line">&#125; <span class="keyword">while</span> (<span class="variable">$expr</span>);</span><br></pre></td></tr></table></figure>
+<p>（4）、for的写法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="number">10</span>; <span class="variable">$i</span>++) &#123; <span class="comment">// 注意几个参数之间的空格</span></span><br><span class="line">    <span class="comment">// for body</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（5）、foreach的写法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$iterable</span> <span class="keyword">as</span> <span class="variable">$key</span> =&gt; <span class="variable">$value</span>) &#123; <span class="comment">// 还是空格问题</span></span><br><span class="line">    <span class="comment">// foreach body</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（6）、try catch的写法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// try body</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (FirstExceptionType <span class="variable">$e</span>) &#123; <span class="comment">// 同样也是注意空格。</span></span><br><span class="line">    <span class="comment">// catch body</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (OtherExceptionType <span class="variable">$e</span>) &#123;</span><br><span class="line">    <span class="comment">// catch body</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基本用到的就是这些了，其他什么闭包啥的用的不多就不过多的累述了。</p>
+<h1 id="PSR-3-规范"><a href="#PSR-3-规范" class="headerlink" title="PSR-3 规范"></a>PSR-3 规范</h1><p>PSR-3规范主要是来规范日志接口(Logger Interface)的，老实讲，其实平常接触的不是特别多，所以就不说了，可以去看官网的<a target="_blank" rel="noopener" href="http://www.php-fig.org/psr/psr-3/">PSR-3</a></p>
+<h1 id="PSR-4-规范"><a href="#PSR-4-规范" class="headerlink" title="PSR-4 规范"></a>PSR-4 规范</h1><p>PSR-4规范是刚出没多久的一条新的规范，它也是规范 自动加载(autoload)的，是对PSR-0的修改，属于补充规范，</p>
+<p>我简单说下，主要是以下几点： </p>
+<ol>
+<li><p>废除了PSR-0中<code>_</code>就是目录分割符的写法，<code>_</code>下划线在完全限定类名中是没有特殊含义了。 </p>
+</li>
+<li><p>类文件名要以 <code>.php</code> 结尾。 </p>
+</li>
+<li><p>类名必须要和对应的文件名要一模一样，大小写也要一模一样。</p>
+<h1 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h1></li>
+</ol>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zybuluo.com/phper/note/65033">https://www.zybuluo.com/phper/note/65033</a></li>
+<li><a target="_blank" rel="noopener" href="http://segmentfault.com/a/1190000000380008">http://segmentfault.com/a/1190000000380008</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.4wei.cn/archives/1002186">http://www.4wei.cn/archives/1002186</a></li>
+<li><a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/7a21e44b48d7c1c708a14577.html#10002-tsina-1-87843-e29b4784eda5d1f51fb0c2a97a15da08">http://wenku.baidu.com/view/7a21e44b48d7c1c708a14577.html#10002-tsina-1-87843-e29b4784eda5d1f51fb0c2a97a15da08</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/hfcorriez/fig-standards">https://github.com/hfcorriez/fig-standards</a></li>
+</ul>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/database-system-principle/">《数据库系统概论》【转】</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span><div class="content"><p><em>原文链接： <a target="_blank" rel="noopener" href="https://github.com/CyC2018/Interview-Notebook/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md">https://github.com/CyC2018/Interview-Notebook/blob/master/notes/数据库系统原理.md</a></em></p>
+<h1 id="一、事务"><a href="#一、事务" class="headerlink" title="一、事务"></a>一、事务</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/185b9c49-4c13-4241-a848-fbff85c03a64.png"></p>
+<p>事务指的是满足 ACID 特性的一系列操作。在数据库中，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。</p>
+<h2 id="四大特性"><a href="#四大特性" class="headerlink" title="四大特性"></a>四大特性</h2><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/09e6e8d4-4d83-4949-b908-6d6b4c2fd064.png"></p>
+<h3 id="1-原子性（Atomicity）"><a href="#1-原子性（Atomicity）" class="headerlink" title="1. 原子性（Atomicity）"></a>1. 原子性（Atomicity）</h3><p>事务被视为不可分割的最小单元，要么全部提交成功，要么全部失败回滚。</p>
+<h3 id="2-一致性（Consistency）"><a href="#2-一致性（Consistency）" class="headerlink" title="2. 一致性（Consistency）"></a>2. 一致性（Consistency）</h3><p>事务执行前后都保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的。</p>
+<h3 id="3-隔离性（Isolation）"><a href="#3-隔离性（Isolation）" class="headerlink" title="3. 隔离性（Isolation）"></a>3. 隔离性（Isolation）</h3><p>一个事务所做的修改在最终提交以前，对其它事务是不可见的。</p>
+<h3 id="4-持久性（Durability）"><a href="#4-持久性（Durability）" class="headerlink" title="4. 持久性（Durability）"></a>4. 持久性（Durability）</h3><p>一旦事务提交，则其所做的修改将会永远保存到数据库中。即使系统发生崩溃，事务执行的结果也不能丢失。可以通过数据库备份和恢复来保证持久性。</p>
+<h1 id="二、并发一致性问题"><a href="#二、并发一致性问题" class="headerlink" title="二、并发一致性问题"></a>二、并发一致性问题</h1><p>在并发环境下，一个事务如果受到另一个事务的影响，那么事务操作就无法满足一致性条件。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="1-丢失修改"><a href="#1-丢失修改" class="headerlink" title="1. 丢失修改"></a>1. 丢失修改</h3><p>T<sub>1</sub> 和 T<sub>2</sub> 两个事务都对一个数据进行修改，T<sub>1</sub> 先修改，T<sub>2</sub> 随后修改，T<sub>2</sub> 的修改覆盖了 T<sub>1</sub> 的修改。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/88ff46b3-028a-4dbb-a572-1f062b8b96d3.png"></p>
+<h3 id="2-读脏数据"><a href="#2-读脏数据" class="headerlink" title="2. 读脏数据"></a>2. 读脏数据</h3><p>T<sub>1</sub> 修改一个数据，T<sub>2</sub> 随后读取这个数据。如果 T<sub>1</sub> 撤销了这次修改，那么 T<sub>2</sub> 读取的数据是脏数据。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/dd782132-d830-4c55-9884-cfac0a541b8e.png"></p>
+<h3 id="3-不可重复读"><a href="#3-不可重复读" class="headerlink" title="3. 不可重复读"></a>3. 不可重复读</h3><p>T<sub>2</sub> 读取一个数据，T<sub>1</sub> 对该数据做了修改。如果 T<sub>2</sub> 再次读取这个数据，此时读取的结果和和第一次读取的结果不同。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c8d18ca9-0b09-441a-9a0c-fb063630d708.png"></p>
+<h3 id="4-幻影读"><a href="#4-幻影读" class="headerlink" title="4. 幻影读"></a>4. 幻影读</h3><p>T<sub>1</sub> 读取某个范围的数据，T<sub>2</sub> 在这个范围内插入新的数据，T<sub>1</sub> 再次读取这个范围的数据，此时读取的结果和和第一次读取的结果不同。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/688dacfe-1057-412f-b3a1-86abb5b0f914.png"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>产生并发不一致性问题主要原因是破坏了事务的隔离性，解决方法是通过并发控制来保证隔离性。</p>
+<p>在没有并发的情况下，事务以串行的方式执行，互不干扰，因此可以保证隔离性。在并发的情况下，如果能通过并发控制，让事务的执行结果和某一个串行执行的结果相同，就认为事务的执行结果满足隔离性要求，也就是说是正确的。把这种事务执行方式称为  <strong>可串行化调度</strong> 。</p>
+<p><strong>并发控制可以通过封锁来实现，但是封锁操作需要用户自己控制，相当复杂。数据库管理系统提供了事务的隔离级别，让用户以一种更轻松的方式处理并发一致性问题。</strong> </p>
+<h1 id="三、封锁"><a href="#三、封锁" class="headerlink" title="三、封锁"></a>三、封锁</h1><h2 id="封锁粒度"><a href="#封锁粒度" class="headerlink" title="封锁粒度"></a>封锁粒度</h2><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1a851e90-0d5c-4d4f-ac54-34c20ecfb903.jpg"></p>
+<p>应该尽量只锁定需要修改的那部分数据，而不是所有的资源。锁定的数据量越少，发生锁争用的可能就越小，系统的并发程度就越高。</p>
+<p>但是加锁需要消耗资源，锁的各种操作，包括获取锁，检查锁是否已经解除、释放锁，都会增加系统开销。因此封锁粒度越小，系统开销就越大。需要在锁开销以及数据安全性之间做一个权衡。</p>
+<p>MySQL 中提供了两种封锁粒度：行级锁以及表级锁。</p>
+<h2 id="封锁类型"><a href="#封锁类型" class="headerlink" title="封锁类型"></a>封锁类型</h2><h3 id="1-排它锁与共享锁"><a href="#1-排它锁与共享锁" class="headerlink" title="1. 排它锁与共享锁"></a>1. 排它锁与共享锁</h3><ul>
+<li>排它锁（Exclusive），简写为 X 锁，又称写锁。</li>
+<li>共享锁（Shared），简写为 S 锁，又称读锁。</li>
+</ul>
+<p>有以下两个规定：</p>
+<ol>
+<li>一个事务对数据对象 A 加了 X 锁，就可以对 A 进行读取和更新。加锁期间其它事务不能对 A 加任何锁。</li>
+<li>一个事务对数据对象 A 加了 S 锁，可以对 A 进行读取操作，但是不能进行更新操作。加锁期间其它事务能对 A 加 S 锁，但是不能加 X 锁。</li>
+</ol>
+<p>锁的兼容关系如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">-</th>
+<th align="center">X</th>
+<th align="center">S</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">X</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+</tr>
+</tbody></table>
+<h3 id="2-意向锁"><a href="#2-意向锁" class="headerlink" title="2. 意向锁"></a>2. 意向锁</h3><p>意向锁（Intention Locks）可以支持多粒度封锁。它本身是一个表锁，通过在原来的 X/S 锁之上引入了 IX/IS，用来表示一个事务想要在某个数据行上加 X 锁或 S 锁。</p>
+<p>有以下两个规定：</p>
+<ol>
+<li>一个事务在获得某个数据行对象的 S 锁之前，必须先获得 IS 锁或者更强的锁；</li>
+<li>一个事务在获得某个数据行对象的 X 锁之前，必须先获得 IX 锁。</li>
+</ol>
+<p>各种锁的兼容关系如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">-</th>
+<th align="center">X</th>
+<th align="center">IX</th>
+<th align="center">S</th>
+<th align="center">IS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">X</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">IX</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">S</td>
+<td align="center">No</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">IS</td>
+<td align="center">No</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+<td align="center">Yes</td>
+</tr>
+</tbody></table>
+<h2 id="封锁协议"><a href="#封锁协议" class="headerlink" title="封锁协议"></a>封锁协议</h2><h3 id="1-三级封锁协议"><a href="#1-三级封锁协议" class="headerlink" title="1. 三级封锁协议"></a>1. 三级封锁协议</h3><p><strong>一级封锁协议</strong> </p>
+<p>事务 T 要修改数据 A 时必须加 X 锁，直到 T 结束才释放锁。</p>
+<p>可以解决丢失修改问题，因为不能同时有两个事务对同一个数据进行修改，那么一个事务的修改就不会被覆盖。</p>
+<table>
+<thead>
+<tr>
+<th align="center">T<sub>1</sub></th>
+<th align="center">T<sub>1</sub></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">lock-x(A)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">read A=20</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">lock-x(A)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">wait</td>
+</tr>
+<tr>
+<td align="center">write A=19</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">commit</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">unlock-x(A)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">obtain</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">read A=19</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">write A=21</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">commit</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">unlock-x(A)</td>
+</tr>
+</tbody></table>
+<p><strong>二级封锁协议</strong> </p>
+<p>在一级的基础上，要求读取数据 A 时必须加 S 锁，读取完马上释放 S 锁。</p>
+<p>可以解决读脏数据问题，因为如果一个事务在对数据 A 进行修改，根据 1 级封锁协议，会加 X 锁，那么就不能再加 S 锁了，也就是不会读入数据。</p>
+<table>
+<thead>
+<tr>
+<th align="center">T<sub>1</sub></th>
+<th align="center">T<sub>1</sub></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">lock-x(A)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">read A=20</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">write A=19</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">lock-s(A)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">wait</td>
+</tr>
+<tr>
+<td align="center">rollback</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">A=20</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">unlock-x(A)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">obtain</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">read A=20</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">commit</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">unlock-s(A)</td>
+</tr>
+</tbody></table>
+<p><strong>三级封锁协议</strong> </p>
+<p>在二级的基础上，要求读取数据 A 时必须加 S 锁，直到事务结束了才能释放 S 锁。</p>
+<p>可以解决不可重复读的问题，因为读 A 时，其它事务不能对 A 加 X 锁，从而避免了在读的期间数据发生改变。</p>
+<table>
+<thead>
+<tr>
+<th align="center">T<sub>1</sub></th>
+<th align="center">T<sub>1</sub></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">lock-s(A)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">read A=20</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">lock-x(A)</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">wait</td>
+</tr>
+<tr>
+<td align="center">read A=20</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">commit</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">unlock-s(A)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">obtain</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">read A=20</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">write A=19</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">commit</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">unlock-X(A)</td>
+</tr>
+</tbody></table>
+<h3 id="2-两段锁协议"><a href="#2-两段锁协议" class="headerlink" title="2. 两段锁协议"></a>2. 两段锁协议</h3><p>加锁和解锁分为两个阶段进行，事务 T 对数据 A 进行读或者写操作之前，必须先获得对 A 的封锁，并且在释放一个封锁之后，T 不能再获得任何的其它锁。</p>
+<p>事务遵循两段锁协议是保证并发操作可串行化调度的充分条件。例如以下操作满足两段锁协议，它是可串行化调度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lock-x(A)...lock-s(B)...lock-s(c)...unlock(A)...unlock(C)...unlock(B)</span><br></pre></td></tr></table></figure>
+<p>但不是必要条件，例如以下操作不满足两段锁协议，但是它还是可串行化调度。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lock-x(A)...unlock(A)...lock-s(B)...unlock(B)...lock-s(c)...unlock(C)...</span><br></pre></td></tr></table></figure>
+<h1 id="四、隔离级别"><a href="#四、隔离级别" class="headerlink" title="四、隔离级别"></a>四、隔离级别</h1><p><font size=4>  <strong>1. 未提交读（READ UNCOMMITTED）</strong> </font> </br></p>
+<p>事务中的修改，即使没有提交，对其它事务也是可见的。</p>
+<p><font size=4>  <strong>2. 提交读（READ COMMITTED）</strong> </font> </br></p>
+<p>一个事务只能读取已经提交的事务所做的修改。换句话说，一个事务所做的修改在提交之前对其它事务是不可见的。</p>
+<p><font size=4>  <strong>3. 可重复读（REPEATABLE READ）</strong> </font> </br></p>
+<p>保证在同一个事务中多次读取同样数据的结果是一样的。</p>
+<p><font size=4>  <strong>4. 可串行化（SERIALIXABLE）</strong> </font> </br></p>
+<p>强制事务串行执行。</p>
+<p><font size=4>  <strong>四个隔离级别的对比</strong> </font> </br></p>
+<table>
+<thead>
+<tr>
+<th align="center">隔离级别</th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻影读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">未提交读</td>
+<td align="center">YES</td>
+<td align="center">YES</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td align="center">提交读</td>
+<td align="center">NO</td>
+<td align="center">YES</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td align="center">可重复读</td>
+<td align="center">NO</td>
+<td align="center">NO</td>
+<td align="center">YES</td>
+</tr>
+<tr>
+<td align="center">可串行化</td>
+<td align="center">NO</td>
+<td align="center">NO</td>
+<td align="center">NO</td>
+</tr>
+</tbody></table>
+<h1 id="五、多版本并发控制"><a href="#五、多版本并发控制" class="headerlink" title="五、多版本并发控制"></a>五、多版本并发控制</h1><p>（Multi-Version Concurrency Control, MVCC）是 MySQL 的 InnoDB 存储引擎实现隔离级别的一种具体方式，用于实现提交读和可重复读这两种隔离级别。而未提交读隔离级别总是读取最新的数据行，无需使用 MVCC；可串行化隔离级别需要对所有读取的行都加锁，单纯使用 MVCC 无法实现。</p>
+<h2 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h2><ul>
+<li>系统版本号：是一个递增的数字，每开始一个新的事务，系统版本号就会自动递增。</li>
+<li>事务版本号：事务开始时的系统版本号。</li>
+</ul>
+<p>InooDB 的 MVCC 在每行记录后面都保存着两个隐藏的列，用来存储两个版本号：</p>
+<ul>
+<li>创建版本号：指示创建一个数据行的快照时的系统版本号；</li>
+<li>删除版本号：如果该快照的删除版本号大于当前事务版本号表示该快照有效，否则表示该快照已经被删除了。</li>
+</ul>
+<h2 id="Undo-日志"><a href="#Undo-日志" class="headerlink" title="Undo 日志"></a>Undo 日志</h2><p>InnoDB 的 MVCC 使用到的快照存储在 Undo 日志中，该日志通过回滚指针把一个数据行（Record）的所有快照连接起来。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e41405a8-7c05-4f70-8092-e961e28d3112.jpg"></p>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>以下过程针对可重复读隔离级别。</p>
+<h3 id="1-SELECT"><a href="#1-SELECT" class="headerlink" title="1. SELECT"></a>1. SELECT</h3><p>该操作必须保证多个事务读取到同一个数据行的快照，这个快照是最近的一个有效快照。但是也有例外，如果有一个事务正在修改该数据行，那么它可以读取事务本身所做的修改，而不用和其它事务的读取结果一致。</p>
+<p>当开始新一个事务时，该事务的版本号肯定会大于当前所有数据行快照的创建版本号，理解这一点很关键。</p>
+<p>把没对一个数据行做修改的事务称为 T，T 所要读取的数据行快照的创建版本号必须小于 T 的版本号，因为如果大于或者等于 T 的版本号，那么表示该数据行快照是其它事务的最新修改，因此不能去读取它。</p>
+<p>除了上面的要求，T 所要读取的数据行快照的删除版本号必须大于 T 的版本号，因为如果小于等于 T 的版本号，那么表示该数据行快照是已经被删除的，不应该去读取它。</p>
+<h3 id="2-INSERT"><a href="#2-INSERT" class="headerlink" title="2. INSERT"></a>2. INSERT</h3><p>将系统版本号作为数据行快照的创建版本号。</p>
+<h3 id="3-DELETE"><a href="#3-DELETE" class="headerlink" title="3. DELETE"></a>3. DELETE</h3><p>将系统版本号作为数据行快照的删除版本号。</p>
+<h3 id="4-UPDATE"><a href="#4-UPDATE" class="headerlink" title="4. UPDATE"></a>4. UPDATE</h3><p>将系统版本号作为更新后的数据行快照的创建版本号，同时将系统版本号作为更新前的数据行快照的删除版本号。可以理解为先执行 DELETE 后执行 INSERT。</p>
+<h2 id="快照读与当前读"><a href="#快照读与当前读" class="headerlink" title="快照读与当前读"></a>快照读与当前读</h2><h3 id="1-快照读"><a href="#1-快照读" class="headerlink" title="1. 快照读"></a>1. 快照读</h3><p>读取快照中的数据。</p>
+<p>引入快照读的目的主要是为了免去加锁操作带来的性能开销，但是当前读需要加锁。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">table</span> ....;</span><br></pre></td></tr></table></figure>
+<h3 id="2-当前读"><a href="#2-当前读" class="headerlink" title="2. 当前读"></a>2. 当前读</h3><p>读取最新的数据。</p>
+<p>需要加锁，以下第一个语句加 S 锁，其它都加 X 锁。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> ? lock <span class="keyword">in</span> share mode;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> ? <span class="keyword">for</span> update;</span><br><span class="line"><span class="keyword">insert</span>;</span><br><span class="line">update ;</span><br><span class="line"><span class="keyword">delete</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="六、Next-Key-Locks"><a href="#六、Next-Key-Locks" class="headerlink" title="六、Next-Key Locks"></a>六、Next-Key Locks</h1><p>Next-Key Locks 也是 MySQL 的 InnoDB 存储引擎的一种锁实现。MVCC 不能解决幻读的问题，Next-Key Locks 就是为了解决这个问题而存在的。在可重复读隔离级别下，MVCC + Next-Key Locks，就可以防止幻读的出现。</p>
+<h2 id="Record-Locks"><a href="#Record-Locks" class="headerlink" title="Record Locks"></a>Record Locks</h2><p>锁定的对象是索引，而不是数据。如果表没有设置索引，InnoDB 会自动在主键上创建隐藏的聚集索引，因此 Record Locks 依然可以使用。</p>
+<h2 id="Grap-Locks"><a href="#Grap-Locks" class="headerlink" title="Grap Locks"></a>Grap Locks</h2><p>锁定一个范围内的索引，例如当一个事务执行以下语句，其它事务就不能在 t.c 中插入 15。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> c <span class="keyword">FROM</span> t <span class="keyword">WHERE</span> c <span class="keyword">BETWEEN</span> <span class="number">10</span> <span class="keyword">and</span> <span class="number">20</span> <span class="keyword">FOR</span> UPDATE;</span><br></pre></td></tr></table></figure>
+<h2 id="Next-Key-Locks"><a href="#Next-Key-Locks" class="headerlink" title="Next-Key Locks"></a>Next-Key Locks</h2><p>它是 Record Locks 和 Gap Locks 的结合。在 user 中有以下记录：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">|</span>   id <span class="operator">|</span> last_name   <span class="operator">|</span> first_name   <span class="operator">|</span>   age <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span><span class="comment">------|-------------|--------------|-------|</span></span><br><span class="line"><span class="operator">|</span>    <span class="number">4</span> <span class="operator">|</span> stark       <span class="operator">|</span> tony         <span class="operator">|</span>    <span class="number">21</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>    <span class="number">1</span> <span class="operator">|</span> tom         <span class="operator">|</span> hiddleston   <span class="operator">|</span>    <span class="number">30</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>    <span class="number">3</span> <span class="operator">|</span> morgan      <span class="operator">|</span> freeman      <span class="operator">|</span>    <span class="number">40</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>    <span class="number">5</span> <span class="operator">|</span> jeff        <span class="operator">|</span> dean         <span class="operator">|</span>    <span class="number">50</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>    <span class="number">2</span> <span class="operator">|</span> donald      <span class="operator">|</span> trump        <span class="operator">|</span>    <span class="number">80</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">------|-------------|--------------|-------+</span></span><br></pre></td></tr></table></figure>
+<p>那么就需要锁定以下范围：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(<span class="operator">-</span>∞, <span class="number">21</span>]</span><br><span class="line">(<span class="number">21</span>, <span class="number">30</span>]</span><br><span class="line">(<span class="number">30</span>, <span class="number">40</span>]</span><br><span class="line">(<span class="number">40</span>, <span class="number">50</span>]</span><br><span class="line">(<span class="number">50</span>, <span class="number">80</span>]</span><br><span class="line">(<span class="number">80</span>, ∞)</span><br></pre></td></tr></table></figure>
+<h1 id="七、关系数据库设计理论"><a href="#七、关系数据库设计理论" class="headerlink" title="七、关系数据库设计理论"></a>七、关系数据库设计理论</h1><h2 id="函数依赖"><a href="#函数依赖" class="headerlink" title="函数依赖"></a>函数依赖</h2><p>记 A-&gt;B 表示 A 函数决定 B，也可以说 B 函数依赖于 A。</p>
+<p>如果 {A1，A2，… ，An} 是关系的一个或多个属性的集合，该集合决定了关系的其它所有属性并且是最小的，那么该集合就称为键码。</p>
+<p>对于 W-&gt;A，如果能找到 W 的真子集 W’，使得 W’-&gt; A，那么 W-&gt;A 就是部分函数依赖，否则就是完全函数依赖；</p>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>以下的学生课程关系的函数依赖为 Sno, Cname -&gt; Sname, Sdept, Mname, Grade，键码为 {Sno, Cname}。也就是说，确定学生和课程之后，就能确定其它信息。</p>
+<table>
+<thead>
+<tr>
+<th align="center">Sno</th>
+<th align="center">Sname</th>
+<th align="center">Sdept</th>
+<th align="center">Mname</th>
+<th align="center">Cname</th>
+<th align="center">Grade</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">学生-1</td>
+<td align="center">学院-1</td>
+<td align="center">院长-1</td>
+<td align="center">课程-1</td>
+<td align="center">90</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">学生-2</td>
+<td align="center">学院-2</td>
+<td align="center">院长-2</td>
+<td align="center">课程-2</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">学生-2</td>
+<td align="center">学院-2</td>
+<td align="center">院长-2</td>
+<td align="center">课程-1</td>
+<td align="center">100</td>
+</tr>
+</tbody></table>
+<p>不符合范式的关系，会产生很多异常，主要有以下四种异常：</p>
+<ol>
+<li>冗余数据，例如学生-2 出现了两次。</li>
+<li>修改异常，修改了一个记录中的信息，但是另一个记录中相同的信息却没有被修改。</li>
+<li>删除异常，删除一个信息，那么也会丢失其它信息。例如如果删除了课程-1，需要删除第一行和第三行，那么学生-1 的信息就会丢失。</li>
+<li>插入异常，例如想要插入一个学生的信息，如果这个学生还没选课，那么就无法插入。</li>
+</ol>
+<h2 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h2><p>范式理论是为了解决以上提到四种异常。高级别范式的依赖于低级别的范式。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c2d343f7-604c-4856-9a3c-c71d6f67fecc.png"></p>
+<h3 id="1-第一范式-1NF"><a href="#1-第一范式-1NF" class="headerlink" title="1. 第一范式 (1NF)"></a>1. 第一范式 (1NF)</h3><p>属性不可分；</p>
+<h3 id="2-第二范式-2NF"><a href="#2-第二范式-2NF" class="headerlink" title="2. 第二范式 (2NF)"></a>2. 第二范式 (2NF)</h3><p>每个非主属性完全函数依赖于键码。</p>
+<p>可以通过分解来满足。</p>
+<p><font size=4> <strong>分解前</strong> </font><br></p>
+<table>
+<thead>
+<tr>
+<th align="center">Sno</th>
+<th align="center">Sname</th>
+<th align="center">Sdept</th>
+<th align="center">Mname</th>
+<th align="center">Cname</th>
+<th align="center">Grade</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">学生-1</td>
+<td align="center">学院-1</td>
+<td align="center">院长-1</td>
+<td align="center">课程-1</td>
+<td align="center">90</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">学生-2</td>
+<td align="center">学院-2</td>
+<td align="center">院长-2</td>
+<td align="center">课程-2</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">学生-2</td>
+<td align="center">学院-2</td>
+<td align="center">院长-2</td>
+<td align="center">课程-1</td>
+<td align="center">100</td>
+</tr>
+</tbody></table>
+<p>以上学生课程关系中，{Sno, Cname} 为键码，有如下函数依赖：</p>
+<ul>
+<li>Sno, Cname -&gt; Sname, Sdept, Mname</li>
+<li>Son -&gt; Sname, Sdept</li>
+<li>Sdept -&gt; Mname</li>
+<li>Sno -&gt; Manme</li>
+<li>Sno, Cname-&gt; Grade</li>
+</ul>
+<p>Grade 完全函数依赖于键码，它没有任何冗余数据，每个学生的每门课都有特定的成绩。</p>
+<p>Sname, Sdept 和 Manme 都函数依赖于 Sno，而部分依赖于键码。当一个学生选修了多门课时，这些数据就会出现多次，造成大量冗余数据。</p>
+<p><font size=4> <strong>分解后</strong> </font><br></p>
+<p>关系-1</p>
+<table>
+<thead>
+<tr>
+<th align="center">Sno</th>
+<th align="center">Sname</th>
+<th align="center">Sdept</th>
+<th align="center">Mname</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">学生-1</td>
+<td align="center">学院-1</td>
+<td align="center">院长-1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">学生-2</td>
+<td align="center">学院-2</td>
+<td align="center">院长-2</td>
+</tr>
+</tbody></table>
+<p>有以下函数依赖：</p>
+<ul>
+<li>Sno -&gt; Sname, Sdept, Mname</li>
+<li>Sdept -&gt; Mname</li>
+</ul>
+<p>关系-2</p>
+<table>
+<thead>
+<tr>
+<th align="center">Sno</th>
+<th align="center">Cname</th>
+<th align="center">Grade</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">课程-1</td>
+<td align="center">90</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">课程-2</td>
+<td align="center">80</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">课程-1</td>
+<td align="center">100</td>
+</tr>
+</tbody></table>
+<p>有以下函数依赖：</p>
+<ul>
+<li>Sno, Cname -&gt;  Grade</li>
+</ul>
+<h3 id="3-第三范式-3NF"><a href="#3-第三范式-3NF" class="headerlink" title="3. 第三范式 (3NF)"></a>3. 第三范式 (3NF)</h3><p>非主属性不传递依赖于键码。</p>
+<p>上面的关系-1 中存在以下传递依赖：Sno -&gt; Sdept -&gt; Mname，可以进行以下分解：</p>
+<p>关系-11</p>
+<table>
+<thead>
+<tr>
+<th align="center">Sno</th>
+<th align="center">Sname</th>
+<th align="center">Sdept</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">学生-1</td>
+<td align="center">学院-1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">学生-2</td>
+<td align="center">学院-2</td>
+</tr>
+</tbody></table>
+<p>关系-12</p>
+<table>
+<thead>
+<tr>
+<th align="center">Sdept</th>
+<th align="center">Mname</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">学院-1</td>
+<td align="center">院长-1</td>
+</tr>
+<tr>
+<td align="center">学院-2</td>
+<td align="center">院长-2</td>
+</tr>
+</tbody></table>
+<h3 id="4-BC-范式（BCNF）"><a href="#4-BC-范式（BCNF）" class="headerlink" title="4. BC 范式（BCNF）"></a>4. BC 范式（BCNF）</h3><p>所有属性不传递依赖于键码。</p>
+<p>关系 STC(Sname, Tname, Cname, Grade) 的四个属性分别为学生姓名、教师姓名、课程名和成绩，它的键码为 (Sname, Cname, Tname)，有以下函数依赖：</p>
+<ul>
+<li>Sname, Cname -&gt; Tname</li>
+<li>Sname, Cname -&gt; Grade</li>
+<li>Sname, Tname -&gt; Cname</li>
+<li>Sname, Tname -&gt; Grade</li>
+<li>Tname -&gt; Cname</li>
+</ul>
+<p>存在着以下函数传递依赖：</p>
+<ul>
+<li>Sname -&gt; Tname -&gt; Cname</li>
+</ul>
+<p>可以分解成 SC(Sname, Cname, Grade) 和 ST(Sname, Tname)，对于 ST，属性之间是多对多关系，无函数依赖。</p>
+<h1 id="八、数据库系统概述"><a href="#八、数据库系统概述" class="headerlink" title="八、数据库系统概述"></a>八、数据库系统概述</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><h3 id="1-数据模型"><a href="#1-数据模型" class="headerlink" title="1. 数据模型"></a>1. 数据模型</h3><p>由数据结构、数据操作和完整性三个要素组成。</p>
+<h3 id="2-数据库系统"><a href="#2-数据库系统" class="headerlink" title="2. 数据库系统"></a>2. 数据库系统</h3><p>数据库系统包含所有与数据库相关的内容，包括数据库、数据库管理系统、应用程序以及数据库管理员和用户，还包括相关的硬件和软件。</p>
+<h2 id="数据库的三层模式和两层映像"><a href="#数据库的三层模式和两层映像" class="headerlink" title="数据库的三层模式和两层映像"></a>数据库的三层模式和两层映像</h2><ul>
+<li>外模式：局部逻辑结构</li>
+<li>模式：全局逻辑结构</li>
+<li>内模式：物理结构</li>
+</ul>
+<p>![](<a target="_blank" rel="noopener" href="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/20150928140509757.png&quot;">https://github.com/CyC2018/Interview-Notebook/raw/master/pics/20150928140509757.png&quot;</a> width=”600)</p>
+<h3 id="1-外模式"><a href="#1-外模式" class="headerlink" title="1. 外模式"></a>1. 外模式</h3><p>又称用户模式，是用户和数据库系统的接口，特定的用户只能访问数据库系统提供给他的外模式中的数据。例如不同的用户创建了不同数据库，那么一个用户只能访问他有权限访问的数据库。</p>
+<p>一个数据库可以有多个外模式，一个用户只能有一个外模式，但是一个外模式可以给多个用户使用。</p>
+<h3 id="2-模式"><a href="#2-模式" class="headerlink" title="2. 模式"></a>2. 模式</h3><p>可以分为概念模式和逻辑模式，概念模式可以用概念-关系来描述；逻辑模式使用特定的数据模式（比如关系模型）来描述数据的逻辑结构，这种逻辑结构包括数据的组成、数据项的名称、类型、取值范围。不仅如此，逻辑模式还要描述数据之间的关系、数据的完整性与安全性要求。</p>
+<h3 id="3-内模式"><a href="#3-内模式" class="headerlink" title="3. 内模式"></a>3. 内模式</h3><p>又称为存储模式，描述记录的存储方式，例如索引的组织方式、数据是否压缩以及是否加密等等。</p>
+<h3 id="4-外模式-模式映像"><a href="#4-外模式-模式映像" class="headerlink" title="4. 外模式/模式映像"></a>4. 外模式/模式映像</h3><p>把外模式的局部逻辑结构和模式的全局逻辑结构联系起来。该映像可以保证数据和应用程序的逻辑独立性。</p>
+<h3 id="5-模式-内模式映像"><a href="#5-模式-内模式映像" class="headerlink" title="5. 模式/内模式映像"></a>5. 模式/内模式映像</h3><p>把模式的全局逻辑结构和内模式的物理结构联系起来，该映像可以保证数据和应用程序的物理独立性。</p>
+<h1 id="九、关系数据库建模"><a href="#九、关系数据库建模" class="headerlink" title="九、关系数据库建模"></a>九、关系数据库建模</h1><h2 id="ER-图"><a href="#ER-图" class="headerlink" title="ER 图"></a>ER 图</h2><p>Entity-Relationship，有三个组成部分：实体、属性、联系。</p>
+<h3 id="1-实体的三种联系"><a href="#1-实体的三种联系" class="headerlink" title="1. 实体的三种联系"></a>1. 实体的三种联系</h3><p>联系包含一对一，一对多，多对多三种。</p>
+<p>如果 A 到 B 是一对多关系，那么画个带箭头的线段指向 B；如果是一对一，画两个带箭头的线段；如果是多对多，画两个不带箭头的线段。下图的 Course 和 Student 是一对多的关系。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/292b4a35-4507-4256-84ff-c218f108ee31.jpg"></p>
+<h3 id="2-表示出现多次的关系"><a href="#2-表示出现多次的关系" class="headerlink" title="2. 表示出现多次的关系"></a>2. 表示出现多次的关系</h3><p>一个实体在联系出现几次，就要用几条线连接。下图表示一个课程的先修关系，先修关系出现两个 Course 实体，第一个是先修课程，后一个是后修课程，因此需要用两条线来表示这种关系。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/8b798007-e0fb-420c-b981-ead215692417.jpg"></p>
+<h3 id="3-联系的多向性"><a href="#3-联系的多向性" class="headerlink" title="3. 联系的多向性"></a>3. 联系的多向性</h3><p>虽然老师可以开设多门课，并且可以教授多名学生，但是对于特定的学生和课程，只有一个老师教授，这就构成了一个三元联系。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/423f2a40-bee1-488e-b460-8e76c48ee560.png"></p>
+<p>一般只使用二元联系，可以把多元关系转换为二元关系。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/de9b9ea0-1327-4865-93e5-6f805c48bc9e.png"></p>
+<h3 id="4-表示子类"><a href="#4-表示子类" class="headerlink" title="4. 表示子类"></a>4. 表示子类</h3><p>用一个三角形和两条线来连接类和子类，与子类有关的属性和联系都连到子类上，而与父类和子类都有关的连到父类上。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7ec9d619-fa60-4a2b-95aa-bf1a62aad408.jpg"></p>
+<h1 id="十、约束"><a href="#十、约束" class="headerlink" title="十、约束"></a>十、约束</h1><h2 id="1-键码"><a href="#1-键码" class="headerlink" title="1. 键码"></a>1. 键码</h2><p>用于唯一表示一个实体。</p>
+<p>键码可以由多个属性构成，每个构成键码的属性称为码。</p>
+<h2 id="2-单值约束"><a href="#2-单值约束" class="headerlink" title="2. 单值约束"></a>2. 单值约束</h2><p>某个属性的值是唯一的。</p>
+<h2 id="3-引用完整性约束"><a href="#3-引用完整性约束" class="headerlink" title="3. 引用完整性约束"></a>3. 引用完整性约束</h2><p>一个实体的属性引用的值在另一个实体的某个属性中存在。</p>
+<h2 id="4-域约束"><a href="#4-域约束" class="headerlink" title="4. 域约束"></a>4. 域约束</h2><p>某个属性的值在特定范围之内。</p>
+<h2 id="5-一般约束"><a href="#5-一般约束" class="headerlink" title="5. 一般约束"></a>5. 一般约束</h2><p>比如大小约束，数量约束。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>史嘉权. 数据库系统概论[M]. 清华大学出版社有限公司, 2006.</li>
+<li>施瓦茨. 高性能 MYSQL(第3版)[M]. 电子工业出版社, 2013.</li>
+<li><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/5.7/en/innodb-storage-engine.html">The InnoDB Storage Engine</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.slideshare.net/ErnestoHernandezRodriguez/transaction-isolation-levels">Transaction isolation levels</a></li>
+<li><a target="_blank" rel="noopener" href="http://scanftree.com/dbms/2-phase-locking-protocol">Concurrency Control</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.slideshare.net/brshristov/the-nightmare-of-locking-blocking-and-isolation-levels-46391666">The Nightmare of Locking, Blocking and Isolation Levels!</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/d2457638978/article/details/48783923">三级模式与两级映像</a></li>
+<li><a target="_blank" rel="noopener" href="https://aksakalli.github.io/2012/03/12/database-normalization-and-normal-forms-with-an-example.html">Database Normalization and Normal Forms with an Example</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.jcole.us/2014/04/16/the-basics-of-the-innodb-undo-logging-and-history-system/">The basics of the InnoDB undo logging and history system</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.brightbox.com/blog/2013/10/31/on-mysql-locks/">MySQL locking for the busy web developer</a></li>
+<li><a target="_blank" rel="noopener" href="https://draveness.me/mysql-innodb">浅入浅出 MySQL 和 InnoDB</a></li>
+<li><a target="_blank" rel="noopener" href="https://tech.meituan.com/innodb-lock.html">fd945daf-4a6c-4f20-b9c2-5390f5955ce5.jpg</a></li>
+</ul>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/high-performance-mysql/">《高性能 MySQL》【转】</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/MySQL/">MySQL</a></span><div class="content"><p><em>原文链接： <a target="_blank" rel="noopener" href="https://github.com/CyC2018/Interview-Notebook/blob/master/notes/MySQL.md">https://github.com/CyC2018/Interview-Notebook/blob/master/notes/MySQL.md</a></em></p>
+<h1 id="一、存储引擎"><a href="#一、存储引擎" class="headerlink" title="一、存储引擎"></a>一、存储引擎</h1><h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><p>InnoDB 是 MySQL 默认的事务型存储引擎，只有在需要 InnoDB 不支持的特性时，才考虑使用其它存储引擎。</p>
+<p>采用 MVCC 来支持高并发，并且实现了四个标准的隔离级别，默认级别是可重复读。</p>
+<p>表是基于聚簇索引建立的，它对主键的查询性能有很高的提升。</p>
+<p>内部做了很多优化，包括从磁盘读取数据时采用的可预测性读、能够自动在内存中创建哈希索引以加速读操作的自适应哈希索引、能够加速插入操作的插入缓冲区等。</p>
+<p>通过一些机制和工具支持真正的热备份。</p>
+<h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><p>MyISAM 提供了大量的特性，包括全文索引、压缩、空间函数（GIS）等。但 MyISAM 不支持事务和行级锁，而且崩溃后无法安全恢复。应该注意的是，MySQL5.6.4 添加了对 InnoDB 引擎的全文索引支持。</p>
+<p>只能对整张表加锁，而不是针对行。</p>
+<p>可以手工或者自动执行检查和修复操作，但是和事务恢复以及崩溃恢复不同，可能导致一些数据丢失，而且修复操作是非常慢的。</p>
+<p>可以包含动态或者静态的行。</p>
+<p>如果指定了 DELAY_KEY_WRITE 选项，在每次修改执行完成时，不会立即将修改的索引数据写入磁盘，而是会写到内存中的键缓冲区，只有在清理键缓冲区或者关闭表的时候才会将对应的索引块写入磁盘。这种方式可以极大的提升写入性能，但是在数据库或者主机崩溃时会造成索引损坏，需要执行修复操作。</p>
+<p>如果表在创建并导入数据以后，不会再进行修改操作，那么这样的表适合采用 MyISAM 压缩表。</p>
+<p>对于只读数据，或者表比较小、可以容忍修复操作，则依然可以继续使用 MyISAM。</p>
+<p>MyISAM 设计简单，数据以紧密格式存储，所以在某些场景下性能很好。</p>
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><ol>
+<li>事务：InnoDB 是事务型的。</li>
+<li>备份：InnoDB 支持在线热备份。</li>
+<li>崩溃恢复：MyISAM 崩溃后发生损坏的概率比 InnoDB 高很多，而且恢复的速度也更慢。</li>
+<li>并发：MyISAM 只支持表级锁，而 InnoDB 还支持行级锁。</li>
+<li>其它特性：MyISAM 支持，地理空间索引。</li>
+</ol>
+<h1 id="二、数据类型"><a href="#二、数据类型" class="headerlink" title="二、数据类型"></a>二、数据类型</h1><h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p>TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT 分别使用 8, 16, 24, 32, 64 位存储空间，一般情况下越小的列越好。</p>
+<p>INT(11) 中的数字只是规定了交互工具显示字符的个数，对于存储和计算来说是没有意义的。</p>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>FLOAT 和 DOUBLE 为浮点类型，DECIMAL 为高精度小数类型。CPU 原生支持浮点运算，但是不支持 DECIMAl 类型的计算，因此 DECIMAL 的计算比浮点类型需要更高的代价。</p>
+<p>FLOAT、DOUBLE 和 DECIMAL 都可以指定列宽，例如 DECIMAL(18, 9) 表示总共 18 位，取 9 位存储小数部分，剩下 9 位存储整数部分。</p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>主要有 CHAR 和 VARCHAR 两种类型，一种是定长的，一种是变长的。</p>
+<p>VARCHAR 这种变长类型能够节省空间，因为只需要存储必要的内容。但是在执行 UPDATE 时可能会使行变得比原来长，当超出一个页所能容纳的大小时，就要执行额外的操作。MyISAM 会将行拆成不同的片段存储，而 InnoDB 则需要分裂页来使行放进页内。</p>
+<p>VARCHAR 会保留字符串末尾的空格，而 CHAR 会删除。</p>
+<p><em>VARCHAR 的长度表示的是字符的数量，而不是字节数。MySQL 屏蔽了底层的编码细节。</em></p>
+<h2 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h2><p>MySQL 提供了两种相似的日期时间类型：DATATIME 和 TIMESTAMP。</p>
+<h3 id="1-DATATIME"><a href="#1-DATATIME" class="headerlink" title="1. DATATIME"></a>1. DATATIME</h3><p>能够保存从 1001 年到 9999 年的日期和时间，精度为秒，使用 8 字节的存储空间。</p>
+<p>它与时区无关。</p>
+<p>默认情况下，MySQL 以一种可排序的、无歧义的格式显示 DATATIME 值，例如“2008-01-16 22:37:08”，这是 ANSI 标准定义的日期和时间表示方法。</p>
+<h3 id="2-TIMESTAMP"><a href="#2-TIMESTAMP" class="headerlink" title="2. TIMESTAMP"></a>2. TIMESTAMP</h3><p>和 UNIX 时间戳相同，保存从 1970 年 1 月 1 日午夜（格林威治时间）以来的秒数，使用 4 个字节，只能表示从 1970 年 到 2038 年。</p>
+<p>它和时区有关。</p>
+<p>MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提供了 UNIX_TIMESTAMP() 函数把日期转换为 UNIX 时间戳。</p>
+<p>默认情况下，如果插入时没有指定 TIMESTAMP 列的值，会将这个值设置为当前时间。</p>
+<p>应该尽量使用 TIMESTAMP，因为它比 DATETIME 空间效率更高。</p>
+<h1 id="三、索引"><a href="#三、索引" class="headerlink" title="三、索引"></a>三、索引</h1><p>索引是在存储引擎层实现的，而不是在服务器层实现的，所以不同存储引擎具有不同的索引类型和实现。</p>
+<p>索引能够轻易将查询性能提升几个数量级。</p>
+<p>对于非常小的表、大部分情况下简单的全表扫描比建立索引更高效。对于中到大型的表，索引就非常有效。但是对于特大型的表，建立和使用索引的代价将会随之增长。这种情况下，需要用到一种技术可以直接区分出需要查询的一组数据，而不是一条记录一条记录地匹配，例如可以使用分区技术。</p>
+<h2 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h2><h3 id="1-B-Tree-索引"><a href="#1-B-Tree-索引" class="headerlink" title="1. B+Tree 索引"></a>1. B+Tree 索引</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c23957e9-a572-44f8-be15-f306c8b92722.jpg"></p>
+<p>《高性能 MySQL》一书使用 B-Tree 进行描述，其实从技术上来说这种索引是 B+Tree。</p>
+<p>B+Tree 索引是大多数 MySQL 存储引擎的默认索引类型。</p>
+<p>因为不再需要进行全表扫描，只需要对树进行搜索即可，因此查找速度快很多。</p>
+<p>可以指定多个列作为索引列，多个索引列共同组成键。B+Tree 索引适用于全键值、键值范围和键前缀查找，其中键前缀查找只适用于最左前缀查找。</p>
+<p>除了用于查找，还可以用于排序和分组。</p>
+<p>如果不是按照索引列的顺序进行查找，则无法使用索引。</p>
+<h3 id="2-哈希索引"><a href="#2-哈希索引" class="headerlink" title="2. 哈希索引"></a>2. 哈希索引</h3><p>基于哈希表实现，优点是查找非常快。</p>
+<p>在 MySQL 中只有 Memory 引擎显式支持哈希索引。</p>
+<p>InnoDB 引擎有一个特殊的功能叫“自适应哈希索引”，当某个索引值被使用的非常频繁时，会在 B+Tree 索引之上再创建一个哈希索引，这样就让 B+Tree 索引具有哈希索引的一些优点，比如快速的哈希查找。</p>
+<p>限制：哈希索引只包含哈希值和行指针，而不存储字段值，所以不能使用索引中的值来避免读取行。不过，访问内存中的行的速度很快，所以大部分情况下这一点对性能影响并不明显；无法用于分组与排序；只支持精确查找，无法用于部分查找和范围查找；如果哈希冲突很多，查找速度会变得很慢。</p>
+<h3 id="3-空间索引（R-Tree）"><a href="#3-空间索引（R-Tree）" class="headerlink" title="3. 空间索引（R-Tree）"></a>3. 空间索引（R-Tree）</h3><p>MyISAM 存储引擎支持空间索引，可以用于地理数据存储。</p>
+<p>空间索引会从所有维度来索引数据，可以有效地使用任意维度来进行组合查询。</p>
+<h3 id="4-全文索引"><a href="#4-全文索引" class="headerlink" title="4. 全文索引"></a>4. 全文索引</h3><p>MyISAM 存储引擎支持全文索引，用于查找文本中的关键词，而不是直接比较索引中的值。</p>
+<p>使用 MATCH AGAINST，而不是普通的 WHERE。</p>
+<h2 id="索引的优点"><a href="#索引的优点" class="headerlink" title="索引的优点"></a>索引的优点</h2><ul>
+<li><p>大大减少了服务器需要扫描的数据量；</p>
+</li>
+<li><p>帮助服务器避免进行排序和创建临时表；</p>
+</li>
+<li><p>将随机 I/O 变为顺序 I/O。</p>
+</li>
+</ul>
+<h2 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h2><h3 id="1-独立的列"><a href="#1-独立的列" class="headerlink" title="1. 独立的列"></a>1. 独立的列</h3><p>在进行查询时，索引列不能是表达式的一部分，也不能是函数的参数，否则无法使用索引。</p>
+<p>例如下面的查询不能使用 actor_id 列的索引：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> actor_id <span class="keyword">FROM</span> sakila.actor <span class="keyword">WHERE</span> actor_id <span class="operator">+</span> <span class="number">1</span> <span class="operator">=</span> <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="2-前缀索引"><a href="#2-前缀索引" class="headerlink" title="2. 前缀索引"></a>2. 前缀索引</h3><p>对于 BLOB、TEXT 和 VARCHAR 类型的列，必须使用前缀索引，只索引开始的部分字符。</p>
+<p>对于前缀长度的选取需要根据  <strong>索引选择性</strong>  来确定：不重复的索引值和记录总数的比值。选择性越高，查询效率也越高。最大值为 1，此时每个记录都有唯一的索引与其对应。</p>
+<h3 id="3-多列索引"><a href="#3-多列索引" class="headerlink" title="3. 多列索引"></a>3. 多列索引</h3><p>在需要使用多个列作为条件进行查询时，使用多列索引比使用多个单列索引性能更好。例如下面的语句中，最好把 actor_id 和 film_id 设置为多列索引。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> film_id, actor_ id <span class="keyword">FROM</span> sakila.film_actor</span><br><span class="line"><span class="keyword">WhERE</span> actor_id <span class="operator">=</span> <span class="number">1</span> <span class="keyword">AND</span> film_id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="4-索引列的顺序"><a href="#4-索引列的顺序" class="headerlink" title="4. 索引列的顺序"></a>4. 索引列的顺序</h3><p>让选择性最强的索引列放在前面，例如下面显示的结果中 customer_id 的选择性比 staff_id 更高，因此最好把 customer_id 列放在多列索引的前面。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> staff_id)<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> staff_id_selectivity,</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> customer_id)<span class="operator">/</span><span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> customer_id_selectivity,</span><br><span class="line"><span class="built_in">COUNT</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">FROM</span> payment;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   staff_id_selectivity: 0.0001</span><br><span class="line">customer_id_selectivity: 0.0373</span><br><span class="line">               COUNT(*): 16049</span><br></pre></td></tr></table></figure>
+<h3 id="5-聚簇索引"><a href="#5-聚簇索引" class="headerlink" title="5. 聚簇索引"></a>5. 聚簇索引</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e800b001-7779-495b-8459-d33a7440d7b8.jpg"></p>
+<p>聚簇索引并不是一种索引类型，而是一种数据存储方式。</p>
+<p>术语“聚簇”表示数据行和相邻的键值紧密地存储在一起，InnoDB 的聚簇索引的数据行存放在 B+Tree 的叶子页中。</p>
+<p>因为无法把数据行存放在两个不同的地方，所以一个表只能有一个聚簇索引。</p>
+<p><strong>优点</strong> </p>
+<ol>
+<li>可以把相关数据保存在一起，减少 I/O 操作；</li>
+<li>因为数据保存在 B+Tree 中，因此数据访问更快。</li>
+</ol>
+<p><strong>缺点</strong> </p>
+<ol>
+<li>聚簇索引最大限度提高了 I/O 密集型应用的性能，但是如果数据全部放在内存，就没必要用聚簇索引。</li>
+<li>插入速度严重依赖于插入顺序，按主键的顺序插入是最快的。</li>
+<li>更新操作代价很高，因为每个被更新的行都会移动到新的位置。</li>
+<li>当插入到某个已满的页中，存储引擎会将该页分裂成两个页面来容纳该行，页分裂会导致表占用更多的磁盘空间。</li>
+<li>如果行比较稀疏，或者由于页分裂导致数据存储不连续时，聚簇索引可能导致全表扫描速度变慢。</li>
+</ol>
+<h3 id="6-覆盖索引"><a href="#6-覆盖索引" class="headerlink" title="6. 覆盖索引"></a>6. 覆盖索引</h3><p>索引包含所有需要查询的字段的值。</p>
+<p><strong>优点</strong> </p>
+<ol>
+<li>因为索引条目通常远小于数据行的大小，所以若只读取索引，能大大减少数据访问量。</li>
+<li>一些存储引擎（例如 MyISAM）在内存中只缓存索引，而数据依赖于操作系统来缓存。因此，只访问索引可以不使用系统调用（通常比较费时）。</li>
+<li>对于 InnoDB 引擎，若二级索引能够覆盖查询，则无需访问聚簇索引。</li>
+</ol>
+<h2 id="B-Tree-和-B-Tree-原理"><a href="#B-Tree-和-B-Tree-原理" class="headerlink" title="B-Tree 和 B+Tree 原理"></a>B-Tree 和 B+Tree 原理</h2><h3 id="1-B-Tree"><a href="#1-B-Tree" class="headerlink" title="1. B-Tree"></a>1. B-Tree</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/5ed71283-a070-4b21-85ae-f2cbfd6ba6e1.jpg"></p>
+<p>为了描述 B-Tree，首先定义一条数据记录为一个二元组 [key, data]，key 为记录的键，data 为数据记录除 key 外的数据。</p>
+<p>B-Tree 是满足下列条件的数据结构：</p>
+<ul>
+<li>所有叶节点具有相同的深度，也就是说 B-Tree 是平衡的；</li>
+<li>一个节点中的 key 从左到右非递减排列；</li>
+<li>如果某个指针的左右相邻 key 分别是 key<sub>i</sub> 和 key<sub>i+1</sub>，且不为 null，则该指针指向节点的所有 key 大于 key<sub>i</sub> 且小于 key<sub>i+1</sub>。</li>
+</ul>
+<p>在 B-Tree 中按 key 检索数据的算法非常直观：首先从根节点进行二分查找，如果找到则返回对应节点的 data，否则对相应区间的指针指向的节点递归进行查找，直到找到节点或找到 null 指针，前者查找成功，后者查找失败。</p>
+<p>由于插入删除新的数据记录会破坏 B-Tree 的性质，因此在插入删除时，需要对树进行一个分裂、合并、转移等操作以保持 B-Tree 性质。</p>
+<h3 id="2-B-Tree"><a href="#2-B-Tree" class="headerlink" title="2. B+Tree"></a>2. B+Tree</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/63cd5b50-d6d8-4df6-8912-ef4a1dd5ba13.jpg"></p>
+<p>与 B-Tree 相比，B+Tree 有以下不同点：</p>
+<ul>
+<li>每个节点的指针上限为 2d 而不是 2d+1；</li>
+<li>内节点不存储 data，只存储 key，叶子节点不存储指针。</li>
+</ul>
+<h3 id="3-带有顺序访问指针的-B-Tree"><a href="#3-带有顺序访问指针的-B-Tree" class="headerlink" title="3. 带有顺序访问指针的 B+Tree"></a>3. 带有顺序访问指针的 B+Tree</h3><p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1ee5f0a5-b8df-43b9-95ab-c516c54ec797.jpg"></p>
+<p>一般在数据库系统或文件系统中使用的 B+Tree 结构都在经典 B+Tree 基础上进行了优化，在叶子节点增加了顺序访问指针，做这个优化的目的是为了提高区间访问的性能。</p>
+<h3 id="4-为什么使用-B-Tree-和-B-Tree"><a href="#4-为什么使用-B-Tree-和-B-Tree" class="headerlink" title="4. 为什么使用 B-Tree 和 B+Tree"></a>4. 为什么使用 B-Tree 和 B+Tree</h3><p>红黑树等数据结构也可以用来实现索引，但是文件系统及数据库系统普遍采用 B-/+Tree 作为索引结构。</p>
+<p>页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页的大小通常为 4k），主存和磁盘以页为单位交换数据。</p>
+<p>一般来说，索引本身也很大，不可能全部存储在内存中，因此索引往往以索引文件的形式存储的磁盘上。为了减少磁盘 I/O，磁盘往往不是严格按需读取，而是每次都会预读。这样做的理论依据是计算机科学中著名的局部性原理：当一个数据被用到时，其附近的数据也通常会马上被使用。数据库系统的设计者巧妙利用了磁盘预读原理，将一个节点的大小设为等于一个页，这样每个节点只需要一次 I/O 就可以完全载入。B-Tree 中一次检索最多需要 h-1 次 I/O（根节点常驻内存），渐进复杂度为 O(h)=O(log<sub>d</sub>N)。一般实际应用中，出度 d 是非常大的数字，通常超过 100，因此 h 非常小（通常不超过 3）。而红黑树这种结构，h 明显要深的多。并且于逻辑上很近的节点（父子）物理上可能很远，无法利用局部性，效率明显比 B-Tree 差很多。</p>
+<p>B+Tree 更适合外存索引，原因和内节点出度 d 有关。由于 B+Tree 内节点去掉了 data 域，因此可以拥有更大的出度，拥有更好的性能。</p>
+<h1 id="四、查询性能优化"><a href="#四、查询性能优化" class="headerlink" title="四、查询性能优化"></a>四、查询性能优化</h1><h3 id="Explain"><a href="#Explain" class="headerlink" title="Explain"></a>Explain</h3><p>用来分析 SQL 语句，分析结果中比较重要的字段有：</p>
+<ul>
+<li><p>select_type : 查询类型，有简单查询、联合查询和子查询</p>
+</li>
+<li><p>key : 使用的索引</p>
+</li>
+<li><p>rows : 扫描的行数</p>
+</li>
+</ul>
+<h3 id="减少返回的列"><a href="#减少返回的列" class="headerlink" title="减少返回的列"></a>减少返回的列</h3><p>慢查询主要是因为访问了过多数据，除了访问过多行之外，也包括访问过多列。</p>
+<p>最好不要使用 SELECT * 语句，要根据需要选择查询的列。</p>
+<h3 id="减少返回的行"><a href="#减少返回的行" class="headerlink" title="减少返回的行"></a>减少返回的行</h3><p>最好使用 LIMIT 语句来取出想要的那些行。</p>
+<p>还可以建立索引来减少条件语句的全表扫描。例如对于下面的语句，不使用索引的情况下需要进行全表扫描，而使用索引只需要扫描几行记录即可，使用 Explain 语句可以通过观察 rows 字段来看出这种差异。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> sakila.film_actor <span class="keyword">WHERE</span> film_id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="拆分大的-DELETE-或-INSERT-语句"><a href="#拆分大的-DELETE-或-INSERT-语句" class="headerlink" title="拆分大的 DELETE 或 INSERT 语句"></a>拆分大的 DELETE 或 INSERT 语句</h3><p>如果一次性执行的话，可能一次锁住很多数据、占满整个事务日志、耗尽系统资源、阻塞很多小的但重要的查询。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> messages <span class="keyword">WHERE</span> <span class="keyword">create</span> <span class="operator">&lt;</span> DATE_SUB(NOW(), <span class="type">INTERVAL</span> <span class="number">3</span> <span class="keyword">MONTH</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rows_affected <span class="operator">=</span> <span class="number">0</span></span><br><span class="line">do &#123;</span><br><span class="line">    rows_affected <span class="operator">=</span> do_query(</span><br><span class="line">    &quot;DELETE FROM messages WHERE create  &lt; DATE_SUB(NOW(), INTERVAL 3 MONTH) LIMIT 10000&quot;)</span><br><span class="line">&#125; while rows_affected &gt; 0</span><br></pre></td></tr></table></figure>
+<h1 id="五、切分"><a href="#五、切分" class="headerlink" title="五、切分"></a>五、切分</h1><p>随着时间和业务的发展，数据库中的表会越来越多，并且表中的数据量也会越来越大，那么读写操作的开销也会随着增大。</p>
+<h2 id="垂直切分"><a href="#垂直切分" class="headerlink" title="垂直切分"></a>垂直切分</h2><p>将表按功能模块、关系密切程度划分出来，部署到不同的库上。例如，我们会建立商品数据库 payDB、用户数据库 userDB 等，分别用来存储项目与商品有关的表和与用户有关的表。</p>
+<h2 id="水平切分"><a href="#水平切分" class="headerlink" title="水平切分"></a>水平切分</h2><p>把表中的数据按照某种规则存储到多个结构相同的表中，例如按 id 的散列值、性别等进行划分。</p>
+<h2 id="切分的选择"><a href="#切分的选择" class="headerlink" title="切分的选择"></a>切分的选择</h2><p>如果数据库中的表太多，并且项目各项业务逻辑清晰，那么垂直切分是首选。</p>
+<p>如果数据库的表不多，但是单表的数据量很大，应该选择水平切分。</p>
+<h2 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h2><h3 id="1-事务问题"><a href="#1-事务问题" class="headerlink" title="1. 事务问题"></a>1. 事务问题</h3><p>在执行分库分表之后，由于数据存储到了不同的库上，数据库事务管理出现了困难。如果依赖数据库本身的分布式事务管理功能去执行事务，将付出高昂的性能代价；如果由应用程序去协助控制，形成程序逻辑上的事务，又会造成编程方面的负担。</p>
+<h3 id="2-跨库跨表连接问题"><a href="#2-跨库跨表连接问题" class="headerlink" title="2. 跨库跨表连接问题"></a>2. 跨库跨表连接问题</h3><p>在执行了分库分表之后，难以避免会将原本逻辑关联性很强的数据划分到不同的表、不同的库上。这时，表的连接操作将受到限制，我们无法连接位于不同分库的表，也无法连接分表粒度不同的表，导致原本只需要一次查询就能够完成的业务需要进行多次才能完成。</p>
+<h3 id="3-额外的数据管理负担和数据运算压力"><a href="#3-额外的数据管理负担和数据运算压力" class="headerlink" title="3. 额外的数据管理负担和数据运算压力"></a>3. 额外的数据管理负担和数据运算压力</h3><p>最显而易见的就是数据的定位问题和数据的增删改查的重复执行问题，这些都可以通过应用程序解决，但必然引起额外的逻辑运算。</p>
+<h1 id="六、故障转移和故障恢复"><a href="#六、故障转移和故障恢复" class="headerlink" title="六、故障转移和故障恢复"></a>六、故障转移和故障恢复</h1><p>故障转移也叫做切换，当主库出现故障时就切换到备库，使备库成为主库。故障恢复顾名思义就是从故障中恢复过来，并且保证数据的正确性。</p>
+<h3 id="提升备库或切换角色"><a href="#提升备库或切换角色" class="headerlink" title="提升备库或切换角色"></a>提升备库或切换角色</h3><p>提升一台备库为主库，或者在一个主-主复制结构中调整主动和被动角色。</p>
+<h3 id="虚拟-IP-地址和-IP-托管"><a href="#虚拟-IP-地址和-IP-托管" class="headerlink" title="虚拟 IP 地址和 IP 托管"></a>虚拟 IP 地址和 IP 托管</h3><p>为 MySQL 实例指定一个逻辑 IP 地址，当 MySQL 实例失效时，可以将 IP 地址转移到另一台 MySQL 服务器上。</p>
+<h3 id="中间件解决方案"><a href="#中间件解决方案" class="headerlink" title="中间件解决方案"></a>中间件解决方案</h3><p>通过代理，可以路由流量到可以使用的服务器上。</p>
+<h3 id="在应用中处理故障转移"><a href="#在应用中处理故障转移" class="headerlink" title="在应用中处理故障转移"></a>在应用中处理故障转移</h3><p>将故障转移整合到应用中可能导致应用变得太过笨拙。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>BaronScbwartz, PeterZaitsev, VadimTkacbenko, 等. 高性能 MySQL[M]. 电子工业出版社, 2013.</li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6">How Sharding Works</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL 索引背后的数据结构及算法原理 </a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jfox.info/20-tiao-mysql-xing-nen-you-hua-de-zui-jia-jing-yan.html">20+ 条 MySQL 性能优化的最佳经验 </a></li>
+<li><a target="_blank" rel="noopener" href="https://www.i3geek.com/archives/1108">数据库为什么分库分表？mysql的分库分表方案</a></li>
+</ul>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/redis-design-and-implement/">《Redis 设计与实现》&amp;《Redis 实战》【转】</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-12</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Redis/">Redis</a></span><div class="content"><p><em>原文链接： <a target="_blank" rel="noopener" href="https://github.com/CyC2018/Interview-Notebook/blob/master/notes/Redis.md">https://github.com/CyC2018/Interview-Notebook/blob/master/notes/Redis.md</a></em></p>
+<h1 id="一、Redis-是什么"><a href="#一、Redis-是什么" class="headerlink" title="一、Redis 是什么"></a>一、Redis 是什么</h1><p>Redis 是速度非常快的非关系型（NoSQL）内存键值数据库，可以存储键和五种不同类型的值之间的映射。</p>
+<p>五种类型数据类型为：字符串、列表、集合、有序集合、散列表。</p>
+<p>Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，使用复制来扩展读性能，使用分片来扩展写性能。</p>
+<h1 id="二、五种基本类型"><a href="#二、五种基本类型" class="headerlink" title="二、五种基本类型"></a>二、五种基本类型</h1><table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">可以存储的值</th>
+<th align="center">操作</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">STRING</td>
+<td align="center">字符串、整数或者浮点数</td>
+<td align="center">对整个字符串或者字符串的其中一部分执行操作</br> 对整数和浮点数执行自增或者自减操作</td>
+</tr>
+<tr>
+<td align="center">LIST</td>
+<td align="center">链表</td>
+<td align="center">从两端压入或者弹出元素</br> 读取单个或者多个元素</br> 进行修剪，只保留一个范围内的元素</td>
+</tr>
+<tr>
+<td align="center">SET</td>
+<td align="center">无序集合</td>
+<td align="center">添加、获取、移除单个元素</br> 检查一个元素是否存在于集合中</br> 计算交集、并集、差集</br> 从集合里面随机获取元素</td>
+</tr>
+<tr>
+<td align="center">HASH</td>
+<td align="center">包含键值对的无序散列表</td>
+<td align="center">添加、获取、移除单个键值对</br> 获取所有键值对</br> 检查某个键是否存在</td>
+</tr>
+<tr>
+<td align="center">ZSET</td>
+<td align="center">有序集合</td>
+<td align="center">添加、获取、删除元素</br> 根据分值范围或者成员来获取元素</br> 计算一个键的排名</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://redislabs.com/ebook/part-1-getting-started/chapter-1-getting-to-know-redis/1-2-what-redis-data-structures-look-like/">What Redis data structures look like</a></p>
+</blockquote>
+<h2 id="1-STRING"><a href="#1-STRING" class="headerlink" title="1. STRING"></a>1. STRING</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; set hello world</span><br><span class="line">OK</span><br><span class="line">&gt; get hello</span><br><span class="line">&quot;world&quot;</span><br><span class="line">&gt; del hello</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; get hello</span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
+<h2 id="2-LIST"><a href="#2-LIST" class="headerlink" title="2. LIST"></a>2. LIST</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpush list-key item</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; rpush list-key item2</span><br><span class="line">(integer) 2</span><br><span class="line">&gt; rpush list-key item</span><br><span class="line">(integer) 3</span><br><span class="line"></span><br><span class="line">&gt; lrange list-key 0 -1</span><br><span class="line">1) &quot;item&quot;</span><br><span class="line">2) &quot;item2&quot;</span><br><span class="line">3) &quot;item&quot;</span><br><span class="line"></span><br><span class="line">&gt; lindex list-key 1</span><br><span class="line">&quot;item2&quot;</span><br><span class="line"></span><br><span class="line">&gt; lpop list-key</span><br><span class="line">&quot;item&quot;</span><br><span class="line"></span><br><span class="line">&gt; lrange list-key 0 -1</span><br><span class="line">1) &quot;item2&quot;</span><br><span class="line">2) &quot;item&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="3-SET"><a href="#3-SET" class="headerlink" title="3. SET"></a>3. SET</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&gt; sadd set-key item</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; sadd set-key item2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; sadd set-key item3</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; sadd set-key item</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; smembers set-key</span><br><span class="line">1) &quot;item&quot;</span><br><span class="line">2) &quot;item2&quot;</span><br><span class="line">3) &quot;item3&quot;</span><br><span class="line"></span><br><span class="line">&gt; sismember set-key item4</span><br><span class="line">(integer) 0</span><br><span class="line">&gt; sismember set-key item</span><br><span class="line">(integer) 1</span><br><span class="line"></span><br><span class="line">&gt; srem set-key item2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; srem set-key item2</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; smembers set-key</span><br><span class="line">1) &quot;item&quot;</span><br><span class="line">2) &quot;item3&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="4-HASH"><a href="#4-HASH" class="headerlink" title="4. HASH"></a>4. HASH</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt; hset hash-key sub-key1 value1</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; hset hash-key sub-key2 value2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; hset hash-key sub-key1 value1</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; hgetall hash-key</span><br><span class="line">1) &quot;sub-key1&quot;</span><br><span class="line">2) &quot;value1&quot;</span><br><span class="line">3) &quot;sub-key2&quot;</span><br><span class="line">4) &quot;value2&quot;</span><br><span class="line"></span><br><span class="line">&gt; hdel hash-key sub-key2</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; hdel hash-key sub-key2</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; hget hash-key sub-key1</span><br><span class="line">&quot;value1&quot;</span><br><span class="line"></span><br><span class="line">&gt; hgetall hash-key</span><br><span class="line">1) &quot;sub-key1&quot;</span><br><span class="line">2) &quot;value1&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="5-ZSET"><a href="#5-ZSET" class="headerlink" title="5. ZSET"></a>5. ZSET</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&gt; zadd zset-key 728 member1</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; zadd zset-key 982 member0</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; zadd zset-key 982 member0</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; zrange zset-key 0 -1 withscores</span><br><span class="line">1) &quot;member1&quot;</span><br><span class="line">2) &quot;728&quot;</span><br><span class="line">3) &quot;member0&quot;</span><br><span class="line">4) &quot;982&quot;</span><br><span class="line"></span><br><span class="line">&gt; zrangebyscore zset-key 0 800 withscores</span><br><span class="line">1) &quot;member1&quot;</span><br><span class="line">2) &quot;728&quot;</span><br><span class="line"></span><br><span class="line">&gt; zrem zset-key member1</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; zrem zset-key member1</span><br><span class="line">(integer) 0</span><br><span class="line"></span><br><span class="line">&gt; zrange zset-key 0 -1 withscores</span><br><span class="line">1) &quot;member0&quot;</span><br><span class="line">2) &quot;982&quot;</span><br></pre></td></tr></table></figure>
+<h1 id="三、键的过期时间"><a href="#三、键的过期时间" class="headerlink" title="三、键的过期时间"></a>三、键的过期时间</h1><p>Redis 可以为每个键设置过期时间，当键过期时，会自动删除该键。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; set my-key-test 1</span><br><span class="line">OK</span><br><span class="line">&gt; get my-key-test</span><br><span class="line">&quot;1&quot;</span><br><span class="line">&gt; expire my-key-test 5</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; ttl my-key-test</span><br><span class="line">(integer) 4</span><br><span class="line">&gt; persist my-key-test</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; get my-key-test</span><br><span class="line">&quot;1&quot;</span><br></pre></td></tr></table></figure>
+<p>对于散列表这种容器，只能为整个键设置过期时间（整个散列表），而不能为键里面的单个元素设置过期时间。</p>
+<p>过期时间对于清理缓存数据非常有用。</p>
+<h1 id="四、发布与订阅"><a href="#四、发布与订阅" class="headerlink" title="四、发布与订阅"></a>四、发布与订阅</h1><p>订阅者订阅了频道之后，发布者向频道发送字符串消息会被所有订阅者接收到。</p>
+<p>发布与订阅模式和观察者模式有以下不同：</p>
+<ul>
+<li>观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。</li>
+<li>观察者模式是同步的，当事件触发时，主题会去调度观察者的方法；而发布与订阅模式是异步的；</li>
+</ul>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg"></p>
+<p>发布与订阅有一些问题，很少使用它，而是使用替代的解决方案。问题如下：</p>
+<ol>
+<li>如果订阅者读取消息的速度很慢，会使得消息不断积压在发布者的输出缓存区中，造成内存占用过多；</li>
+<li>如果订阅者在执行订阅的过程中网络出现问题，那么就会丢失断线期间发送的所有消息。</li>
+</ol>
+<h1 id="五、事务"><a href="#五、事务" class="headerlink" title="五、事务"></a>五、事务</h1><p>Redis 最简单的事务实现方式是使用 MULTI 和 EXEC 命令将事务操作包围起来。</p>
+<p>MULTI 和 EXEC 中的操作将会一次性发送给服务器，而不是一条一条发送，这种方式称为流水线，它可以减少客户端与服务器之间的网络通信次数从而提升性能。</p>
+<p>Redis只能保证事务的每个命令连续执行，但是如果事务中的一个命令失败了，并不回滚其他命令，比如使用的命令类型不匹配。当事务的执行过程中，如果redis意外的挂了。很遗憾只有部分命令执行了，后面的也就被丢弃了。当然如果我们使用的append-only file方式持久化，redis会用单个write操作写入整个事务内容。即是是这种方式还是有可能只部分写入了事务到磁盘。发生部分写入事务的情况 下，redis重启时会检测到这种情况，然后失败退出。可以使用redis-check-aof工具进行修复，修复会删除部分写入的事务内容。修复完后就能够重新启动了。（<a target="_blank" rel="noopener" href="http://www.cnblogs.com/xhan/archive/2011/02/04/1949151.html">redis学习笔记之事务</a>）</p>
+<h1 id="六、持久化"><a href="#六、持久化" class="headerlink" title="六、持久化"></a>六、持久化</h1><p>Redis 是内存型数据库，为了保证数据在断电后不会丢失，需要将内存中的数据持久化到硬盘上。</p>
+<h2 id="1-快照持久化"><a href="#1-快照持久化" class="headerlink" title="1. 快照持久化"></a>1. 快照持久化</h2><p>将某个时间点的所有数据都存放到硬盘上。</p>
+<p>可以将快照复制到其它服务器从而创建具有相同数据的服务器副本。</p>
+<p>如果系统发生故障，将会丢失最后一次创建快照之后的数据。</p>
+<p>如果数据量很大，保存快照的时间会很长。</p>
+<h2 id="2-AOF-持久化"><a href="#2-AOF-持久化" class="headerlink" title="2. AOF 持久化"></a>2. AOF 持久化</h2><p>将写命令添加到 AOF 文件（Append Only File）的末尾。</p>
+<p>对硬盘的文件进行写入时，写入的内容首先会被存储到缓冲区，然后由操作系统决定什么时候将该内容同步到硬盘，用户可以调用 file.flush() 方法请求操作系统尽快将缓冲区存储的数据同步到硬盘。</p>
+<p>将写命令添加到 AOF 文件时，要根据需求来保证何时将添加的数据同步到硬盘上，有以下同步选项：</p>
+<table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">同步频率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">always</td>
+<td align="center">每个写命令都同步</td>
+</tr>
+<tr>
+<td align="center">everysec</td>
+<td align="center">每秒同步一次</td>
+</tr>
+<tr>
+<td align="center">no</td>
+<td align="center">让操作系统来决定何时同步</td>
+</tr>
+</tbody></table>
+<p>always 选项会严重减低服务器的性能；everysec 选项比较合适，可以保证系统奔溃时只会丢失一秒左右的数据，并且 Redis 每秒执行一次同步对服务器性能几乎没有任何影响；no 选项并不能给服务器性能带来多大的提升，而且也会增加系统奔溃时数据丢失的数量。</p>
+<p>随着服务器写请求的增多，AOF 文件会越来越大；Redis 提供了一种将 AOF 重写的特性，能够去除 AOF 文件中的冗余写命令。</p>
+<h1 id="七、复制"><a href="#七、复制" class="headerlink" title="七、复制"></a>七、复制</h1><p>通过使用 slaveof host port 命令来让一个服务器成为另一个服务器的从服务器。</p>
+<p>一个从服务器只能有一个主服务器，并且不支持主主复制。</p>
+<h2 id="从服务器连接主服务器的过程"><a href="#从服务器连接主服务器的过程" class="headerlink" title="从服务器连接主服务器的过程"></a>从服务器连接主服务器的过程</h2><ol>
+<li><p>主服务器创建快照文件，发送给从服务器，并在发送期间使用缓冲区记录执行的写命令。快照文件发送完毕之后，开始向从服务器发送存储在缓冲区中的写命令；</p>
+</li>
+<li><p>从服务器丢弃所有旧数据，载入主服务器发来的快照文件，之后从服务器开始接受主服务器发来的写命令；</p>
+</li>
+<li><p>主服务器每执行一次写命令，就向从服务器发送相同的写命令。</p>
+</li>
+</ol>
+<h2 id="主从链"><a href="#主从链" class="headerlink" title="主从链"></a>主从链</h2><p>随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png"></p>
+<h1 id="八、处理故障"><a href="#八、处理故障" class="headerlink" title="八、处理故障"></a>八、处理故障</h1><p>要用到持久化文件来恢复服务器的数据。</p>
+<p>持久化文件可能因为服务器出错也有错误，因此要先对持久化文件进行验证和修复。对 AOF 文件就行验证和修复很容易，修复操作将第一个出错命令和其后的所有命令都删除；但是只能验证快照文件，无法对快照文件进行修复，因为快照文件进行了压缩，出现在快照文件中间的错误可能会导致整个快照文件的剩余部分无法读取。</p>
+<p>当主服务器出现故障时，Redis 常用的做法是新开一台服务器作为主服务器，具体步骤如下：假设 A 为主服务器，B 为从服务器，当 A 出现故障时，让 B 生成一个快照文件，将快照文件发送给 C，并让 C 恢复快照文件的数据。最后，让 B 成为 C 的从服务器。</p>
+<h1 id="九、分片"><a href="#九、分片" class="headerlink" title="九、分片"></a>九、分片</h1><p>Redis 中的分片类似于 MySQL 的分表操作，分片是将数据划分为多个部分的方法，对数据的划分可以基于键包含的 ID、基于键的哈希值，或者基于以上两者的某种组合。通过对数据进行分片，用户可以将数据存储到多台机器里面，也可以从多台机器里面获取数据，这种方法在解决某些问题时可以获得线性级别的性能提升。</p>
+<p>假设有 4 个 Reids 实例 R0，R1，R2，R3，还有很多表示用户的键 user:1，user:2，… 等等，有不同的方式来选择一个指定的键存储在哪个实例中。最简单的方式是范围分片，例如用户 id 从 0~1000 的存储到实例 R0 中，用户 id 从 1001~2000 的存储到实例 R1 中，等等。但是这样需要维护一张映射范围表，维护操作代价很高。还有一种方式是哈希分片，使用 CRC32 哈希函数将键转换为一个数字，再对实例数量求模就能知道应该存储的实例。</p>
+<h2 id="1-客户端分片"><a href="#1-客户端分片" class="headerlink" title="1. 客户端分片"></a>1. 客户端分片</h2><p>客户端使用一致性哈希等算法决定键应当分布到哪个节点。</p>
+<h2 id="2-代理分片"><a href="#2-代理分片" class="headerlink" title="2. 代理分片"></a>2. 代理分片</h2><p>将客户端请求发送到代理上，由代理转发请求到正确的节点上。</p>
+<h2 id="3-服务器分片"><a href="#3-服务器分片" class="headerlink" title="3. 服务器分片"></a>3. 服务器分片</h2><p>Redis Cluster。</p>
+<h1 id="十、事件"><a href="#十、事件" class="headerlink" title="十、事件"></a>十、事件</h1><h2 id="事件类型"><a href="#事件类型" class="headerlink" title="事件类型"></a>事件类型</h2><h3 id="1-文件事件"><a href="#1-文件事件" class="headerlink" title="1. 文件事件"></a>1. 文件事件</h3><p>服务器有许多套接字，事件产生时会对这些套接字进行操作，服务器通过监听套接字来处理事件。常见的文件事件有：客户端的连接事件；客户端的命令请求事件；服务器向客户端返回命令结果的事件；</p>
+<h3 id="2-时间事件"><a href="#2-时间事件" class="headerlink" title="2. 时间事件"></a>2. 时间事件</h3><p>又分为两类：定时事件是让一段程序在指定的时间之内执行一次；周期性时间是让一段程序每隔指定时间就执行一次。</p>
+<h2 id="事件的调度与执行"><a href="#事件的调度与执行" class="headerlink" title="事件的调度与执行"></a>事件的调度与执行</h2><p>服务器需要不断监听文件事件的套接字才能得到待处理的文件事件，但是不能监听太久，否则时间事件无法在规定的时间内执行，因此监听时间应该根据距离现在最近的时间事件来决定。</p>
+<p>事件调度与执行由 aeProcessEvents 函数负责，伪代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">aeProcessEvents</span>():</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取到达时间离当前时间最接近的时间事件</span></span><br><span class="line">    time_event = aeSearchNearestTimer()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算最接近的时间事件距离到达还有多少毫秒</span></span><br><span class="line">    remaind_ms = time_event.when - unix_ts_now()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 如果事件已到达，那么 remaind_ms 的值可能为负数，将它设为 0</span></span><br><span class="line">    <span class="keyword">if</span> remaind_ms &lt; <span class="number">0</span>:</span><br><span class="line">        remaind_ms = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 根据 remaind_ms 的值，创建 timeval</span></span><br><span class="line">    timeval = create_timeval_with_ms(remaind_ms)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 阻塞并等待文件事件产生，最大阻塞时间由传入的 timeval 决定</span></span><br><span class="line">    aeApiPoll(timeval)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 处理所有已产生的文件事件</span></span><br><span class="line">    procesFileEvents()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 处理所有已到达的时间事件</span></span><br><span class="line">    processTimeEvents()</span><br></pre></td></tr></table></figure>
+<p>将 aeProcessEvents 函数置于一个循环里面，加上初始化和清理函数，就构成了 Redis 服务器的主函数，伪代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化服务器</span></span><br><span class="line">    init_server()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一直处理事件，直到服务器关闭为止</span></span><br><span class="line">    <span class="keyword">while</span> server_is_not_shutdown():</span><br><span class="line">        aeProcessEvents()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 服务器关闭，执行清理操作</span></span><br><span class="line">    clean_server()</span><br></pre></td></tr></table></figure>
+<p>从事件处理的角度来看，服务器运行流程如下：</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/dda1608d-26e0-4f10-8327-a459969b150a.png"></p>
+<h1 id="十一、Redis-与-Memcached-的区别"><a href="#十一、Redis-与-Memcached-的区别" class="headerlink" title="十一、Redis 与 Memcached 的区别"></a>十一、Redis 与 Memcached 的区别</h1><p>两者都是非关系型内存键值数据库。有以下主要不同：</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Memcached 仅支持字符串类型，而 Redis 支持五种不同种类的数据类型，使得它可以更灵活地解决问题。</p>
+<h2 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h2><p>Redis 支持两种持久化策略：RDB 快照和 AOF 日志，而 Memcached 不支持持久化。</p>
+<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p>Memcached 不支持分布式，只能通过在客户端使用像一致性哈希这样的分布式算法来实现分布式存储，这种方式在存储和查询时都需要先在客户端计算一次数据所在的节点。</p>
+<p>Redis Cluster 实现了分布式的支持。</p>
+<h2 id="内存管理机制"><a href="#内存管理机制" class="headerlink" title="内存管理机制"></a>内存管理机制</h2><p>在 Redis 中，并不是所有数据都一直存储在内存中，可以将一些很久没用的 value 交换到磁盘。而 Memcached 的数据则会一直在内存中。</p>
+<p>Memcached 将内存分割成特定长度的块来存储数据，以完全解决内存碎片的问题，但是这种方式会使得内存的利用率不高，例如块的大小为 128 bytes，只存储 100 bytes 的数据，那么剩下的 28 bytes 就浪费掉了。</p>
+<h1 id="十二、Redis-适用场景"><a href="#十二、Redis-适用场景" class="headerlink" title="十二、Redis 适用场景"></a>十二、Redis 适用场景</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>将热点数据放到内存中。</p>
+<h2 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h2><p>List 类型是双向链表，很适合用于消息队列。</p>
+<h2 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h2><p>Redis 这种内存数据库能支持计数器频繁的读写操作。</p>
+<h2 id="好友关系"><a href="#好友关系" class="headerlink" title="好友关系"></a>好友关系</h2><p>使用 Set 类型的交集操作很容易就可以知道两个用户的共同好友。</p>
+<h1 id="十三、数据淘汰策略"><a href="#十三、数据淘汰策略" class="headerlink" title="十三、数据淘汰策略"></a>十三、数据淘汰策略</h1><p>可以设置内存最大使用量，当内存使用量超过时施行淘汰策略，具体有 6 种淘汰策略。</p>
+<table>
+<thead>
+<tr>
+<th align="center">策略</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">volatile-lru</td>
+<td align="center">从已设置过期时间的数据集中挑选最近最少使用的数据淘汰</td>
+</tr>
+<tr>
+<td align="center">volatile-ttl</td>
+<td align="center">从已设置过期时间的数据集中挑选将要过期的数据淘汰</td>
+</tr>
+<tr>
+<td align="center">volatile-random</td>
+<td align="center">从已设置过期时间的数据集中任意选择数据淘汰</td>
+</tr>
+<tr>
+<td align="center">allkeys-lru</td>
+<td align="center">从所有数据集中挑选最近最少使用的数据淘汰</td>
+</tr>
+<tr>
+<td align="center">allkeys-random</td>
+<td align="center">从所有数据集中任意选择数据进行淘汰</td>
+</tr>
+<tr>
+<td align="center">no-envicition</td>
+<td align="center">禁止驱逐数据</td>
+</tr>
+</tbody></table>
+<p>如果使用 Redis 来缓存数据时，要保证所有数据都是热点数据，可以将内存最大使用量设置为热点数据占用的内存量，然后启用 allkeys-lru 淘汰策略，将最近最少使用的数据淘汰。</p>
+<p>作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法（LRU、TTL）实际实现上并非针对所有 key，而是抽样一小部分 key 从中选出被淘汰 key。抽样数量可通过 maxmemory-samples 配置。</p>
+<h1 id="十四、一个简单的论坛系统分析"><a href="#十四、一个简单的论坛系统分析" class="headerlink" title="十四、一个简单的论坛系统分析"></a>十四、一个简单的论坛系统分析</h1><p>该论坛系统功能如下：</p>
+<ul>
+<li>可以发布文章；</li>
+<li>可以对文章进行点赞；</li>
+<li>在首页可以按文章的发布时间或者文章的点赞数进行排序显示；</li>
+</ul>
+<h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><p>文章包括标题、作者、赞数等信息，在关系型数据库中很容易构建一张表来存储这些信息，在 Redis 中可以使用 HASH 来存储每种信息以及其对应的值的映射。</p>
+<p>Redis 没有关系型数据库中的表这一概念来将同类型的数据存放在一起，而是使用命名空间的方式来实现这一功能。键名的前面部分存储命名空间，后面部分的内容存储 ID，通常使用 : 来进行分隔。例如下面的 HASH 的键名为 article:92617，其中 article 为命名空间，ID 为 92617。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7c54de21-e2ff-402e-bc42-4037de1c1592.png"></p>
+<h2 id="点赞功能"><a href="#点赞功能" class="headerlink" title="点赞功能"></a>点赞功能</h2><p>当有用户为一篇文章点赞时，除了要对该文章的 votes 字段进行加 1 操作，还必须记录该用户已经对该文章进行了点赞，防止用户点赞次数超过 1。可以建立文章的已投票用户集合来进行记录。</p>
+<p>为了节约内存，规定一篇文章发布满一周之后，就不能再对它进行投票，而文章的已投票集合也会被删除，可以为文章的已投票集合设置一个一周的过期时间就能实现这个规定。</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/485fdf34-ccf8-4185-97c6-17374ee719a0.png"></p>
+<h2 id="对文章进行排序"><a href="#对文章进行排序" class="headerlink" title="对文章进行排序"></a>对文章进行排序</h2><p>为了按发布时间和点赞数进行排序，可以建立一个文章发布时间的有序集合和一个文章点赞数的有序集合。（下图中的 score 就是这里所说的点赞数；下面所示的有序集合分值并不直接是时间和点赞数，而是根据时间和点赞数间接计算出来的）</p>
+<p><img src="https://github.com/CyC2018/Interview-Notebook/raw/master/pics/f7d170a3-e446-4a64-ac2d-cb95028f81a8.png"></p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li>Carlson J L. Redis in Action[J]. Media.johnwiley.com.au, 2013.</li>
+<li>黄健宏. Redis 设计与实现 [M]. 机械工业出版社, 2014.</li>
+<li><a target="_blank" rel="noopener" href="https://redislabs.com/ebook/foreword/">REDIS IN ACTION</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/loveincode/p/7411911.html">论述 Redis 和 Memcached 的差异</a></li>
+<li><a target="_blank" rel="noopener" href="http://wiki.jikexueyuan.com/project/redis-guide">Redis 3.0 中文版- 分片</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.scienjus.com/redis-use-case/">Redis 应用场景</a></li>
+<li><a target="_blank" rel="noopener" href="http://developers-club.com/posts/270339/">Observer vs Pub-Sub</a></li>
+</ul>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/jekyll-to-hexo/">博客迁移到Hexo</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-10</time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Git/">Git</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Jekyll/">Jekyll</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Hexo/">Hexo</a></span><div class="content"><p>上午把一些很占资源的大图给删掉了，研究了一下现在 Github Pages 博客的最新进展，发现很多人都开始用基于 Node.js 的 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a> 了。功能比较丰富，而且配置简单，主题也多，所以就把博客从 Jekyll 迁移过来了。</p>
+<p>本地写博客的话，还是起一个服务就够了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;create-new-post&quot;</span></span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>只不过发布比较麻烦，下面的命令生成静态文件后会自动push到Github的master分支，挺暴力的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<p>所以现在写作的源代码就放在 hexo 分支下了，master分支是生成后的文件。一定要注意！这样的话，在克隆代码时需要加点料：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --recurse-submodules -j2 -b hexo git@github.com:kingfree/kingfree.github.io.git</span><br></pre></td></tr></table></figure>
+<p>老的代码提交记录也在这个分支，因为master已经被暴力清空了TAT</p>
+<p>接下来还要解决一下竖排模板的问题。</p>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/git-force-remove-files/">Git如何永久删除文件(包括历史记录)【转】</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-10</time><span class="article-meta"><span class="article-meta__separator">|</span><i class="fa fa-inbox article-meta__icon" aria-hidden="true"></i><a class="article-meta__categories" href="/categories/%E8%BD%AC%E8%BD%BD/">转载</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/Git/">Git</a></span><div class="content"><p><em>原文链接：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/shines77/p/3460274.html">http://www.cnblogs.com/shines77/p/3460274.html</a></em></p>
+<p>有些时候不小心上传了一些敏感文件(例如密码), 或者不想上传的文件(没及时或忘了加到<code>.gitignore</code>里的),</p>
+<p>而且上传的文件又特别大的时候, 这将导致别人clone你的代码或下载zip包的时候也必须更新或下载这些无用的文件,</p>
+<p>因此, 我们需要一个方法, 永久的删除这些文件(包括该文件的历史记录).</p>
+<p>首先, 可以参考 github 的帮助:<a target="_blank" rel="noopener" href="https://help.github.com/articles/remove-sensitive-data">https://help.github.com/articles/remove-sensitive-data</a></p>
+<h3 id="步骤一-从你的资料库中清除文件"><a href="#步骤一-从你的资料库中清除文件" class="headerlink" title="步骤一: 从你的资料库中清除文件"></a>步骤一: 从你的资料库中清除文件</h3><p>以Windows下为例(Linux类似), 打开项目的Git Bash,使用命令: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch &lt;path-to-your-remove-file&gt;&#39; --prune-empty --tag-name-filter cat -- --all</span><br></pre></td></tr></table></figure>
+<p>其中, <code>&lt;path-to-your-remove-file&gt;</code> 就是你要删除的文件的相对路径(相对于git仓库的跟目录), 替换成你要删除的文件即可. 注意一点，这里的文件或文件夹，都不能以 ‘/‘ 开头，否则文件或文件夹会被认为是从 git 的安装目录开始。</p>
+<p>如果你要删除的目标不是文件，而是文件夹，那么请在 <code>git rm --cached</code> 命令后面添加 <code>-r</code> 命令，表示递归的删除（子）文件夹和文件夹下的文件，类似于 <code>rm -rf</code> 命令。</p>
+<p>此外，如果你要删除的文件很多, 可以写进一个.sh文件批量执行, 如果文件或路径里有中文, 由于MinGW或CygWin对中文路径设置比较麻烦, 你可以使用通配符<em>号, 例如: sound/music_</em>.mp3, 这样就把sound目录下以music_开头的mp3文件都删除了.</p>
+<p>例如这样, 新建一个 bash 脚本文件，<code>del-music-mp3.sh</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">git filter-branch --force --index-filter <span class="string">&#x27;git rm --cached --ignore-unmatch projects/Moon.mp3&#x27;</span> --prune-empty --tag-name-filter cat -- --all</span><br><span class="line">git filter-branch --force --index-filter <span class="string">&#x27;git rm --cached --ignore-unmatch sound/Music_*.mp3&#x27;</span> --prune-empty --tag-name-filter cat -- --all</span><br></pre></td></tr></table></figure>
+<p> 如果你看到类似下面这样的, 就说明删除成功了:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Rewrite 48dc599c80e20527ed902928085e7861e6b3cbe6 (266/266)</span><br><span class="line"><span class="comment"># Ref &#x27;refs/heads/master&#x27; was rewritten</span></span><br></pre></td></tr></table></figure>
+<p>如果显示 <code>xxxxx unchanged</code>, 说明repo里没有找到该文件, 请检查路径和文件名是否正确.</p>
+<p>注意: 补充一点, 如果你想以后也不会再上传这个文件或文件夹, 请把这个文件或文件夹添加到.gitignore文件里, 然后再push你的repo.</p>
+<h3 id="步骤二-推送我们修改后的repo"><a href="#步骤二-推送我们修改后的repo" class="headerlink" title="步骤二: 推送我们修改后的repo"></a>步骤二: 推送我们修改后的repo</h3><p>以强制覆盖的方式推送你的repo, 命令如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master --force</span><br></pre></td></tr></table></figure>
+<p>这个过程其实是重新上传我们的repo, 比较耗时, 虽然跟删掉重新建一个repo有些类似, 但是好处是保留了原有的更新记录, 所以还是有些不同的. 如果你实在不在意这些更新记录, 也可以删掉重建, 两者也差不太多, 也许后者还更直观些.</p>
+<p>执行结果类似下面:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Counting objects: 4669, <span class="keyword">done</span>.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (4352/4352), <span class="keyword">done</span>.</span><br><span class="line">Writing objects: 100% (4666/4666), 35.16 MiB | 51 KiB/s, <span class="keyword">done</span>.</span><br><span class="line">Total 4666 (delta 1361), reused 0 (delta 0)</span><br><span class="line">To https://github.com/defunkt/github-gem.git</span><br><span class="line"> + beb839d...81f21f3 master -&gt; master (forced update)</span><br></pre></td></tr></table></figure>
+<p>为了能从打了 tag 的版本中也删除你所指定的文件或文件夹，您可以使用这样的命令来强制推送您的 Git tags：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master --force --tags</span><br></pre></td></tr></table></figure>
+<h3 id="步骤三-清理和回收空间"><a href="#步骤三-清理和回收空间" class="headerlink" title="步骤三: 清理和回收空间"></a>步骤三: 清理和回收空间</h3><p>虽然上面我们已经删除了文件, 但是我们的repo里面仍然保留了这些objects, 等待垃圾回收(GC), 所以我们要用命令彻底清除它, 并收回空间.</p>
+<p>命令如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ rm -rf .git/refs/original/</span><br><span class="line"></span><br><span class="line">$ git reflog expire --expire=now --all</span><br><span class="line"></span><br><span class="line">$ git gc --prune=now</span><br><span class="line"></span><br><span class="line">Counting objects: 2437, <span class="keyword">done</span>.</span><br><span class="line"><span class="comment"># Delta compression using up to 4 threads.</span></span><br><span class="line"><span class="comment"># Compressing objects: 100% (1378/1378), done.</span></span><br><span class="line"><span class="comment"># Writing objects: 100% (2437/2437), done.</span></span><br><span class="line"><span class="comment"># Total 2437 (delta 1461), reused 1802 (delta 1048)</span></span><br><span class="line"></span><br><span class="line">$ git gc --aggressive --prune=now</span><br><span class="line"></span><br><span class="line">Counting objects: 2437, <span class="keyword">done</span>.</span><br><span class="line"><span class="comment"># Delta compression using up to 4 threads.</span></span><br><span class="line"><span class="comment"># Compressing objects: 100% (2426/2426), done.</span></span><br><span class="line"><span class="comment"># Writing objects: 100% (2437/2437), done.</span></span><br><span class="line"><span class="comment"># Total 2437 (delta 1483), reused 0 (delta 0)</span></span><br></pre></td></tr></table></figure>
+<p>现在你再看看你的.git目录文件大小是不是变小了.</p>
+<h3 id="参考自"><a href="#参考自" class="headerlink" title="参考自:"></a>参考自:</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://blog.csdn.net/meteor1113/article/details/4407209">从git中永久删除文件以节省空间</a></li>
+</ul>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/poem-of-usuzan/">日行小詩</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-04</time><div class="content"><p><em>原文载简书：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/51e40a1bb9e2">https://www.jianshu.com/p/51e40a1bb9e2</a></em></p>
+<p>記戊戌年二月北海道遊</p>
+<p>伊達驛前路漫漫，長途左涉國道邊。</p>
+<p>山清水遠車行稀，峰迴路轉洞爺前。</p>
+<p>湖邊景色卻看好，又轉山間雪忽霾。</p>
+<p>雪上雪下雪紛飛，路平路曲路綿延。</p>
+<p>迷茫霧里尋彩雲，千里迢迢水潺潺。</p>
+<p>不上山頂不覓爽，下山搖杏案火山。</p>
+<p>我本是為麻將來，奈何竟然見圓盤！</p>
+<p>風復靜，雪云開，湖若明鏡顯蓮台。</p>
+<p>小學校，白石苔，松柏不動人愈還。</p>
+<p>北去不上有珠山，南來未下鹿兒島。</p>
+<p>何以東西都飄雪，是唯冬去春又來！</p>
+</div><hr></div><div class="recent-post-item"><a class="article-title" href="/wu-xu-zheng-yue-chu-ba/">戊戌正月初八</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-02-23</time><div class="content"><p><em>原文载简书：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/805c44d8d3ed">https://www.jianshu.com/p/805c44d8d3ed</a></em></p>
+<p>戊戌新年自安回滬，已無旅日之前放浪之心。無大興致于動畫，無大趣味于展會，唯心所欲，無不在于讀書、學問。然而學之不及，有耐久之心，無耐久之力。熄燈就寢，輾轉思緒，願有志矣。</p>
+<p>思量錢財，故及房產。查閱戶籍制度之繁雜，感歎限購政策之艱難。所思而得最易者，竟是大學。京滬之難，知矣；鄭安之敗，顯矣；川渝之興，得矣。且尋重慶大學之門戶，遂知有<strong>博雅學院</strong>一說，又為中山大學所立。鏈其所見，無不與我思維同衷，感情相和。驚然歎曰：“吾當學于此！”</p>
+<p>噫！高考之難，我已經矣；就業之難，我已悼矣。今放浪形骸于中日城鄉，三年而知孰輕孰重。人之不為學則廢矣，此世何容我哉！唯今所想追求經世之道，非中國之大學不能成，故棄留學之計劃，立高考之微願。是其難矣，錢多發自當以節流理蓄，體多弱自當以鍛煉健康，學多病自當以激勵勉強。自是以後兩年，以此三者張之，其可成也讚于天，其不可成也往繼續之，終可成矣。
+今為此文，以彰我誰。</p>
+<p>二〇一八年二月二十三日戊戌年正月初八</p>
+</div><hr></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-chevron-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">&lt;i class&#x3D;&quot;fa fa-chevron-right&quot;&gt;&lt;&#x2F;i&gt;</a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2008 - 2021 原田莓莓</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fa fa-user"></i><span id="busuanzi_value_site_uv"></span><span></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i><span id="busuanzi_value_site_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.2"></script><script src="/js/fancybox.js?version=1.5.2"></script><script src="/js/sidebar.js?version=1.5.2"></script><script src="/js/copy.js?version=1.5.2"></script><script src="/js/fireworks.js?version=1.5.2"></script><script src="/js/transition.js?version=1.5.2"></script><script src="/js/scroll.js?version=1.5.2"></script><script src="/js/head.js?version=1.5.2"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

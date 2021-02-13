@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="《HTTP 权威指南》"><meta name="keywords" content="HTTP"><meta name="author" content="原田莓莓,undefined"><meta name="copyright" content="原田莓莓"><title>《HTTP 权威指南》 | 原田莓莓</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.2"><script>var GLOBAL = { 
+  root: '/',
+  algolia: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  localSearch: undefined
+} </script><meta name="generator" content="Hexo 5.3.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="文章详情">站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-HTTP-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">第一部分 HTTP 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-HTTP-%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">第1章 HTTP 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-URL-%E4%B8%8E%E8%B5%84%E6%BA%90"><span class="toc-number">1.2.</span> <span class="toc-text">第2章 URL 与资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-HTTP-%E6%8A%A5%E6%96%87"><span class="toc-number">1.3.</span> <span class="toc-text">第3章 HTTP 报文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">第4章 连接管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-HTTP-%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">第二部分 HTTP 结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-Web-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">第5章 Web 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0-%E4%BB%A3%E7%90%86"><span class="toc-number">2.2.</span> <span class="toc-text">第6章 代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E7%BC%93%E5%AD%98"><span class="toc-number">2.3.</span> <span class="toc-text">第7章 缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC8%E7%AB%A0-%E7%BD%91%E5%85%B3%E3%80%81%E9%9A%A7%E9%81%93%E5%92%8C%E4%B8%AD%E7%BB%A7"><span class="toc-number">2.4.</span> <span class="toc-text">第8章 网关、隧道和中继</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC9%E7%AB%A0-%E7%88%AC%E8%99%AB"><span class="toc-number">2.5.</span> <span class="toc-text">第9章 爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC10%E7%AB%A0-HTTP-2"><span class="toc-number">2.6.</span> <span class="toc-text">第10章 HTTP&#x2F;2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-HTTP-%E7%8A%B6%E6%80%81"><span class="toc-number">3.</span> <span class="toc-text">第三部分 HTTP 状态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC11%E7%AB%A0-Cookie-%E5%92%8C-Session"><span class="toc-number">3.1.</span> <span class="toc-text">第11章 Cookie 和 Session</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC12%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6"><span class="toc-number">3.2.</span> <span class="toc-text">第12章 基本认证机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC13%E7%AB%A0-%E6%91%98%E8%A6%81%E8%AE%A4%E8%AF%81"><span class="toc-number">3.3.</span> <span class="toc-text">第13章 摘要认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC14%E7%AB%A0-HTTPS"><span class="toc-number">3.4.</span> <span class="toc-text">第14章 HTTPS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-HTTP-%E5%86%85%E5%AE%B9"><span class="toc-number">4.</span> <span class="toc-text">第四部分 HTTP 内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC15%E7%AB%A0-%E5%AE%9E%E4%BD%93%E5%92%8C%E7%BC%96%E7%A0%81"><span class="toc-number">4.1.</span> <span class="toc-text">第15章 实体和编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC16%E7%AB%A0-%E5%9B%BD%E9%99%85%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">第16章 国际化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC17%E7%AB%A0-%E5%86%85%E5%AE%B9%E5%8D%8F%E5%95%86%E4%B8%8E%E8%BD%AC%E7%A0%81"><span class="toc-number">4.3.</span> <span class="toc-text">第17章 内容协商与转码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-HTTP-%E9%83%A8%E7%BD%B2"><span class="toc-number">5.</span> <span class="toc-text">第五部分 HTTP 部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC18%E7%AB%A0-Web-%E4%B8%BB%E6%9C%BA%E6%89%98%E7%AE%A1"><span class="toc-number">5.1.</span> <span class="toc-text">第18章 Web 主机托管</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC19%E7%AB%A0-%E5%8F%91%E5%B8%83%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.2.</span> <span class="toc-text">第19章 发布系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC20%E7%AB%A0-%E9%87%8D%E5%AE%9A%E5%90%91%E5%92%8C%E5%9D%87%E8%A1%A1%E8%B4%9F%E8%BD%BD"><span class="toc-number">5.3.</span> <span class="toc-text">第20章 重定向和均衡负载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC21%E7%AB%A0-%E6%97%A5%E5%BF%97"><span class="toc-number">5.4.</span> <span class="toc-text">第21章 日志</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number"></span> <span class="toc-text">参考文献</span></a></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/favicon.ico"></div><div class="author-info__name text-center">原田莓莓</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">73</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">34</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">10</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="https://www.byvoid.com" target="_blank">BYVoid</a><a class="author-info-links__name text-center" href="https://zr.is/" target="_blank">Zeyi Fan</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/images/background/shinohayu1920.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">原田莓莓</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">首页</a><a class="site-page" href="/archives">博文</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/about">关于</a></span></div><div id="post-info"><div id="post-title">《HTTP 权威指南》</div><div id="post-etitle">HTTP: The Definitive Guide</div><div id="post-author">David Gourley, Brian Totty, Marjorie Sayer, Sailu Reddy, etc.</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2016-11-12</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E8%AE%80%E6%9B%B8%E7%AD%86%E8%A8%98/">讀書筆記</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/http-the-definitive-guide/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="http-the-definitive-guide/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><p>一直想看的经典书籍之一，终于有时间，断断续续花了一周左右的时间看完了。</p>
+<p>这本书解释了我之前对很多名词和协议的疑惑，也比较全面地补充了 HTTP 相关的知识体系。我就在阅读中发现的一些问题，和补充的内容，作一下记录和讨论。</p>
+<h2 id="第一部分-HTTP-基础"><a href="#第一部分-HTTP-基础" class="headerlink" title="第一部分 HTTP 基础"></a>第一部分 HTTP 基础</h2><h3 id="第1章-HTTP-概述"><a href="#第1章-HTTP-概述" class="headerlink" title="第1章 HTTP 概述"></a>第1章 HTTP 概述</h3><p>所有类型的内容来源都是<strong>资源</strong>。</p>
+<p>URI 包括 URL 和 URN，现在几乎所有的 URI 都是 URL。另外，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A3%81%E5%8A%9B%E9%93%BE%E6%8E%A5">磁力链接</a>是 URN。</p>
+<h3 id="第2章-URL-与资源"><a href="#第2章-URL-与资源" class="headerlink" title="第2章 URL 与资源"></a>第2章 URL 与资源</h3><p>URL 的语法：</p>
+<pre><code>&lt;方案&gt;://&lt;用户&gt;:&lt;密码&gt;@&lt;主机&gt;:&lt;端口&gt;/&lt;路径&gt;;&lt;参数&gt;?&lt;查询&gt;#&lt;片段&gt;
+</code></pre>
+<p>URL 可以通过 <code>.</code> 和 <code>..</code> 来进行相对定位。</p>
+<p>URL 编码限于 ASCII 范围，用 <code>%</code> 转义。</p>
+<h3 id="第3章-HTTP-报文"><a href="#第3章-HTTP-报文" class="headerlink" title="第3章 HTTP 报文"></a>第3章 HTTP 报文</h3><p>所有报文都向下游流动。</p>
+<p>虽然分割符是 <code>\r\n</code>，但是稳健的应用程序也应该支持单个换行符的情况。</p>
+<p>请求行：<code>&lt;方法&gt; &lt;路径&gt; &lt;协议&gt;</code></p>
+<p>HTTP/1.1 定义的安全方法有 <code>GET</code>、<code>HEAD</code>、<code>POST</code>、<code>PUT</code>、<code>TRACE</code>、<code>OPTIONS</code>、<code>DELETE</code>。</p>
+<p>协议包含版本号，版本号不应作为小数点比较，比如 <code>1.10</code> &gt; <code>1.2</code>。</p>
+<p>响应行：<code>&lt;状态码&gt; &lt;原因短语&gt;</code></p>
+<p>常见的状态码有200、201、302、400、401、403、404、500、502、504，参见 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81">HTTP 状态码</a>。</p>
+<p>首部字段根据请求还是响应，分为四类。具体参见 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/HTTP%E5%A4%B4%E5%AD%97%E6%AE%B5%E5%88%97%E8%A1%A8">HTTP 头字段列表</a>。</p>
+<ol>
+<li>通用首部。</li>
+<li>请求首部。</li>
+<li>响应首部。</li>
+<li>实体首部。</li>
+</ol>
+<h3 id="第4章-连接管理"><a href="#第4章-连接管理" class="headerlink" title="第4章 连接管理"></a>第4章 连接管理</h3><p>TCP 保证的传输可靠性，见《TCP/IP 详解（第一卷）》。</p>
+<p>HTTP 事务的时延，包括 DNS 查询、连接建立、请求处理过程和数据传输验证过程。</p>
+<p>并行连接不能根本解决问题，可以结合持久连接：</p>
+<pre><code>Connection: Keep-Alive
+Keep-Alive: max=5, timeout=120
+</code></pre>
+<p>持久连接需要代理支持：</p>
+<pre><code>Proxy-Connection: Keep-Alive
+</code></pre>
+<h2 id="第二部分-HTTP-结构"><a href="#第二部分-HTTP-结构" class="headerlink" title="第二部分 HTTP 结构"></a>第二部分 HTTP 结构</h2><h3 id="第5章-Web-服务器"><a href="#第5章-Web-服务器" class="headerlink" title="第5章 Web 服务器"></a>第5章 Web 服务器</h3><p>书中给出了一个老旧的 Perl 服务器示例。注意到 Apache 已经逐步被 Nginx 部分取代，Node.js 也越来越活跃了。可以参见 <a target="_blank" rel="noopener" href="https://www.netcraft.com/survey">Netcraft 的服务器市场调查</a>，现在是微软的市场份额占据了一半。</p>
+<p>一个 Web 服务器处理请求需要七步：</p>
+<ol>
+<li>建立连接。其中确认用户的 ident 协议已经基本没人用了。</li>
+<li>接受请求。单线程、多线程/进程（Apache）、复用IO（Node.js），以及复用IO的多线程服务器。</li>
+<li>处理请求。</li>
+<li>访问资源。</li>
+<li>构建相应。</li>
+<li>发送响应。</li>
+<li>记录日志。</li>
+</ol>
+<h3 id="第6章-代理"><a href="#第6章-代理" class="headerlink" title="第6章 代理"></a>第6章 代理</h3><p><strong>代理</strong>连接的是相同协议的应用程序，<strong>网关</strong>连接的是不同协议的应用程序。</p>
+<p>常见的代理：防火墙、缓存服务器、反向代理（Nginx）、匿名服务。客户端的代理方式有：</p>
+<ol>
+<li>手动代理。就是浏览器的 Internet 选项。</li>
+<li>PAC文件。实现 <code>FindProxyForURL(url, host)</code> 的 JavaScript 程序。</li>
+<li>WPAD。自动配置 PAC 的方式。</li>
+</ol>
+<p>代理相关的首部：</p>
+<pre><code>Via: 1.0 fred, 1.1 example.com (Apache/1.1)
+Proxy-Authenticate: Basic
+Proxy-Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+X-Forwarded-For: client1, proxy1, proxy2
+</code></pre>
+<h3 id="第7章-缓存"><a href="#第7章-缓存" class="headerlink" title="第7章 缓存"></a>第7章 缓存</h3><p>为什么要有缓存：</p>
+<ol>
+<li>数据传输存在冗余。</li>
+<li>带宽有瓶颈。</li>
+<li>大新闻发生时的瞬间拥塞。</li>
+<li>物理距离产生的延迟。</li>
+</ol>
+<p>缓存无法保存世界上<em>每份文档</em>的副本，<strong>缓存命中</strong>、未命中和再验证是一个缓存的基本处理方式。一个缓存交互如下：</p>
+<pre><code>If-Modified-Since: Sat, 29 Jul 2016, 14:30:00 GMT
+
+HTTP/1.1 304 Not Modified
+Expires: Fri, 05 Oct 2016, 20:00:00 GMT
+</code></pre>
+<p>缓存命中率和字节命中率用于不同场合对缓存效率的衡量。HTTP没有提供区分缓存命中和访问原始服务器得到的手段，可以使用 <code>Date</code> 或 <code>Age</code> 首部来判断。</p>
+<p>共有代理缓存和私有缓存等可以构建起来层次化的缓存结构，也有复杂的网状缓存。</p>
+<p>缓存的处理步骤：</p>
+<ol>
+<li>接收</li>
+<li>解析</li>
+<li>查询</li>
+<li>新鲜度检测</li>
+<li>创建响应</li>
+<li>发送</li>
+<li>日志</li>
+</ol>
+<p>如何保证文档新鲜度：</p>
+<ol>
+<li>文档过期机制。<ol start="2">
+<li>过期日期：<code>Expires: &lt;日期&gt;</code></li>
+<li>使用期：<code>Cache-Control: max-age=&lt;秒数&gt;</code></li>
+</ol>
+</li>
+<li>用条件方法再验证。<ol start="5">
+<li>时间再验证：<code>If-Modified-Since: &lt;时间&gt;</code></li>
+<li>实体标签再验证：<code>If-None-Match: &lt;标签&gt;</code></li>
+<li>标签：<code>Etag: W/&quot;v2.4&quot;</code></li>
+</ol>
+</li>
+</ol>
+<p>如何控制缓存：</p>
+<pre><code>Cache-Control: no-store
+Cache-Control: no-cache
+Cache-Control: must-revalidate
+Cache-Control: max-stale
+Cache-Control: max-stale=&lt;秒数&gt;
+Cache-Control: min-fresh=&lt;秒数&gt;
+Cache-Control: max-age=&lt;秒数&gt;
+Cache-Control: only-if-cached
+Expires: &lt;日期&gt;
+Pragma: no-cache
+
+&lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;no-cache&quot;&gt;
+</code></pre>
+<p>新鲜度算法：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">server_freshness_limit</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">local</span>($heuristic, $server_freshness_limit, $time_since_last_modify);</span><br><span class="line"></span><br><span class="line">  $heuristic = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ($Max_Age_value_set) &#123;</span><br><span class="line">    $server_freshness_limit = $Max_Age_value;</span><br><span class="line">  &#125; elseif ($Expires_value_set) &#123;</span><br><span class="line">    $server_freshness_limit = $Expires_value - $Date_value;</span><br><span class="line">  &#125; elseif ($Last_Modified_value_set) &#123;</span><br><span class="line">    $time_since_last_modify = max(<span class="number">0</span>, $Date_value - $Last_Modified_value);</span><br><span class="line">    $server_freshness_limit = <span class="keyword">int</span>($time_since_last_modify * lm_factor);</span><br><span class="line">    $heuristic = <span class="number">1</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $server_freshness_limit = $default_cache_min_lifetime;</span><br><span class="line">    $heuristic = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ($heuristic) &#123;</span><br><span class="line">    <span class="keyword">if</span> ($server_freshness_limit &gt; $default_cache_max_lifetime) &#123;</span><br><span class="line">      $server_fresh_limit = $default_cache_max_lifetime;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> ($server_freshness_limit &lt; $default_cache_min_lifetime) &#123;</span><br><span class="line">      $server_fresh_limit = $default_cache_min_lifetime;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ($server_freshness_limit);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">sub</span> <span class="title">client_modified_freshness_limit</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  $age_limit = server_freshness_limit();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ($Max_Stale_value_set) &#123;</span><br><span class="line">    <span class="keyword">if</span> ($Max_Stale_value == $INT_MAX) &#123;</span><br><span class="line">      $age_limit = $INT_MAX;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $age_limit = server_freshness_limit() + $Max_Stale_value;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ($Min_Fresh_value_set) &#123;</span><br><span class="line">    $age_limit = min($age_limit, server_freshness_limit() - $Min_Fresh_value_set);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ($Max_Age_value_set) &#123;</span><br><span class="line">    $age_limit = min($age_limit, $Max_Age_value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>广告商不喜欢缓存。</p>
+<h3 id="第8章-网关、隧道和中继"><a href="#第8章-网关、隧道和中继" class="headerlink" title="第8章 网关、隧道和中继"></a>第8章 网关、隧道和中继</h3><p>单个应用程序无法处理所有的资源，<strong>网关</strong>作为不同协议之间的翻译器，分为服务器网关（<code>HTTP/*</code>）和客户端网关（<code>*/HTTP</code>）。</p>
+<p>协议网关可以在代理设置里配置。</p>
+<p>资源网关，通过 API 与客户端通信。最初的应用程序网关就是 CGI。API 交互方式有 XML 和 SOAP 等。</p>
+<p><strong>隧道</strong>通过 HTTP 来承载非 HTTP 流量以通过防火墙：</p>
+<pre><code>CONNECT 127.0.0.1:1080 HTTP/1.1
+
+HTTP/1.1 200 Connection Established
+Proxy-agent: SSH-Proxy/2
+</code></pre>
+<p><strong>中继</strong>是没有完全遵循 HTTP 规范的简单 HTTP 代理，负责处理建立连接的部分，然后对字节进行盲转发。</p>
+<p>中继能当能够处理 <code>Connection</code> 首部来避免互操作的问题。</p>
+<h3 id="第9章-爬虫"><a href="#第9章-爬虫" class="headerlink" title="第9章 爬虫"></a>第9章 爬虫</h3><p><strong>爬虫</strong>（Web 机器人），从根集开始，提取页面上的链接，进行相对链接标准化和转义的规范化。</p>
+<p>注意避免环路，可以使用树和散列表、存在位图、检查点和分类机制来进行管理。文件系统链接也会产生环路，需要特殊处理。几种避免重复和循环的技术：</p>
+<ul>
+<li>规范化 URL。</li>
+<li>广度优先的爬行。</li>
+<li>节流。</li>
+<li>限制 URL 长度。</li>
+<li>URL 黑名单。</li>
+<li>模式检测。</li>
+<li>内容指纹。</li>
+<li>人工监视。</li>
+</ul>
+<p>爬虫需要支持最小集合的 HTTP，具体包括 <code>User-Agent</code>、<code>From</code>、<code>Accept</code>、<code>Referer</code>、<code>Host</code> 等，也要支持 <code>http-equiv</code> 和重定向信息。</p>
+<p>拒绝机器人访问标准：<code>robots.txt</code>。</p>
+<pre><code>User-Agent: *
+Disallow: /home
+Allow: /index
+</code></pre>
+<p>搜索引擎相关内容，参见《搜索引擎：信息检索实践》。</p>
+<h3 id="第10章-HTTP-2"><a href="#第10章-HTTP-2" class="headerlink" title="第10章 HTTP/2"></a>第10章 HTTP/2</h3><p>HTTP/2于2015年5月以正式发布。</p>
+<p>当前所有浏览器均只支持 HTTP/2 Over TLS。</p>
+<h2 id="第三部分-HTTP-状态"><a href="#第三部分-HTTP-状态" class="headerlink" title="第三部分 HTTP 状态"></a>第三部分 HTTP 状态</h2><p>HTTP 是无状态的，所以要有一套机制来实现状态。</p>
+<h3 id="第11章-Cookie-和-Session"><a href="#第11章-Cookie-和-Session" class="headerlink" title="第11章 Cookie 和 Session"></a>第11章 Cookie 和 Session</h3><p>客户端 IP 地址在经过多重代理时会不断发生变化，现在会使用 <code>X-Forworded-For</code> 来记录。</p>
+<p>胖 URL 可以作为识别用户的标记，但不利于搜索引擎优化和阅读。</p>
+<p>Cookie 和 Session 的唯一区别就是它们的过期时间。不同站点使用不同的 Cookie，并且不能跨域访问。</p>
+<p>虽然书中讲到了 <code>Set-Cookie2</code>，不过现在大多数应用程序都使用 <code>Set-Cookie</code>，少有实现前者的。</p>
+<p>设置的 Cookie 需要在请求时加在首部：</p>
+<pre><code>Set-Cookie: session-id=111, uid=1, path=/; domain=.kingfree.moe, expires=Tuesday, 24-Nov-2018 18:00:00 GMT
+
+Cookie: session-id=111, uid=1
+</code></pre>
+<h3 id="第12章-基本认证机制"><a href="#第12章-基本认证机制" class="headerlink" title="第12章 基本认证机制"></a>第12章 基本认证机制</h3><p>基本认证：</p>
+<pre><code>GET /user
+
+HTTP/1.1 401 Authorization Required
+WWW-Authenticate: Basic realm=&quot;kingfree&quot;
+
+GET /user
+Authorization: Basic &lt;Base64编码的用户名:密码&gt;
+
+HTTP/1.1 200 Success
+</code></pre>
+<p>代理认证把返回码改成 <code>407</code>，请求改为 <code>Proxy-Authorization</code>，响应改为 <code>Proxy-Authorizate</code>。</p>
+<p>基本认证通过网络发送用户名和密码，存在安全缺陷。将基本认证与加密传输结合起来，是一种常用的技巧。</p>
+<h3 id="第13章-摘要认证"><a href="#第13章-摘要认证" class="headerlink" title="第13章 摘要认证"></a>第13章 摘要认证</h3><p>摘要认证作了如下改进：</p>
+<ul>
+<li>永远不会以明文方式在网络上发送密码。</li>
+<li>可以防止恶意用户捕获并重放认证的握手过程。</li>
+<li>可以有选择地防止对报文内容的修改。</li>
+<li>防范其他几种常见的攻击方式。</li>
+</ul>
+<p>通过随机数，可以防止重放攻击。</p>
+<p>摘要的计算：</p>
+<ol>
+<li>由单项散列函数$H(d)$和摘要$KD(s, d)$组成一对函数，其中$s$表示密码，$d$表示数据。</li>
+<li>密码是包含了安全信息的数据块，称$A_1$。</li>
+<li>请求报文中非保密属性的数据块，成$A_2$。</li>
+<li>计算$H(A_2)$和$KD(A_1, A_2)$，产生摘要。</li>
+</ol>
+<p>建议的摘要算法为 MD5：</p>
+<p>$$H(d) = MD5(d)\
+KD(s, d) = H(concatenate(s, d))$$</p>
+<p><strong>预授权</strong>可以减少报文数量，通过在首部加入预选随机数实现：</p>
+<pre><code>Authentication-Info: nextnonce=&quot;&lt;随机数&gt;&quot;
+</code></pre>
+<p>注意，摘要认证仍然不够安全，词典攻击和中间人攻击依然奏效。</p>
+<h3 id="第14章-HTTPS"><a href="#第14章-HTTPS" class="headerlink" title="第14章 HTTPS"></a>第14章 HTTPS</h3><p><strong>数字证书</strong>用于安全认证身份验证。一个 HTTPS 连接的建立要满足：</p>
+<ol>
+<li>用户相信他们的浏览器正确实现了 HTTPS 且安装了正确的证书颁发机构；</li>
+<li>用户相信证书颁发机构仅信任合法的网站；</li>
+<li>被访问的网站提供了一个信任的证书颁发机构签发的证书；</li>
+<li>该证书正确地验证了被访问的网站，或者互联网上相关的节点是值得信任的，或者用户相信本协议的加密层不能被窃听者破坏。</li>
+</ol>
+<p>HTTPS 运行在 TLS/SSL 之上，使用 OpenSSL 来编写相关应用程序。</p>
+<h2 id="第四部分-HTTP-内容"><a href="#第四部分-HTTP-内容" class="headerlink" title="第四部分 HTTP 内容"></a>第四部分 HTTP 内容</h2><h3 id="第15章-实体和编码"><a href="#第15章-实体和编码" class="headerlink" title="第15章 实体和编码"></a>第15章 实体和编码</h3><p>报文承载实体。</p>
+<p><code>Content-Length</code> 可以用于检测截尾。<code>Content-MD5</code> 用以验证实体内容。</p>
+<pre><code>Content-Type: &lt;MIME类型&gt;; charset=&lt;编码&gt;
+</code></pre>
+<p>多部分表单提交：    </p>
+<pre><code>Content-Type: multipart/form-data; boundary=$&#123;bound&#125;
+
+--$&#123;bound&#125;  
+Content-Disposition: form-data; name=&quot;Filename&quot;  
+  
+HTTP.pdf  
+--$&#123;bound&#125;  
+Content-Disposition: form-data; name=&quot;file000&quot;; filename=&quot;HTTP协议详解.pdf&quot;  
+Content-Type: application/octet-stream  
+  
+%PDF-1.5
+file content  
+%%EOF  
+  
+--$&#123;bound&#125;  
+Content-Disposition: form-data; name=&quot;Upload&quot;  
+  
+Submit Query  
+--$&#123;bound&#125;--  
+</code></pre>
+<p>内容编码：</p>
+<pre><code>Accept-Encoding: *
+
+Content-Encoding: gzip
+Content-Encoding: compress
+Content-Encoding: deflate
+Content-Encoding: identity # 默认
+</code></pre>
+<p>分块编码：</p>
+<pre><code>Transfer-encoding: chunked
+</code></pre>
+<p>条件请求和验证标签：</p>
+<pre><code>ETag: &lt;标签&gt;
+Last-Modified: &lt;日期&gt;
+
+If-Match: &lt;标签&gt;
+If-None-Match: &lt;标签&gt;
+If-Modified-Since: &lt;日期&gt;
+If-Unmodified-Since: &lt;日期&gt;
+</code></pre>
+<p>范围请求可以实现断点续传和多线程下载：</p>
+<pre><code>Range: bytes=4000-
+Range: bytes=4000-8000
+Range: bytes=-1
+
+Accept-Ranges: bytes
+</code></pre>
+<p>实现差异编码所需的额外磁盘空间会将减少传输量获得的好处抵消掉，所以现在一般不用。</p>
+<h3 id="第16章-国际化"><a href="#第16章-国际化" class="headerlink" title="第16章 国际化"></a>第16章 国际化</h3><pre><code>Accept-Language:zh-CN,zh;q=0.8,ja;q=0.6,en-US;q=0.4,en;q=0.2,zh-TW;q=0.2
+
+Content-Language: zh-CN
+</code></pre>
+<p>通过<a target="_blank" rel="noopener" href="https://www.ietf.org/rfc/rfc3492">Punycode</a>，域名已经支持中文。</p>
+<p>URL 也支持中文，根据服务器处理实现不同。</p>
+<p>最重要，统一使用 UTF-8 避免编码问题！</p>
+<h3 id="第17章-内容协商与转码"><a href="#第17章-内容协商与转码" class="headerlink" title="第17章 内容协商与转码"></a>第17章 内容协商与转码</h3><pre><code>Accept: &lt;MIME类型&gt;
+Accept-Language: &lt;自然语言&gt;
+Accept-Charset: &lt;字符集&gt;
+Accept-Encoding: &lt;编码&gt;
+
+Content-Type: &lt;MIME类型&gt;; charset=&lt;字符集&gt;
+Content-Language: &lt;自然语言&gt;
+Content-Encoding: &lt;编码&gt;
+</code></pre>
+<h2 id="第五部分-HTTP-部署"><a href="#第五部分-HTTP-部署" class="headerlink" title="第五部分 HTTP 部署"></a>第五部分 HTTP 部署</h2><h3 id="第18章-Web-主机托管"><a href="#第18章-Web-主机托管" class="headerlink" title="第18章 Web 主机托管"></a>第18章 Web 主机托管</h3><p>虚拟主机的多域名托管：</p>
+<pre><code>Host: blog.kingfree.moe
+</code></pre>
+<h3 id="第19章-发布系统"><a href="#第19章-发布系统" class="headerlink" title="第19章 发布系统"></a>第19章 发布系统</h3><p>书中讲的 FrontPage 和 WebDAV 均已过时。</p>
+<h3 id="第20章-重定向和均衡负载"><a href="#第20章-重定向和均衡负载" class="headerlink" title="第20章 重定向和均衡负载"></a>第20章 重定向和均衡负载</h3><p>报文重定向的方法：</p>
+<ul>
+<li>DNS 轮转。</li>
+<li>IP 地址转发。</li>
+<li>IP MAC 转发。</li>
+<li>HTTP 重定向。</li>
+<li>任播寻址。</li>
+</ul>
+<p>代理重定向的方法：</p>
+<ul>
+<li>显式浏览器配置。</li>
+<li>代理自动配置（PAC）。</li>
+<li>代理自动发现（WPAD）。</li>
+</ul>
+<p>缓存重定向的方法：</p>
+<ul>
+<li>WCCP 重定向。</li>
+<li>因特网缓存协议（ICP）。</li>
+<li>缓存阵列路由协议（CARP）。</li>
+<li>超文本缓存协议（HTCP）。</li>
+<li>内容分发网络（CDN）。</li>
+</ul>
+<h3 id="第21章-日志"><a href="#第21章-日志" class="headerlink" title="第21章 日志"></a>第21章 日志</h3><p>常用日志格式和组合日志格式：</p>
+<pre><code>&lt;远程主机名&gt; &lt;用户名&gt; &lt;认证用户名&gt; &lt;请求的日期时间&gt; &lt;请求首行&gt; &lt;响应状态码&gt; &lt;Content-Length&gt; &lt;Referer&gt; &lt;User-Agent&gt;
+</code></pre>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc2616">超文本传输协议——HTTP/1.1</a></li>
+<li><a target="_blank" rel="noopener" href="https://imququ.com/post/http2-resource.html">HTTP/2 资料汇总</a></li>
+<li><a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc6265">HTTP 状态管理机制</a></li>
+</ol>
+</div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HTTP/">HTTP</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/the-non-designer-s-design-book/"><i class="fa fa-chevron-left">  </i><span>《写给大家看的设计书》</span></a></div><div class="next-post pull-right"><a href="/the-design-of-design/"><span>《设计原本》</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var disqus_shortname = 'kingfree'
+var disqus_config = function () {
+  this.page.url = 'http://blog.kingfree.moe/http-the-definitive-guide/';
+  this.page.identifier = 'http-the-definitive-guide/';
+  this.page.title = '《HTTP 权威指南》';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + disqus_shortname +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-src" src="https://kingfree.disqus.com/count.js" async></script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2008 - 2021 原田莓莓</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.2"></script><script src="/js/fancybox.js?version=1.5.2"></script><script src="/js/sidebar.js?version=1.5.2"></script><script src="/js/copy.js?version=1.5.2"></script><script src="/js/fireworks.js?version=1.5.2"></script><script src="/js/transition.js?version=1.5.2"></script><script src="/js/scroll.js?version=1.5.2"></script><script src="/js/head.js?version=1.5.2"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

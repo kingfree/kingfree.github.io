@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="PSR-4: 自动加载"><meta name="keywords" content="PHP"><meta name="author" content="原田莓莓,undefined"><meta name="copyright" content="原田莓莓"><title>PSR-4: 自动加载 | 原田莓莓</title><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css?version=1.5.2"><script>var GLOBAL = { 
+  root: '/',
+  algolia: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  localSearch: undefined
+} </script><meta name="generator" content="Hexo 5.3.0"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="文章详情">站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A6%82%E5%86%B5"><span class="toc-number">1.</span> <span class="toc-text">1. 概况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AF%B4%E6%98%8E"><span class="toc-number">2.</span> <span class="toc-text">2. 说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%8C%83%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">3. 范例</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/favicon.ico"></div><div class="author-info__name text-center">原田莓莓</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">73</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">34</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">10</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">友情链接</div><a class="author-info-links__name text-center" href="https://www.byvoid.com" target="_blank">BYVoid</a><a class="author-info-links__name text-center" href="https://zr.is/" target="_blank">Zeyi Fan</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/images/background/shinohayu1920.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">原田莓莓</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">首页</a><a class="site-page" href="/archives">博文</a><a class="site-page" href="/tags">标签</a><a class="site-page" href="/categories">分类</a><a class="site-page" href="/about">关于</a></span></div><div id="post-info"><div id="post-title">PSR-4: 自动加载</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-04-13</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%BF%BB%E8%AF%91/">翻译</a><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/psr-4/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="psr-4/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div id="post-content"><p><em>原文： <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-4/">https://www.php-fig.org/psr/psr-4/</a></em></p>
+<p><a target="_blank" rel="noopener" href="http://tools.ietf.org/html/rfc2119">RFC 2119</a>中的<strong>必须</strong>(MUST)、<strong>不能</strong>(MUST NOT)、<strong>应当</strong>(SHOULD)、<strong>不应</strong>(SHOULD NOT)、<strong>可以</strong>(MAY)等术语将在本节用来做一些解释性的描述。</p>
+<h2 id="1-概况"><a href="#1-概况" class="headerlink" title="1. 概况"></a>1. 概况</h2><p>这个 PSR 描述的是通过文件路径<a target="_blank" rel="noopener" href="http://php.net/autoload">自动加载</a>类的指南，是对 <a target="_blank" rel="noopener" href="https://www.php-fig.org/psr/psr-0/">PSR-0</a> 的补充。根据这个指导如何规范存放文件以便自动加载。</p>
+<h2 id="2-说明"><a href="#2-说明" class="headerlink" title="2. 说明"></a>2. 说明</h2><ol>
+<li><p>术语“类”是一个泛称，它包含类、接口、特性(trait)以及其他类似的结构。</p>
+</li>
+<li><p>完全限定类名应该类似如下范例：</p>
+<p> <code>\&lt;NamespaceName&gt;(\&lt;SubNamespaceNames&gt;)*\&lt;ClassName&gt;</code></p>
+<ol>
+<li>完全限定类名<strong>必须</strong>有一个顶级命名空间（Vendor Name）；</li>
+<li>完全限定类名<strong>可以</strong>有多个子命名空间；</li>
+<li>完全限定类名<strong>应当</strong>有一个终止类名；</li>
+<li>下划线在完全限定类名中是没有特殊含义的；</li>
+<li>字母在完全限定类名中<strong>可以</strong>是任何大小写的组合；</li>
+<li>所有类名<strong>必须</strong>以大小写敏感的方式引用。</li>
+</ol>
+</li>
+<li><p>当从完全限定类名载入文件时：</p>
+<ol>
+<li>在完全限定类名中，连续的一个或几个子命名空间构成的命名空间前缀（不包括顶级命名空间的分隔符），至少对应着至少一个基础目录。</li>
+<li>在“命名空间前缀”后的连续子命名空间名称对应一个“基础目录”下的子目录，其中的命名空间分隔符表示目录分隔符。子目录名称<strong>必须</strong>和子命名空间名大小写匹配；</li>
+<li>终止类名对应一个以 <code>.php</code> 结尾的文件。文件名<strong>必须</strong>和终止类名大小写匹配。</li>
+</ol>
+</li>
+<li><p>自动加载器的实现<strong>不能</strong>抛出任何异常，<strong>不能</strong>引发任何等级的错误，也<strong>不应</strong>返回任何值。</p>
+</li>
+</ol>
+<h2 id="3-范例"><a href="#3-范例" class="headerlink" title="3. 范例"></a>3. 范例</h2><p>如下表格展示的是与完全限定类名、命名空间前缀和基础目录相对应的文件路径：</p>
+<table>
+<thead>
+<tr>
+<th>完全限定类名</th>
+<th>命名空间前缀</th>
+<th>基础目录</th>
+<th>实际的文件路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\Acme\Log\Writer\File_Writer</td>
+<td>Acme\Log\Writer</td>
+<td>./acme-log-writer/lib/</td>
+<td>./acme-log-writer/lib/File_Writer.php</td>
+</tr>
+<tr>
+<td>\Aura\Web\Response\Status</td>
+<td>Aura\Web</td>
+<td>/path/to/aura-web/src/</td>
+<td>/path/to/aura-web/src/Response/Status.php</td>
+</tr>
+<tr>
+<td>\Symfony\Core\Request</td>
+<td>Symfony\Core</td>
+<td>./vendor/Symfony/Core/</td>
+<td>./vendor/Symfony/Core/Request.php</td>
+</tr>
+<tr>
+<td>\Zend\Acl</td>
+<td>Zend</td>
+<td>/usr/includes/Zend/</td>
+<td>/usr/includes/Zend/Acl.php</td>
+</tr>
+</tbody></table>
+<p>例子中的自动加载器非常适合这个指南，请参照 <a target="_blank" rel="noopener" href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader-examples.md">示例文件</a>。由于示例<strong>可能</strong>随时变更，<strong>不能</strong>作为指南的一部分。</p>
+</div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/PHP/">PHP</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/ethash-algorithm/"><i class="fa fa-chevron-left">  </i><span>Ethash 算法</span></a></div><div class="next-post pull-right"><a href="/psr-3/"><span>PSR-3: 日志接口</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var disqus_shortname = 'kingfree'
+var disqus_config = function () {
+  this.page.url = 'http://blog.kingfree.moe/psr-4/';
+  this.page.identifier = 'psr-4/';
+  this.page.title = 'PSR-4: 自动加载';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + disqus_shortname +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-src" src="https://kingfree.disqus.com/count.js" async></script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2008 - 2021 原田莓莓</div><div class="framework-info"><span>驱动 - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="/js/third-party/anime.min.js"></script><script src="/js/third-party/jquery.min.js"></script><script src="/js/third-party/jquery.fancybox.min.js"></script><script src="/js/third-party/velocity.min.js"></script><script src="/js/third-party/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.2"></script><script src="/js/fancybox.js?version=1.5.2"></script><script src="/js/sidebar.js?version=1.5.2"></script><script src="/js/copy.js?version=1.5.2"></script><script src="/js/fireworks.js?version=1.5.2"></script><script src="/js/transition.js?version=1.5.2"></script><script src="/js/scroll.js?version=1.5.2"></script><script src="/js/head.js?version=1.5.2"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
