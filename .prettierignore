@@ -1,0 +1,14 @@
+# 构建产物与依赖
+dist/
+node_modules/
+package-lock.json
+.astro/
+
+# 静态资源保持原样
+public/
+
+# Astro 模板是手写排版，不交给 Prettier（保存时也不会自动格式化，见 .zed/settings.json）
+src/**/*.astro
+
+# 文章正文是散文，不需要工具重排
+src/content/posts/

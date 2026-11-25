@@ -25,7 +25,11 @@ function parseFm(text) {
       key = kv[1];
       let v = kv[2].trim();
       if (v.startsWith('[') && v.endsWith(']')) {
-        fm[key] = v.slice(1, -1).split(',').map((s) => s.trim().replace(/^['"]|['"]$/g, '')).filter(Boolean);
+        fm[key] = v
+          .slice(1, -1)
+          .split(',')
+          .map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
+          .filter(Boolean);
       } else if (v === '') {
         fm[key] = '';
       } else {
@@ -46,7 +50,8 @@ for (const f of files) {
   const m = base.match(/^(\d{4}-\d{2}-\d{2})-(.+)$/);
   const dateFromName = m ? m[1] : null;
   const slug = m ? m[2] : base;
-  const pad = (s) => s.replace(/^(\d{4})-(\d{1,2})-(\d{1,2})/, (_, y, m, d) => `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`);
+  const pad = (s) =>
+    s.replace(/^(\d{4})-(\d{1,2})-(\d{1,2})/, (_, y, m, d) => `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`);
   const date = pad((fm.date ? String(fm.date).slice(0, 10) : dateFromName) ?? '2008-01-01');
   const toArr = (v) => (Array.isArray(v) ? v : v ? [v] : []);
   const tags = [...new Set([...toArr(fm.categories), ...toArr(fm.tags)])];
@@ -64,7 +69,9 @@ for (const f of files) {
     'tags: ' + JSON.stringify(tags),
     fm.update ? 'updated: ' + String(fm.update).slice(0, 10) : null,
     '---',
-  ].filter(Boolean).join('\n');
+  ]
+    .filter(Boolean)
+    .join('\n');
   // links to pages that never made it out of the old site
   md = md
     .replace(/\[([^\]]*)\]\(\/books\/xinlei_learning_method\.html\)/g, '$1')

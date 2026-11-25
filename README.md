@@ -14,6 +14,17 @@ npm run dev      # http://localhost:4321
 npm run build    # 输出到 dist/
 ```
 
+## 格式
+
+保存时不自动格式化；`.zed/settings.json` 对 Astro / Markdown / HTML 关闭了保存时格式化，
+免得改文案时整个模板被重排。`*.astro` 与 `src/content/posts/` 不进 Prettier（见 `.prettierignore`），
+其余代码用 Prettier 统一：
+
+```bash
+npm run format         # 格式化
+npm run format:check   # 只检查
+```
+
 ## 内容
 
 新增文章：在 `src/content/posts/` 放一个 `<slug>.md`，frontmatter 至少写 `title` 与 `date`，

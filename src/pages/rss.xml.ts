@@ -1,8 +1,7 @@
 import type { APIRoute } from 'astro';
 import { loadPosts } from '../lib/posts';
 
-const esc = (s: string) =>
-  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 export const GET: APIRoute = async ({ site }) => {
   const base = (site ?? new URL('https://meimoe.fun')).toString().replace(/\/$/, '');
@@ -14,7 +13,7 @@ export const GET: APIRoute = async ({ site }) => {
       <link>${base}/${p.slug}/</link>
       <guid>${base}/${p.slug}/</guid>
       <pubDate>${p.date.toUTCString()}</pubDate>
-    </item>`
+    </item>`,
     )
     .join('\n');
 

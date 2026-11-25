@@ -27,7 +27,7 @@ export async function loadPosts(): Promise<Post[]> {
         description: fm.description,
         Content: mod.default,
       } satisfies Post;
-    })
+    }),
   );
   return entries.sort((a, b) => b.date.getTime() - a.date.getTime());
 }

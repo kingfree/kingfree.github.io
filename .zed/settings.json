@@ -1,0 +1,13 @@
+{
+  "languages": {
+    "Astro": {
+      "format_on_save": "off"
+    },
+    "Markdown": {
+      "format_on_save": "off"
+    },
+    "HTML": {
+      "format_on_save": "off"
+    }
+  }
+}
