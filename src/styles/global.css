@@ -743,3 +743,143 @@ html.dark .prose pre {
     display: none;
   }
 }
+
+/* ---------- 对话式文章（frontmatter: chat: [说话人…]） ---------- */
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chat > blockquote {
+  margin: 0;
+}
+
+.chat-turn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.chat-avatar {
+  flex: none;
+  width: 1.65rem;
+  height: 1.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg);
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.chat-name {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.chat-note {
+  font-size: 0.75rem;
+  color: var(--faint);
+}
+
+.chat-body {
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--bg-soft);
+  padding: 1.05rem 1.25rem;
+  font-size: 0.9688rem;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.chat-body > :first-child {
+  margin-top: 0;
+}
+
+.chat-body > :last-child {
+  margin-bottom: 0;
+}
+
+.chat-body h2 {
+  margin: 1.75em 0 0.55em;
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.chat-body h3 {
+  margin: 1.6em 0 0.35em;
+  font-size: 0.9688rem;
+  font-weight: 700;
+}
+
+.chat-body blockquote {
+  margin: 1em 0;
+  padding: 0.15em 0 0.15em 0.9em;
+  border-left: 2px solid var(--accent);
+  background: transparent;
+  color: var(--muted);
+}
+
+.chat-body ul,
+.chat-body ol {
+  padding-left: 1.2em;
+}
+
+.chat-body table {
+  font-size: 0.85rem;
+}
+
+/* 我的提问：靠右、用强调色，像对话框里属于自己的那一侧 */
+.chat-turn.me {
+  align-items: flex-end;
+}
+
+.chat-turn.me .chat-head {
+  flex-direction: row-reverse;
+}
+
+/* 自己的消息不用头像，名字本身已经说明是谁 */
+.chat-turn.me .chat-avatar {
+  display: none;
+}
+
+.chat-turn.me .chat-body {
+  max-width: min(88%, 34rem);
+  border-color: transparent;
+  background: var(--accent-soft);
+}
+
+html.dark .chat-body {
+  background: #1b1815;
+}
+
+html.dark .chat-turn.me .chat-body {
+  background: #2a1c1f;
+}
+
+@media (max-width: 640px) {
+  .chat {
+    gap: 1.15rem;
+  }
+  .chat-body {
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+  }
+  .chat-turn.me .chat-body {
+    max-width: 92%;
+  }
+}

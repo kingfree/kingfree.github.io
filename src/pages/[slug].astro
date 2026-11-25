@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import { loadPosts, formatDate } from '../lib/posts';
+import { renderChat } from '../lib/chat-turns.mjs';
+
+const rawSources = import.meta.glob('../content/posts/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
 
 export async function getStaticPaths() {
   const posts = await loadPosts();
@@ -12,6 +15,8 @@ export async function getStaticPaths() {
 
 const { post, prev, next } = Astro.props;
 const Content = post.Content;
+const chatSource = post.chat.length ? rawSources['../content/posts/' + post.slug + '.md'] : '';
+const chatHtml = chatSource ? renderChat(chatSource, post.chat) : null;
 const description = post.description ?? post.title + ' —— 原田莓莓';
 ---
 <Base title={post.title} description={description} type="article">
@@ -30,8 +35,8 @@ const description = post.description ?? post.title + ' —— 原田莓莓';
       </div>
     </header>
 
-    <div class="prose">
-      <Content />
+    <div class={post.chat.length ? 'prose chat' : 'prose'}>
+      {chatHtml ? <Fragment set:html={chatHtml} /> : <Content />}
     </div>
 
     {post.legacy && post.source && (

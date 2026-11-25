@@ -5,6 +5,8 @@ export type Post = {
   tags: string[];
   /** 分类：空 = 原创文章；'译' = 译文；'转' = 转载。这三类各自独立成站内栏目。 */
   category: string;
+  /** 对话式排版：frontmatter 的 chat 说话人列表；空数组表示普通文章。 */
+  chat: string[];
   legacy: boolean;
   source?: string;
   description?: string;
@@ -30,6 +32,7 @@ export async function loadPosts(): Promise<Post[]> {
         date: new Date(fm.date ?? 0),
         tags: Array.isArray(fm.tags) ? fm.tags.map(String) : [],
         category: String(fm.category ?? ''),
+        chat: Array.isArray(fm.chat) ? fm.chat.map(String) : [],
         legacy: Boolean(fm.legacy),
         source: fm.source,
         description: fm.description,

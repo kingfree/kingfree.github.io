@@ -14,6 +14,17 @@ npm run dev      # http://localhost:4321
 npm run build    # 输出到 dist/
 ```
 
+## 对话式文章
+
+想把它排成聊天记录的样子，在 frontmatter 里写说话人列表即可（「我」渲染成靠右的用户气泡，其余是助手气泡）：
+
+```yaml
+chat: ["我", "Gemini", "Sonnet 5"]
+```
+
+正文里用「加粗说话人 + 段落」分段，轮与轮之间用 `---` 隔开（分隔线会被吃掉）。
+渲染走 `src/lib/chat-turns.mjs`，在构建期把 Markdown 转成气泡结构，不需要客户端脚本。
+
 ## 格式
 
 保存时不自动格式化；`.zed/settings.json` 对 Astro / Markdown / HTML 关闭了保存时格式化，
