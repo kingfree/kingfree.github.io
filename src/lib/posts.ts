@@ -27,7 +27,7 @@ export const SECTIONS = [
 /** 带这些标签的算译文 / 转载 / 读书笔记（简繁都认）。 */
 const TRANSLATION_TAGS = ['翻译', '翻譯', '译文', '譯文'];
 const REPOST_TAGS = ['转载', '轉載'];
-const READING_TAGS = ['讀書筆記', '读书笔记', '读书', '讀書', '書評', '书评'];
+const READING_TAGS = ['讀書筆記', '读书笔记', '读书', '讀書', '書評', '书评', '经史子集', '經史子集', '史記', '史记'];
 
 /** 标题里遗留的旧标记，显示前统一去掉。 */
 const TITLE_MARKER = /【[译譯轉转書书]】/g;
