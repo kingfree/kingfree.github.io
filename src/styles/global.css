@@ -432,6 +432,24 @@ a {
 .prose p {
   margin: 1.15em 0;
 }
+
+/* 生僻字注音（<ruby> 拼音） */
+.prose ruby {
+  ruby-position: over;
+  ruby-align: center;
+}
+
+.prose rt {
+  font-size: 0.58em;
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.prose p:has(ruby) {
+  line-height: 2.1;
+}
 .prose ul,
 .prose ol {
   margin: 1.15em 0;
