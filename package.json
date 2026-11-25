@@ -15,6 +15,8 @@
     "astro": "^7.4.13"
   },
   "devDependencies": {
+    "@astrojs/markdown-satteri": "^0.4.10",
+    "katex": "^0.19.1",
     "lxgw-wenkai-webfont": "^1.7.0",
     "prettier": "^3.10.1",
     "satteri": "^0.11.7",

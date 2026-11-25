@@ -883,3 +883,23 @@ html.dark .chat-turn.me .chat-body {
     max-width: 92%;
   }
 }
+
+/* ---------- KaTeX 公式 ---------- */
+
+.prose .katex {
+  font-size: 1.04em;
+}
+
+.prose .katex-display {
+  margin: 1.5em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.prose .math-block {
+  margin: 1.5em 0;
+}
+
+html.dark .prose .katex {
+  color: var(--text);
+}

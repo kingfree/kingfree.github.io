@@ -14,6 +14,11 @@ npm run dev      # http://localhost:4321
 npm run build    # 输出到 dist/
 ```
 
+## 公式
+
+行内 `$...$`、块级 `$$...$$` 由 KaTeX 在构建期渲染（`src/lib/satteri-katex.mjs`），样式取自 `katex/dist/katex.min.css`，深浅色都跟着正文走。
+公式里的中文要包在 `\text{}` 里，或者干脆别塞进公式——KaTeX 的字体没有中文。
+
 ## 对话式文章
 
 想把它排成聊天记录的样子，在 frontmatter 里写说话人列表即可（「我」渲染成靠右的用户气泡，其余是助手气泡）：
