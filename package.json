@@ -15,6 +15,7 @@
     "astro": "^7.4.13"
   },
   "devDependencies": {
+    "lxgw-wenkai-webfont": "^1.7.0",
     "prettier": "^3.10.1",
     "turndown": "^7.2.5"
   }
