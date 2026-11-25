@@ -22,6 +22,31 @@ const speakerOf = (node, speakers) => {
   return speakers.includes(name) ? name : null;
 };
 
+const slugify = (text) =>
+  text
+    .trim()
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '');
+
+/** 给对话里的标题补 id，顺手收一份大纲出来（和普通文章一样能生成目录）。 */
+const collectHeadings = (node, headings, used) => {
+  if (node?.type === 'element' && /^h[1-6]$/.test(node.tagName)) {
+    const depth = Number(node.tagName.slice(1));
+    const text = textOf(node).trim();
+    let id = node.properties?.id ?? slugify(text);
+    if (used.has(id)) {
+      let i = 2;
+      while (used.has(id + '-' + i)) i++;
+      id = id + '-' + i;
+    }
+    used.add(id);
+    node.properties = { ...(node.properties ?? {}), id };
+    if (depth === 2 || depth === 3) headings.push({ depth, slug: id, text });
+  }
+  for (const child of node?.children ?? []) collectHeadings(child, headings, used);
+};
+
 export function renderChat(source, speakers) {
   const body = source.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
   const tree = markdownToHast(body);
@@ -55,5 +80,8 @@ export function renderChat(source, speakers) {
     else out.push(node);
   }
 
-  return hastToHtml({ type: 'root', children: out });
+  const outRoot = { type: 'root', children: out };
+  const headings = [];
+  collectHeadings(outRoot, headings, new Set());
+  return { html: hastToHtml(outRoot), headings };
 }

@@ -1,0 +1,74 @@
+---
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { headings } = Astro.props;
+const items = headings.filter((h) => (h.depth === 2 || h.depth === 3) && h.slug && h.text);
+---
+
+{
+  items.length >= 2 && (
+    <>
+      <nav class="toc" aria-label="目录">
+        <p class="toc-title">目录</p>
+        <ul>
+          {items.map((h) => (
+            <li class={'toc-h' + h.depth}>
+              <a href={'#' + h.slug} data-toc-target={h.slug}>{h.text}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <details class="toc-inline">
+        <summary>目录 · {items.length} 节</summary>
+        <ul>
+          {items.map((h) => (
+            <li class={'toc-h' + h.depth}>
+              <a href={'#' + h.slug}>{h.text}</a>
+            </li>
+          ))}
+        </ul>
+      </details>
+
+      <script is:inline>
+        (() => {
+          const links = [...document.querySelectorAll('.toc a[data-toc-target]')];
+          if (links.length === 0) return;
+          const map = new Map();
+          for (const link of links) {
+            const el = document.getElementById(link.dataset.tocTarget);
+            if (el) map.set(el, link);
+          }
+          let current = null;
+          const update = () => {
+            let active = null;
+            for (const el of map.keys()) {
+              if (el.getBoundingClientRect().top <= 140) active = el;
+              else break;
+            }
+            if (active === current) return;
+            current = active;
+            for (const link of links) link.removeAttribute('aria-current');
+            if (active) map.get(active)?.setAttribute('aria-current', 'true');
+          };
+          let ticking = false;
+          addEventListener(
+            'scroll',
+            () => {
+              if (ticking) return;
+              ticking = true;
+              requestAnimationFrame(() => {
+                ticking = false;
+                update();
+              });
+            },
+            { passive: true },
+          );
+          update();
+        })();
+      </script>
+    </>
+  )
+}

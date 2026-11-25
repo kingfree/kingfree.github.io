@@ -7,6 +7,8 @@ export type Post = {
   category: string;
   /** 对话式排版：frontmatter 的 chat 说话人列表；空数组表示普通文章。 */
   chat: string[];
+  /** 标题大纲（h2/h3），用于目录。 */
+  headings: { depth: number; slug: string; text: string }[];
   legacy: boolean;
   source?: string;
   description?: string;
@@ -44,6 +46,11 @@ export async function loadPosts(): Promise<Post[]> {
         tags: Array.isArray(fm.tags) ? fm.tags.map(String) : [],
         category: String(fm.category ?? categoryOfTitle(title)),
         chat: Array.isArray(fm.chat) ? fm.chat.map(String) : [],
+        headings: (typeof mod.getHeadings === 'function' ? mod.getHeadings() : []).map((h: any) => ({
+          depth: Number(h.depth ?? 2),
+          slug: String(h.slug ?? ''),
+          text: String(h.text ?? ''),
+        })),
         legacy: Boolean(fm.legacy),
         source: fm.source,
         description: fm.description,
