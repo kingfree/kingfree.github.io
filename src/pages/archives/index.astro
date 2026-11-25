@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadPosts, formatDate } from '../../lib/posts';
+
+const posts = await loadPosts();
+const years = [...new Set(posts.map((p) => p.date.getUTCFullYear()))].sort((a, b) => b - a);
+const groups = years.map((year) => ({ year, posts: posts.filter((p) => p.date.getUTCFullYear() === year) }));
+const first = posts[posts.length - 1];
+---
+<Base title="归档" description="原田莓莓的写作年表。">
+  <header class="page-head">
+    <h1>归档</h1>
+    <p>
+      从 {first ? first.date.getUTCFullYear() : 2009} 年到 {posts[0] ? posts[0].date.getUTCFullYear() : 2022} 年，
+      共 {posts.length} 篇，按年份排列。
+    </p>
+  </header>
+
+  <section class="section">
+    {groups.map(({ year, posts: list }) => (
+      <>
+        <h2 class="year-head">{year}<span style="margin-left:0.6rem; letter-spacing:0;">{list.length}</span></h2>
+        <ul class="entry-list">
+          {list.map((p) => (
+            <li class="entry">
+              <time datetime={formatDate(p.date)}>{formatDate(p.date)}</time>
+              <a class="title" href={'/' + p.slug + '/'}>{p.title}</a>
+              <span class="tag">{p.tags[0] ?? ''}</span>
+            </li>
+          ))}
+        </ul>
+      </>
+    ))}
+
+    <p class="note">
+      <strong>关于重建</strong>：旧站是 Hexo 生成的，正文源码一直躺在仓库的 <code>hexo</code> 分支里。
+      2026 年 11 月，我把这些 Markdown 全部搬进 Astro，链接保持原来的 <code>/标题/</code> 形式。
+    </p>
+  </section>
+</Base>

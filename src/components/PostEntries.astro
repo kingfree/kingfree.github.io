@@ -1,0 +1,24 @@
+---
+import { formatDate, type Post } from '../lib/posts';
+
+interface Props { posts: Post[]; showYear?: boolean; }
+const { posts, showYear = true } = Astro.props;
+
+let lastYear = -1;
+const items = posts.map((p) => {
+  const y = p.date.getUTCFullYear();
+  const isNewYear = showYear && y !== lastYear;
+  lastYear = y;
+  return { post: p, isNewYear };
+});
+---
+{items.map(({ post, isNewYear }) => (
+  <>
+    {isNewYear && <li class="year-head">{post.date.getUTCFullYear()}</li>}
+    <li class="entry">
+      <time datetime={formatDate(post.date)}>{formatDate(post.date)}</time>
+      <a class="title" href={'/' + post.slug + '/'}>{post.title}</a>
+      <span class="tag">{post.tags[0] ?? ''}</span>
+    </li>
+  </>
+))}

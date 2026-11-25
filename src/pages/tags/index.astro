@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadPosts } from '../../lib/posts';
+
+const posts = await loadPosts();
+const counts = new Map<string, number>();
+for (const p of posts) for (const t of p.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
+const tags = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'));
+---
+<Base title="标签" description="按标签翻原田莓莓的文章。">
+  <header class="page-head">
+    <h1>标签</h1>
+    <p>{tags.length} 个标签，按出现次数排序。</p>
+  </header>
+  <section class="section">
+    <ul class="tag-cloud">
+      {tags.map(([tag, n]) => (
+        <li><a href={'/tags/' + encodeURIComponent(tag) + '/'}>{tag}<span class="count">{n}</span></a></li>
+      ))}
+    </ul>
+  </section>
+</Base>

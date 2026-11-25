@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadPosts, formatDate } from '../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await loadPosts();
+  return posts.map((post, i) => ({
+    params: { slug: post.slug },
+    props: { post, prev: posts[i + 1] ?? null, next: posts[i - 1] ?? null },
+  }));
+}
+
+const { post, prev, next } = Astro.props;
+const Content = post.Content;
+const description = post.description ?? post.title + ' —— 原田莓莓';
+---
+<Base title={post.title} description={description} type="article">
+  <article>
+    <header class="article-head">
+      <h1>{post.title}</h1>
+      <div class="article-meta">
+        <time datetime={formatDate(post.date)}>{formatDate(post.date)}</time>
+        {post.tags.map((t) => <a href={'/tags/' + encodeURIComponent(t) + '/'}>#{t}</a>)}
+        {post.legacy && <span>· 2018 年旧文</span>}
+      </div>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {post.legacy && post.source && (
+      <p class="note">
+        这篇写于旧博客，正文由<a href={post.source} rel="noopener">互联网档案馆的 2018 年快照</a>恢复，排版做了整理。
+      </p>
+    )}
+
+    <footer class="article-foot">
+      <span>{prev ? <a href={'/' + prev.slug + '/'}>← {prev.title}</a> : <a href="/posts/">← 全部文章</a>}</span>
+      <span>{next ? <a href={'/' + next.slug + '/'}>{next.title} →</a> : <span />}</span>
+    </footer>
+  </article>
+</Base>
