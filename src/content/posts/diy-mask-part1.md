@@ -1,5 +1,5 @@
 ---
-title: "【译】完全自制 Kigurumi 面（part1）：从建模开始"
+title: "完全自制 Kigurumi 面（part1）：从建模开始"
 date: 2021-01-11
 tags: ["Kigurumi", "译文", "制作"]
 ---

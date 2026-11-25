@@ -5,8 +5,8 @@ import { loadPosts, originals, inCategory } from '../../lib/posts';
 
 const all = await loadPosts();
 const posts = originals(all);
-const translated = inCategory(all, '译').length;
-const reposted = inCategory(all, '转').length;
+const reposted = inCategory(all, '转载').length;
+const reading = inCategory(all, '读书').length;
 const tags = new Set(all.flatMap((p) => p.tags));
 ---
 <Base title="文章" description="原田莓莓写过的东西。">
@@ -14,7 +14,7 @@ const tags = new Set(all.flatMap((p) => p.tags));
     <h1>文章</h1>
     <p>
       {posts.length} 篇，{tags.size} 个标签。更早的年份见 <a href="/archives/">归档</a>；
-      另有 <a href="/translation/">译文 {translated}</a> 篇、<a href="/repost/">转载 {reposted}</a> 篇，单独成栏。
+      另有 <a href="/repost/">转载 {reposted}</a> 篇、<a href="/reading/">读书 {reading}</a> 篇，单独成栏。
     </p>
   </header>
   <section class="section">

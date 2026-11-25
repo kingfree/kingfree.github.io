@@ -1,5 +1,5 @@
 ---
-title: "【译】Kigurumi 委托资料的制作方法"
+title: "Kigurumi 委托资料的制作方法"
 date: 2022-10-20
 tags: ["Kigurumi", "译文", "制作"]
 ---

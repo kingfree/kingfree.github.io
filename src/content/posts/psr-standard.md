@@ -1,5 +1,5 @@
 ---
-title: "PHP中PSR-[0-4]代码规范【转】"
+title: "PHP中PSR-[0-4]代码规范"
 date: 2018-04-13
 tags: ["转载","PHP"]
 ---

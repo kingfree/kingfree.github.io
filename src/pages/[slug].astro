@@ -27,9 +27,10 @@ const description = post.description ?? post.title + ' —— 原田莓莓';
       <h1>{post.title}</h1>
       <div class="article-meta">
         <time datetime={formatDate(post.date)}>{formatDate(post.date)}</time>
-        {post.category && (
-          <a class="cat" href={post.category === '译' ? '/translation/' : '/repost/'}>
-            【{post.category}】
+        {post.badge && (
+          <a class="cat" href={post.category === '读书' ? '/reading/' : '/repost/'}>
+            <span class="badge" data-badge={post.badge} aria-hidden="true" />
+            {post.category}
           </a>
         )}
         {post.tags.map((t) => <a href={'/tags/' + encodeURIComponent(t) + '/'}>#{t}</a>)}

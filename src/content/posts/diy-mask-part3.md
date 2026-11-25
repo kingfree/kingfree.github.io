@@ -1,5 +1,5 @@
 ---
-title: "【译】完全自制 Kigurumi 面（part3）"
+title: "完全自制 Kigurumi 面（part3）"
 date: 2021-01-19
 tags: ["Kigurumi", "译文", "制作"]
 ---

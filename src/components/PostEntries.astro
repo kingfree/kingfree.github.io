@@ -17,7 +17,10 @@ const items = posts.map((p) => {
     {isNewYear && <li class="year-head">{post.date.getUTCFullYear()}</li>}
     <li class="entry">
       <time datetime={formatDate(post.date)}>{formatDate(post.date)}</time>
-      <a class="title" href={'/' + post.slug + '/'}>{post.title}</a>
+      <a class="title" href={'/' + post.slug + '/'}>
+        {post.badge && <span class="badge" data-badge={post.badge} aria-hidden="true" />}
+        {post.title}
+      </a>
       <span class="tag">{post.tags[0] ?? ''}</span>
     </li>
   </>

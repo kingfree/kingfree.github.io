@@ -1006,3 +1006,57 @@ html.dark .prose .katex {
     border-radius: 2px;
   }
 }
+
+/* ---------- 译 / 转 / 书 标记 ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 0.18em;
+  font-size: 0.72em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  vertical-align: 0.05em;
+  flex: none;
+  user-select: none;
+}
+
+.badge::before {
+  content: attr(data-badge);
+}
+
+.badge[data-badge='译'] {
+  background: #3f6f9c;
+}
+
+.badge[data-badge='转'] {
+  background: #5d7a4c;
+}
+
+.badge[data-badge='书'] {
+  background: #a9483f;
+}
+
+.entry .badge {
+  margin-right: 0.35rem;
+}
+
+.article-meta .cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.entry .title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.entry .title .badge {
+  margin-right: 0;
+}

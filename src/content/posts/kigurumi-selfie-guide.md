@@ -1,5 +1,5 @@
 ---
-title: "【译】新手向 Kigurumi 自拍指南"
+title: "新手向 Kigurumi 自拍指南"
 date: 2022-07-06
 tags: ["摄影", "译文", "Kigurumi"]
 ---

@@ -1,5 +1,5 @@
 ---
-title: "比特币Bitcoin源代码安装编译【转】"
+title: "比特币Bitcoin源代码安装编译"
 date: 2018-04-27
 tags: ["转载","区块链"]
 ---

@@ -6,6 +6,7 @@ export default defineConfig({
   site: 'https://meimoe.fun',
   trailingSlash: 'always',
   build: { format: 'directory' },
+  redirects: { '/translation/': '/repost/' },
   markdown: {
     processor: satteri({ features: { math: true }, hastPlugins: [katex] }),
     shikiConfig: {

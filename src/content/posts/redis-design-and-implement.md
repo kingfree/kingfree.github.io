@@ -1,5 +1,5 @@
 ---
-title: "《Redis 设计与实现》&《Redis 实战》【转】"
+title: "《Redis 设计与实现》&《Redis 实战》"
 date: 2018-04-12
 tags: ["转载","数据库","Redis"]
 ---
