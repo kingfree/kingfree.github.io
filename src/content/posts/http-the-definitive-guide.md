@@ -1,7 +1,7 @@
 ---
 title: "《HTTP 权威指南》"
 date: 2016-11-12
-tags: ["讀書筆記","HTTP"]
+tags: ["读书笔记","HTTP"]
 updated: 2016-11-24
 ---
 

@@ -1007,7 +1007,7 @@ html.dark .prose .katex {
   }
 }
 
-/* ---------- 译 / 转 / 书 标记 ---------- */
+/* ---------- 譯 / 轉 / 書 单字标记（繁体） ---------- */
 
 .badge {
   display: inline-flex;
@@ -1029,15 +1029,15 @@ html.dark .prose .katex {
   content: attr(data-badge);
 }
 
-.badge[data-badge='译'] {
+.badge[data-badge='譯'] {
   background: #3f6f9c;
 }
 
-.badge[data-badge='转'] {
+.badge[data-badge='轉'] {
   background: #5d7a4c;
 }
 
-.badge[data-badge='书'] {
+.badge[data-badge='書'] {
   background: #a9483f;
 }
 

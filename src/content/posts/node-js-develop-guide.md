@@ -1,7 +1,7 @@
 ---
 title: "全面系统的入门教程——评《Node.js 开发指南》"
 date: 2012-08-01
-tags: ["讀書筆記","JavaScript","Node.js"]
+tags: ["读书笔记","JavaScript","Node.js"]
 ---
 
 *原文载豆瓣：<https://book.douban.com/review/5529655/>*

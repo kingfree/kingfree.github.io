@@ -1,11 +1,11 @@
-export type Badge = '译' | '转' | '书' | '';
+export type Badge = '譯' | '轉' | '書' | '';
 
 export type Post = {
   slug: string;
   title: string;
   date: Date;
   tags: string[];
-  /** 标记：译 / 转 / 书；空字符串表示原创文章。 */
+  /** 标记：譯 / 轉 / 書（单字一律用繁体）；空字符串表示原创文章。 */
   badge: Badge;
   /** 栏目：'转载'（译 + 转）/ '读书'（书）/ ''（原创）。 */
   category: string;
@@ -30,26 +30,46 @@ const REPOST_TAGS = ['转载', '轉載'];
 const READING_TAGS = ['讀書筆記', '读书笔记', '读书', '讀書', '書評', '书评'];
 
 /** 标题里遗留的旧标记，显示前统一去掉。 */
-const TITLE_MARKER = /【[译轉转書书]】/g;
+const TITLE_MARKER = /【[译譯轉转書书]】/g;
 
 export function cleanTitle(title: string): string {
   return title.replace(TITLE_MARKER, '').replace(/\s+/g, ' ').trim();
 }
 
+/** 单字标记统一用繁体：译 → 譯、转 → 轉、书 → 書。 */
+const FORCED_BADGES: Record<string, Badge> = {
+  译: '譯',
+  譯: '譯',
+  译文: '譯',
+  譯文: '譯',
+  翻译: '譯',
+  翻譯: '譯',
+  转: '轉',
+  轉: '轉',
+  转载: '轉',
+  轉載: '轉',
+  书: '書',
+  書: '書',
+  读书: '書',
+  讀書: '書',
+};
+
+function hasMarker(title: string, ...chars: string[]): boolean {
+  return chars.some((c) => title.includes('【' + c + '】'));
+}
+
 export function badgeOf(title: string, tags: string[], explicit?: unknown): Badge {
-  const forced = String(explicit ?? '').trim();
-  if (forced === '译' || forced === '转' || forced === '书') return forced;
-  if (forced === '转载') return '转';
-  if (forced === '读书') return '书';
-  if (title.includes('【译】') || tags.some((t) => TRANSLATION_TAGS.includes(t))) return '译';
-  if (title.includes('【转】') || tags.some((t) => REPOST_TAGS.includes(t))) return '转';
-  if (title.includes('【书】') || tags.some((t) => READING_TAGS.includes(t))) return '书';
+  const forced = FORCED_BADGES[String(explicit ?? '').trim()];
+  if (forced) return forced;
+  if (hasMarker(title, '译', '譯') || tags.some((t) => TRANSLATION_TAGS.includes(t))) return '譯';
+  if (hasMarker(title, '转', '轉') || tags.some((t) => REPOST_TAGS.includes(t))) return '轉';
+  if (hasMarker(title, '书', '書') || tags.some((t) => READING_TAGS.includes(t))) return '書';
   return '';
 }
 
 export function categoryOf(badge: Badge): string {
-  if (badge === '书') return '读书';
-  if (badge === '译' || badge === '转') return '转载';
+  if (badge === '書') return '读书';
+  if (badge === '譯' || badge === '轉') return '转载';
   return '';
 }
 

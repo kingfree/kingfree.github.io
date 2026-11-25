@@ -5,8 +5,8 @@ import { loadPosts, inCategory } from '../../lib/posts';
 
 const all = inCategory(await loadPosts(), '转载');
 const posts = all;
-const translated = all.filter((p) => p.badge === '译').length;
-const reposted = all.filter((p) => p.badge === '转').length;
+const translated = all.filter((p) => p.badge === '譯').length;
+const reposted = all.filter((p) => p.badge === '轉').length;
 ---
 <Base title="转载" description="原田莓莓的译文与转载。">
   <header class="page-head">
