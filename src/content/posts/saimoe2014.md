@@ -2129,8 +2129,8 @@ LL最后的出票还是没能超过200，他们早已明白这场没有赢的机
 
 其实不砍票的结果挺好的，但是RUN不是吃素的。大刀下去，死的就是LL和电磁了。本来票就不够晋级的LL，被砍到了个位数，其中得票最高的矢泽妮可反而是因为被麻将带了几票的缘故，而LL内部第一的绚濑绘里则活生生砍到了倒数，星空凛甚至从头到尾只有两票，不可谓不讽刺，也坚定了运营除尽多重的想法。电磁虽然做了充足的斗争，但是由于始终没有找到对抗砍票的策略，活生生被砍死了两个，黑子砍到十几票，泪子因为麻将的带票勉强有了五十票，而第二优势早没影了；随着电磁一起遭殃的是被连记上来的森大人和本子娜。那么，有人落马就有人上位，本来以为没有希望了的中川花音——曾在一回战输给丹生谷森夏的东山第一个主役——由于麻将的连记从11位落选砍活到了5位晋级，拿到了32强席位，是今年日萌最传奇的角色，也正式宣告了东山阵营的存在。麻将由砍票得利，宥姐晋级。圆脸预定打捞的春物两将也从平票砍成了稍有差距，但仍然稳定晋级。点兔在被各大阵营随手带的情况下，晋级了一只智乃。
 
-<img id="NewSPARKS" style="width: 20%; min-width: 80px; float: right; margin-left: 10px;" alt="宫永咲" src="/images/saimoe/NewSPARKS.jpg">
-<img id="Anthology" style="width: 20%; min-width: 80px; float: left; margin-right: 10px;" alt="咲和稳" src="/images/saimoe/Anthology.jpg">
+<img id="NewSPARKS" style="width: 20%; min-width: 80px; float: right; margin-left: 10px;" alt="宫永咲" src="/images/saimoe/NewSPARKS.webp" loading="lazy" decoding="async">
+<img id="Anthology" loading="lazy" decoding="async" style="width: 20%; min-width: 80px; float: left; margin-right: 10px;" alt="咲和稳" src="/images/saimoe/Anthology.webp">
 
 <hr>
 
@@ -2155,7 +2155,7 @@ LL最后的出票还是没能超过200，他们早已明白这场没有赢的机
 
 整个季后赛八场比赛，由于砍票的原因，持续了一个月多，赛程被割裂。砍票也彻底地变成了意识流砍票，完全毁灭了日萌的公平性。期间，电磁和LL阵营彻底退出日萌赛场并展开了自己的总结，圆麻反黄图联盟形成，东山阵营刚刚显现便因为分组遭到摧残而迅速消匿。日萌彻底陷入泥潭。
 
-<img style="width: 45%; min-width: 400px; float: right; margin-left: 10px;" alt="季后赛第一场的应援图" src="http://up.animesaimoe.net/img/u6566.png" id="ouen1">
+*（季后赛第一场的应援图，原图链接已失效，未能找到存档。）*
 
 ### 10/30(木) FL1
 

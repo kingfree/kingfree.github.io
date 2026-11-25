@@ -6,7 +6,7 @@ tags: ["東山奈央","偶像"]
 
 Love Kanon Bang Bang!
 
-[![＊かのんちゃん誕生日＊](http://intention-k.com/talent_blog/n2015.3.3.jpg)](http://intention-k.com/talent_blog/2015/03/post-15.html)
+[![＊かのんちゃん誕生日＊](/images/ext/kanon-happy-birthday/01.webp)](http://intention-k.com/talent_blog/2015/03/post-15.html)
 
 「私に出来ることのちょっと向こう」
 

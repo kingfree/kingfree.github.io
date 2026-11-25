@@ -41,7 +41,7 @@ KingFree Physics Circuit Laboratory
 
 ### 截图欣赏
 
-![](/images/kfpcl/1.png)
-![](/images/kfpcl/2.png)
-![](/images/kfpcl/3.png)
-![](/images/kfpcl/4.png)
+![](/images/kfpcl/1.webp)
+![](/images/kfpcl/2.webp)
+![](/images/kfpcl/3.webp)
+![](/images/kfpcl/4.webp)

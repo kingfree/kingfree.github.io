@@ -18,8 +18,6 @@ const nav = [
   { href: '/posts/', label: '文章' },
   { href: '/repost/', label: '转载' },
   { href: '/reading/', label: '读书' },
-  { href: '/archives/', label: '归档' },
-  { href: '/tags/', label: '标签' },
   { href: '/about/', label: '关于' },
 ];
 const current = (p: string) => Astro.url.pathname === p || Astro.url.pathname.startsWith(p);
@@ -70,6 +68,10 @@ const current = (p: string) => Astro.url.pathname === p || Astro.url.pathname.st
     </main>
     <footer class="site-footer wrap">
       <span>© {new Date().getFullYear()} Harada Meimei</span>
+      <span class="sep">/</span>
+      <a href="/archives/">归档</a>
+      <span class="sep">/</span>
+      <a href="/tags/">标签</a>
       <span class="sep">/</span>
       <a href="https://github.com/kingfree" rel="me noopener">GitHub</a>
       <span class="sep">/</span>

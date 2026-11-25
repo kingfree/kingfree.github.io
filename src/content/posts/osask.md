@@ -71,7 +71,7 @@ static unsigned char table_rgb[16 * 3] = {
 };
 ```
 
-![任务栏](/images/osask/day04_taskbar.png)
+![任务栏](/images/osask/day04_taskbar.webp)
 
 ### 第5天 4月24日
 

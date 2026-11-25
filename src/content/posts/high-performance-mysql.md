@@ -106,7 +106,7 @@ MySQL 提供了 FROM_UNIXTIME() 函数把 UNIX 时间戳转换为日期，并提
 
 ### 1. B+Tree 索引
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c23957e9-a572-44f8-be15-f306c8b92722.jpg)
+![](/images/ext/high-performance-mysql/01.webp)
 
 《高性能 MySQL》一书使用 B-Tree 进行描述，其实从技术上来说这种索引是 B+Tree。
 
@@ -196,7 +196,7 @@ customer_id_selectivity: 0.0373
 
 ### 5. 聚簇索引
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e800b001-7779-495b-8459-d33a7440d7b8.jpg)
+![](/images/ext/high-performance-mysql/02.webp)
 
 聚簇索引并不是一种索引类型，而是一种数据存储方式。
 
@@ -231,7 +231,7 @@ customer_id_selectivity: 0.0373
 
 ### 1. B-Tree
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/5ed71283-a070-4b21-85ae-f2cbfd6ba6e1.jpg)
+![](/images/ext/high-performance-mysql/03.webp)
 
 为了描述 B-Tree，首先定义一条数据记录为一个二元组 [key, data]，key 为记录的键，data 为数据记录除 key 外的数据。
 
@@ -247,7 +247,7 @@ B-Tree 是满足下列条件的数据结构：
 
 ### 2. B+Tree
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/63cd5b50-d6d8-4df6-8912-ef4a1dd5ba13.jpg)
+![](/images/ext/high-performance-mysql/04.webp)
 
 与 B-Tree 相比，B+Tree 有以下不同点：
 
@@ -256,7 +256,7 @@ B-Tree 是满足下列条件的数据结构：
 
 ### 3. 带有顺序访问指针的 B+Tree
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1ee5f0a5-b8df-43b9-95ab-c516c54ec797.jpg)
+![](/images/ext/high-performance-mysql/05.webp)
 
 一般在数据库系统或文件系统中使用的 B+Tree 结构都在经典 B+Tree 基础上进行了优化，在叶子节点增加了顺序访问指针，做这个优化的目的是为了提高区间访问的性能。
 

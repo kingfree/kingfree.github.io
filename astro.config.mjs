@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
 import katex from './src/lib/satteri-katex.mjs';
+import imgLazy from './src/lib/satteri-img.mjs';
 
 export default defineConfig({
   site: 'https://meimoe.fun',
@@ -16,7 +17,7 @@ export default defineConfig({
     '/tags/遊記/': '/tags/游记/',
   },
   markdown: {
-    processor: satteri({ features: { math: true }, hastPlugins: [katex] }),
+    processor: satteri({ features: { math: true }, hastPlugins: [katex, imgLazy] }),
     shikiConfig: {
       themes: { light: 'github-light', dark: 'github-dark' },
       wrap: true,

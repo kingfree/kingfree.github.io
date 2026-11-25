@@ -159,4 +159,4 @@ tags: ["韩语","输入法"]
 
 和日语一样，使用罗马字输入是最简单的。这里我使用了macOS提供的「工振厅罗马字」布局方案。
 
-![macOS的韩语输入法](/images/pictures/hangul-input.png)
+![macOS的韩语输入法](/images/pictures/hangul-input.webp)

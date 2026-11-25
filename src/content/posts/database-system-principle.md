@@ -10,13 +10,13 @@ tags: ["转载","数据库"]
 
 ## 概念
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/185b9c49-4c13-4241-a848-fbff85c03a64.png)
+![](/images/ext/database-system-principle/01.webp)
 
 事务指的是满足 ACID 特性的一系列操作。在数据库中，可以通过 Commit 提交一个事务，也可以使用 Rollback 进行回滚。
 
 ## 四大特性
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/09e6e8d4-4d83-4949-b908-6d6b4c2fd064.png)
+![](/images/ext/database-system-principle/02.webp)
 
 ### 1. 原子性（Atomicity）
 
@@ -44,25 +44,25 @@ tags: ["转载","数据库"]
 
 T<sub>1</sub> 和 T<sub>2</sub> 两个事务都对一个数据进行修改，T<sub>1</sub> 先修改，T<sub>2</sub> 随后修改，T<sub>2</sub> 的修改覆盖了 T<sub>1</sub> 的修改。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/88ff46b3-028a-4dbb-a572-1f062b8b96d3.png)
+![](/images/ext/database-system-principle/03.webp)
 
 ### 2. 读脏数据
 
 T<sub>1</sub> 修改一个数据，T<sub>2</sub> 随后读取这个数据。如果 T<sub>1</sub> 撤销了这次修改，那么 T<sub>2</sub> 读取的数据是脏数据。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/dd782132-d830-4c55-9884-cfac0a541b8e.png)
+![](/images/ext/database-system-principle/04.webp)
 
 ### 3. 不可重复读
 
 T<sub>2</sub> 读取一个数据，T<sub>1</sub> 对该数据做了修改。如果 T<sub>2</sub> 再次读取这个数据，此时读取的结果和和第一次读取的结果不同。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c8d18ca9-0b09-441a-9a0c-fb063630d708.png)
+![](/images/ext/database-system-principle/05.webp)
 
 ### 4. 幻影读
 
 T<sub>1</sub> 读取某个范围的数据，T<sub>2</sub> 在这个范围内插入新的数据，T<sub>1</sub> 再次读取这个范围的数据，此时读取的结果和和第一次读取的结果不同。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/688dacfe-1057-412f-b3a1-86abb5b0f914.png)
+![](/images/ext/database-system-principle/06.webp)
 
 ## 解决方法
 
@@ -76,7 +76,7 @@ T<sub>1</sub> 读取某个范围的数据，T<sub>2</sub> 在这个范围内插�
 
 ## 封锁粒度
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/1a851e90-0d5c-4d4f-ac54-34c20ecfb903.jpg)
+![](/images/ext/database-system-principle/07.webp)
 
 应该尽量只锁定需要修改的那部分数据，而不是所有的资源。锁定的数据量越少，发生锁争用的可能就越小，系统的并发程度就越高。
 
@@ -249,7 +249,7 @@ InooDB 的 MVCC 在每行记录后面都保存着两个隐藏的列，用来存�
 
 InnoDB 的 MVCC 使用到的快照存储在 Undo 日志中，该日志通过回滚指针把一个数据行（Record）的所有快照连接起来。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/e41405a8-7c05-4f70-8092-e961e28d3112.jpg)
+![](/images/ext/database-system-principle/08.webp)
 
 ## 实现过程
 
@@ -376,7 +376,7 @@ SELECT c FROM t WHERE c BETWEEN 10 and 20 FOR UPDATE;
 
 范式理论是为了解决以上提到四种异常。高级别范式的依赖于低级别的范式。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/c2d343f7-604c-4856-9a3c-c71d6f67fecc.png)
+![](/images/ext/database-system-principle/09.webp)
 
 ### 1. 第一范式 (1NF)
 
@@ -490,7 +490,7 @@ Sname, Sdept 和 Manme 都函数依赖于 Sno，而部分依赖于键码。当�
 - 模式：全局逻辑结构
 - 内模式：物理结构
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/20150928140509757.png" width="600)
+<img src="/images/ext/database-system-principle/10.webp" width="600" alt="数据库系统" loading="lazy" decoding="async">
 
 ### 1. 外模式
 
@@ -526,29 +526,29 @@ Entity-Relationship，有三个组成部分：实体、属性、联系。
 
 如果 A 到 B 是一对多关系，那么画个带箭头的线段指向 B；如果是一对一，画两个带箭头的线段；如果是多对多，画两个不带箭头的线段。下图的 Course 和 Student 是一对多的关系。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/292b4a35-4507-4256-84ff-c218f108ee31.jpg)
+![](/images/ext/database-system-principle/11.webp)
 
 ### 2. 表示出现多次的关系
 
 一个实体在联系出现几次，就要用几条线连接。下图表示一个课程的先修关系，先修关系出现两个 Course 实体，第一个是先修课程，后一个是后修课程，因此需要用两条线来表示这种关系。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/8b798007-e0fb-420c-b981-ead215692417.jpg)
+![](/images/ext/database-system-principle/12.webp)
 
 ### 3. 联系的多向性
 
 虽然老师可以开设多门课，并且可以教授多名学生，但是对于特定的学生和课程，只有一个老师教授，这就构成了一个三元联系。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/423f2a40-bee1-488e-b460-8e76c48ee560.png)
+![](/images/ext/database-system-principle/13.webp)
 
 一般只使用二元联系，可以把多元关系转换为二元关系。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/de9b9ea0-1327-4865-93e5-6f805c48bc9e.png)
+![](/images/ext/database-system-principle/14.webp)
 
 ### 4. 表示子类
 
 用一个三角形和两条线来连接类和子类，与子类有关的属性和联系都连到子类上，而与父类和子类都有关的连到父类上。
 
-![](https://github.com/CyC2018/Interview-Notebook/raw/master/pics/7ec9d619-fa60-4a2b-95aa-bf1a62aad408.jpg)
+![](/images/ext/database-system-principle/15.webp)
 
 # 十、约束
 
