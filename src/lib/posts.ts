@@ -20,13 +20,18 @@ export const CATEGORIES = [
   { key: '转', href: '/repost/', label: '转载' },
 ] as const;
 
+/** 带这些标签的算译文 / 转载（简繁都认）。 */
+const TRANSLATION_TAGS = ['翻译', '翻譯', '译文', '譯文'];
+const REPOST_TAGS = ['转载', '轉載'];
+
 /**
- * 分类看标题里的标记：带 `【转】` 是转载，带 `【译】` 是译文（放在开头或结尾都算）。
+ * 分类看标题标记和标签：标题带 `【转】` 或标签有「转载」→ 转载；
+ * 标题带 `【译】` 或标签有「翻译 / 译文」→ 译文。
  * frontmatter 里显式写了 category 的以它为准。
  */
-export function categoryOfTitle(title: string): string {
-  if (title.includes('【转】')) return '转';
-  if (title.includes('【译】')) return '译';
+export function categoryOf(title: string, tags: string[]): string {
+  if (title.includes('【转】') || tags.some((t) => REPOST_TAGS.includes(t))) return '转';
+  if (title.includes('【译】') || tags.some((t) => TRANSLATION_TAGS.includes(t))) return '译';
   return '';
 }
 
@@ -39,12 +44,13 @@ export async function loadPosts(): Promise<Post[]> {
       const slug = path.split('/').pop()!.replace(/\.md$/, '');
       const fm = mod.frontmatter ?? {};
       const title = String(fm.title ?? slug);
+      const tags = Array.isArray(fm.tags) ? fm.tags.map(String) : [];
       return {
         slug,
         title,
         date: new Date(fm.date ?? 0),
-        tags: Array.isArray(fm.tags) ? fm.tags.map(String) : [],
-        category: String(fm.category ?? categoryOfTitle(title)),
+        tags,
+        category: String(fm.category ?? categoryOf(title, tags)),
         chat: Array.isArray(fm.chat) ? fm.chat.map(String) : [],
         headings: (typeof mod.getHeadings === 'function' ? mod.getHeadings() : []).map((h: any) => ({
           depth: Number(h.depth ?? 2),
