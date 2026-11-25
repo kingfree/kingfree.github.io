@@ -18,6 +18,16 @@ export const CATEGORIES = [
   { key: '转', href: '/repost/', label: '转载' },
 ] as const;
 
+/**
+ * 分类看标题里的标记：带 `【转】` 是转载，带 `【译】` 是译文（放在开头或结尾都算）。
+ * frontmatter 里显式写了 category 的以它为准。
+ */
+export function categoryOfTitle(title: string): string {
+  if (title.includes('【转】')) return '转';
+  if (title.includes('【译】')) return '译';
+  return '';
+}
+
 const modules = import.meta.glob('../content/posts/*.md');
 
 export async function loadPosts(): Promise<Post[]> {
@@ -26,12 +36,13 @@ export async function loadPosts(): Promise<Post[]> {
       const mod: any = await loader();
       const slug = path.split('/').pop()!.replace(/\.md$/, '');
       const fm = mod.frontmatter ?? {};
+      const title = String(fm.title ?? slug);
       return {
         slug,
-        title: String(fm.title ?? slug),
+        title,
         date: new Date(fm.date ?? 0),
         tags: Array.isArray(fm.tags) ? fm.tags.map(String) : [],
-        category: String(fm.category ?? ''),
+        category: String(fm.category ?? categoryOfTitle(title)),
         chat: Array.isArray(fm.chat) ? fm.chat.map(String) : [],
         legacy: Boolean(fm.legacy),
         source: fm.source,
