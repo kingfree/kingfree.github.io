@@ -3,11 +3,18 @@ export type Post = {
   title: string;
   date: Date;
   tags: string[];
+  /** 分类：空 = 原创文章；'译' = 译文；'转' = 转载。这三类各自独立成站内栏目。 */
+  category: string;
   legacy: boolean;
   source?: string;
   description?: string;
   Content: any;
 };
+
+export const CATEGORIES = [
+  { key: '译', href: '/translation/', label: '译文' },
+  { key: '转', href: '/repost/', label: '转载' },
+] as const;
 
 const modules = import.meta.glob('../content/posts/*.md');
 
@@ -22,6 +29,7 @@ export async function loadPosts(): Promise<Post[]> {
         title: String(fm.title ?? slug),
         date: new Date(fm.date ?? 0),
         tags: Array.isArray(fm.tags) ? fm.tags.map(String) : [],
+        category: String(fm.category ?? ''),
         legacy: Boolean(fm.legacy),
         source: fm.source,
         description: fm.description,
@@ -30,6 +38,16 @@ export async function loadPosts(): Promise<Post[]> {
     }),
   );
   return entries.sort((a, b) => b.date.getTime() - a.date.getTime());
+}
+
+/** 原创文章：不带 译/转 分类。 */
+export function originals(posts: Post[]): Post[] {
+  return posts.filter((p) => !p.category);
+}
+
+/** 取出某一分类（译 / 转）的文章。 */
+export function inCategory(posts: Post[], category: string): Post[] {
+  return posts.filter((p) => p.category === category);
 }
 
 export function formatDate(d: Date): string {

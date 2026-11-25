@@ -30,6 +30,14 @@ npm run format:check   # 只检查
 新增文章：在 `src/content/posts/` 放一个 `<slug>.md`，frontmatter 至少写 `title` 与 `date`，
 可选 `tags` 数组。slug 即 URL：`/<slug>/`。
 
+## 分类
+
+站内分三类，各自独立成栏，`/posts/` 只列原创：
+
+- 原创（不写 `category`）→ `/posts/`，首页“最近写的”也只取这些
+- 译文（`category: 译`）→ `/translation/`，标题以 `【译】` 开头
+- 转载（`category: 转`）→ `/repost/`，标题以 `【转】` 开头
+
 重新导入 Hexo 源码（需要 `hexo` 分支的 `source/_posts`）：
 
 ```bash

@@ -1,15 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PostEntries from '../../components/PostEntries.astro';
-import { loadPosts } from '../../lib/posts';
+import { loadPosts, originals, inCategory } from '../../lib/posts';
 
-const posts = await loadPosts();
-const tags = new Set(posts.flatMap((p) => p.tags));
+const all = await loadPosts();
+const posts = originals(all);
+const translated = inCategory(all, '译').length;
+const reposted = inCategory(all, '转').length;
+const tags = new Set(all.flatMap((p) => p.tags));
 ---
 <Base title="文章" description="原田莓莓写过的东西。">
   <header class="page-head">
     <h1>文章</h1>
-    <p>{posts.length} 篇，{tags.size} 个标签。更早的年份见 <a href="/archives/">归档</a>。</p>
+    <p>
+      {posts.length} 篇，{tags.size} 个标签。更早的年份见 <a href="/archives/">归档</a>；
+      另有 <a href="/translation/">译文 {translated}</a> 篇、<a href="/repost/">转载 {reposted}</a> 篇，单独成栏。
+    </p>
   </header>
   <section class="section">
     <ul class="entry-list">
