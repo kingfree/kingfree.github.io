@@ -7,7 +7,7 @@ interface Props {
   type?: string;
 }
 
-const { title, description = '原田莓莓的个人站：Kigurumi、软体头壳、代码与读书。', type = 'website' } = Astro.props;
+const { title, description = '原田莓莓的个人站：Kigurumi、代码与读书。', type = 'website' } = Astro.props;
 const site = 'meimoe.fun';
 const pageTitle = title ? title + ' · 原田莓莓' : '原田莓莓 · Meimei';
 const canonical = new URL(Astro.url.pathname, Astro.site);
