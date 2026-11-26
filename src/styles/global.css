@@ -252,69 +252,6 @@ a {
   color: var(--faint);
 }
 
-/* ---------- 首页：生日角色 ---------- */
-
-.birthday-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 7rem);
-  gap: 1rem 0.8rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.birthday-card a {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.birthday-card img,
-.birthday-initial {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: 50% 30%;
-  border-radius: 4px;
-  background: var(--bg-soft);
-}
-
-.birthday-initial {
-  display: grid;
-  place-items: center;
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  color: var(--faint);
-}
-
-.birthday-name {
-  overflow: hidden;
-  font-size: 0.8125rem;
-  line-height: 1.4;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.birthday-when {
-  display: flex;
-  align-items: baseline;
-  gap: 0.3rem;
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.02em;
-  color: var(--faint);
-  white-space: nowrap;
-}
-
-.birthday-when .d {
-  opacity: 0.85;
-}
-
-.birthday-card a:hover .birthday-name {
-  color: var(--accent);
-}
-
 .section {
   margin-top: 4rem;
 }
@@ -1157,7 +1094,6 @@ html.dark .prose .katex {
   margin-right: 0;
 }
 
-
 /* ---------- 相册 ---------- */
 
 .gallery-head {
@@ -1538,7 +1474,6 @@ body.lb-open {
   }
 }
 
-
 @media (prefers-reduced-motion: reduce) {
   .gallery .shot,
   .gallery .shot-img,
@@ -1574,7 +1509,6 @@ body.lb-open {
   }
 }
 
-
 /* ---------- 写真页占满整行 ---------- */
 
 .wrap-wide {
@@ -1586,7 +1520,6 @@ body.lb-open {
 .wrap-wide .site-header {
   max-width: none;
 }
-
 
 /* ---------- 灯箱：打开/切换/关闭动效 ---------- */
 
@@ -1647,7 +1580,6 @@ body.lb-open {
   }
 }
 
-
 /* ---------- 灯箱：左右切换的热区放大 ---------- */
 
 .lightbox .lb-prev,
@@ -1697,7 +1629,6 @@ body.lb-open {
     font-size: 1.4rem;
   }
 }
-
 
 /* 关闭按钮压在翻页热区之上，别被挡住 */
 .lightbox .lb-btn {
@@ -1998,5 +1929,3 @@ body.search-open {
   .search-panel {
     transform: none;
   }
-}
-
