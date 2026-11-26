@@ -39,7 +39,7 @@ const BIRTHDAY_OVERRIDES = {
   浮波柚叶: { mon: 11, day: 2 },
   // 原神：萌娘百科角色卡
   云堇: { mon: 5, day: 21 },
-  莱伊拉: { mon: 12, day: 19 },
+  莱依拉: { mon: 12, day: 19 },
   砂糖: { mon: 11, day: 26 },
   // VOCALOID / 转生王女：Bangumi 角色页
   洛天依: { mon: 7, day: 12 },

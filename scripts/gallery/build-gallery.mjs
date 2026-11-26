@@ -64,7 +64,7 @@ const ALIASES = {
   chiori: '三上千织',
   hanami: '花海咲季',
   juju: '乾纱寿叶',
-  layla: '莱伊拉',
+  layla: '莱依拉',
   mikan: '阳夏木蜜柑',
   miko: '伊井野弥子',
   rino: '衣之咲璃乃',
@@ -141,7 +141,7 @@ const EXTRA_ALIASES = (() => {
 
 /** Bangumi 里的长名/别名统一成常用名 */
 const CANON = {
-  莱依拉: '莱伊拉',
+  莱伊拉: '莱依拉',
   卯香菱: '香菱',
   矢泽日香: '矢泽妮可',
   阿斯托洛吉斯·莫娜·梅姬斯图斯: '莫娜',
