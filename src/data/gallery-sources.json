@@ -1,15 +1,75 @@
 {
  "note": "相册源清单：rel 相对各自照片库根目录；由 scripts/gallery/build-gallery.mjs 生成。",
- "count": 288,
+ "count": 355,
  "photos": [
   {
    "root": "",
-   "album": "20161001ruby",
-   "rel": "20161001ruby/DSC_2094.jpg",
+   "album": "20160515",
+   "rel": "20160515/DSC_0175.JPG",
    "kind": "blog",
-   "reason": "random",
-   "detail": "无修图导出痕迹（文件名/子目录无修图标记），按文件名排序+稳定哈希从 38 张中伪随机取 1 张；EXIF Software=Windows Photo Editor 10.0.10011.16384（轻量编辑软件痕迹，但非修图导出，不作修图判据）",
-   "datetime": "2016-10-02 15:18:36",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2016-06-08 13:35:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20150919kanon",
+   "rel": "20150919kanon/35c0ee03918fa0ec7e811543209759ee3c6ddbce.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2016-06-08 17:15:38",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20170123矢泽妮可",
+   "rel": "20170123矢泽妮可/IMG_20170123_165901.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-01-23 23:54:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20160430",
+   "rel": "20160430/QQ图片20160430170445.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-02-03 17:25:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20161001ruby",
+   "rel": "20161001ruby/DSC04881.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-02-03 17:29:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20161001ruby",
+   "rel": "20161001ruby/DSC04888.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-02-03 17:29:06",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20161001ruby",
+   "rel": "20161001ruby/DSC04988.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-02-03 17:29:09",
    "datetimeSource": "app"
   },
   {
@@ -20,6 +80,76 @@
    "reason": "random",
    "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 40 张中伪随机取 1 张",
    "datetime": "2017-05-01 16:11:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20170501ako-CP20",
+   "rel": "20170501ako-CP20/IMG20170501160342.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-05-01 23:46:17",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20170924虹野梦",
+   "rel": "20170924虹野梦/IMG_20170924_204726.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-09-27 21:52:43",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20170928珈百璃",
+   "rel": "20170928珈百璃/IMG_20170928_224225.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-10-05 21:29:26",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20170928珈百璃",
+   "rel": "20170928珈百璃/IMG_20171001_161127.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-10-05 21:35:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20170928珈百璃",
+   "rel": "20170928珈百璃/IMG_20171001_173041.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-10-05 21:36:36",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20171003虹野梦",
+   "rel": "20171003虹野梦/IMG_20171003_122634.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-10-05 21:45:52",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20171003虹野梦",
+   "rel": "20171003虹野梦/IMG_20171003_130428_1.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2017-10-05 21:46:12",
    "datetimeSource": "app"
   },
   {
@@ -40,16 +170,6 @@
    "reason": "random",
    "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 12 张），判为相机直出；按文件名排序+md5 稳定哈希（00a40659）取第 1 张",
    "datetime": "2018-06-17 01:34:13",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "20190701",
-   "rel": "20190701/IMG_20181111_020708B.jpg",
-   "kind": "blog",
-   "reason": "random",
-   "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 12 张），判为相机直出；按文件名排序+md5 稳定哈希（0473f901）取第 1 张",
-   "datetime": "2018-11-11 02:07:09",
    "datetimeSource": "app"
   },
   {
@@ -104,12 +224,102 @@
   },
   {
    "root": "",
-   "album": "20190826",
-   "rel": "20190826/img-410ebd42f18774f296dc6e5a6b591c93.jpg",
+   "album": "20180519yume",
+   "rel": "20180519yume/DSC01892.jpg",
    "kind": "blog",
-   "reason": "random",
-   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
-   "datetime": "2019-08-03 23:47:42",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:17:44",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180519yume",
+   "rel": "20180519yume/IMG_lm9csm.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:19:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180519yume",
+   "rel": "20180519yume/-5d206e8e18d76bb9.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:20:43",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180519yume",
+   "rel": "20180519yume/IMG_20190301_223018_1.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:26:48",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180519yume",
+   "rel": "20180519yume/IMG_v96bbw.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:35:31",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180519yume",
+   "rel": "20180519yume/IMG_0493.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:37:16",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180519yume",
+   "rel": "20180519yume/IMG20180519151009.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:43:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180407珈百璃",
+   "rel": "20180407珈百璃/IMG_20180407_143735F.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:47:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180407珈百璃",
+   "rel": "20180407珈百璃/DSC_2930.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-07-01 22:47:28",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/-3dd154eec138c9a.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2019-08-03 10:42:57",
    "datetimeSource": "app"
   },
   {
@@ -154,12 +364,42 @@
   },
   {
    "root": "",
+   "album": "娃照",
+   "rel": "娃照/-2bc98ed62a3256ea.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2020-07-19 12:45:28",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/-5334e6de31ead9d8.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2020-07-19 12:46:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20200726lala",
    "rel": "20200726lala/IMG_20200729_210927.jpg",
    "kind": "blog",
    "reason": "random",
    "detail": "无修图痕迹（抽样 11 张，EXIF Software 主要为 ILCE-7M2 v4.00）；按文件名排序+md5 稳定哈希（171f242e）取第 1 张",
    "datetime": "2020-07-25 04:20:36",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/-142505ea9de7c880.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2020-07-27 15:17:53",
    "datetimeSource": "app"
   },
   {
@@ -184,6 +424,16 @@
   },
   {
    "root": "",
+   "album": "娃照",
+   "rel": "娃照/IMG_20200829_155104.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2020-08-29 15:51:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20210101rino",
    "rel": "20210101rino/IMG_20210101_215255.jpg",
    "kind": "blog",
@@ -200,6 +450,16 @@
    "reason": "random",
    "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
    "datetime": "2021-01-02 11:00:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/-a220962a0dd2f42.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2021-01-02 11:39:19",
    "datetimeSource": "app"
   },
   {
@@ -375,11 +635,51 @@
   {
    "root": "",
    "album": "0831莫娜",
+   "rel": "0831莫娜/莫娜-莓莓/989C9E79A7AECA9DD8D933ED39A56D12.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2021-06-08 23:10:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
+   "rel": "0831莫娜/cp28/DSC09339.JPG",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2021-06-15 21:12:29",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
+   "rel": "0831莫娜/莫娜-莓莓/部分调了下/DSC_3026.JPG",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2021-06-24 01:28:14",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
    "rel": "0831莫娜/莫娜-莓莓/部分调了下/DSC_3037.JPG",
    "kind": "cos",
    "reason": "edited",
    "detail": "位于「部分调了下」子目录；EXIF Software=NX Studio 1.0 W",
    "datetime": "2021-06-24 01:28:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
+   "rel": "0831莫娜/莫娜-莓莓/部分调了下/DSC_3039.JPG",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2021-06-24 01:28:36",
    "datetimeSource": "app"
   },
   {
@@ -550,6 +850,26 @@
    "reason": "random",
    "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
    "datetime": "2021-10-07 00:51:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/DSC07056.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2021-10-07 18:52:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/DSC07016.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2021-10-07 18:52:08",
    "datetimeSource": "app"
   },
   {
@@ -884,6 +1204,16 @@
   },
   {
    "root": "",
+   "album": "20220703sucrose",
+   "rel": "20220703sucrose/IMG_20220703_171454.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-07-04 09:35:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20220717sucrose",
    "rel": "20220717sucrose/IMG_20220717_164705.jpg",
    "kind": "blog",
@@ -894,12 +1224,32 @@
   },
   {
    "root": "",
+   "album": "20220717sucrose",
+   "rel": "20220717sucrose/IMG_20220717_164430.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-07-17 23:14:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20220721juju",
    "rel": "20220721juju/IMG_20220721_102138.jpg",
    "kind": "blog",
    "reason": "random",
    "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 3 张），判为相机直出；按文件名排序+md5 稳定哈希（00189413）取第 1 张",
    "datetime": "2022-07-21 10:21:38",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220721juju",
+   "rel": "20220721juju/IMG_20220721_100849.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-07-21 22:55:28",
    "datetimeSource": "app"
   },
   {
@@ -1004,12 +1354,62 @@
   },
   {
    "root": "",
-   "album": "20220910",
-   "rel": "20220910/IMG_5069-编辑.jpg",
+   "album": "20220910dw7",
+   "rel": "20220910dw7/IMG_4955.JPG",
    "kind": "blog",
-   "reason": "edited",
-   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-09-10 16:09:57",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220910dw7",
+   "rel": "20220910dw7/IMG_5053.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-09-10 18:36:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220910dw7",
+   "rel": "20220910dw7/IMG_5069.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
    "datetime": "2022-09-10 18:47:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220910dw7-2",
+   "rel": "20220910dw7-2/IMG_5111.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-09-10 22:33:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220912",
+   "rel": "20220912/DSC_9808.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-09-12 12:07:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220912",
+   "rel": "20220912/DSC_9852.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2022-09-12 12:13:38",
    "datetimeSource": "app"
   },
   {
@@ -1144,16 +1544,6 @@
   },
   {
    "root": "",
-   "album": "20230113yunjin-sucrose",
-   "rel": "20230113yunjin-sucrose/IMG_6809.JPG",
-   "kind": "blog",
-   "reason": "random",
-   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 89 张中伪随机取 1 张",
-   "datetime": "2023-01-13 17:04:19",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
    "album": "20230114-by-yao",
    "rel": "20230114-by-yao/IMG_0290.JPG",
    "kind": "blog",
@@ -1174,12 +1564,52 @@
   },
   {
    "root": "",
+   "album": "20230126",
+   "rel": "20230126/IMG_7346.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-01-26 12:33:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230127",
+   "rel": "20230127/_DSC7661.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-01-30 19:47:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230127",
+   "rel": "20230127/_DSC7662.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-01-30 19:47:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20230204长沙",
    "rel": "20230204长沙/IMG_7975.JPG",
    "kind": "blog",
    "reason": "random",
    "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 76 张中伪随机取 1 张",
    "datetime": "2023-02-04 14:55:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/ant/IMG_20190507_225834.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-03-10 16:45:56",
    "datetimeSource": "app"
   },
   {
@@ -1474,6 +1904,16 @@
   },
   {
    "root": "",
+   "album": "发布",
+   "rel": "发布/IMG_0006.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-11-25 12:56:16",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20231126mikan",
    "rel": "20231126mikan/IMG_0167-编辑.JPG",
    "kind": "blog",
@@ -1495,6 +1935,66 @@
   {
    "root": "",
    "album": "发布",
+   "rel": "发布/IMG_0131.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-11-26 14:06:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "发布",
+   "rel": "发布/IMG_0221.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-11-26 14:07:02",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "发布",
+   "rel": "发布/IMG_0312.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-11-26 14:07:10",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "发布",
+   "rel": "发布/IMG_0336.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-11-26 14:07:10",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231202DW10",
+   "rel": "20231202DW10/DSC_0529.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-02 17:06:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231202DW10",
+   "rel": "20231202DW10/DSC_0596.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-02 17:09:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "发布",
    "rel": "发布/DSC_0596-2.jpg",
    "kind": "blog",
    "reason": "edited",
@@ -1505,11 +2005,31 @@
   {
    "root": "",
    "album": "20231209by-H君",
+   "rel": "20231209by-H君/087A9194.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-09 09:31:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231209by-H君",
    "rel": "20231209by-H君/087A9226.JPG",
    "kind": "blog",
    "reason": "random",
    "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
    "datetime": "2023-12-09 09:47:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231209by-H君",
+   "rel": "20231209by-H君/087A9230.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-09 09:49:28",
    "datetimeSource": "app"
   },
   {
@@ -1525,11 +2045,61 @@
   {
    "root": "",
    "album": "20231210",
-   "rel": "20231210/_Y8A0881.JPG",
+   "rel": "20231210/_Y8A0856.JPG",
    "kind": "blog",
-   "reason": "random",
-   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 (无 Software)）；按文件名排序+md5 稳定哈希（00172751）取第 1 张",
-   "datetime": "2023-12-10 09:26:07",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-10 08:21:16",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231210",
+   "rel": "20231210/_Y8A0872.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-10 08:24:12",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231210",
+   "rel": "20231210/_Y8A0886.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-10 08:26:33",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231210",
+   "rel": "20231210/_Y8A0961.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-10 08:46:21",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231210",
+   "rel": "20231210/_Y8A1035.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-10 09:09:47",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231210",
+   "rel": "20231210/_Y8A1045.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2023-12-10 09:10:41",
    "datetimeSource": "app"
   },
   {
@@ -1640,6 +2210,86 @@
    "reason": "random",
    "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 ILCE-7CM2 v1.01）；按文件名排序+md5 稳定哈希（0d7b3b18）取第 1 张",
    "datetime": "2024-02-16 22:56:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/MEI00860.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-02-18 14:20:31",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/MEI00625.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-02-18 14:20:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/MEI00654.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-02-18 14:20:43",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/MEI00642.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-02-18 14:20:47",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/MEI00630.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-02-18 14:20:53",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/MEI00653.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-02-18 14:20:59",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/MEI00637.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-02-18 14:21:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240315",
+   "rel": "20240315/MEI00015.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2024-03-15 22:31:56",
    "datetimeSource": "app"
   },
   {
@@ -1945,31 +2595,11 @@
   {
    "root": "",
    "album": "1102香菱",
-   "rel": "1102香菱/250126MEI06183-编辑-16.jpg",
-   "kind": "cos",
-   "reason": "edited",
-   "detail": "文件名含「编辑」",
-   "datetime": "2025-01-26 00:00:00",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "1102香菱",
    "rel": "1102香菱/250126MEI06224-编辑-24.jpg",
    "kind": "cos",
    "reason": "edited",
    "detail": "文件名含「编辑」",
    "datetime": "2025-01-26 00:00:00",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "1102香菱",
-   "rel": "1102香菱/20250126-MEI06208-编辑.jpg",
-   "kind": "cos",
-   "reason": "edited",
-   "detail": "文件名含「编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
-   "datetime": "2025-01-26 18:26:15",
    "datetimeSource": "app"
   },
   {
@@ -1995,31 +2625,11 @@
   {
    "root": "",
    "album": "20250126香菱_1",
-   "rel": "20250126香菱_1/MEI06224-编辑.tif",
-   "kind": "blog",
-   "reason": "edited",
-   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.1 (Windows)",
-   "datetime": "2025-01-28 18:50:25",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "20250126香菱_1",
    "rel": "20250126香菱_1/MEI06057-编辑.tif",
    "kind": "blog",
    "reason": "edited",
    "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.1 (Windows)",
    "datetime": "2025-01-28 18:51:17",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "20250126香菱_1",
-   "rel": "20250126香菱_1/MEI06187-编辑.tif",
-   "kind": "blog",
-   "reason": "edited",
-   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.1 (Windows)",
-   "datetime": "2025-01-28 18:55:33",
    "datetimeSource": "app"
   },
   {
@@ -2074,16 +2684,6 @@
   },
   {
    "root": "",
-   "album": "20250201",
-   "rel": "20250201/MEI06741.JPG",
-   "kind": "blog",
-   "reason": "random",
-   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=ILCE-7CM2 v1.01",
-   "datetime": "2025-02-01 21:21:27",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
    "album": "20250201fromSimon",
    "rel": "20250201fromSimon/IMG_1919.JPG",
    "kind": "blog",
@@ -2094,42 +2694,12 @@
   },
   {
    "root": "",
-   "album": "20250202",
-   "rel": "20250202/IMG_2230-编辑.tif",
-   "kind": "blog",
-   "reason": "edited",
-   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 26.3 (Macintosh)",
-   "datetime": "2025-02-02 15:33:11",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
    "album": "20250202-mcp",
    "rel": "20250202-mcp/IMG_2230-编辑.jpg",
    "kind": "blog",
    "reason": "edited",
    "detail": "文件名带 -编辑 修图标记（该文件无任何 EXIF 信息）",
    "datetime": "2025-02-02 21:25:35",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "1220藤岛慈",
-   "rel": "1220藤岛慈/mcp-okinawa/IMG_2230-编辑.jpg",
-   "kind": "cos",
-   "reason": "edited",
-   "detail": "文件名含「编辑」",
-   "datetime": "2025-02-04 21:30:24",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "0303虹野梦",
-   "rel": "0303虹野梦/20250228/20250228-MEI08707-编辑.jpg",
-   "kind": "cos",
-   "reason": "edited",
-   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
-   "datetime": "2025-02-28 17:59:34",
    "datetimeSource": "app"
   },
   {
@@ -2155,11 +2725,71 @@
   {
    "root": "",
    "album": "0303虹野梦",
-   "rel": "0303虹野梦/II1A5135-编辑.png",
+   "rel": "0303虹野梦/20250228/20250228-II1A5082.jpg",
    "kind": "cos",
-   "reason": "edited",
-   "detail": "文件名带 -编辑",
-   "datetime": "2025-03-02 20:13:32",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-02 01:13:48",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20250228/20250228-II1A5180.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-02 01:13:50",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20250228/20250228-II1A5215.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-02 01:13:53",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20250228-II1A5197.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-02 22:22:19",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/MEI09022.JPG",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-03 00:38:10",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/MEI08830.JPG",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-03 00:43:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/MEI08793.JPG",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-03 00:46:53",
    "datetimeSource": "app"
   },
   {
@@ -2230,6 +2860,26 @@
    "reason": "random",
    "detail": "未发现修图标记（文件名/目录/抽样 EXIF Software 均无），按文件名排序+稳定哈希随机取 1 张",
    "datetime": "2025-03-10 19:51:44",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250315-星宫莓",
+   "rel": "20250315-星宫莓/MEI09842.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-15 15:42:07",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250315-星宫莓",
+   "rel": "20250315-星宫莓/MEI00007.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-03-15 16:40:47",
    "datetimeSource": "app"
   },
   {
@@ -2325,16 +2975,6 @@
   {
    "root": "",
    "album": "20250430青衣-花海咲季-伊井野弥子",
-   "rel": "20250430青衣-花海咲季-伊井野弥子/MEI02487-编辑.tif",
-   "kind": "blog",
-   "reason": "edited",
-   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 26.3 (Windows)",
-   "datetime": "2025-04-30 16:07:18",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "20250430青衣-花海咲季-伊井野弥子",
    "rel": "20250430青衣-花海咲季-伊井野弥子/MEI02507-编辑.tif",
    "kind": "blog",
    "reason": "edited",
@@ -2350,26 +2990,6 @@
    "reason": "edited",
    "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
    "datetime": "2025-04-30 16:08:32",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "20250430青衣-花海咲季-伊井野弥子",
-   "rel": "20250430青衣-花海咲季-伊井野弥子/MEI02508-编辑.tif",
-   "kind": "blog",
-   "reason": "edited",
-   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 26.3 (Windows)",
-   "datetime": "2025-04-30 16:08:32",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "0101青衣",
-   "rel": "0101青衣/MEI02553-编辑.JPG",
-   "kind": "cos",
-   "reason": "edited",
-   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
-   "datetime": "2025-04-30 16:09:51",
    "datetimeSource": "app"
   },
   {
@@ -2524,6 +3144,26 @@
   },
   {
    "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20250629-MEI03468.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-06-29 15:48:10",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20250629-MEI03505.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-06-29 15:48:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20250718idol",
    "rel": "20250718idol/MEI03816.JPG",
    "kind": "blog",
@@ -2595,16 +3235,6 @@
   {
    "root": "",
    "album": "20250912",
-   "rel": "20250912/Capture One/DSCF3101.jpg",
-   "kind": "blog",
-   "reason": "edited",
-   "detail": "目录Capture One；EXIF Software=Capture One Macintosh",
-   "datetime": "2025-09-12 17:42:29",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "20250912",
    "rel": "20250912/Capture One/DSCF3106.jpg",
    "kind": "blog",
    "reason": "edited",
@@ -2644,12 +3274,12 @@
   },
   {
    "root": "",
-   "album": "0722矢泽妮可",
-   "rel": "0722矢泽妮可/20250912-DSCF3218-编辑.jpg",
-   "kind": "cos",
-   "reason": "edited",
-   "detail": "文件名含「编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
-   "datetime": "2025-09-12 22:51:32",
+   "album": "20250912",
+   "rel": "20250912/DSCF3177.jpg",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-09-12 22:21:32",
    "datetimeSource": "app"
   },
   {
@@ -2660,16 +3290,6 @@
    "reason": "edited",
    "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
    "datetime": "2025-09-12 22:51:35",
-   "datetimeSource": "app"
-  },
-  {
-   "root": "",
-   "album": "0722矢泽妮可",
-   "rel": "0722矢泽妮可/20250912-DSCF3248.jpg",
-   "kind": "cos",
-   "reason": "edited",
-   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
-   "datetime": "2025-09-12 22:51:40",
    "datetimeSource": "app"
   },
   {
@@ -2714,12 +3334,42 @@
   },
   {
    "root": "",
+   "album": "20250928-浮波柚叶",
+   "rel": "20250928-浮波柚叶/MEI06298.JPG",
+   "kind": "blog",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-09-28 17:03:42",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "1002浮波柚叶",
    "rel": "1002浮波柚叶/20250928-MEI06327-编辑.jpg",
    "kind": "cos",
    "reason": "edited",
    "detail": "文件名含「编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
    "datetime": "2025-09-29 09:30:53",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20251008-MEI06826.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-10-08 23:31:23",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20251008-MEI06927.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-10-08 23:33:25",
    "datetimeSource": "app"
   },
   {
@@ -2754,12 +3404,22 @@
   },
   {
    "root": "",
-   "album": "20251022",
-   "rel": "20251022/SONY/MEI07373.JPG",
-   "kind": "blog",
-   "reason": "random",
-   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=ILCE-7CM2 v1.01",
-   "datetime": "2025-10-22 17:52:55",
+   "album": "1120真中啦啦",
+   "rel": "1120真中啦啦/IAN06810.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-11-03 10:40:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1120真中啦啦",
+   "rel": "1120真中啦啦/89691982EED86EF70C8D456BA6B1666C.jpg",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2025-11-03 10:43:25",
    "datetimeSource": "app"
   },
   {
@@ -2824,6 +3484,16 @@
   },
   {
    "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20260303/MEI07803.JPG",
+   "kind": "cos",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2026-03-03 22:55:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
    "album": "20260511-洛天依",
    "rel": "20260511-洛天依/MEI08171-编辑.jpg",
    "kind": "blog",
@@ -2865,11 +3535,11 @@
   {
    "root": "",
    "album": "20260913",
-   "rel": "20260913/darktable_exported/MEI08218.jpg",
+   "rel": "20260913/darktable_exported/grok-image-36ce1455-cd87-43aa-8e4b-b660fa32b6f1.jpg",
    "kind": "blog",
-   "reason": "edited",
-   "detail": "所在目录属修图/导出目录",
-   "datetime": "2026-09-13 11:50:35",
+   "reason": "manual",
+   "detail": "从资源管理器拖进应用",
+   "datetime": "2026-09-18 21:45:43",
    "datetimeSource": "app"
   },
   {

@@ -1,5 +1,5 @@
 {
- "note": "由 scripts/gallery/build-birthdays.mjs 生成：生日先取脚本里人工核过的 BIRTHDAY_OVERRIDES（萌娘百科 / Bangumi），其次 Z:\\着ぐるみ\\角色 目录名的 MMDD 前缀，最后 Bangumi 角色数据；作品取 Bangumi 关联作品的主角作。",
+ "note": "由 scripts/gallery/build-birthdays.mjs 生成：角色、生日、日文名、作品、着ぐるみ以相册选片工具的角色库（--characters C:\\Users\\mei\\dsh\\work\\gallery-build\\characters.json）为准；角色库里没有的 tag 才退回人工核过的 BIRTHDAY_OVERRIDES、着ぐるみ目录名的 MMDD 前缀与 Bangumi 数据。",
  "characters": [
   {
    "tag": "青衣",
@@ -12,6 +12,20 @@
    "birthdaySource": "cos"
   },
   {
+   "tag": "园田智代子",
+   "name": "园田智代子",
+   "nameJa": "園田智代子",
+   "mon": 2,
+   "day": 24,
+   "works": [
+    "偶像大师 闪耀色彩",
+    "偶像大师闪耀色彩 web四格漫画",
+    "偶像大师 闪耀色彩 Song for Prism"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
    "tag": "虹野梦",
    "name": "虹野梦",
    "nameJa": "虹野ゆめ",
@@ -20,6 +34,19 @@
    "works": [
     "偶像活动Stars",
     "剧场版 偶像活动Stars"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "中川花音",
+   "name": "中川花音",
+   "nameJa": "中川かのん",
+   "mon": 3,
+   "day": 3,
+   "works": [
+    "只有神知道的世界",
+    "只有神知道的世界 四人与偶像"
    ],
    "kigurumi": true,
    "birthdaySource": "cos"
@@ -71,6 +98,18 @@
    "birthdaySource": "cos"
   },
   {
+   "tag": "花海佑芽",
+   "name": "花海佑芽",
+   "nameJa": "花海佑芽",
+   "mon": 4,
+   "day": 1,
+   "works": [
+    "学园偶像大师"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "db"
+  },
+  {
    "tag": "木之本樱",
    "name": "木之本樱",
    "nameJa": "木之本桜",
@@ -116,6 +155,18 @@
    "birthdaySource": "manual"
   },
   {
+   "tag": "珈百璃",
+   "name": "珈百璃",
+   "nameJa": "天真=ガヴリール=ホワイト",
+   "mon": 4,
+   "day": 20,
+   "works": [
+    "珈百璃的堕落"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "user"
+  },
+  {
    "tag": "伊井野弥子",
    "name": "伊井野弥子",
    "nameJa": "伊井野ミコ",
@@ -127,6 +178,19 @@
    ],
    "kigurumi": true,
    "birthdaySource": "cos"
+  },
+  {
+   "tag": "松原花音",
+   "name": "松原花音",
+   "nameJa": "松原花音",
+   "mon": 5,
+   "day": 11,
+   "works": [
+    "BanG Dream! 少女乐团派对！",
+    "BanG Dream! 少女乐团派对！☆PICO"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
   },
   {
    "tag": "新子憧",
@@ -218,6 +282,18 @@
    "birthdaySource": "manual"
   },
   {
+   "tag": "虹之丘真白",
+   "name": "虹之丘真白",
+   "nameJa": "虹ヶ丘ましろ",
+   "mon": 7,
+   "day": 16,
+   "works": [
+    "开阔天空！光之美少女"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "db"
+  },
+  {
    "tag": "矢泽妮可",
    "name": "矢泽妮可",
    "nameJa": "矢澤にこ",
@@ -229,6 +305,18 @@
    ],
    "kigurumi": true,
    "birthdaySource": "cos"
+  },
+  {
+   "tag": "玛拉妮",
+   "name": "玛拉妮",
+   "nameJa": "",
+   "mon": 8,
+   "day": 3,
+   "works": [
+    "原神"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "db"
   },
   {
    "tag": "犬饲彩羽",
@@ -281,10 +369,7 @@
    "nameJa": "初音ミク",
    "mon": 8,
    "day": 31,
-   "works": [
-    "VOCALOID2 角色主唱系列 CV01 初音未來",
-    "MikuMikuDance"
-   ],
+   "works": [],
    "kigurumi": false,
    "birthdaySource": "bgm"
   },
@@ -307,6 +392,18 @@
    "works": [],
    "kigurumi": true,
    "birthdaySource": "cos"
+  },
+  {
+   "tag": "天江衣",
+   "name": "天江衣",
+   "nameJa": "天江衣",
+   "mon": 9,
+   "day": 6,
+   "works": [
+    "咲日和 OAD"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
   },
   {
    "tag": "千早爱音",
@@ -401,6 +498,58 @@
    "birthdaySource": "bgm"
   },
   {
+   "tag": "樱庭萝拉",
+   "name": "樱庭萝拉",
+   "nameJa": "桜庭ローラ",
+   "mon": 11,
+   "day": 4,
+   "works": [
+    "偶像活动Stars",
+    "剧场版 偶像活动Stars"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "辻野朱里",
+   "name": "辻野朱里",
+   "nameJa": "辻野あかり",
+   "mon": 11,
+   "day": 5,
+   "works": [
+    "偶像大师 灰姑娘女孩"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "user"
+  },
+  {
+   "tag": "真中啦啦",
+   "name": "真中啦啦",
+   "nameJa": "真中らぁら",
+   "mon": 11,
+   "day": 20,
+   "works": [
+    "美妙天堂",
+    "美妙天堂剧场版 全～体大集合！美妙☆观光",
+    "美妙天堂 第二期"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "高松灯",
+   "name": "高松灯",
+   "nameJa": "高松燈",
+   "mon": 11,
+   "day": 22,
+   "works": [
+    "BanG Dream! 少女乐团派对！",
+    "BanG Dream! It's MyGO!!!!!"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
    "tag": "砂糖",
    "name": "砂糖",
    "nameJa": "",
@@ -458,6 +607,32 @@
  ],
  "unknown": [
   {
+   "tag": "星野露比",
+   "name": "星野露比",
+   "nameJa": "",
+   "mon": 0,
+   "day": 0,
+   "works": [
+    "【我推的孩子】"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "db"
+  },
+  {
+   "tag": "绪方理珠",
+   "name": "绪方理珠",
+   "nameJa": "緒方理珠",
+   "mon": 0,
+   "day": 0,
+   "works": [
+    "我们真的学不来",
+    "我们真的学不来！",
+    "我们真的学不来 OVA"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
    "tag": "荧",
    "name": "荧",
    "nameJa": "",
@@ -465,7 +640,7 @@
    "day": 0,
    "works": [],
    "kigurumi": true,
-   "birthdaySource": ""
+   "birthdaySource": "db"
   }
  ],
  "excluded": [
