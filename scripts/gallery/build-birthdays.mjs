@@ -21,6 +21,8 @@ const opt = (name, fallback) => {
 
 const GALLERY = resolve(repo, opt('gallery', 'src/data/gallery.json'));
 const BGM = opt('bgm', 'C:\\Users\\mei\\bgm-birthday-calendar\\public\\characters.json');
+// 相册选片工具自己的角色库（characters.json）：给了就以它为准，不再按目录名/Bangumi 猜。
+const CHARACTERS = opt('characters', '');
 const COS_ROOT = opt('cos-root', 'Z:\\着ぐるみ\\角色');
 const OUT = resolve(repo, opt('out', 'src/data/birthdays.json'));
 
@@ -110,11 +112,47 @@ async function main() {
     return list;
   }
 
+  // 相册选片工具的角色库优先：生日、日文名、作品、着ぐるみ都照它写。
+  const dbPath = CHARACTERS ? resolve(repo, CHARACTERS) : '';
+  let database = null;
+  if (dbPath && existsSync(dbPath)) {
+    try {
+      database = JSON.parse((await readFile(dbPath, 'utf8')).replace(/^\uFEFF/, ''));
+      console.log('[birthdays] characters from ' + dbPath + ': ' + (database.characters || []).length);
+    } catch (e) {
+      console.warn('[birthdays] cannot read ' + dbPath + ': ' + e.message);
+    }
+  }
+  const fromDb = new Map();
+  for (const row of (database && database.characters) || []) {
+    if (row && row.tag) fromDb.set(String(row.tag), row);
+  }
+
   const characters = [];
   const unknown = [];
+  const covered = new Set();
   for (const t of tags) {
     const name = t.name;
     if (EXCLUDE.has(name)) continue;
+    const row = fromDb.get(name);
+    if (row) {
+      const mon = Number(row.mon) || 0;
+      const day = Number(row.day) || 0;
+      const dbEntry = {
+        tag: name,
+        name: row.name || name,
+        nameJa: row.nameJa || '',
+        mon,
+        day,
+        works: Array.isArray(row.works) ? row.works.map(String) : [],
+        kigurumi: Boolean(row.kigurumi),
+        birthdaySource: row.source || 'db',
+      };
+      covered.add(name);
+      if (mon >= 1 && mon <= 12 && day >= 1 && day <= 31) characters.push(dbEntry);
+      else unknown.push(dbEntry);
+      continue;
+    }
     const c = byName.get(norm(name)) || null;
     const cosBirth = cosByName.get(name) || null;
     const bgmBirth =
@@ -144,7 +182,11 @@ async function main() {
     OUT,
     JSON.stringify(
       {
-        note: '由 scripts/gallery/build-birthdays.mjs 生成：生日先取脚本里人工核过的 BIRTHDAY_OVERRIDES（萌娘百科 / Bangumi），其次 Z:\\着ぐるみ\\角色 目录名的 MMDD 前缀，最后 Bangumi 角色数据；作品取 Bangumi 关联作品的主角作。',
+        note: database
+          ? '由 scripts/gallery/build-birthdays.mjs 生成：角色、生日、日文名、作品、着ぐるみ以相册选片工具的角色库（--characters ' +
+            dbPath +
+            '）为准；角色库里没有的 tag 才退回人工核过的 BIRTHDAY_OVERRIDES、着ぐるみ目录名的 MMDD 前缀与 Bangumi 数据。'
+          : '由 scripts/gallery/build-birthdays.mjs 生成：生日先取脚本里人工核过的 BIRTHDAY_OVERRIDES（萌娘百科 / Bangumi），其次 Z:\\着ぐるみ\\角色 目录名的 MMDD 前缀，最后 Bangumi 角色数据；作品取 Bangumi 关联作品的主角作。',
         characters,
         unknown,
         excluded: [...EXCLUDE],

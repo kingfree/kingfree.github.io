@@ -333,7 +333,9 @@ async function main() {
       continue;
     }
     let srcPath = resolved.file;
-    const { date, tags } = tokenize(p.album, p.kind);
+    const { date, tags: albumTags } = tokenize(p.album, p.kind);
+    // 选片工具里手动指定的角色优先；没指定才按目录名推断。
+    const tags = Array.isArray(p.tags) ? p.tags.map(String) : albumTags;
     const keptTags = [...new Set(tags)].filter((t) => !EXCLUDE.has(t));
     const ts = parseTime(p.datetime) ?? parseTime(date) ?? Date.now();
     const d = new Date(ts);

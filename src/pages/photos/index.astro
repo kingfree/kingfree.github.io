@@ -19,14 +19,14 @@ const ordered = tags.slice().sort((a, b) => {
 const charsWithBirthday = ordered.filter((t) => birthdayOf.has(t.name));
 const others = ordered.filter((t) => !birthdayOf.has(t.name)).slice(0, 8);
 const topTags = [...charsWithBirthday, ...others];
-const span = years.length ? years[0] + '—' + years[years.length - 1] : '';
+const span = years.length ? (years.length > 1 ? years[0] + '—' + years[years.length - 1] : years[0]) : '';
 ---
 
 <Base wide title="写真" description="原田莓莓的着ぐるみ写真：按拍摄时间排列，可按角色与年份筛选。">
   <header class="gallery-head">
     <div class="gallery-headline">
       <h1>写真</h1>
-      <p class="gallery-meta" id="gallery-meta">{count} 张<span>{span && ' · ' + span}</span></p>
+      <p class="gallery-meta" id="gallery-meta">{count} 张 · {tags.length} 位角色<span>{span && ' · ' + span}</span></p>
     </div>
     <div class="gallery-actions">
       <button class="ghost-btn" type="button" data-bd-open>生日</button>
@@ -193,12 +193,24 @@ const span = years.length ? years[0] + '—' + years[years.length - 1] : '';
         });
       }
 
+      // 头部：当前视图的图片数 / 角色数 / 年代跨度
       function setMeta() {
         filterBtn.classList.toggle('has-filter', Boolean(tag) || year !== 'all');
         if (!meta) return;
+        const tagsInView = new Set();
+        let from = '';
+        let to = '';
+        for (const el of visible) {
+          for (const t of el.dataset.tags.split(' ')) if (t) tagsInView.add(t);
+          const y = el.dataset.year;
+          if (y) {
+            if (!from || y < from) from = y;
+            if (!to || y > to) to = y;
+          }
+        }
         const bits = [visible.length + ' 张'];
-        if (tag) bits.push(tag);
-        if (year !== 'all') bits.push(year);
+        if (tagsInView.size) bits.push(tagsInView.size + ' 位角色');
+        if (from) bits.push(from === to ? from : from + '—' + to);
         if (visible.length !== total) bits.push('共 ' + total + ' 张');
         meta.textContent = bits.join(' · ');
       }

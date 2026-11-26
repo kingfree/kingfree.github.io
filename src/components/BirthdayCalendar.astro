@@ -2,7 +2,7 @@
 import birthdays from '../data/birthdays.json';
 import gallery from '../data/gallery.json';
 
-// 角色 tag -> 照片列表（封面优先用 cos 源、时间最早的）
+// 角色 tag -> 照片列表（生日格子一律用最新拍的那张）
 const photosByTag = new Map();
 for (const p of gallery.photos) {
   for (const t of p.tags) {
@@ -13,9 +13,12 @@ for (const p of gallery.photos) {
 }
 
 function pickPhoto(tag) {
-  const list = (photosByTag.get(tag) || []).slice();
-  list.sort((a, b) => (a.source === 'cos' ? 0 : 1) - (b.source === 'cos' ? 0 : 1) || a.ts - b.ts);
-  return list[0];
+  const list = photosByTag.get(tag) || [];
+  let latest = null;
+  for (const p of list) {
+    if (!latest || p.ts > latest.ts) latest = p;
+  }
+  return latest;
 }
 
 const characters = [];
@@ -29,6 +32,7 @@ for (const c of birthdays.characters) {
     day: c.day,
     works: c.works || [],
     photo: photo ? photo.thumb : '',
+    count: (photosByTag.get(c.tag) || []).length,
     initial: (c.name || '?').slice(0, 1),
   });
 }
@@ -72,6 +76,11 @@ for (const c of birthdays.unknown) {
         </ul>
       </details>
     )}
+  </div>
+
+  <div class="bd-pop" id="bd-pop" hidden role="dialog" aria-label="同一天的角色">
+    <p class="bd-pop-head" id="bd-pop-head"></p>
+    <ul class="bd-pop-list" id="bd-pop-list"></ul>
   </div>
 </div>
 
@@ -126,43 +135,145 @@ for (const c of birthdays.unknown) {
         .join('');
     }
 
+    // 同一天有几个人，就把格子等分成几格
+    function splitOf(n) {
+      if (n <= 1) return [1, 1];
+      if (n === 2) return [2, 1];
+      if (n === 3) return [3, 1];
+      if (n === 4) return [2, 2];
+      return [3, Math.ceil(n / 3)];
+    }
+
+    // 一个人时直接是链接；多人时整格是按钮，点开浮层再选
+    function personHtml(day, c, asLink) {
+      const label = month + 1 + ' 月 ' + day + ' 日 · ' + c.name;
+      const tag = asLink ? 'a' : 'span';
+      const href = asLink ? ' href="/photos/?tag=' + encodeURIComponent(c.tag) + '"' : '';
+      const media = c.photo
+        ? '<img class="bd-photo" src="' + esc(c.photo) + '" alt="" loading="lazy" decoding="async" />'
+        : '';
+      return (
+        '<' + tag + ' class="bd-person' + (c.photo ? '' : ' no-img') + '"' +
+        href +
+        ' data-tag="' + esc(c.tag) + '"' +
+        ' data-initial="' + esc(c.initial) + '"' +
+        ' aria-label="' + esc(label) + ' 的写真">' +
+        media +
+        '</' + tag + '>'
+      );
+    }
+
     function cellHtml(day, people, isToday) {
       const num = '<span class="bd-num">' + day + '</span>';
       if (!people.length) {
         return '<div class="bd-cell' + (isToday ? ' is-today' : '') + '">' + num + '</div>';
       }
-      const first = people[0];
+      const multi = people.length > 1;
       const names = people.map((c) => c.name).join('、');
+      const split = splitOf(people.length);
+      const style = ' style="--bd-cols:' + split[0] + ';--bd-rows:' + split[1] + '"';
       const label = month + 1 + ' 月 ' + day + ' 日 · ' + names;
-      const classes = 'bd-cell has-photo' + (isToday ? ' is-today' : '') + (first.photo ? '' : ' no-img');
-      const media = first.photo
-        ? '<img class="bd-photo" src="' + esc(first.photo) + '" alt="" loading="lazy" decoding="async" />'
-        : '';
+      const attrs = multi
+        ? ' role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false"' +
+          ' data-day="' + day + '"' +
+          ' aria-label="' + esc(label + '，共 ' + people.length + ' 位角色，点开查看') + '"'
+        : ' aria-label="' + esc(label) + '"';
       return (
-        '<a class="' + classes + '" href="/photos/?tag=' + encodeURIComponent(first.tag) + '"' +
-        ' data-tag="' + esc(first.tag) + '"' +
-        ' data-initial="' + esc(first.initial) + '"' +
-        ' aria-label="' + esc(label) + ' 的写真">' +
-        media +
+        '<div class="bd-cell has-photo' + (isToday ? ' is-today' : '') + (multi ? ' is-multi' : '') + '"' +
+        attrs + '>' +
         num +
-        (people.length > 1 ? '<span class="bd-plus">+' + (people.length - 1) + '</span>' : '') +
+        '<div class="bd-people"' + style + '>' + people.map((c) => personHtml(day, c, !multi)).join('') + '</div>' +
         '<span class="bd-tip">' + tipHtml(people) + '</span>' +
-        '</a>'
+        '</div>'
       );
+    }
+
+    // ---- 同一天多个角色：点格子弹出浮层 ----
+    const pop = document.getElementById('bd-pop');
+    const popHead = document.getElementById('bd-pop-head');
+    const popList = document.getElementById('bd-pop-list');
+    let popCell = null;
+
+    function popItemHtml(c) {
+      const work = c.works && c.works.length ? c.works[0] : '';
+      const media = c.photo
+        ? '<img class="bd-pop-photo" src="' + esc(c.photo) + '" alt="" loading="lazy" decoding="async" />'
+        : '<span class="bd-pop-photo is-initial">' + esc(c.initial) + '</span>';
+      return (
+        '<li><a class="bd-pop-item" href="/photos/?tag=' + encodeURIComponent(c.tag) + '"' +
+        ' data-tag="' + esc(c.tag) + '">' +
+        media +
+        '<span class="bd-pop-body"><b>' + esc(c.name) + '</b>' +
+        (work ? '<em>' + esc(work) + '</em>' : '') +
+        '<span class="bd-pop-n">' + (c.count || 0) + ' 张写真</span></span>' +
+        '</a></li>'
+      );
+    }
+
+    // 贴着格子放，靠边时往里收、放不下就翻到上面
+    function placePop(cell) {
+      if (!pop || pop.hidden) return;
+      const rect = cell.getBoundingClientRect();
+      const w = pop.offsetWidth;
+      const h = pop.offsetHeight;
+      const gap = 10;
+      const pad = 10;
+      let left = rect.left + rect.width / 2 - w / 2;
+      left = Math.min(Math.max(pad, left), window.innerWidth - w - pad);
+      let top = rect.bottom + gap;
+      if (top + h > window.innerHeight - pad) top = rect.top - gap - h;
+      if (top < pad) top = pad;
+      pop.style.left = Math.round(left) + 'px';
+      pop.style.top = Math.round(top) + 'px';
+    }
+
+    function openPop(cell) {
+      if (!pop || !popList) return;
+      const day = Number(cell.dataset.day);
+      const people = byDay.get((month + 1) * 100 + day) || [];
+      if (people.length < 2) return;
+      closePop(false);
+      popCell = cell;
+      popHead.textContent = month + 1 + ' 月 ' + day + ' 日 · ' + people.length + ' 位角色';
+      popList.innerHTML = people.map((c) => popItemHtml(c)).join('');
+      pop.hidden = false;
+      placePop(cell);
+      requestAnimationFrame(() => pop.classList.add('is-open'));
+      cell.setAttribute('aria-expanded', 'true');
+      const first = popList.querySelector('.bd-pop-item');
+      if (first) first.focus({ preventScroll: true });
+    }
+
+    function closePop(refocus) {
+      if (!pop || pop.hidden) return;
+      pop.hidden = true;
+      pop.classList.remove('is-open');
+      if (popCell) {
+        popCell.setAttribute('aria-expanded', 'false');
+        if (refocus) popCell.focus({ preventScroll: true });
+        popCell = null;
+      }
     }
 
     function render(options) {
       const silent = Boolean(options && options.silent);
+      closePop(false);
       const firstWeekday = new Date(year, month, 1).getDay();
       const daysInMonth = new Date(year, month + 1, 0).getDate();
-      const rows = Math.ceil((firstWeekday + daysInMonth) / 7);
+      // 固定 6 行：切换月份时弹窗尺寸不变，不会上下抖动
+      const rows = 6;
       const total = rows * 7;
+      const prevDays = new Date(year, month, 0).getDate();
       const html = [];
       let birthdays = 0;
       for (let i = 0; i < total; i++) {
         const day = i - firstWeekday + 1;
         if (day < 1 || day > daysInMonth) {
-          html.push('<div class="bd-cell is-out" aria-hidden="true"></div>');
+          // 前后补位的日子只写个淡淡的日期，撑满固定的 6 行
+          const label = day < 1 ? prevDays + day : day - daysInMonth;
+          html.push(
+            '<div class="bd-cell is-out" aria-hidden="true"><span class="bd-num">' + label + '</span></div>',
+          );
           continue;
         }
         const people = byDay.get((month + 1) * 100 + day) || [];
@@ -183,9 +294,9 @@ for (const c of birthdays.unknown) {
         img.addEventListener(
           'error',
           () => {
-            const cell = img.closest('.bd-cell');
+            const person = img.closest('.bd-person');
             img.remove();
-            if (cell) cell.classList.add('no-img');
+            if (person) person.classList.add('no-img');
           },
           { once: true },
         );
@@ -221,6 +332,7 @@ for (const c of birthdays.unknown) {
 
     function closeDialog() {
       if (!isOpen()) return;
+      closePop(false);
       dialog.classList.remove('is-open');
       document.body.classList.remove('lb-open');
       const done = () => {
@@ -241,13 +353,30 @@ for (const c of birthdays.unknown) {
     if (closeBtn) closeBtn.addEventListener('click', closeDialog);
     if (sheet) {
       dialog.addEventListener('click', (e) => {
+        if (pop && pop.contains(e.target)) return;
         if (!sheet.contains(e.target)) closeDialog();
       });
     }
 
-    // 点日期格：直接在当前页筛这个角色，不跳页刷新
+    // 点日历别的格子 / 空白处关掉浮层
+    document.addEventListener('click', (e) => {
+      if (!pop || pop.hidden) return;
+      const target = e.target;
+      if (pop.contains(target)) return;
+      if (target.closest && target.closest('.bd-cell.is-multi')) return;
+      closePop(false);
+    });
+
+    // 一天多个角色：点格子开浮层；只有一个角色：直接筛这个角色
     grid.addEventListener('click', (e) => {
-      const cell = e.target.closest('a.bd-cell');
+      const multi = e.target.closest('.bd-cell.is-multi');
+      if (multi) {
+        e.preventDefault();
+        if (popCell === multi) closePop(false);
+        else openPop(multi);
+        return;
+      }
+      const cell = e.target.closest('a.bd-person');
       if (!cell) return;
       const tag = cell.dataset.tag || '';
       if (typeof window.gallerySetTag === 'function') {
@@ -256,6 +385,28 @@ for (const c of birthdays.unknown) {
         closeDialog();
       }
     });
+
+    grid.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const multi = e.target.closest && e.target.closest('.bd-cell.is-multi');
+      if (!multi) return;
+      e.preventDefault();
+      openPop(multi);
+    });
+
+    if (pop) {
+      pop.addEventListener('click', (e) => {
+        const item = e.target.closest('.bd-pop-item');
+        if (!item) return;
+        const tag = item.dataset.tag || '';
+        if (typeof window.gallerySetTag === 'function') {
+          e.preventDefault();
+          closePop(false);
+          window.gallerySetTag(tag);
+          closeDialog();
+        }
+      });
+    }
 
     const prev = document.getElementById('bd-prev');
     const next = document.getElementById('bd-next');
@@ -274,13 +425,30 @@ for (const c of birthdays.unknown) {
       if (!isOpen()) return;
       if (e.key === 'Escape') {
         e.preventDefault();
-        closeDialog();
+        if (pop && !pop.hidden) closePop(true);
+        else closeDialog();
         return;
       }
       const tag = e.target && e.target.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      // 浮层打开时上下键在角色之间走，左右键不再翻月份
+      if (pop && !pop.hidden) {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+          const items = Array.prototype.slice.call(popList.querySelectorAll('.bd-pop-item'));
+          if (!items.length) return;
+          e.preventDefault();
+          const at = items.indexOf(document.activeElement);
+          const next = e.key === 'ArrowDown' ? (at + 1) % items.length : (at - 1 + items.length) % items.length;
+          if (items[next]) items[next].focus({ preventScroll: true });
+        }
+        return;
+      }
       if (e.key === 'ArrowLeft') shift(-1);
       else if (e.key === 'ArrowRight') shift(1);
+    });
+
+    window.addEventListener('resize', () => {
+      if (pop && !pop.hidden && popCell) placePop(popCell);
     });
 
     render({ silent: true });
@@ -311,7 +479,11 @@ for (const c of birthdays.unknown) {
   }
 
   .bd-sheet {
+    /* 宽高都随视口收紧：6 行方格始终放得下，弹窗高度不变 */
     width: min(47rem, 100%);
+    /* 减去弹窗内除日期格以外的高度，保证 6 行方格整块放得下、不出现内部滚动 */
+    width: clamp(18rem, min(47rem, calc((100dvh - 18.5rem) * 7 / 6)), 100%);
+    max-width: 100%;
     max-height: calc(100vh - 2.5rem);
     overflow: auto;
     overscroll-behavior: contain;
@@ -453,7 +625,10 @@ for (const c of birthdays.unknown) {
 
   .bd-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    /* 固定 6 行：5 周、6 周的月份格子一样高 */
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    aspect-ratio: 7 / 6;
     gap: 1px;
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -479,15 +654,48 @@ for (const c of birthdays.unknown) {
   .bd-cell {
     position: relative;
     display: block;
-    aspect-ratio: 1 / 1;
+    min-width: 0;
+    min-height: 0;
     overflow: hidden;
     background: var(--bg);
     color: inherit;
     text-decoration: none;
   }
 
+  /* 同一天多个角色：格子内等分，各放自己的照片 */
+  .bd-people {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--bd-cols, 1), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--bd-rows, 1), minmax(0, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .bd-person {
+    position: relative;
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--bg-soft);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .bd-person:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: -1px;
+  }
+
   .bd-cell.is-out {
     background: color-mix(in srgb, var(--bg-soft) 55%, var(--bg));
+  }
+
+  .bd-cell.is-out .bd-num {
+    color: color-mix(in srgb, var(--faint) 45%, transparent);
   }
 
   .bd-cell.has-photo {
@@ -505,8 +713,8 @@ for (const c of birthdays.unknown) {
     will-change: transform;
   }
 
-  a.bd-cell:hover .bd-photo,
-  a.bd-cell:focus-visible .bd-photo {
+  a.bd-person:hover .bd-photo,
+  a.bd-person:focus-visible .bd-photo {
     transform: scale(1.045);
   }
 
@@ -530,23 +738,6 @@ for (const c of birthdays.unknown) {
   .bd-cell.no-img .bd-num {
     color: var(--muted);
     text-shadow: none;
-  }
-
-  .bd-plus {
-    position: absolute;
-    z-index: 3;
-    top: 0.24rem;
-    right: 0.26rem;
-    min-width: 1.15rem;
-    padding: 0 0.22rem;
-    border-radius: 999px;
-    background: rgba(12, 9, 8, 0.55);
-    color: #fff;
-    font-family: var(--font-mono);
-    font-size: 0.5625rem;
-    line-height: 1.7;
-    text-align: center;
-    letter-spacing: 0;
   }
 
   .bd-tip {
@@ -597,7 +788,134 @@ for (const c of birthdays.unknown) {
     text-overflow: ellipsis;
   }
 
-  .bd-cell.no-img::before {
+  /* ---------- 同一天多个角色：点开的小浮层 ---------- */
+
+  .bd-cell.is-multi {
+    cursor: pointer;
+  }
+
+  .bd-cell.is-multi:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: -1px;
+  }
+
+  .bd-cell.is-multi[aria-expanded='true'] {
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 62%, transparent);
+  }
+
+  /* 浮层开着的时候别让悬停提示再冒出来挡着 */
+  .bd-cell.is-multi[aria-expanded='true'] .bd-tip {
+    opacity: 0;
+  }
+
+  .bd-pop {
+    position: fixed;
+    z-index: 70;
+    width: min(18rem, 88vw);
+    padding: 0.65rem 0.75rem 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg);
+    box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.24);
+    opacity: 0;
+    transform: translateY(4px) scale(0.985);
+    transition:
+      opacity 0.16s ease,
+      transform 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .bd-pop[hidden] {
+    display: none;
+  }
+
+  .bd-pop.is-open {
+    opacity: 1;
+    transform: none;
+  }
+
+  .bd-pop-head {
+    margin: 0 0 0.25rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px dotted var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    color: var(--faint);
+  }
+
+  .bd-pop-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bd-pop-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 -0.35rem;
+    padding: 0.35rem;
+    border-radius: 6px;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .bd-pop-item:hover,
+  .bd-pop-item:focus-visible {
+    background: var(--bg-soft);
+  }
+
+  .bd-pop-photo {
+    flex: none;
+    width: 3.6rem;
+    height: 4.6rem;
+    border-radius: 4px;
+    background: var(--bg-soft);
+    object-fit: cover;
+    object-position: 50% 28%;
+  }
+
+  .bd-pop-photo.is-initial {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--faint);
+  }
+
+  .bd-pop-body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    line-height: 1.45;
+  }
+
+  .bd-pop-body b {
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .bd-pop-body em {
+    overflow: hidden;
+    font-style: normal;
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .bd-pop-n {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.02em;
+    color: var(--faint);
+  }
+
+  .bd-person.no-img::before {
     content: attr(data-initial);
     position: absolute;
     inset: 0;
@@ -721,6 +1039,15 @@ for (const c of birthdays.unknown) {
       transition: none;
     }
 
+    .bd-pop {
+      transition: none;
+      transform: none;
+    }
+
+    .bd-pop-item {
+      transition: none;
+    }
+
     .bd-grid.is-in {
       animation: none;
     }
@@ -730,8 +1057,8 @@ for (const c of birthdays.unknown) {
       transition: none;
     }
 
-    a.bd-cell:hover .bd-photo,
-    a.bd-cell:focus-visible .bd-photo {
+    a.bd-person:hover .bd-photo,
+    a.bd-person:focus-visible .bd-photo {
       transform: none;
     }
 
