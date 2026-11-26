@@ -1,11 +1,11 @@
 ---
 title: "确定性线性时间最小生成树（中文版 + C 实现）"
-date: 2026-11-26
+date: 2026-11-24
 tags: ["翻译", "算法", "最小生成树"]
 description: "arXiv:2611.31187 的中文全译，附一份自己写的 C 实现；MST 的比较复杂度问题就此了结。"
 ---
 
-2026 年 11 月 23 日，Sanjeev Khanna、Aaron Putterman 与 Junkai Song 把《A Deterministic Linear Time Algorithm for Minimum Spanning Tree》挂上 arXiv。结论一句话：最小生成树的确定性比较复杂度是 $O(m)$。Chazelle 在 2000 年做到 $O(m\alpha(m,n))$ 之后这个界再没动过，如今最后一层也被揭掉了——而这个问题从 Borůvka 1926 年为摩拉维亚的电气化算电网开始，已经问了整整一百年。
+2026 年 11 月 24 日，Sanjeev Khanna、Aaron Putterman 与 Junkai Song 把《A Deterministic Linear Time Algorithm for Minimum Spanning Tree》挂上 arXiv。结论一句话：最小生成树的确定性比较复杂度是 $O(m)$。Chazelle 在 2000 年做到 $O(m\alpha(m,n))$ 之后这个界再没动过，如今最后一层也被揭掉了——而这个问题从 Borůvka 1926 年为摩拉维亚的电气化算电网开始，已经问了整整一百年。
 
 论文的路线不太寻常：它先证明 $T^*(m,n) = O(m)$，也就是存在一棵深度为线性的比较树，再借 Pettie–Ramachandran（JACM 2002）的归约把它变成真正的 $O(m)$ 时间算法。核心的「证书过程」读起来并不神秘：反复把顶点投影到越来越小的门户集合上，凡是被投影出的森林所支撑的边就整批丢弃，剩下的边只有 $\varepsilon m + C_\varepsilon\sqrt{nm}$ 条；跑常数个 Borůvka 阶段把 $\sqrt{nm}$ 压到 $m/4$ 以下，递归规模就减半，于是 $T(m) = T(m/2) + O(m)$。
 
