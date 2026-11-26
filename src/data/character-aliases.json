@@ -1,0 +1,200 @@
+{
+ "note": "由 scripts/gallery/build-characters.mjs 生成：把相册 tag 对到 Bangumi 角色收藏（2026-11-26T06:10:21+08:00）。aliases 用于把目录名里的罗马字/别名统一成中文角色名。",
+ "source": "C:\\Users\\mei\\bgm-birthday-calendar\\public\\characters.json",
+ "aliases": {
+  "莫娜": "阿斯托洛吉斯·莫娜·梅姬斯图斯",
+  "香菱": "卯香菱",
+  "矢泽妮可": "矢泽日香",
+  "鹿目圆香": "鹿目圆",
+  "新泽西": "花园",
+  "长崎素世": "长崎爽世",
+  "中川花音": "中川奏音",
+  "momo": "桃子"
+ },
+ "matched": [
+  {
+   "tag": "虹野梦",
+   "canonical": "虹野梦",
+   "how": "exact"
+  },
+  {
+   "tag": "莫娜",
+   "canonical": "阿斯托洛吉斯·莫娜·梅姬斯图斯",
+   "how": "exact"
+  },
+  {
+   "tag": "安柏",
+   "canonical": "安柏",
+   "how": "exact"
+  },
+  {
+   "tag": "胡桃",
+   "canonical": "胡桃",
+   "how": "exact"
+  },
+  {
+   "tag": "木之本樱",
+   "canonical": "木之本樱",
+   "how": "exact"
+  },
+  {
+   "tag": "香菱",
+   "canonical": "卯香菱",
+   "how": "exact"
+  },
+  {
+   "tag": "大空明",
+   "canonical": "大空明",
+   "how": "exact"
+  },
+  {
+   "tag": "青衣",
+   "canonical": "青衣",
+   "how": "exact"
+  },
+  {
+   "tag": "伊井野弥子",
+   "canonical": "伊井野弥子",
+   "how": "exact"
+  },
+  {
+   "tag": "黑泽露比",
+   "canonical": "黑泽露比",
+   "how": "exact"
+  },
+  {
+   "tag": "强击",
+   "canonical": "强击",
+   "how": "exact"
+  },
+  {
+   "tag": "矢泽妮可",
+   "canonical": "矢泽日香",
+   "how": "exact"
+  },
+  {
+   "tag": "初音未来",
+   "canonical": "初音未来",
+   "how": "exact"
+  },
+  {
+   "tag": "千早爱音",
+   "canonical": "千早爱音",
+   "how": "exact"
+  },
+  {
+   "tag": "釉瑚",
+   "canonical": "釉瑚",
+   "how": "exact"
+  },
+  {
+   "tag": "星宫莓",
+   "canonical": "星宫莓",
+   "how": "exact"
+  },
+  {
+   "tag": "和泉纱雾",
+   "canonical": "和泉纱雾",
+   "how": "exact"
+  },
+  {
+   "tag": "浮波柚叶",
+   "canonical": "浮波柚叶",
+   "how": "exact"
+  },
+  {
+   "tag": "宫下爱",
+   "canonical": "宫下爱",
+   "how": "exact"
+  },
+  {
+   "tag": "鹿目圆香",
+   "canonical": "鹿目圆",
+   "how": "exact"
+  },
+  {
+   "tag": "若娜瓦",
+   "canonical": "若娜瓦",
+   "how": "exact"
+  },
+  {
+   "tag": "三月七",
+   "canonical": "三月七",
+   "how": "exact"
+  },
+  {
+   "tag": "喜多郁代",
+   "canonical": "喜多郁代",
+   "how": "exact"
+  },
+  {
+   "tag": "新泽西",
+   "canonical": "花园",
+   "how": "exact"
+  },
+  {
+   "tag": "长崎素世",
+   "canonical": "长崎爽世",
+   "how": "exact"
+  },
+  {
+   "tag": "真中啦啦",
+   "canonical": "真中啦啦",
+   "how": "exact"
+  },
+  {
+   "tag": "中川花音",
+   "canonical": "中川奏音",
+   "how": "exact"
+  },
+  {
+   "tag": "momo",
+   "canonical": "桃子",
+   "how": "exact"
+  }
+ ],
+ "unmatched": [
+  "砂冢明",
+  "羽衣拉拉",
+  "rino",
+  "juju",
+  "荧",
+  "ai",
+  "miko",
+  "ako",
+  "花海咲季",
+  "云堇",
+  "anisphia",
+  "大泽琉璃乃",
+  "晓山瑞希",
+  "犬饲彩羽",
+  "akiras",
+  "maya",
+  "mikan",
+  "ruri",
+  "花火",
+  "洛天依",
+  "砂糖",
+  "杏目",
+  "珈百璃",
+  "莱依拉",
+  "chiori",
+  "大场奈奈",
+  "海梦",
+  "藤岛慈",
+  "咲良歌",
+  "紫雨心",
+  "akimiho",
+  "chisato",
+  "hanami",
+  "kasumi",
+  "korai",
+  "layla",
+  "mahiru",
+  "rola",
+  "rurino",
+  "sagiri",
+  "senaka",
+  "setsuna"
+ ]
+}

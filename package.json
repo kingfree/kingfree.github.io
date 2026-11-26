@@ -9,7 +9,10 @@
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "gallery:build": "node scripts/gallery/build-gallery.mjs",
+    "gallery:birthdays": "node scripts/gallery/build-birthdays.mjs",
+    "gallery:catalog": "node scripts/gallery/build-catalog.mjs"
   },
   "dependencies": {
     "astro": "^7.4.13"

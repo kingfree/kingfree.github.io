@@ -1,0 +1,742 @@
+---
+import birthdays from '../data/birthdays.json';
+import gallery from '../data/gallery.json';
+
+// 角色 tag -> 照片列表（封面优先用 cos 源、时间最早的）
+const photosByTag = new Map();
+for (const p of gallery.photos) {
+  for (const t of p.tags) {
+    const list = photosByTag.get(t);
+    if (list) list.push(p);
+    else photosByTag.set(t, [p]);
+  }
+}
+
+function pickPhoto(tag) {
+  const list = (photosByTag.get(tag) || []).slice();
+  list.sort((a, b) => (a.source === 'cos' ? 0 : 1) - (b.source === 'cos' ? 0 : 1) || a.ts - b.ts);
+  return list[0];
+}
+
+const characters = [];
+for (const c of birthdays.characters) {
+  if (!(c.mon > 0 && c.day > 0)) continue;
+  const photo = pickPhoto(c.tag);
+  characters.push({
+    tag: c.tag,
+    name: c.name,
+    mon: c.mon,
+    day: c.day,
+    works: c.works || [],
+    photo: photo ? photo.thumb : '',
+    initial: (c.name || '?').slice(0, 1),
+  });
+}
+
+const unknown = [];
+for (const c of birthdays.unknown) {
+  if (c.mon > 0 && c.day > 0) continue;
+  unknown.push({ tag: c.tag, name: c.name, work: (c.works && c.works[0]) || '' });
+}
+---
+
+<div class="bd-dialog" id="bd-dialog" hidden>
+  <div class="bd-sheet" role="dialog" aria-modal="true" aria-labelledby="bd-title">
+    <header class="bd-head">
+      <h2 class="bd-title" id="bd-title">角色生日<span class="bd-title-n">{characters.length}</span></h2>
+      <button class="bd-close" id="bd-close" type="button" aria-label="关闭">×</button>
+    </header>
+
+    <div class="bd-bar">
+      <button class="bd-nav" id="bd-prev" type="button" aria-label="上个月">‹</button>
+      <span class="bd-month" id="bd-month" aria-live="polite">—</span>
+      <button class="bd-nav" id="bd-next" type="button" aria-label="下个月">›</button>
+      <button class="bd-today" id="bd-today" type="button">本月</button>
+    </div>
+
+    <div class="bd-week" aria-hidden="true">
+      <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+    </div>
+    <div class="bd-grid" id="bd-grid" aria-label="角色生日月历"></div>
+    <p class="bd-count" id="bd-count"></p>
+
+    {unknown.length > 0 && (
+      <details class="bd-unknown">
+        <summary>生日未知<span class="bd-unknown-n">{unknown.length}</span></summary>
+        <ul class="bd-unknown-list">
+          {unknown.map((u) => (
+            <li>
+              <a href={`/photos/?tag=${encodeURIComponent(u.tag)}`} title={u.work || undefined}>{u.name}</a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    )}
+  </div>
+</div>
+
+<script is:inline type="application/json" id="bday-data" set:html={JSON.stringify({ characters }).replace(/</g, '\\u003c')}></script>
+
+<script is:inline>
+  (() => {
+    const dialog = document.getElementById('bd-dialog');
+    const sheet = dialog && dialog.querySelector('.bd-sheet');
+    const grid = document.getElementById('bd-grid');
+    const monthLabel = document.getElementById('bd-month');
+    const countLine = document.getElementById('bd-count');
+    if (!dialog || !grid || !monthLabel) return;
+
+    const dataNode = document.getElementById('bday-data');
+    let data = {};
+    try {
+      data = JSON.parse((dataNode && dataNode.textContent) || '{}');
+    } catch (err) {
+      data = {};
+    }
+    const characters = Array.isArray(data.characters) ? data.characters : [];
+
+    // 按「月-日」归拢，同一天可能有多个角色
+    const byDay = new Map();
+    for (const c of characters) {
+      const key = c.mon * 100 + c.day;
+      const list = byDay.get(key);
+      if (list) list.push(c);
+      else byDay.set(key, [c]);
+    }
+
+    const today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth();
+    const todayKey = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const ESC = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+    const esc = (v) => String(v == null ? '' : v).replace(/[&<>"']/g, (ch) => ESC[ch]);
+
+    function tipHtml(people) {
+      return people
+        .map((c) => {
+          const work = c.works && c.works.length ? c.works[0] : '';
+          return (
+            '<span class="bd-tip-row"><b>' + esc(c.name) + '</b>' +
+            (work ? '<em>' + esc(work) + '</em>' : '') +
+            '</span>'
+          );
+        })
+        .join('');
+    }
+
+    function cellHtml(day, people, isToday) {
+      const num = '<span class="bd-num">' + day + '</span>';
+      if (!people.length) {
+        return '<div class="bd-cell' + (isToday ? ' is-today' : '') + '">' + num + '</div>';
+      }
+      const first = people[0];
+      const names = people.map((c) => c.name).join('、');
+      const label = month + 1 + ' 月 ' + day + ' 日 · ' + names;
+      const classes = 'bd-cell has-photo' + (isToday ? ' is-today' : '') + (first.photo ? '' : ' no-img');
+      const media = first.photo
+        ? '<img class="bd-photo" src="' + esc(first.photo) + '" alt="" loading="lazy" decoding="async" />'
+        : '';
+      return (
+        '<a class="' + classes + '" href="/photos/?tag=' + encodeURIComponent(first.tag) + '"' +
+        ' data-tag="' + esc(first.tag) + '"' +
+        ' data-initial="' + esc(first.initial) + '"' +
+        ' aria-label="' + esc(label) + ' 的写真">' +
+        media +
+        num +
+        (people.length > 1 ? '<span class="bd-plus">+' + (people.length - 1) + '</span>' : '') +
+        '<span class="bd-tip">' + tipHtml(people) + '</span>' +
+        '</a>'
+      );
+    }
+
+    function render(options) {
+      const silent = Boolean(options && options.silent);
+      const firstWeekday = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const rows = Math.ceil((firstWeekday + daysInMonth) / 7);
+      const total = rows * 7;
+      const html = [];
+      let birthdays = 0;
+      for (let i = 0; i < total; i++) {
+        const day = i - firstWeekday + 1;
+        if (day < 1 || day > daysInMonth) {
+          html.push('<div class="bd-cell is-out" aria-hidden="true"></div>');
+          continue;
+        }
+        const people = byDay.get((month + 1) * 100 + day) || [];
+        if (people.length) birthdays += people.length;
+        html.push(cellHtml(day, people, year * 10000 + (month + 1) * 100 + day === todayKey));
+      }
+      monthLabel.textContent = year + ' 年 ' + (month + 1) + ' 月';
+      grid.innerHTML = html.join('');
+      if (countLine) {
+        countLine.textContent = birthdays ? '本月 ' + birthdays + ' 位角色生日' : '本月没有角色生日';
+      }
+      if (!silent && !reduceMotion) {
+        grid.classList.remove('is-in');
+        void grid.offsetWidth;
+        grid.classList.add('is-in');
+      }
+      for (const img of grid.querySelectorAll('img.bd-photo')) {
+        img.addEventListener(
+          'error',
+          () => {
+            const cell = img.closest('.bd-cell');
+            img.remove();
+            if (cell) cell.classList.add('no-img');
+          },
+          { once: true },
+        );
+      }
+    }
+
+    function shift(delta) {
+      const d = new Date(year, month + delta, 1);
+      year = d.getFullYear();
+      month = d.getMonth();
+      render();
+    }
+
+    // ---- 打开 / 关闭 ----
+    let lastFocus = null;
+    let closeTimer = 0;
+
+    function isOpen() {
+      return !dialog.hidden;
+    }
+
+    function openDialog() {
+      if (isOpen()) return;
+      lastFocus = document.activeElement;
+      clearTimeout(closeTimer);
+      dialog.hidden = false;
+      document.body.classList.add('lb-open');
+      if (reduceMotion) dialog.classList.add('is-open');
+      else requestAnimationFrame(() => dialog.classList.add('is-open'));
+      const closeBtn = document.getElementById('bd-close');
+      if (closeBtn) closeBtn.focus({ preventScroll: true });
+    }
+
+    function closeDialog() {
+      if (!isOpen()) return;
+      dialog.classList.remove('is-open');
+      document.body.classList.remove('lb-open');
+      const done = () => {
+        dialog.hidden = true;
+        if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+      };
+      if (reduceMotion) done();
+      else {
+        clearTimeout(closeTimer);
+        closeTimer = setTimeout(done, 200);
+      }
+    }
+
+    for (const btn of document.querySelectorAll('[data-bd-open]')) {
+      btn.addEventListener('click', openDialog);
+    }
+    const closeBtn = document.getElementById('bd-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeDialog);
+    if (sheet) {
+      dialog.addEventListener('click', (e) => {
+        if (!sheet.contains(e.target)) closeDialog();
+      });
+    }
+
+    // 点日期格：直接在当前页筛这个角色，不跳页刷新
+    grid.addEventListener('click', (e) => {
+      const cell = e.target.closest('a.bd-cell');
+      if (!cell) return;
+      const tag = cell.dataset.tag || '';
+      if (typeof window.gallerySetTag === 'function') {
+        e.preventDefault();
+        window.gallerySetTag(tag);
+        closeDialog();
+      }
+    });
+
+    const prev = document.getElementById('bd-prev');
+    const next = document.getElementById('bd-next');
+    const back = document.getElementById('bd-today');
+    if (prev) prev.addEventListener('click', () => shift(-1));
+    if (next) next.addEventListener('click', () => shift(1));
+    if (back)
+      back.addEventListener('click', () => {
+        const t = new Date();
+        year = t.getFullYear();
+        month = t.getMonth();
+        render();
+      });
+
+    document.addEventListener('keydown', (e) => {
+      if (!isOpen()) return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeDialog();
+        return;
+      }
+      const tag = e.target && e.target.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      if (e.key === 'ArrowLeft') shift(-1);
+      else if (e.key === 'ArrowRight') shift(1);
+    });
+
+    render({ silent: true });
+  })();
+</script>
+
+<style is:global>
+  /* ---------- 生日月历（相册页内弹出） ---------- */
+
+  .bd-dialog {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    background: color-mix(in srgb, #0b0908 58%, transparent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .bd-dialog[hidden] {
+    display: none;
+  }
+
+  .bd-dialog.is-open {
+    opacity: 1;
+  }
+
+  .bd-sheet {
+    width: min(47rem, 100%);
+    max-height: calc(100vh - 2.5rem);
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 1rem 1.25rem 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.28);
+    transform: translateY(8px) scale(0.995);
+    transition: transform 0.22s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .bd-dialog.is-open .bd-sheet {
+    transform: none;
+  }
+
+  .bd-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .bd-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .bd-title-n {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+  }
+
+  .bd-close {
+    flex: none;
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .bd-close:hover,
+  .bd-close:focus-visible {
+    border-color: var(--faint);
+    color: var(--text);
+  }
+
+  .bd-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.1rem 0 0.7rem;
+  }
+
+  .bd-month {
+    min-width: 8.5em;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+
+  .bd-nav {
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .bd-nav:hover,
+  .bd-nav:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .bd-today {
+    margin-left: 0.35rem;
+    padding: 0.2rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .bd-today:hover,
+  .bd-today:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .bd-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    padding-bottom: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    color: var(--faint);
+    text-align: center;
+    text-indent: 0.14em;
+  }
+
+  .bd-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--border);
+    overflow: hidden;
+  }
+
+  .bd-grid.is-in {
+    animation: bd-fade 0.32s ease both;
+  }
+
+  @keyframes bd-fade {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .bd-cell {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--bg);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .bd-cell.is-out {
+    background: color-mix(in srgb, var(--bg-soft) 55%, var(--bg));
+  }
+
+  .bd-cell.has-photo {
+    background: var(--bg-soft);
+  }
+
+  .bd-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 32%;
+    transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform;
+  }
+
+  a.bd-cell:hover .bd-photo,
+  a.bd-cell:focus-visible .bd-photo {
+    transform: scale(1.045);
+  }
+
+  .bd-num {
+    position: absolute;
+    z-index: 3;
+    top: 0.3rem;
+    left: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: var(--faint);
+  }
+
+  .bd-cell.has-photo .bd-num {
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .bd-cell.no-img .bd-num {
+    color: var(--muted);
+    text-shadow: none;
+  }
+
+  .bd-plus {
+    position: absolute;
+    z-index: 3;
+    top: 0.24rem;
+    right: 0.26rem;
+    min-width: 1.15rem;
+    padding: 0 0.22rem;
+    border-radius: 999px;
+    background: rgba(12, 9, 8, 0.55);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.5625rem;
+    line-height: 1.7;
+    text-align: center;
+    letter-spacing: 0;
+  }
+
+  .bd-tip {
+    position: absolute;
+    z-index: 2;
+    inset: auto 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    padding: 0.9rem 0.35rem 0.26rem;
+    background: linear-gradient(to top, rgba(10, 8, 6, 0.9), rgba(10, 8, 6, 0));
+    color: #f7efe4;
+    font-family: var(--font-sans);
+    font-size: 0.625rem;
+    line-height: 1.35;
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity 0.22s ease,
+      transform 0.22s ease;
+    pointer-events: none;
+  }
+
+  .bd-cell:hover .bd-tip,
+  .bd-cell:focus-visible .bd-tip {
+    opacity: 1;
+    transform: none;
+  }
+
+  .bd-tip-row {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .bd-tip-row b {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bd-tip-row em {
+    font-style: normal;
+    opacity: 0.72;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bd-cell.no-img::before {
+    content: attr(data-initial);
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--faint);
+    background: var(--bg-soft);
+  }
+
+  .bd-cell.is-today::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 62%, transparent);
+    pointer-events: none;
+  }
+
+  .bd-cell.is-today:not(.has-photo) .bd-num {
+    color: var(--accent);
+  }
+
+  .bd-count {
+    margin: 0.7rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+  }
+
+  .bd-unknown {
+    margin-top: 1.6rem;
+    border-top: 1px solid var(--border);
+    padding-top: 0.9rem;
+  }
+
+  .bd-unknown summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .bd-unknown summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .bd-unknown summary::after {
+    content: '＋';
+    font-size: 0.7rem;
+    line-height: 1;
+    opacity: 0.8;
+  }
+
+  .bd-unknown[open] summary::after {
+    content: '−';
+  }
+
+  .bd-unknown-n {
+    color: var(--muted);
+  }
+
+  .bd-unknown-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.15rem;
+    margin: 0.85rem 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  .bd-unknown-list a {
+    border-bottom: 1px solid transparent;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .bd-unknown-list a:hover {
+    color: var(--accent);
+    border-bottom-color: currentColor;
+  }
+
+  @media (max-width: 720px) {
+    .bd-dialog {
+      padding: 0.65rem;
+    }
+
+    .bd-sheet {
+      padding: 0.85rem 0.8rem 1rem;
+      max-height: calc(100vh - 1.3rem);
+    }
+
+    .bd-month {
+      font-size: 0.875rem;
+    }
+
+    .bd-num {
+      top: 0.2rem;
+      left: 0.25rem;
+      font-size: 0.5625rem;
+    }
+
+    .bd-tip {
+      padding-top: 0.6rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bd-dialog,
+    .bd-sheet {
+      transition: none;
+    }
+
+    .bd-grid.is-in {
+      animation: none;
+    }
+
+    .bd-photo,
+    .bd-tip {
+      transition: none;
+    }
+
+    a.bd-cell:hover .bd-photo,
+    a.bd-cell:focus-visible .bd-photo {
+      transform: none;
+    }
+
+    .bd-tip {
+      transform: none;
+    }
+  }
+</style>

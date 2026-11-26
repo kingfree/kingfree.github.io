@@ -8,9 +8,10 @@ interface Props {
   title?: string;
   description?: string;
   type?: string;
+  wide?: boolean;
 }
 
-const { title, description = '原田莓莓的个人站：Kigurumi、代码与读书。', type = 'website' } = Astro.props;
+const { title, description = '原田莓莓的个人站：Kigurumi、代码与读书。', type = 'website', wide = false } = Astro.props;
 const site = 'meimoe.fun';
 const pageTitle = title ? title + ' · 原田莓莓' : '原田莓莓 · Meimei';
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -18,6 +19,7 @@ const nav = [
   { href: '/posts/', label: '文章' },
   { href: '/repost/', label: '转载' },
   { href: '/reading/', label: '读书' },
+  { href: '/photos/', label: '写真' },
   { href: '/about/', label: '关于' },
 ];
 const current = (p: string) => Astro.url.pathname === p || Astro.url.pathname.startsWith(p);
@@ -63,21 +65,19 @@ const current = (p: string) => Astro.url.pathname === p || Astro.url.pathname.st
         </nav>
       </div>
     </header>
-    <main class="wrap">
+    <main class={wide ? 'wrap wrap-wide' : 'wrap'}>
       <slot />
     </main>
     <footer class="site-footer wrap">
-      <span>© {new Date().getFullYear()} Harada Meimei</span>
+      <span>© {new Date().getFullYear()} 原田莓莓</span>
       <span class="sep">/</span>
       <a href="/archives/">归档</a>
       <span class="sep">/</span>
       <a href="/tags/">标签</a>
       <span class="sep">/</span>
-      <a href="https://github.com/kingfree" rel="me noopener">GitHub</a>
-      <span class="sep">/</span>
       <a href="/rss.xml">RSS</a>
       <span class="sep">/</span>
-      <span><a href="https://kigis.me/about" rel="noopener">Nijino IoT.</a></span>
+      <span><a href="https://kigis.me/about" rel="noopener">虹野物联</a></span>
     </footer>
     <script is:inline>
       document.getElementById('theme-toggle')?.addEventListener('click', () => {

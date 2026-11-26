@@ -1,0 +1,475 @@
+{
+ "note": "由 scripts/gallery/build-birthdays.mjs 生成：生日先取脚本里人工核过的 BIRTHDAY_OVERRIDES（萌娘百科 / Bangumi），其次 Z:\\着ぐるみ\\角色 目录名的 MMDD 前缀，最后 Bangumi 角色数据；作品取 Bangumi 关联作品的主角作。",
+ "characters": [
+  {
+   "tag": "青衣",
+   "name": "青衣",
+   "nameJa": "青衣",
+   "mon": 1,
+   "day": 1,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "虹野梦",
+   "name": "虹野梦",
+   "nameJa": "虹野ゆめ",
+   "mon": 3,
+   "day": 3,
+   "works": [
+    "偶像活动Stars",
+    "剧场版 偶像活动Stars"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "杏目",
+   "name": "杏目",
+   "nameJa": "",
+   "mon": 3,
+   "day": 10,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "星宫莓",
+   "name": "星宫莓",
+   "nameJa": "星宮いちご",
+   "mon": 3,
+   "day": 15,
+   "works": [
+    "偶像活动 第一年",
+    "剧场版 偶像活动"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "咲良歌",
+   "name": "咲良歌",
+   "nameJa": "",
+   "mon": 3,
+   "day": 27,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "大空明",
+   "name": "大空明",
+   "nameJa": "大空あかり",
+   "mon": 4,
+   "day": 1,
+   "works": [
+    "剧场版 偶像活动",
+    "偶像活动 MUSIC AWARD 让我们一起领奖吧！"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "木之本樱",
+   "name": "木之本樱",
+   "nameJa": "木之本桜",
+   "mon": 4,
+   "day": 1,
+   "works": [
+    "魔卡少女樱",
+    "魔卡少女樱 香港之旅"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "花海咲季",
+   "name": "花海咲季",
+   "nameJa": "",
+   "mon": 4,
+   "day": 2,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "强击",
+   "name": "强击",
+   "nameJa": "ヴィブロス",
+   "mon": 4,
+   "day": 9,
+   "works": [
+    "赛马娘 Pretty Derby"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "艾妮丝菲亚",
+   "name": "艾妮丝菲亚",
+   "nameJa": "",
+   "mon": 4,
+   "day": 16,
+   "works": [],
+   "kigurumi": false,
+   "birthdaySource": "manual"
+  },
+  {
+   "tag": "伊井野弥子",
+   "name": "伊井野弥子",
+   "nameJa": "伊井野ミコ",
+   "mon": 5,
+   "day": 5,
+   "works": [
+    "辉夜大小姐想让我告白 ~天才们的恋爱头脑战~",
+    "辉夜大小姐想让我告白?～天才们的恋爱头脑战～"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "新子憧",
+   "name": "新子憧",
+   "nameJa": "新子憧",
+   "mon": 5,
+   "day": 17,
+   "works": [
+    "天才麻将少女 阿知贺篇",
+    "咲-Saki- 阿知贺篇 episode of side-A"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "云堇",
+   "name": "云堇",
+   "nameJa": "",
+   "mon": 5,
+   "day": 21,
+   "works": [],
+   "kigurumi": false,
+   "birthdaySource": "manual"
+  },
+  {
+   "tag": "三上千织",
+   "name": "三上千织",
+   "nameJa": "三上千織",
+   "mon": 5,
+   "day": 23,
+   "works": [],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "长崎素世",
+   "name": "长崎素世",
+   "nameJa": "長崎そよ",
+   "mon": 5,
+   "day": 27,
+   "works": [
+    "BanG Dream! 少女乐团派对！",
+    "BanG Dream! It's MyGO!!!!!"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "宫下爱",
+   "name": "宫下爱",
+   "nameJa": "宮下愛",
+   "mon": 5,
+   "day": 30,
+   "works": [
+    "LoveLive! 学园偶像祭",
+    "Love Live! 学园偶像季：群星闪耀"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "乾纱寿叶",
+   "name": "乾纱寿叶",
+   "nameJa": "乾紗寿叶",
+   "mon": 6,
+   "day": 1,
+   "works": [],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "羽衣拉拉",
+   "name": "羽衣拉拉",
+   "nameJa": "",
+   "mon": 7,
+   "day": 7,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "洛天依",
+   "name": "洛天依",
+   "nameJa": "",
+   "mon": 7,
+   "day": 12,
+   "works": [],
+   "kigurumi": false,
+   "birthdaySource": "manual"
+  },
+  {
+   "tag": "矢泽妮可",
+   "name": "矢泽妮可",
+   "nameJa": "矢澤にこ",
+   "mon": 7,
+   "day": 22,
+   "works": [
+    "Love Live!",
+    "LoveLive! 学园偶像祭"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "犬饲彩羽",
+   "name": "犬饲彩羽",
+   "nameJa": "",
+   "mon": 8,
+   "day": 7,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "安柏",
+   "name": "安柏",
+   "nameJa": "安柏",
+   "mon": 8,
+   "day": 10,
+   "works": [
+    "原神PROJECT"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "衣之咲璃乃",
+   "name": "衣之咲璃乃",
+   "nameJa": "リノ",
+   "mon": 8,
+   "day": 25,
+   "works": [
+    "公主连结",
+    "公主连结 Re:Dive"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "晓山瑞希",
+   "name": "晓山瑞希",
+   "nameJa": "",
+   "mon": 8,
+   "day": 27,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "初音未来",
+   "name": "初音未来",
+   "nameJa": "初音ミク",
+   "mon": 8,
+   "day": 31,
+   "works": [
+    "VOCALOID2 角色主唱系列 CV01 初音未來",
+    "MikuMikuDance"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "大泽琉璃乃",
+   "name": "大泽琉璃乃",
+   "nameJa": "",
+   "mon": 8,
+   "day": 31,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "莫娜",
+   "name": "莫娜",
+   "nameJa": "莫娜",
+   "mon": 8,
+   "day": 31,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "千早爱音",
+   "name": "千早爱音",
+   "nameJa": "千早愛音",
+   "mon": 9,
+   "day": 8,
+   "works": [
+    "BanG Dream! 少女乐团派对！",
+    "BanG Dream! It's MyGO!!!!!"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "黑泽露比",
+   "name": "黑泽露比",
+   "nameJa": "黒澤ルビィ",
+   "mon": 9,
+   "day": 21,
+   "works": [
+    "LoveLive! 学园偶像祭",
+    "LoveLive! Sunshine!!"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "早乙女亚子",
+   "name": "早乙女亚子",
+   "nameJa": "早乙女あこ",
+   "mon": 9,
+   "day": 25,
+   "works": [
+    "偶像活动Stars",
+    "剧场版 偶像活动Stars"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "砂冢明",
+   "name": "砂冢明",
+   "nameJa": "",
+   "mon": 10,
+   "day": 7,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "釉瑚",
+   "name": "釉瑚",
+   "nameJa": "釉瑚",
+   "mon": 10,
+   "day": 13,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "浮波柚叶",
+   "name": "浮波柚叶",
+   "nameJa": "柚叶",
+   "mon": 11,
+   "day": 2,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "manual"
+  },
+  {
+   "tag": "香菱",
+   "name": "香菱",
+   "nameJa": "香菱",
+   "mon": 11,
+   "day": 2,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "阳夏木蜜柑",
+   "name": "阳夏木蜜柑",
+   "nameJa": "陽夏木ミカン",
+   "mon": 11,
+   "day": 3,
+   "works": [
+    "街角魔族",
+    "街角魔族 2丁目"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "砂糖",
+   "name": "砂糖",
+   "nameJa": "",
+   "mon": 11,
+   "day": 26,
+   "works": [],
+   "kigurumi": false,
+   "birthdaySource": "manual"
+  },
+  {
+   "tag": "新泽西",
+   "name": "新泽西",
+   "nameJa": "新泽西",
+   "mon": 12,
+   "day": 7,
+   "works": [
+    "碧蓝航线"
+   ],
+   "kigurumi": false,
+   "birthdaySource": "bgm"
+  },
+  {
+   "tag": "和泉纱雾",
+   "name": "和泉纱雾",
+   "nameJa": "和泉紗霧",
+   "mon": 12,
+   "day": 10,
+   "works": [
+    "埃罗芒阿老师",
+    "公式コミックアンソロジー エロマンガ先生"
+   ],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  },
+  {
+   "tag": "莱伊拉",
+   "name": "莱伊拉",
+   "nameJa": "",
+   "mon": 12,
+   "day": 19,
+   "works": [],
+   "kigurumi": false,
+   "birthdaySource": "manual"
+  },
+  {
+   "tag": "藤岛慈",
+   "name": "藤岛慈",
+   "nameJa": "",
+   "mon": 12,
+   "day": 20,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": "cos"
+  }
+ ],
+ "unknown": [
+  {
+   "tag": "荧",
+   "name": "荧",
+   "nameJa": "",
+   "mon": 0,
+   "day": 0,
+   "works": [],
+   "kigurumi": true,
+   "birthdaySource": ""
+  }
+ ],
+ "excluded": [
+  "仓田真白",
+  "二叶筑紫"
+ ]
+}

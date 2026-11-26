@@ -1,0 +1,2886 @@
+{
+ "note": "相册源清单：rel 相对各自照片库根目录；由 scripts/gallery/build-gallery.mjs 生成。",
+ "count": 288,
+ "photos": [
+  {
+   "root": "",
+   "album": "20161001ruby",
+   "rel": "20161001ruby/DSC_2094.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图导出痕迹（文件名/子目录无修图标记），按文件名排序+稳定哈希从 38 张中伪随机取 1 张；EXIF Software=Windows Photo Editor 10.0.10011.16384（轻量编辑软件痕迹，但非修图导出，不作修图判据）",
+   "datetime": "2016-10-02 15:18:36",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20170501ako-CP20",
+   "rel": "20170501ako-CP20/IMG20170501161151.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 40 张中伪随机取 1 张",
+   "datetime": "2017-05-01 16:11:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "娃照",
+   "rel": "娃照/DSC_1390.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 11 张），判为相机直出；按文件名排序+md5 稳定哈希（06b107b8）取第 1 张",
+   "datetime": "2018-01-12 02:23:52",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20180519yume",
+   "rel": "20180519yume/IMG_20180617_013412R_1.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 12 张），判为相机直出；按文件名排序+md5 稳定哈希（00a40659）取第 1 张",
+   "datetime": "2018-06-17 01:34:13",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190701",
+   "rel": "20190701/IMG_20181111_020708B.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 12 张），判为相机直出；按文件名排序+md5 稳定哈希（0473f901）取第 1 张",
+   "datetime": "2018-11-11 02:07:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190507yume",
+   "rel": "20190507yume/-7156xa.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Lightroom CC 2.2.1 (Windows)",
+   "datetime": "2019-05-07 23:03:10",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190608rizu",
+   "rel": "20190608rizu/IMG_20190608_151602.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张；同名候选仅 _1/(1)/ 数字后缀且无编辑软件 EXIF，无法确认修图",
+   "datetime": "2019-06-08 15:16:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190626lala",
+   "rel": "20190626lala/IMG_20190623_211322.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=VCE-AL00 9.0.1.172(C00E171R1P1",
+   "datetime": "2019-06-23 01:07:13",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190623lala",
+   "rel": "20190623lala/IMG_20190630_230613_mh1561908682271.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「mh1561908682271」修图标记",
+   "datetime": "2019-06-30 23:06:14",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190623lala",
+   "rel": "20190623lala/IMG_20190630_230754_mh1561908414064.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「mh1561908414064」修图标记",
+   "datetime": "2019-06-30 23:07:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190826",
+   "rel": "20190826/img-410ebd42f18774f296dc6e5a6b591c93.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2019-08-03 23:47:42",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190810chiori",
+   "rel": "20190810chiori/IMG_20190810_173549.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 VCE-AL00 9.1.0.230(C00E230R1P1)）；按文件名排序+md5 稳定哈希（0e3e81e1）取第 1 张",
+   "datetime": "2019-08-10 17:35:50",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20190905",
+   "rel": "20190905/IMG_20190905_222854.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "文件名/目录/抽样EXIF均无修图痕迹，按文件名排序+稳定哈希随机1张；EXIF Software=VCE-AL00 9.1.0.230(C00E230R1P1)",
+   "datetime": "2019-09-05 22:28:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20191119ako",
+   "rel": "20191119ako/-24f6b390a84dd513.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 6 张，EXIF Software 主要为 Ver.1.11）；按文件名排序+md5 稳定哈希（45a58133）取第 1 张",
+   "datetime": "2019-10-02 14:58:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20191003ako-lala-CICF",
+   "rel": "20191003ako-lala-CICF/IMG_4314.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 8.3.1 ",
+   "datetime": "2019-10-03 15:45:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20200726lala",
+   "rel": "20200726lala/IMG_20200729_210927.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 11 张，EXIF Software 主要为 ILCE-7M2 v4.00）；按文件名排序+md5 稳定哈希（171f242e）取第 1 张",
+   "datetime": "2020-07-25 04:20:36",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0707羽衣拉拉",
+   "rel": "0707羽衣拉拉/CP26-by霜云/DSC01483.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 9.3 (Macintosh)",
+   "datetime": "2020-08-06 15:49:57",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0707羽衣拉拉",
+   "rel": "0707羽衣拉拉/CP26-by霜云/DSC01485.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 9.3 (Macintosh)",
+   "datetime": "2020-08-06 15:49:57",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210101rino",
+   "rel": "20210101rino/IMG_20210101_215255.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2021-01-01 21:52:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210102rino",
+   "rel": "20210102rino/20210102110051_IMG_1698.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2021-01-02 11:00:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210117rino",
+   "rel": "20210117rino/670A6770.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 (无 Software)）；按文件名排序+md5 稳定哈希（00535825）取第 1 张",
+   "datetime": "2021-01-17 16:49:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210118rino",
+   "rel": "20210118rino/DSC06380.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 14 张，EXIF Software 主要为 (无 Software)）；按文件名排序+md5 稳定哈希（00ff0c58）取第 1 张",
+   "datetime": "2021-01-18 20:25:19",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210327ako",
+   "rel": "20210327ako/20210327145118_IMG_1900.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 35 张中伪随机取 1 张",
+   "datetime": "2021-03-27 14:51:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210404mona",
+   "rel": "20210404mona/DSC06893.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "无文件名/目录线索；抽样 6 张中 6 张 EXIF Software 为修图软件（典型值 Adobe Photoshop Camera Raw 12.4 (Windows)），判定整批为修图导出；该图 EXIF Software=Adobe Photoshop Camera Raw 12.4 (Windows)",
+   "datetime": "2021-04-04 17:27:41",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210404rino",
+   "rel": "20210404rino/成图/DSC06740.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成图」为导出/成片目录",
+   "datetime": "2021-04-08 00:07:52",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210404rino",
+   "rel": "20210404rino/成图/DSC06746.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成图」为导出/成片目录",
+   "datetime": "2021-04-08 00:07:52",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210404rino",
+   "rel": "20210404rino/成图/DSC06748.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成图」为导出/成片目录",
+   "datetime": "2021-04-08 00:07:57",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210404rino",
+   "rel": "20210404rino/成图/DSC06747.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成图」为导出/成片目录",
+   "datetime": "2021-04-08 00:07:58",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210501miko",
+   "rel": "20210501miko/IMG_5756.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2021-05-01 01:09:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210502mona",
+   "rel": "20210502mona/IMG_20210502_142348.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 (无 Software)）；按文件名排序+md5 稳定哈希（02f51107）取第 1 张",
+   "datetime": "2021-05-02 14:23:50",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210503mona",
+   "rel": "20210503mona/IMG_20210503_162539_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1",
+   "datetime": "2021-05-03 16:25:40",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
+   "rel": "0831莫娜/莫娜-莓莓/DSC05359.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop CC 2019 (Windows)",
+   "datetime": "2021-05-16 20:25:36",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
+   "rel": "0831莫娜/莫娜-莓莓/DSC04467.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop CC 2019 (Windows)",
+   "datetime": "2021-05-17 23:30:47",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204",
+   "rel": "20220204/DSCF0902-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 23.0 (Windows)",
+   "datetime": "2021-05-20 02:41:24",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204",
+   "rel": "20220204/DSCF0903-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 23.0 (Windows)",
+   "datetime": "2021-05-20 02:41:45",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204",
+   "rel": "20220204/DSCF0905-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 23.0 (Windows)",
+   "datetime": "2021-05-20 02:44:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204",
+   "rel": "20220204/DSCF0906-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 23.0 (Windows)",
+   "datetime": "2021-05-20 02:45:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
+   "rel": "0831莫娜/莫娜-莓莓/部分调了下/DSC_3037.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "位于「部分调了下」子目录；EXIF Software=NX Studio 1.0 W",
+   "datetime": "2021-06-24 01:28:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831莫娜",
+   "rel": "0831莫娜/莫娜-莓莓/部分调了下/DSC_3041.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "位于「部分调了下」子目录；EXIF Software=NX Studio 1.0 W",
+   "datetime": "2021-06-24 01:28:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210710yume",
+   "rel": "20210710yume/_2486923028-3963123167-509155F981E89497708EE4EA8C5CC639.jpeg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2021-07-10 13:48:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210711yume",
+   "rel": "20210711yume/导出/IMG_20210711_144132.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录导出",
+   "datetime": "2021-07-11 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210711yume",
+   "rel": "20210711yume/导出/IMG_20210711_161144.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录导出",
+   "datetime": "2021-07-11 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210711yume",
+   "rel": "20210711yume/IMG_20210711_142932_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1",
+   "datetime": "2021-07-11 14:29:33",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210711yume",
+   "rel": "20210711yume/IMG_8328-2.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-2；EXIF Software=Adobe Photoshop Lightroom Classic 10.2 (",
+   "datetime": "2021-07-11 15:53:13",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210727yume",
+   "rel": "20210727yume/IMG_20210727_220044.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2021-07-27 22:00:45",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210801miko",
+   "rel": "20210801miko/IMG_2680.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2021-08-01 15:42:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210814lala",
+   "rel": "20210814lala/DSC09669.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为相机固件/无 Software）；按文件名排序+md5 稳定哈希（00089c0a）取第 1 张",
+   "datetime": "2021-08-14 11:47:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210821akira",
+   "rel": "20210821akira/DSC09729-HDR.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「HDR」修图标记；EXIF Software=Adobe Photoshop Lightroom Classic 10.3 (Windows)",
+   "datetime": "2021-08-20 05:46:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210820akira",
+   "rel": "20210820akira/DSC09771.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 ILCE-7M2 v4.00）；按文件名排序+md5 稳定哈希（01510603）取第 1 张",
+   "datetime": "2021-08-20 06:06:07",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210821akira",
+   "rel": "20210821akira/DSC09842-HDR.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「HDR」修图标记；EXIF Software=Adobe Photoshop Lightroom Classic 10.3 (Windows)",
+   "datetime": "2021-08-20 06:40:03",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210821akira",
+   "rel": "20210821akira/DSC09853-HDR.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「HDR」修图标记；EXIF Software=Adobe Photoshop Lightroom Classic 10.3 (Windows)",
+   "datetime": "2021-08-20 06:43:25",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210821akira",
+   "rel": "20210821akira/DSC09874-HDR.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「HDR」修图标记；EXIF Software=Adobe Photoshop Lightroom Classic 10.3 (Windows)",
+   "datetime": "2021-08-20 07:09:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211002ai",
+   "rel": "20211002ai/IMG_20211002_175749_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1",
+   "datetime": "2021-10-02 17:57:50",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211003ai",
+   "rel": "20211003ai/IMG_20211005_194757_polarr.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「polarr」修图标记；EXIF Software=Polarr Photo Editor",
+   "datetime": "2021-10-03 17:59:33",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211007akira",
+   "rel": "20211007akira/IMG_5169.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2021-10-07 00:51:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211008akira",
+   "rel": "20211008akira/IMG_5234-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop 21.1 (Windows)",
+   "datetime": "2021-10-08 11:16:50",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211008akira",
+   "rel": "20211008akira/成图/IMG_5188.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成图」为修图导出目录",
+   "datetime": "2021-10-10 22:46:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211008akira",
+   "rel": "20211008akira/成图/IMG_5215.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成图」为修图导出目录",
+   "datetime": "2021-10-10 22:48:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211008akira",
+   "rel": "20211008akira/成图/IMG_5253.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成图」为修图导出目录",
+   "datetime": "2021-10-10 22:49:14",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20211026yume",
+   "rel": "20211026yume/IMG_20211026_222106.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 8 张中伪随机取 1 张",
+   "datetime": "2021-10-26 22:21:06",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220106lala",
+   "rel": "20220106lala/IMG_20220106_200538.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2022-01-06 20:05:38",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204akira",
+   "rel": "20220204akira/小图/DSCF0895.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录小图",
+   "datetime": "2022-02-06 20:01:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204akira",
+   "rel": "20220204akira/小图/DSCF0898.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录小图",
+   "datetime": "2022-02-06 20:01:19",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204akira",
+   "rel": "20220204akira/DSCF0902-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑",
+   "datetime": "2022-02-06 20:01:21",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220204akira",
+   "rel": "20220204akira/DSCF0905-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑",
+   "datetime": "2022-02-06 20:01:23",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220214akira",
+   "rel": "20220214akira/IMG_20220214_214811_TIMEBURST24.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 54 张中伪随机取 1 张",
+   "datetime": "2022-02-14 21:50:17",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220223akira",
+   "rel": "20220223akira/IMG_20220223_222825.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 3 张中伪随机取 1 张",
+   "datetime": "2022-02-23 22:28:25",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220315akira",
+   "rel": "20220315akira/IMG_20220315_160421.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 70 张中伪随机取 1 张",
+   "datetime": "2022-03-15 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220315ai",
+   "rel": "20220315ai/IMG_3026.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2022-03-15 17:28:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220316rino",
+   "rel": "20220316rino/IMG_20220316_160438.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 1 张），判为相机直出；按文件名排序+md5 稳定哈希（03585b75）取第 1 张",
+   "datetime": "2022-03-16 16:04:38",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220317rino",
+   "rel": "20220317rino/IMG_20220317_142257_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1",
+   "datetime": "2022-03-17 14:22:57",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220317rino",
+   "rel": "20220317rino/IMG_20220317_144928_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1",
+   "datetime": "2022-03-17 14:49:28",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220319chiori",
+   "rel": "20220319chiori/IMG_20220319_222343.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 98 张中伪随机取 1 张",
+   "datetime": "2022-03-19 22:23:43",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220321newjersey",
+   "rel": "20220321newjersey/IMG_20220321_222705.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2022-03-21 22:27:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220322lala",
+   "rel": "20220322lala/导出/IMG_20220322_223733.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2022-03-22 21:04:33",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220322lala",
+   "rel": "20220322lala/导出/IMG_20220322_223350.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2022-03-22 21:06:58",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220322lala",
+   "rel": "20220322lala/导出/IMG_20220322_212058.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2022-03-22 21:07:13",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220322lala",
+   "rel": "20220322lala/导出/IMG_20220322_223253.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2022-03-22 21:08:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220323akira",
+   "rel": "20220323akira/IMG_20220323_220218.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 2 张），判为相机直出；按文件名排序+md5 稳定哈希（00b90cd1）取第 1 张",
+   "datetime": "2022-03-23 22:02:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220406akira",
+   "rel": "20220406akira/导出/IMG_20220406_154534.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「导出」为修图导出目录",
+   "datetime": "2022-04-06 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220406akira",
+   "rel": "20220406akira/导出/IMG_20220406_161535.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「导出」为修图导出目录",
+   "datetime": "2022-04-06 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210118miko",
+   "rel": "20210118miko/导出/DSC06118.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「导出」为导出/成片目录",
+   "datetime": "2022-04-09 20:28:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210118miko",
+   "rel": "20210118miko/导出/DSC06300.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「导出」为导出/成片目录",
+   "datetime": "2022-04-09 20:36:07",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210118miko",
+   "rel": "20210118miko/导出/DSC06064.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「导出」为导出/成片目录",
+   "datetime": "2022-04-09 20:36:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20210118miko",
+   "rel": "20210118miko/导出/DSC06133.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「导出」为导出/成片目录",
+   "datetime": "2022-04-09 20:36:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220501miko",
+   "rel": "20220501miko/IMG_3127-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」",
+   "datetime": "2022-05-01 21:15:23",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220611rino",
+   "rel": "20220611rino/0 (12).jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2022-06-12 20:58:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220703sucrose",
+   "rel": "20220703sucrose/IMG_20220703_162513.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "文件名/目录/抽样EXIF均无修图痕迹，按文件名排序+稳定哈希随机1张",
+   "datetime": "2022-07-03 16:25:13",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220717sucrose",
+   "rel": "20220717sucrose/IMG_20220717_164705.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 69 张中伪随机取 1 张",
+   "datetime": "2022-07-17 16:47:06",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220721juju",
+   "rel": "20220721juju/IMG_20220721_102138.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内仅见 -1/_1/R/B 等弱重复标记的副本、EXIF 未见修图软件（抽样 3 张），判为相机直出；按文件名排序+md5 稳定哈希（00189413）取第 1 张",
+   "datetime": "2022-07-21 10:21:38",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220819akira",
+   "rel": "20220819akira/_E3G0071-已增强.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-08-18 22:45:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220809akiras",
+   "rel": "20220809akiras/IMG_3728-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-08-18 23:24:24",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220819akira",
+   "rel": "20220819akira/IMG_3728-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-08-18 23:24:24",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220809akiras",
+   "rel": "20220809akiras/IMG_3731-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-08-18 23:24:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220820akimiho",
+   "rel": "20220820akimiho/IMG_4105.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2022-08-20 15:57:52",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220820莓莓Simon",
+   "rel": "20220820莓莓Simon/JPG/IMG_4196.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2022-08-20 16:23:38",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220809akiras",
+   "rel": "20220809akiras/IMG_4255-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-08-20 16:34:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220820莓莓Simon",
+   "rel": "20220820莓莓Simon/IMG_4255-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop CC 2019 (Macintosh)；超大 TIFF（>150MB），Pillow 读取头超时，改用 TIFF IFD 解析校验尺寸/元数据",
+   "datetime": "2022-08-20 16:34:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220909juju",
+   "rel": "20220909juju/JPG/IMG_4913.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录名含修图标记(JPG)；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-09-09 01:51:13",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220909juju",
+   "rel": "20220909juju/JPG/IMG_4948.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录名含修图标记(JPG)；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-09-09 01:51:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220910",
+   "rel": "20220910/IMG_5069-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-09-10 18:47:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220917akira",
+   "rel": "20220917akira/DSC_0061.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-09-17 21:09:03",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220917akira-3",
+   "rel": "20220917akira-3/IMG_5377-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop CC 2019 (Macintosh)；超大 TIFF（>150MB），Pillow 读取头超时，改用 TIFF IFD 解析校验尺寸/元数据",
+   "datetime": "2022-09-17 23:05:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220809akiras",
+   "rel": "20220809akiras/DSC_0323-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1 (Macintosh)",
+   "datetime": "2022-09-18 12:04:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20220918akira",
+   "rel": "20220918akira/DSC_0323-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop CC 2019 (Macintosh)",
+   "datetime": "2022-09-18 15:41:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20221002ai-niji",
+   "rel": "20221002ai-niji/成片/BYY08691.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成片」为导出/成片目录；EXIF Software=Adobe Photoshop 21.0 (Windows)",
+   "datetime": "2022-10-02 11:14:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20221002ai-niji",
+   "rel": "20221002ai-niji/成片/BYY08706.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成片」为导出/成片目录；EXIF Software=Adobe Photoshop 21.0 (Windows)",
+   "datetime": "2022-10-02 11:34:15",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20221002ai-niji",
+   "rel": "20221002ai-niji/成片/1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成片」为导出/成片目录；EXIF Software=Adobe Photoshop 21.0 (Windows)",
+   "datetime": "2022-10-02 16:25:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20221002ai-niji",
+   "rel": "20221002ai-niji/成片/2.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「成片」为导出/成片目录；EXIF Software=Adobe Photoshop 21.0 (Windows)",
+   "datetime": "2022-10-02 16:25:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230108yunjin",
+   "rel": "20230108yunjin/IMG_6236.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1",
+   "datetime": "2023-01-08 17:32:48",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230108yunjin",
+   "rel": "20230108yunjin/IMG_6265.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1",
+   "datetime": "2023-01-08 17:36:47",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230108yunjin",
+   "rel": "20230108yunjin/IMG_6279.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1",
+   "datetime": "2023-01-08 17:38:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230108yunjin",
+   "rel": "20230108yunjin/IMG_6308.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1",
+   "datetime": "2023-01-08 17:44:02",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230110yunjin-er",
+   "rel": "20230110yunjin-er/IMG_6706.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "文件名/目录/抽样EXIF均无修图痕迹，按文件名排序+稳定哈希随机1张",
+   "datetime": "2023-01-10 12:40:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230113yunjin-sucrose",
+   "rel": "20230113yunjin-sucrose/IMG_6809.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 89 张中伪随机取 1 张",
+   "datetime": "2023-01-13 17:04:19",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230114-by-yao",
+   "rel": "20230114-by-yao/IMG_0290.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1",
+   "datetime": "2023-01-13 18:18:05",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230114-by-yao",
+   "rel": "20230114-by-yao/IMG_0295.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 10.1.1",
+   "datetime": "2023-01-13 18:19:35",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230204长沙",
+   "rel": "20230204长沙/IMG_7975.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 76 张中伪随机取 1 张",
+   "datetime": "2023-02-04 14:55:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230325mashiro",
+   "rel": "20230325mashiro/IMG_20230325_111818.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2023-03-25 11:18:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230331mashiro",
+   "rel": "20230331mashiro/IMG_8377.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2023-03-31 14:35:20",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230401mashiro",
+   "rel": "20230401mashiro/IMG_8483-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop CC 2019 (Macintosh)",
+   "datetime": "2023-04-01 11:36:28",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230401mashiro",
+   "rel": "20230401mashiro/IMG_8494-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop CC 2019 (Macintosh)",
+   "datetime": "2023-04-01 11:38:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230401mashiro",
+   "rel": "20230401mashiro/IMG_8509-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop CC 2019 (Macintosh)",
+   "datetime": "2023-04-01 11:40:29",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230401mashiro",
+   "rel": "20230401mashiro/IMG_8522-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop CC 2019 (Macintosh)",
+   "datetime": "2023-04-01 11:41:26",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230415anisphia-by-qb",
+   "rel": "20230415anisphia-by-qb/IMG_20230415_093813.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 (无 Software)）；按文件名排序+md5 稳定哈希（0050d166）取第 1 张",
+   "datetime": "2023-04-15 09:38:13",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230415anisphia",
+   "rel": "20230415anisphia/风喵修图/DSC_5252.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2023-04-15 14:09:43",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230415anisphia",
+   "rel": "20230415anisphia/风喵修图/DSC_5308.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2023-04-15 14:32:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230415anisphia",
+   "rel": "20230415anisphia/风喵修图/DSC_5325.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2023-04-15 14:34:41",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230415anisphia",
+   "rel": "20230415anisphia/风喵修图/DSC_5355.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2023-04-15 14:59:45",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230417yume",
+   "rel": "20230417yume/IMG_20230417_153549.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2023-04-17 15:35:50",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20221002虹团JPG",
+   "rel": "20221002虹团JPG/水印/BYY08900-2.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-2",
+   "datetime": "2023-05-30 00:04:28",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230716mashiro",
+   "rel": "20230716mashiro/IMG_20230716_173439_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1；EXIF Software=MediaTek Camera Application\u0000\u0000\u0000；注意：EXIF Software 仍为 MediaTek Camera Applicat，非修图软件，判据来自文件名/目录，强度较弱",
+   "datetime": "2023-07-16 17:34:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230721yume",
+   "rel": "20230721yume/IMG_9187-编辑-3.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)",
+   "datetime": "2023-07-21 22:17:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240727",
+   "rel": "20240727/DSC04590-已增强-降噪.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-降噪/降噪；EXIF Software=Adobe Photoshop Lightroom Classic 13.4 (",
+   "datetime": "2023-07-28 21:08:24",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230805juju",
+   "rel": "20230805juju/IMG_20230805_104310_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(_1)；EXIF Software=MediaTek Camera Application\u0000\u0000\u0000\u0000",
+   "datetime": "2023-08-05 10:43:10",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230817layla",
+   "rel": "20230817layla/IMG_20230817_001726.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 2 张，EXIF Software 主要为 MediaTek Camera Application\u0000\u0000\u0000\u0000）；按文件名排序+md5 稳定哈希（2e831194）取第 1 张",
+   "datetime": "2023-08-17 00:17:26",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231007akira",
+   "rel": "20231007akira/IMG_9592.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 12.5 (Windows)",
+   "datetime": "2023-10-07 18:09:53",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231007akira",
+   "rel": "20231007akira/IMG_9610.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 12.5 (Windows)",
+   "datetime": "2023-10-07 18:36:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231105akari",
+   "rel": "20231105akari/IMG_9699-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1 (Windows)",
+   "datetime": "2023-11-05 19:25:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231105akari",
+   "rel": "20231105akari/IMG_9725-编辑-2.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1 (Windows)",
+   "datetime": "2023-11-05 19:28:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "发布",
+   "rel": "发布/IMG_9699-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)",
+   "datetime": "2023-11-05 20:19:22",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231106ako",
+   "rel": "20231106ako/IMG_9772-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「编辑」修图标记；EXIF Software=Adobe Photoshop 25.1 (Windows)",
+   "datetime": "2023-11-06 21:39:31",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231112anon",
+   "rel": "20231112anon/IMG_9906-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑；EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1",
+   "datetime": "2023-11-12 10:05:22",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231112anon",
+   "rel": "20231112anon/IMG_9910-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑；EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1",
+   "datetime": "2023-11-12 10:06:07",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231112anon",
+   "rel": "20231112anon/IMG_9917-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑；EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1",
+   "datetime": "2023-11-12 10:06:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231112anon",
+   "rel": "20231112anon/IMG_9920-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑；EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1",
+   "datetime": "2023-11-12 10:07:11",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20230429yume",
+   "rel": "20230429yume/Fu3d91maIAEOS1j.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2023-11-15 00:42:21",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231126mikan",
+   "rel": "20231126mikan/IMG_0167-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1 (Windows)",
+   "datetime": "2023-11-26 13:05:15",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231126mikan",
+   "rel": "20231126mikan/IMG_0170-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop Lightroom Classic 13.0.1 (Windows)",
+   "datetime": "2023-11-26 13:05:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "发布",
+   "rel": "发布/DSC_0596-2.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-2)；EXIF Software=Adobe Photoshop Lightroom Classic 13.0.2 (Macintosh)",
+   "datetime": "2023-12-02 18:11:28",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231209by-H君",
+   "rel": "20231209by-H君/087A9226.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2023-12-09 09:47:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231209",
+   "rel": "20231209/_Y8A0744.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2023-12-09 10:00:50",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231210",
+   "rel": "20231210/_Y8A0881.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 (无 Software)）；按文件名排序+md5 稳定哈希（00172751）取第 1 张",
+   "datetime": "2023-12-10 09:26:07",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231222",
+   "rel": "20231222/IMG_20231222_143153-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop 25.3 (Windows)",
+   "datetime": "2023-12-22 14:31:53",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231222",
+   "rel": "20231222/IMG_20231222_143226-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop 25.3 (Windows)",
+   "datetime": "2023-12-22 14:32:26",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231222",
+   "rel": "20231222/IMG_20231222_143309-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop 25.3 (Windows)",
+   "datetime": "2023-12-22 14:33:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20231222",
+   "rel": "20231222/IMG_20231222_143658-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop 25.3 (Windows)",
+   "datetime": "2023-12-22 14:36:58",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240216",
+   "rel": "20240216/IMG_20240214_231049_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1；EXIF Software=MediaTek Camera Application\u0000\u0000\u0000；注意：EXIF Software 仍为 MediaTek Camera Applicat，非修图软件，判据来自文件名/目录，强度较弱",
+   "datetime": "2024-02-14 23:10:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240215",
+   "rel": "20240215/MEI00603.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2024-02-15 11:42:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240216",
+   "rel": "20240216/IMG_20240215_114821_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记_1；EXIF Software=MediaTek Camera Application\u0000\u0000\u0000；注意：EXIF Software 仍为 MediaTek Camera Applicat，非修图软件，判据来自文件名/目录，强度较弱",
+   "datetime": "2024-02-15 11:48:21",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240115",
+   "rel": "20240115/IMG_6556.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "文件名/目录/抽样EXIF均无修图痕迹，按文件名排序+稳定哈希随机1张",
+   "datetime": "2024-02-15 14:12:11",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240216",
+   "rel": "20240216/MEI00898-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑；EXIF Software=Adobe Photoshop 25.4 (Windows)",
+   "datetime": "2024-02-16 20:02:02",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240216",
+   "rel": "20240216/MEI00922 (1).jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记(1)",
+   "datetime": "2024-02-16 20:06:25",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240216mikan",
+   "rel": "20240216mikan/MEI00969.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 ILCE-7CM2 v1.01）；按文件名排序+md5 稳定哈希（0d7b3b18）取第 1 张",
+   "datetime": "2024-02-16 22:56:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "发布",
+   "rel": "发布/MEI00001_1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(_1)",
+   "datetime": "2024-04-21 15:34:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240511",
+   "rel": "20240511/MEI00063-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带修图标记且 EXIF Software=Adobe Photoshop Lightroom Classic 13.2 (Windows)",
+   "datetime": "2024-05-11 14:32:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240511",
+   "rel": "20240511/MEI00069-编辑.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带-编辑且 EXIF Software=Adobe Photoshop Lightroom Classic 13.2 (Windows)；同名 tif 版本未选",
+   "datetime": "2024-05-11 14:33:56",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240527soyo",
+   "rel": "20240527soyo/MEI00006.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图导出痕迹（文件名/子目录无修图标记），按文件名排序+稳定哈希从 15 张中伪随机取 1 张；EXIF Software=ILCE-7CM2 v1.01（相机应用/固件信息，不计为修图）",
+   "datetime": "2024-05-27 20:17:58",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240629品红",
+   "rel": "20240629品红/MEI02489.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2024-06-29 13:05:48",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240718soyoanon",
+   "rel": "20240718soyoanon/MEI02732.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.4 (Windows)",
+   "datetime": "2024-07-18 17:57:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240724",
+   "rel": "20240724/3A148A36A8D2C634A8D75F6F0E174F50.png",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（文件名/目录/EXIF 均未发现手工修图），按文件名排序+稳定哈希从 58 张中伪随机取 1 张",
+   "datetime": "2024-07-24 20:12:57",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831大泽琉璃乃",
+   "rel": "0831大泽琉璃乃/20230728-DSC04475.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.4 (Macintosh)",
+   "datetime": "2024-08-03 00:45:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831大泽琉璃乃",
+   "rel": "0831大泽琉璃乃/20230728-DSC04577.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.4 (Macintosh)",
+   "datetime": "2024-08-03 02:28:06",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831大泽琉璃乃",
+   "rel": "0831大泽琉璃乃/20230728-DSC04590-已增强-降噪.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「已增强」；EXIF Software=Adobe Photoshop Lightroom Classic 13.4 (Macintosh)",
+   "datetime": "2024-08-03 02:47:11",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0831大泽琉璃乃",
+   "rel": "0831大泽琉璃乃/20230728-DSC04598.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.4 (Macintosh)",
+   "datetime": "2024-08-03 03:03:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240501nijigasaki",
+   "rel": "20240501nijigasaki/op2/土司.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop 25.7 (Windows)",
+   "datetime": "2024-08-26 18:32:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20240501nijigasaki",
+   "rel": "20240501nijigasaki/op2/BYY08009_.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop 25.7 (Windows)",
+   "datetime": "2024-08-27 16:06:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20241007",
+   "rel": "20241007/MEI01783.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.5.1 (Macintosh)",
+   "datetime": "2024-10-07 02:41:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20241030",
+   "rel": "20241030/MEI02422.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.5.1 (Windows)",
+   "datetime": "2024-10-30 02:43:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20241031",
+   "rel": "20241031/MEI02788.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.5.1 (Windows)",
+   "datetime": "2024-10-31 21:03:44",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20241031",
+   "rel": "20241031/MEI02798.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.5.1 (Windows)",
+   "datetime": "2024-10-31 21:06:06",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20241031hanami",
+   "rel": "20241031hanami/MEI02802.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图导出痕迹（文件名/子目录无修图标记），按文件名排序+稳定哈希从 245 张中伪随机取 1 张；EXIF Software=ILCE-7CM2 v1.01（相机应用/固件信息，不计为修图）",
+   "datetime": "2024-10-31 21:06:45",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20241031",
+   "rel": "20241031/MEI02841.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.5.1 (Windows)",
+   "datetime": "2024-10-31 21:18:01",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20241031",
+   "rel": "20241031/MEI02844.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 13.5.1 (Windows)",
+   "datetime": "2024-10-31 21:18:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250109-大泽琉璃乃",
+   "rel": "20250109-大泽琉璃乃/IMG_20250109_230449-1.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-1)",
+   "datetime": "2025-01-09 23:04:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250125-木之本樱",
+   "rel": "20250125-木之本樱/MEI05574.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-25 01:23:45",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250125-木之本樱",
+   "rel": "20250125-木之本樱/MEI05606.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-25 01:31:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250125-木之本樱",
+   "rel": "20250125-木之本樱/MEI05636.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-25 01:34:20",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250125-木之本樱",
+   "rel": "20250125-木之本樱/MEI05666.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-25 01:46:25",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0401木之本樱",
+   "rel": "0401木之本樱/20250125-MEI05711.jpg",
+   "kind": "cos",
+   "reason": "random",
+   "detail": "未发现修图标记（文件名/目录/抽样 EXIF Software 均无），按文件名排序+稳定哈希随机取 1 张",
+   "datetime": "2025-01-25 01:51:26",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0807犬饲彩羽",
+   "rel": "0807犬饲彩羽/20250125-MEI05806.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-25 03:48:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0807犬饲彩羽",
+   "rel": "0807犬饲彩羽/20250125-MEI05773.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-25 03:48:40",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0807犬饲彩羽",
+   "rel": "0807犬饲彩羽/20250125-MEI05825.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-25 03:54:53",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1102香菱",
+   "rel": "1102香菱/250126MEI06085-编辑-11.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」",
+   "datetime": "2025-01-26 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1102香菱",
+   "rel": "1102香菱/250126MEI06183-编辑-16.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」",
+   "datetime": "2025-01-26 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1102香菱",
+   "rel": "1102香菱/250126MEI06224-编辑-24.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」",
+   "datetime": "2025-01-26 00:00:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1102香菱",
+   "rel": "1102香菱/20250126-MEI06208-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-26 18:26:15",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0807犬饲彩羽",
+   "rel": "0807犬饲彩羽/20250125-MEI05865.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-26 21:51:25",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250126-香菱",
+   "rel": "20250126-香菱/MEI06208-编辑-2.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop Lightroom Classic 14.1.1 (Macintosh)",
+   "datetime": "2025-01-26 22:40:52",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250126香菱_1",
+   "rel": "20250126香菱_1/MEI06224-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.1 (Windows)",
+   "datetime": "2025-01-28 18:50:25",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250126香菱_1",
+   "rel": "20250126香菱_1/MEI06057-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.1 (Windows)",
+   "datetime": "2025-01-28 18:51:17",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250126香菱_1",
+   "rel": "20250126香菱_1/MEI06187-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.1 (Windows)",
+   "datetime": "2025-01-28 18:55:33",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250126香菱_1",
+   "rel": "20250126香菱_1/MEI06031-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.1 (Windows)",
+   "datetime": "2025-01-28 18:58:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250125木之本樱_1",
+   "rel": "20250125木之本樱_1/MEI05574.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1 (Windows)",
+   "datetime": "2025-01-29 03:53:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250125木之本樱_1",
+   "rel": "20250125木之本樱_1/MEI05652.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1 (Windows)",
+   "datetime": "2025-01-29 03:57:06",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250125木之本樱_1",
+   "rel": "20250125木之本樱_1/MEI05729.JPG",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.1 (Windows)",
+   "datetime": "2025-01-29 04:00:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250202-mcp",
+   "rel": "20250202-mcp/MEI05854-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带 -编辑 修图标记（该文件无任何 EXIF 信息）",
+   "datetime": "2025-02-01 19:56:46",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250201",
+   "rel": "20250201/MEI06741.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=ILCE-7CM2 v1.01",
+   "datetime": "2025-02-01 21:21:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250201fromSimon",
+   "rel": "20250201fromSimon/IMG_1919.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 18.1.1）；按文件名排序+md5 稳定哈希（024767d2）取第 1 张",
+   "datetime": "2025-02-02 11:22:06",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250202",
+   "rel": "20250202/IMG_2230-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 26.3 (Macintosh)",
+   "datetime": "2025-02-02 15:33:11",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250202-mcp",
+   "rel": "20250202-mcp/IMG_2230-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名带 -编辑 修图标记（该文件无任何 EXIF 信息）",
+   "datetime": "2025-02-02 21:25:35",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1220藤岛慈",
+   "rel": "1220藤岛慈/mcp-okinawa/IMG_2230-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」",
+   "datetime": "2025-02-04 21:30:24",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20250228/20250228-MEI08707-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-02-28 17:59:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250228-虹野梦-m-8",
+   "rel": "20250228-虹野梦-m-8/10350228/MEI08707-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑；EXIF Software=Adobe Photoshop 26.3 (Macintosh)",
+   "datetime": "2025-02-28 17:59:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/20250228/II1A5102-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-02-28 18:37:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0303虹野梦",
+   "rel": "0303虹野梦/II1A5135-编辑.png",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑",
+   "datetime": "2025-03-02 20:13:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0000荧",
+   "rel": "0000荧/20250307-II1A5293-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-07 16:18:01",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0000荧",
+   "rel": "0000荧/20250307-II1A5297-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-07 16:20:59",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0000荧",
+   "rel": "0000荧/20250307-II1A5301-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-07 16:25:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0409强击",
+   "rel": "0409强击/20250307-II1A5336-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-07 17:17:44",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250310-杏目-m",
+   "rel": "20250310-杏目-m/MEI09723.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 ILCE-7CM2 v1.01）；按文件名排序+md5 稳定哈希（02d24b70）取第 1 张",
+   "datetime": "2025-03-10 19:39:52",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250310-杏目-8",
+   "rel": "20250310-杏目-8/II1A5421.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2025-03-10 19:41:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0310杏目",
+   "rel": "0310杏目/20250310-II1A5437.jpg",
+   "kind": "cos",
+   "reason": "random",
+   "detail": "未发现修图标记（文件名/目录/抽样 EXIF Software 均无），按文件名排序+稳定哈希随机取 1 张",
+   "datetime": "2025-03-10 19:51:44",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250315-星宫莓",
+   "rel": "20250315-星宫莓/MEI00026.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2025-03-15 17:11:04",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0315星宫莓",
+   "rel": "0315星宫莓/20250315-MEI00033.jpg",
+   "kind": "cos",
+   "reason": "random",
+   "detail": "未发现修图标记（文件名/目录/抽样 EXIF Software 均无），按文件名排序+稳定哈希随机取 1 张",
+   "datetime": "2025-03-15 17:11:57",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1013釉瑚",
+   "rel": "1013釉瑚/20250323-MEI00557.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-23 02:24:41",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1219莱依拉",
+   "rel": "1219莱依拉/20250323-MEI00727.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-23 02:27:49",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1219莱依拉",
+   "rel": "1219莱依拉/20250323-MEI00826.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-23 03:16:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1013釉瑚",
+   "rel": "1013釉瑚/20250323-MEI00733-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-23 03:42:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1013釉瑚",
+   "rel": "1013釉瑚/20250323-MEI00491.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-24 00:53:08",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1013釉瑚",
+   "rel": "1013釉瑚/20250323-MEI00562.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Macintosh)",
+   "datetime": "2025-03-24 00:55:11",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0101青衣",
+   "rel": "0101青衣/MEI02487-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 16:07:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250430青衣-花海咲季-伊井野弥子",
+   "rel": "20250430青衣-花海咲季-伊井野弥子/MEI02487-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 26.3 (Windows)",
+   "datetime": "2025-04-30 16:07:18",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250430青衣-花海咲季-伊井野弥子",
+   "rel": "20250430青衣-花海咲季-伊井野弥子/MEI02507-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 26.3 (Windows)",
+   "datetime": "2025-04-30 16:08:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0101青衣",
+   "rel": "0101青衣/MEI02508-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 16:08:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250430青衣-花海咲季-伊井野弥子",
+   "rel": "20250430青衣-花海咲季-伊井野弥子/MEI02508-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop 26.3 (Windows)",
+   "datetime": "2025-04-30 16:08:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0101青衣",
+   "rel": "0101青衣/MEI02553-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 16:09:51",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0101青衣",
+   "rel": "0101青衣/MEI02581-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 16:12:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0402花海咲季",
+   "rel": "0402花海咲季/MEI02646-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 16:38:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0402花海咲季",
+   "rel": "0402花海咲季/MEI02677-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 16:43:00",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0402花海咲季",
+   "rel": "0402花海咲季/MEI02701-编辑-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 16:59:30",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0402花海咲季",
+   "rel": "0402花海咲季/MEI02740-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 17:07:54",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0505伊井野弥子",
+   "rel": "0505伊井野弥子/MEI02749-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 17:18:31",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0505伊井野弥子",
+   "rel": "0505伊井野弥子/MEI02772-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 17:21:15",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0505伊井野弥子",
+   "rel": "0505伊井野弥子/MEI02784-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 17:23:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0505伊井野弥子",
+   "rel": "0505伊井野弥子/MEI02819-编辑.JPG",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名带 -编辑；EXIF Software=Adobe Photoshop Lightroom Classic 14.2 (Windows)",
+   "datetime": "2025-04-30 17:27:48",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250614-安柏-莓莓-原点",
+   "rel": "20250614-安柏-莓莓-原点/DSC_1917.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "文件名/目录/抽样EXIF均无修图痕迹，按文件名排序+稳定哈希随机1张；EXIF Software=Ver.02.01\u0000\u0000\u0000",
+   "datetime": "2025-06-14 16:04:09",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0810安柏",
+   "rel": "0810安柏/20250614-DSC_1966.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.3.1 (Macintosh)",
+   "datetime": "2025-06-15 17:35:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0810安柏",
+   "rel": "0810安柏/20250614-DSC_2176.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.3.1 (Macintosh)",
+   "datetime": "2025-06-15 17:35:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0810安柏",
+   "rel": "0810安柏/20250614-DSC_2180.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.3.1 (Macintosh)",
+   "datetime": "2025-06-15 17:35:37",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0810安柏",
+   "rel": "0810安柏/20250614-DSC_2169.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.3.1 (Macintosh)",
+   "datetime": "2025-06-15 17:35:41",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250629",
+   "rel": "20250629/MEI03499.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=ILCE-7CM2 v1.01",
+   "datetime": "2025-06-29 14:54:22",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250718idol",
+   "rel": "20250718idol/MEI03816.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 16 张，EXIF Software 主要为 ILCE-7CM2 v1.01）；按文件名排序+md5 稳定哈希（0023b0ee）取第 1 张",
+   "datetime": "2025-07-18 21:56:33",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0327咲良歌",
+   "rel": "0327咲良歌/20250718-MEI03930.jpg",
+   "kind": "cos",
+   "reason": "random",
+   "detail": "未发现修图标记（文件名/目录/抽样 EXIF Software 均无），按文件名排序+稳定哈希随机取 1 张",
+   "datetime": "2025-07-18 22:33:36",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250909-黑泽露比",
+   "rel": "20250909-黑泽露比/DSCF2863.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "文件名/目录/抽样EXIF均无修图痕迹，按文件名排序+稳定哈希随机1张；EXIF Software=Digital Camera X-T3 Ver5.11",
+   "datetime": "2025-09-09 18:32:01",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0921黑泽露比",
+   "rel": "0921黑泽露比/20250909-DSCF2826.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.4 (Macintosh)",
+   "datetime": "2025-09-10 02:12:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0921黑泽露比",
+   "rel": "0921黑泽露比/20250909-DSCF2845.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.4 (Macintosh)",
+   "datetime": "2025-09-10 02:12:39",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0921黑泽露比",
+   "rel": "0921黑泽露比/20250909-DSCF2849.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.4 (Macintosh)",
+   "datetime": "2025-09-10 02:12:41",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0921黑泽露比",
+   "rel": "0921黑泽露比/20250909-DSCF2899.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.4 (Macintosh)",
+   "datetime": "2025-09-10 02:12:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250912",
+   "rel": "20250912/Capture One/DSCF3101.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录Capture One；EXIF Software=Capture One Macintosh",
+   "datetime": "2025-09-12 17:42:29",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250912",
+   "rel": "20250912/Capture One/DSCF3106.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录Capture One；EXIF Software=Capture One Macintosh",
+   "datetime": "2025-09-12 17:43:03",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250912",
+   "rel": "20250912/Capture One/DSCF3112.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "目录Capture One；EXIF Software=Capture One Macintosh",
+   "datetime": "2025-09-12 17:43:34",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250912",
+   "rel": "20250912/DSCF3218-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名标记-编辑/编辑；EXIF Software=Adobe Photoshop 26.10 (Macintosh)",
+   "datetime": "2025-09-12 18:25:14",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0722矢泽妮可",
+   "rel": "0722矢泽妮可/DSCF3161.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+   "datetime": "2025-09-12 22:21:03",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0722矢泽妮可",
+   "rel": "0722矢泽妮可/20250912-DSCF3218-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+   "datetime": "2025-09-12 22:51:32",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0722矢泽妮可",
+   "rel": "0722矢泽妮可/20250912-DSCF3208.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+   "datetime": "2025-09-12 22:51:35",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0722矢泽妮可",
+   "rel": "0722矢泽妮可/20250912-DSCF3248.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+   "datetime": "2025-09-12 22:51:40",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250919-初音未来",
+   "rel": "20250919-初音未来/Capture One/DSCF3749.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「Capture One」为修图导出目录；EXIF Software=Capture One Macintosh",
+   "datetime": "2025-09-19 19:12:24",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250919-初音未来",
+   "rel": "20250919-初音未来/Capture One/DSCF3813.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「Capture One」为修图导出目录；EXIF Software=Capture One Macintosh",
+   "datetime": "2025-09-19 19:20:20",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250919-初音未来",
+   "rel": "20250919-初音未来/Capture One/DSCF3900.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「Capture One」为修图导出目录；EXIF Software=Capture One Macintosh",
+   "datetime": "2025-09-19 19:36:02",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250919-初音未来",
+   "rel": "20250919-初音未来/Capture One/DSCF4025.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "子目录「Capture One」为修图导出目录；EXIF Software=Capture One Macintosh",
+   "datetime": "2025-09-19 19:53:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "1002浮波柚叶",
+   "rel": "1002浮波柚叶/20250928-MEI06327-编辑.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "文件名含「编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+   "datetime": "2025-09-29 09:30:53",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20251008-DollEveryday",
+   "rel": "20251008-DollEveryday/11551008/MEI07051-编辑.tif",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含修图标记(-编辑)；EXIF Software=Adobe Photoshop 26.10 (Macintosh)",
+   "datetime": "2025-10-09 23:23:41",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20251022-大空明",
+   "rel": "20251022-大空明/MEI07344.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "专辑内未发现修图痕迹；按文件名+md5(稳定哈希)伪随机选 1 张",
+   "datetime": "2025-10-22 17:45:29",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0401大空明",
+   "rel": "0401大空明/20251022-MEI07349.jpg",
+   "kind": "cos",
+   "reason": "random",
+   "detail": "未发现修图标记（文件名/目录/抽样 EXIF Software 均无），按文件名排序+稳定哈希随机取 1 张",
+   "datetime": "2025-10-22 17:46:33",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20251022",
+   "rel": "20251022/SONY/MEI07373.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=ILCE-7CM2 v1.01",
+   "datetime": "2025-10-22 17:52:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20251126-sagiri",
+   "rel": "20251126-sagiri/IMG_20251126_022436.jpg",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张",
+   "datetime": "2025-11-26 02:24:36",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20251217-晓山瑞希",
+   "rel": "20251217-晓山瑞希/DSCF1711.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "文件名/目录/抽样EXIF均无修图痕迹，按文件名排序+稳定哈希随机1张；EXIF Software=Digital Camera X-T3 Ver5.11",
+   "datetime": "2025-12-17 19:05:55",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0827晓山瑞希",
+   "rel": "0827晓山瑞希/20260127/260127-8240.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 15.1.1 (Macintosh)",
+   "datetime": "2026-01-28 01:06:23",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0827晓山瑞希",
+   "rel": "0827晓山瑞希/20260127/260127-1954.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 15.1.1 (Macintosh)",
+   "datetime": "2026-01-28 01:06:45",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0827晓山瑞希",
+   "rel": "0827晓山瑞希/20260208-by-yuina/P2081325-2.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 15.1.1 (Macintosh)",
+   "datetime": "2026-02-08 22:04:41",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "0827晓山瑞希",
+   "rel": "0827晓山瑞希/20260208-by-yuina/P2081409-2.jpg",
+   "kind": "cos",
+   "reason": "edited",
+   "detail": "EXIF Software=Adobe Photoshop Lightroom Classic 15.1.1 (Macintosh)",
+   "datetime": "2026-02-08 23:32:35",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20260511-洛天依",
+   "rel": "20260511-洛天依/MEI08171-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 15.3 (Windows)",
+   "datetime": "2026-05-11 22:09:27",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20260511-洛天依",
+   "rel": "20260511-洛天依/MEI08186-编辑.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "文件名含「-编辑」；EXIF Software=Adobe Photoshop Lightroom Classic 15.3 (Windows)",
+   "datetime": "2026-05-11 22:10:40",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20250902-yume",
+   "rel": "20250902-yume/MEI08205.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=ILCE-7CM2 v1.01",
+   "datetime": "2026-09-02 09:42:31",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20260906-大空明",
+   "rel": "20260906-大空明/MEI08211.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图迹象（文件名/目录无修图标记，抽样 EXIF Software 未见修图软件），按文件名排序+稳定哈希伪随机取 1 张；相机/软件标记=ILCE-7CM2 v1.01",
+   "datetime": "2026-09-06 12:52:11",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20260913",
+   "rel": "20260913/darktable_exported/MEI08218.jpg",
+   "kind": "blog",
+   "reason": "edited",
+   "detail": "所在目录属修图/导出目录",
+   "datetime": "2026-09-13 11:50:35",
+   "datetimeSource": "app"
+  },
+  {
+   "root": "",
+   "album": "20260921-ichigo",
+   "rel": "20260921-ichigo/MEI08222.JPG",
+   "kind": "blog",
+   "reason": "random",
+   "detail": "无修图痕迹（抽样 11 张，EXIF Software 主要为 ILCE-7CM2 v1.01）；按文件名排序+md5 稳定哈希（18f45b2f）取第 1 张",
+   "datetime": "2026-09-21 16:05:58",
+   "datetimeSource": "app"
+  }
+ ]
+}
